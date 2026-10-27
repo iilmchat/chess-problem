@@ -1,0 +1,15 @@
+{
+  "name": "chess-problem-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Content and documentation validators for Chess Problem",
+  "type": "module",
+  "scripts": {
+    "check:docs": "node check-docs.mjs",
+    "check:content": "node validate-content.mjs",
+    "check": "npm run check:docs && npm run check:content"
+  },
+  "dependencies": {
+    "chess.js": "^1.4.0"
+  }
+}

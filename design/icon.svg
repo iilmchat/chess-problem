@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Chess Problem — иконка</title>
+  <desc id="desc">Латунный шахматный конь в кольце-циферблате на чернильно-зелёном фоне.</desc>
+
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="72%">
+      <stop offset="0%" stop-color="#1A3027"/>
+      <stop offset="58%" stop-color="#0D1A15"/>
+      <stop offset="100%" stop-color="#08110E"/>
+    </radialGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0C878"/>
+      <stop offset="45%" stop-color="#D6A756"/>
+      <stop offset="100%" stop-color="#A9772F"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0C878"/>
+      <stop offset="50%" stop-color="#D6A756"/>
+      <stop offset="100%" stop-color="#B8893F"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Фон: без прозрачности, заполнен полностью -->
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Едва заметная сетка «доски» -->
+  <g opacity="0.055" fill="#F4F0E5">
+    <rect x="64" y="64" width="48" height="48"/>
+    <rect x="160" y="64" width="48" height="48"/>
+    <rect x="256" y="64" width="48" height="48"/>
+    <rect x="352" y="64" width="48" height="48"/>
+    <rect x="112" y="112" width="48" height="48"/>
+    <rect x="208" y="112" width="48" height="48"/>
+    <rect x="304" y="112" width="48" height="48"/>
+    <rect x="400" y="112" width="48" height="48"/>
+    <rect x="64" y="160" width="48" height="48"/>
+    <rect x="160" y="160" width="48" height="48"/>
+    <rect x="256" y="160" width="48" height="48"/>
+    <rect x="352" y="160" width="48" height="48"/>
+    <rect x="112" y="208" width="48" height="48"/>
+    <rect x="208" y="208" width="48" height="48"/>
+    <rect x="304" y="208" width="48" height="48"/>
+    <rect x="400" y="208" width="48" height="48"/>
+    <rect x="64" y="256" width="48" height="48"/>
+    <rect x="160" y="256" width="48" height="48"/>
+    <rect x="256" y="256" width="48" height="48"/>
+    <rect x="352" y="256" width="48" height="48"/>
+    <rect x="112" y="304" width="48" height="48"/>
+    <rect x="208" y="304" width="48" height="48"/>
+    <rect x="304" y="304" width="48" height="48"/>
+    <rect x="400" y="304" width="48" height="48"/>
+    <rect x="64" y="352" width="48" height="48"/>
+    <rect x="160" y="352" width="48" height="48"/>
+    <rect x="256" y="352" width="48" height="48"/>
+    <rect x="352" y="352" width="48" height="48"/>
+  </g>
+
+  <!-- Кольцо-циферблат -->
+  <circle cx="256" cy="256" r="196" fill="none" stroke="url(#ring)" stroke-width="9"/>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#34D399" stroke-width="2" opacity="0.28"/>
+  <g stroke="#D6A756" stroke-width="6" stroke-linecap="round" opacity="0.65">
+    <line x1="256" y1="48" x2="256" y2="70"/>
+    <line x1="464" y1="256" x2="442" y2="256"/>
+    <line x1="256" y1="464" x2="256" y2="442"/>
+    <line x1="48" y1="256" x2="70" y2="256"/>
+  </g>
+  <g fill="#D6A756" opacity="0.4">
+    <circle cx="256" cy="58" r="3"/>
+    <circle cx="454" cy="256" r="3"/>
+    <circle cx="256" cy="454" r="3"/>
+    <circle cx="58" cy="256" r="3"/>
+  </g>
+
+  <!-- Конь -->
+  <g filter="url(#soft)">
+    <path fill="url(#brass)" d="M 196 392
+      L 196 352
+      C 196 326 206 304 224 288
+      L 262 254
+      L 246 232
+      C 238 220 240 204 250 194
+      L 282 166
+      L 276 136
+      L 300 160
+      L 316 128
+      L 324 166
+      L 350 176
+      C 370 184 382 202 384 224
+      L 386 252
+      C 386 270 378 286 364 296
+      L 338 314
+      C 326 322 320 336 322 350
+      L 326 392
+      Z"/>
+    <rect x="170" y="388" width="172" height="30" rx="15" fill="url(#brass)"/>
+    <path fill="#08110E" opacity="0.9" d="M 344 210
+      C 350 210 354 214 354 220
+      C 354 226 350 230 344 230
+      C 338 230 334 226 334 220
+      C 334 214 338 210 344 210 Z"/>
+    <path fill="#08110E" opacity="0.55" d="M 366 238
+      C 372 238 376 242 376 246
+      C 376 250 372 254 366 254
+      C 361 254 357 250 357 246
+      C 357 242 361 238 366 238 Z"/>
+    <path fill="#B8893F" opacity="0.75" d="M 262 254
+      L 246 232
+      L 270 238 Z"/>
+    <path fill="#B8893F" opacity="0.6" d="M 282 286
+      L 266 264
+      L 290 270 Z"/>
+    <path fill="#B8893F" opacity="0.45" d="M 300 318
+      L 286 296
+      L 310 302 Z"/>
+  </g>
+
+  <!-- Латунная точка-акцент: «точный ход» -->
+  <circle cx="256" cy="430" r="5" fill="#34D399" filter="url(#glow)" opacity="0.9"/>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.1",
+  "level": "PROFESSIONAL",
+  "puzzles": [
+    {
+      "id": "pro-001",
+      "chapter": "mixed-review",
+      "fen": "2q3k1/5ppp/8/5N2/8/8/5PPP/6K1 w - - 0 1",
+      "setupMove": null,
+      "solution": ["f5e7", "g8h8", "e7c8"],
+      "task": { "type": "WIN", "plies": 2 },
+      "rating": 1450,
+      "themes": ["fork", "knight", "check"],
+      "timeLimitSec": 185,
+      "title": { "ru": "Вилка конём", "en": "Knight fork" },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите вилку: одна фигура должна напасть на короля и ферзя одновременно.",
+          "en": "Look for a fork: one piece must attack the king and the queen at the same time."
+        },
+        {
+          "tier": 2,
+          "ru": "Конь с f5 может дать шах и одновременно напасть на c8.",
+          "en": "The knight on f5 can give check and attack c8 at the same time."
+        },
+        {
+          "tier": 3,
+          "ru": "Сыграйте конём f5–e7, а после ответа короля заберите ферзя на c8.",
+          "en": "Play Nf5–e7, then capture the queen on c8 after the king moves."
+        }
+      ],
+      "explanation": {
+        "ru": "Конь с f5 идёт на e7 и даёт шах королю на g8. Одновременно он атакует ферзя на c8. Король вынужден отойти, и конь забирает ферзя — классическая вилка.",
+        "en": "The knight goes from f5 to e7, checking the king on g8 while attacking the queen on c8. The king must move, and the knight captures the queen — a classic fork."
+      },
+      "source": {
+        "provider": "original",
+        "id": "chess-problem-original-003",
+        "license": "proprietary"
+      }
+    }
+  ]
+}

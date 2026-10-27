@@ -1,0 +1,44 @@
+# Gradle / Android
+.gradle/
+build/
+**/build/
+.kotlin/
+local.properties
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Signing and secrets
+keystore.properties
+*.jks
+*.keystore
+*.p12
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node / content tools
+tools/node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Python (local one-off scripts, not part of the build)
+__pycache__/
+*.pyc
+.venv/
+
+# Logs and temp
+*.log
+tmp/
+out/

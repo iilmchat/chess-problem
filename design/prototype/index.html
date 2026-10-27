@@ -1,0 +1,3390 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#08110E">
+  <title>Chess Problem — интерактивный прототип</title>
+  <meta name="description" content="Интерактивный дизайн-прототип Chess Problem: главная, решатель, подсказки и результат.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08110e;
+      --surface: #111f1a;
+      --surface-2: #182a24;
+      --surface-3: #223a32;
+      --ivory: #f4f0e5;
+      --muted: #b9c6be;
+      --outline: #33544a;
+      --emerald: #34d399;
+      --on-emerald: #06251a;
+      --brass: #d6a756;
+      --on-brass: #2a1c05;
+      --violet: #8b5cf6;
+      --violet-soft: #c4b5fd;
+      --error: #f87171;
+      --board-light: #eadfc8;
+      --board-dark: #6f8b72;
+      --radius-s: 8px;
+      --radius-m: 12px;
+      --radius-l: 16px;
+      --radius-xl: 20px;
+      --radius-2xl: 28px;
+      --ease: cubic-bezier(.2, 0, 0, 1);
+      --shadow-board: 0 18px 42px rgba(0, 0, 0, .34), 0 0 0 1px rgba(244, 240, 229, .11);
+      --display: "Montserrat", "Segoe UI", sans-serif;
+      --body: "Manrope", "Segoe UI", sans-serif;
+      --mono: "Roboto Mono", "Consolas", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      overflow: hidden;
+      color: var(--ivory);
+      background:
+        radial-gradient(1100px 760px at 12% -12%, rgba(52, 211, 153, .10), transparent 62%),
+        radial-gradient(900px 700px at 92% 112%, rgba(214, 167, 86, .085), transparent 62%),
+        #050c09;
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .5;
+      background-image:
+        linear-gradient(rgba(244, 240, 229, .022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244, 240, 229, .022) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse at center, #000 10%, transparent 72%);
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 10%, transparent 72%);
+    }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    button:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--emerald);
+      outline-offset: 2px;
+    }
+    svg { display: block; }
+    .icon { width: 20px; height: 20px; flex: 0 0 auto; }
+    .icon-sm { width: 16px; height: 16px; flex: 0 0 auto; }
+    .icon-lg { width: 24px; height: 24px; flex: 0 0 auto; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+
+    /* ---------- Prototype chrome ---------- */
+    .studio {
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .studio-bar {
+      position: relative;
+      z-index: 30;
+      flex: 0 0 64px;
+      height: 64px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      padding: 0 24px;
+      background: rgba(5, 12, 9, .72);
+      border-bottom: 1px solid rgba(244, 240, 229, .06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      justify-self: start;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: linear-gradient(145deg, #1a3027, #0a1510);
+      border: 1px solid rgba(214, 167, 86, .28);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 6px 18px rgba(0, 0, 0, .25);
+    }
+    .brand-mark svg {
+      width: 23px;
+      height: 23px;
+      color: var(--brass);
+      --piece-stroke: #8b5e25;
+      --piece-eye: #15251e;
+    }
+    .brand-text { display: flex; flex-direction: column; min-width: 0; }
+    .brand-text strong {
+      font: 700 12px/1 var(--display);
+      letter-spacing: .12em;
+      color: var(--ivory);
+      white-space: nowrap;
+    }
+    .brand-text small {
+      margin-top: 5px;
+      font: 500 9px/1 var(--body);
+      letter-spacing: .04em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .screen-tabs {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(17, 31, 26, .65);
+      border: 1px solid rgba(244, 240, 229, .06);
+    }
+    .screen-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font: 600 10px/1 var(--body);
+      letter-spacing: .02em;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .18s var(--ease), background .18s var(--ease);
+    }
+    .screen-tab .num {
+      font: 600 8px/1 var(--mono);
+      color: var(--muted);
+      opacity: .55;
+    }
+    .screen-tab:hover { color: var(--ivory); background: rgba(244, 240, 229, .05); }
+    .screen-tab[aria-selected="true"] {
+      color: var(--emerald);
+      background: rgba(52, 211, 153, .12);
+      box-shadow: inset 0 0 0 1px rgba(52, 211, 153, .08);
+    }
+    .screen-tab[aria-selected="true"] .num { color: var(--emerald); opacity: .8; }
+    .bar-actions {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .version {
+      font: 500 9px/1 var(--mono);
+      color: var(--muted);
+      opacity: .65;
+      white-space: nowrap;
+    }
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(17, 31, 26, .8);
+      border: 1px solid rgba(244, 240, 229, .09);
+    }
+    .lang-toggle button {
+      width: 30px;
+      height: 24px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font: 700 8px/1 var(--mono);
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: color .18s var(--ease), background .18s var(--ease);
+    }
+    .lang-toggle button.active {
+      color: #08110e;
+      background: var(--ivory);
+    }
+    .stage {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      overflow: hidden;
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      width: min(70vw, 780px);
+      height: min(70vw, 780px);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(52, 211, 153, .09), transparent 64%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+    .stage::after {
+      content: "";
+      position: absolute;
+      bottom: 3%;
+      width: min(58vw, 560px);
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .5);
+      filter: blur(24px);
+      pointer-events: none;
+    }
+    .stage-note {
+      position: absolute;
+      left: 24px;
+      bottom: 16px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font: 500 9px/1.4 var(--body);
+      letter-spacing: .02em;
+      opacity: .7;
+    }
+    .stage-note .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px rgba(52, 211, 153, .6);
+    }
+    .phone {
+      position: relative;
+      z-index: 1;
+      width: min(390px, calc(100vw - 32px));
+      height: min(844px, calc(100dvh - 108px));
+      padding: 6px;
+      border-radius: 44px;
+      background: linear-gradient(160deg, #1a2a24, #070f0c 55%, #15231d);
+      border: 1px solid rgba(244, 240, 229, .14);
+      box-shadow:
+        0 50px 120px rgba(0, 0, 0, .65),
+        0 0 0 1px rgba(0, 0, 0, .4),
+        inset 0 1px 0 rgba(255, 255, 255, .08);
+    }
+    .app {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border-radius: 38px;
+      background: var(--bg);
+      isolation: isolate;
+    }
+    .statusbar {
+      position: relative;
+      z-index: 6;
+      flex: 0 0 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 21px;
+      color: var(--ivory);
+      font: 700 10px/1 var(--body);
+      letter-spacing: .02em;
+    }
+    .status-icons { display: flex; align-items: center; gap: 5px; opacity: .9; }
+    .status-icon { width: 12px; height: 12px; }
+    .status-icon.battery { width: 16px; }
+    .camera-dot {
+      position: absolute;
+      left: 50%;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      background: #020604;
+      box-shadow: inset 0 0 0 1px rgba(244, 240, 229, .13);
+    }
+    .screen {
+      position: absolute;
+      inset: 26px 0 0;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      overflow: hidden;
+      transition: opacity .24s var(--ease), transform .24s var(--ease);
+      background: var(--bg);
+    }
+    .screen.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    /* ---------- Shared app primitives ---------- */
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--emerald);
+      font: 700 9px/1 var(--body);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      height: 44px;
+      padding: 0 15px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--emerald);
+      color: var(--on-emerald);
+      font: 800 11px/1 var(--body);
+      letter-spacing: .01em;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(52, 211, 153, .16);
+      transition: transform .12s var(--ease), filter .12s var(--ease);
+    }
+    .btn-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+    .btn-primary:active { transform: scale(.98); }
+    .btn-primary svg { width: 14px; height: 14px; }
+    .btn-primary.small { height: 38px; padding: 0 13px; border-radius: 10px; font-size: 10px; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      height: 48px;
+      padding: 0 16px;
+      border: 1px solid var(--outline);
+      border-radius: 14px;
+      background: var(--surface);
+      color: var(--ivory);
+      font: 700 11px/1 var(--body);
+      cursor: pointer;
+      transition: background .18s var(--ease), border-color .18s var(--ease);
+    }
+    .btn-secondary:hover { background: var(--surface-2); border-color: rgba(52, 211, 153, .3); }
+    .btn-secondary svg, .btn-text svg { width: 15px; height: 15px; flex: 0 0 auto; }
+    .btn-text {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-height: 40px;
+      padding: 0 8px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: 600 10px/1 var(--body);
+      cursor: pointer;
+    }
+    .btn-text:hover { color: var(--ivory); }
+    .round-btn {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid rgba(244, 240, 229, .08);
+      border-radius: 50%;
+      background: rgba(244, 240, 229, .035);
+      color: var(--muted);
+      cursor: pointer;
+      transition: color .18s var(--ease), background .18s var(--ease);
+    }
+    .round-btn:hover { color: var(--ivory); background: rgba(244, 240, 229, .07); }
+    .round-btn svg { width: 18px; height: 18px; }
+    .icon-btn {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid rgba(244, 240, 229, .08);
+      border-radius: 50%;
+      background: rgba(244, 240, 229, .04);
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .icon-btn svg { width: 17px; height: 17px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      height: 24px;
+      padding: 0 9px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font: 700 9px/1 var(--body);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .chip.brass { color: var(--brass); background: rgba(214, 167, 86, .11); border-color: rgba(214, 167, 86, .18); }
+    .chip.neutral { color: var(--muted); background: var(--surface-2); border-color: rgba(244, 240, 229, .06); }
+    .chip.emerald { color: var(--emerald); background: rgba(52, 211, 153, .10); border-color: rgba(52, 211, 153, .14); }
+
+    /* ---------- Home ---------- */
+    .home-screen { background: var(--bg); }
+    .home-scroll {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: 4px 20px 96px;
+      scrollbar-width: none;
+    }
+    .home-scroll::-webkit-scrollbar { display: none; }
+    .home-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 7px 0 17px;
+    }
+    .wordmark { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .wordmark-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: linear-gradient(145deg, #1a3027, #0a1510);
+      border: 1px solid rgba(214, 167, 86, .3);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+    }
+    .wordmark-mark svg {
+      width: 23px;
+      height: 23px;
+      color: var(--brass);
+      --piece-stroke: #8b5e25;
+      --piece-eye: #15251e;
+    }
+    .wordmark h1 {
+      margin: 0;
+      font: 700 14px/1 var(--display);
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+    .wordmark p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font: 500 8px/1 var(--body);
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .streak {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      height: 34px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 167, 86, .18);
+      background: rgba(214, 167, 86, .09);
+      color: var(--brass);
+      font: 800 11px/1 var(--body);
+      cursor: pointer;
+    }
+    .streak svg { width: 14px; height: 14px; }
+    .home-title {
+      margin: 0 0 6px;
+      font: 700 26px/1.12 var(--display);
+      letter-spacing: -.03em;
+    }
+    .home-sub {
+      max-width: 290px;
+      margin: 0 0 15px;
+      color: var(--muted);
+      font: 400 12px/1.55 var(--body);
+    }
+    .daily {
+      position: relative;
+      overflow: hidden;
+      min-height: 148px;
+      padding: 16px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(52, 211, 153, .17);
+      background:
+        linear-gradient(135deg, rgba(52, 211, 153, .15), rgba(139, 92, 246, .06) 62%, rgba(17, 31, 26, .15)),
+        var(--surface);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 18px 40px rgba(0, 0, 0, .16);
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      color: var(--ivory);
+    }
+    .daily::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(200px 130px at 91% 4%, rgba(52, 211, 153, .18), transparent 70%);
+      pointer-events: none;
+    }
+    .daily-top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .daily-label {
+      color: var(--emerald);
+      font: 800 9px/1 var(--body);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .daily-badge {
+      display: inline-flex;
+      align-items: center;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 167, 86, .2);
+      background: rgba(214, 167, 86, .12);
+      color: var(--brass);
+      font: 800 8px/1 var(--body);
+      letter-spacing: .04em;
+    }
+    .daily h3 {
+      position: relative;
+      z-index: 2;
+      margin: 9px 0 3px;
+      font: 700 23px/1.1 var(--display);
+      letter-spacing: -.025em;
+    }
+    .daily-meta {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      color: var(--muted);
+      font: 500 10px/1.4 var(--body);
+    }
+    .daily-bottom {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 13px;
+    }
+    .daily-dots { display: flex; gap: 4px; padding-bottom: 4px; }
+    .daily-dots span {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(244, 240, 229, .18);
+    }
+    .daily-dots span:first-child { width: 14px; border-radius: 99px; background: var(--emerald); }
+    .mini-board {
+      position: absolute;
+      z-index: 1;
+      top: 39px;
+      right: 14px;
+      width: 92px;
+      height: 92px;
+      overflow: hidden;
+      border-radius: 13px;
+      border: 1px solid rgba(244, 240, 229, .25);
+      background-color: var(--board-light);
+      background-image:
+        linear-gradient(45deg, var(--board-dark) 25%, transparent 25%, transparent 75%, var(--board-dark) 75%),
+        linear-gradient(45deg, var(--board-dark) 25%, transparent 25%, transparent 75%, var(--board-dark) 75%);
+      background-size: 46px 46px;
+      background-position: 0 0, 23px 23px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, .3);
+      transform: rotate(3deg);
+    }
+    .mini-board::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, .10), transparent 55%, rgba(0, 0, 0, .12));
+    }
+    .mini-piece {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 61px;
+      height: 61px;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      color: #f7f1e3;
+      --piece-stroke: #263a30;
+      --piece-eye: #263a30;
+      filter: drop-shadow(0 5px 3px rgba(0, 0, 0, .28));
+    }
+    .continue-card {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      width: 100%;
+      margin-top: 11px;
+      padding: 12px;
+      border-radius: var(--radius-l);
+      border: 1px solid var(--outline);
+      background: var(--surface);
+      color: var(--ivory);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .18s var(--ease), transform .18s var(--ease);
+    }
+    .continue-card:hover { border-color: rgba(52, 211, 153, .35); transform: translateY(-1px); }
+    .continue-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      background: rgba(52, 211, 153, .1);
+      color: var(--emerald);
+    }
+    .continue-icon svg { width: 17px; height: 17px; }
+    .continue-body { flex: 1; min-width: 0; }
+    .continue-title { font: 700 12px/1.2 var(--body); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .continue-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 4px;
+      color: var(--muted);
+      font: 500 9px/1.2 var(--body);
+    }
+    .continue-progress {
+      height: 4px;
+      margin-top: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: var(--surface-3);
+    }
+    .continue-progress span {
+      display: block;
+      height: 100%;
+      width: 70%;
+      border-radius: inherit;
+      background: var(--emerald);
+      box-shadow: 0 0 10px rgba(52, 211, 153, .35);
+    }
+    .continue-time {
+      flex: 0 0 auto;
+      padding: 5px 7px;
+      border-radius: 8px;
+      background: rgba(214, 167, 86, .1);
+      color: var(--brass);
+      font: 600 9px/1 var(--mono);
+    }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 20px 0 9px;
+    }
+    .section-head h2 { margin: 0; font: 700 15px/1.2 var(--body); letter-spacing: -.01em; }
+    .section-note {
+      color: var(--muted);
+      font: 600 8px/1 var(--body);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .level-list { display: flex; flex-direction: column; gap: 8px; }
+    .level-card {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      width: 100%;
+      padding: 11px;
+      border-radius: var(--radius-l);
+      border: 1px solid var(--outline);
+      background: var(--surface);
+      color: var(--ivory);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .18s var(--ease), transform .18s var(--ease);
+    }
+    .level-card:hover { border-color: rgba(52, 211, 153, .32); transform: translateY(-1px); }
+    .level-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      border: 1px solid rgba(52, 211, 153, .14);
+      background: rgba(52, 211, 153, .09);
+      color: var(--emerald);
+    }
+    .level-icon svg {
+      width: 29px;
+      height: 29px;
+      --piece-stroke: rgba(6, 37, 26, .55);
+      --piece-eye: #c8f7e4;
+    }
+    .level-card.brass .level-icon {
+      border-color: rgba(214, 167, 86, .18);
+      background: rgba(214, 167, 86, .09);
+      color: var(--brass);
+    }
+    .level-card.brass .level-icon svg { --piece-stroke: rgba(42, 28, 5, .55); --piece-eye: #f6e4bf; }
+    .level-card.violet .level-icon {
+      border-color: rgba(139, 92, 246, .2);
+      background: rgba(139, 92, 246, .1);
+      color: var(--violet-soft);
+    }
+    .level-card.violet .level-icon svg { --piece-stroke: rgba(28, 12, 62, .55); --piece-eye: #e9e2ff; }
+    .level-body { flex: 1; min-width: 0; }
+    .level-name { display: block; font: 700 12px/1.2 var(--body); }
+    .level-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 3px;
+      color: var(--muted);
+      font: 500 8px/1.2 var(--body);
+    }
+    .level-bar {
+      display: block;
+      height: 4px;
+      margin-top: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: var(--surface-3);
+    }
+    .level-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--emerald);
+    }
+    .level-card.brass .level-bar span { background: var(--brass); }
+    .level-card.violet .level-bar span { background: var(--violet); }
+    .level-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      flex: 0 0 auto;
+      color: var(--muted);
+    }
+    .level-stars {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: var(--brass);
+      font: 800 9px/1 var(--body);
+    }
+    .level-stars svg { width: 10px; height: 10px; }
+    .level-side > svg { width: 13px; height: 13px; opacity: .55; }
+    .home-footnote {
+      margin: 15px 2px 0;
+      color: var(--muted);
+      font: 500 8px/1.5 var(--body);
+      opacity: .7;
+      text-align: center;
+    }
+    .bottom-nav {
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 68px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      padding: 6px 18px 9px;
+      border-top: 1px solid rgba(244, 240, 229, .07);
+      background: rgba(13, 26, 21, .92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--muted);
+      font: 600 8px/1 var(--body);
+      cursor: pointer;
+      transition: color .18s var(--ease), background .18s var(--ease);
+    }
+    .nav-item svg { width: 19px; height: 19px; }
+    .nav-item:hover { color: var(--ivory); background: rgba(244, 240, 229, .04); }
+    .nav-item.active { color: var(--emerald); }
+    .nav-item.active svg { filter: drop-shadow(0 0 8px rgba(52, 211, 153, .25)); }
+    .nav-handle {
+      position: absolute;
+      left: 50%;
+      bottom: 4px;
+      width: 86px;
+      height: 3px;
+      border-radius: 99px;
+      background: rgba(244, 240, 229, .17);
+      transform: translateX(-50%);
+    }
+    /* ---------- Solver ---------- */
+    .solver-screen {
+      background:
+        radial-gradient(360px 260px at 50% 22%, rgba(52, 211, 153, .045), transparent 70%),
+        var(--bg);
+    }
+    .solver-top {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 16px 7px;
+    }
+    .solver-title { flex: 1; min-width: 0; }
+    .solver-kicker {
+      display: block;
+      color: var(--muted);
+      font: 700 8px/1 var(--body);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .solver-title h2 {
+      margin: 3px 0 0;
+      overflow: hidden;
+      color: var(--ivory);
+      font: 700 13px/1.2 var(--body);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .timer-pill {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 36px;
+      padding: 0 10px;
+      overflow: hidden;
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--ivory);
+      font: 800 14px/1 var(--body);
+      font-variant-numeric: tabular-nums;
+      cursor: pointer;
+      transition: color .2s var(--ease), border-color .2s var(--ease);
+    }
+    .timer-pill svg { width: 14px; height: 14px; color: var(--brass); }
+    .timer-pill::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: var(--timer-progress, 100%);
+      height: 2px;
+      background: var(--brass);
+      opacity: .75;
+      transition: width 1s linear, background .2s var(--ease);
+    }
+    .timer-pill.warning { color: var(--brass); border-color: rgba(214, 167, 86, .3); }
+    .timer-pill.warning svg { color: var(--brass); }
+    .timer-pill.danger {
+      color: var(--error);
+      border-color: rgba(248, 113, 113, .36);
+      animation: timerPulse 1.2s var(--ease) infinite;
+    }
+    .timer-pill.danger svg { color: var(--error); }
+    .timer-pill.danger::after { background: var(--error); }
+    .timer-pill.paused { color: var(--muted); }
+    .solver-content {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: safe center;
+      gap: 9px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: 1px 20px 7px;
+      scrollbar-width: none;
+    }
+    .solver-content::-webkit-scrollbar { display: none; }
+    .puzzle-card {
+      flex: 0 0 auto;
+      padding: 11px 13px;
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-l);
+      background: linear-gradient(180deg, rgba(24, 42, 36, .72), rgba(17, 31, 26, .95));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
+    }
+    .puzzle-kicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--muted);
+      font: 700 8px/1 var(--body);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .puzzle-kicker .rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--brass);
+      letter-spacing: .05em;
+    }
+    .puzzle-kicker .rating svg { width: 11px; height: 11px; }
+    .puzzle-task {
+      margin: 6px 0 8px;
+      color: var(--ivory);
+      font: 700 14px/1.35 var(--body);
+      letter-spacing: -.01em;
+    }
+    .puzzle-task strong { color: var(--emerald); font-weight: 800; }
+    .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .board-wrap {
+      position: relative;
+      flex: 0 0 auto;
+      width: min(100%, 400px);
+      margin: 0 auto;
+      border-radius: var(--radius-l);
+      box-shadow: var(--shadow-board);
+    }
+    .board {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: var(--radius-l);
+      background: var(--board-light);
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .sq {
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .sq.light { background: var(--board-light); }
+    .sq.dark { background: var(--board-dark); }
+    .sq .piece {
+      position: relative;
+      z-index: 2;
+      width: 88%;
+      height: 88%;
+      color: #f7f1e3;
+      --piece-stroke: #263a30;
+      --piece-eye: #263a30;
+      filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .28));
+      transition: transform .18s var(--ease), filter .18s var(--ease);
+      pointer-events: none;
+    }
+    .sq .piece.b {
+      color: #17251f;
+      --piece-stroke: rgba(244, 240, 229, .36);
+      --piece-eye: #eadfc8;
+      filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .36));
+    }
+    .sq:hover .piece { transform: translateY(-2px); }
+    .sq.selected { box-shadow: inset 0 0 0 100px rgba(52, 211, 153, .28); }
+    .sq.selected .piece { transform: translateY(-2px) scale(1.03); }
+    .sq.last { box-shadow: inset 0 0 0 100px rgba(214, 167, 86, .22); }
+    .sq.check {
+      box-shadow: inset 0 0 0 100px rgba(248, 113, 113, .42), 0 0 20px rgba(248, 113, 113, .26);
+    }
+    .sq.legal::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: 28%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(52, 211, 153, .55);
+      box-shadow: 0 0 12px rgba(52, 211, 153, .35);
+      pointer-events: none;
+    }
+    .sq.legal-capture::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      inset: 5%;
+      border: 3px solid rgba(52, 211, 153, .62);
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: 0 0 14px rgba(52, 211, 153, .24);
+      pointer-events: none;
+    }
+    .sq.wrong { animation: wrongFlash .38s var(--ease); }
+    .sq.correct { animation: correctFlash .42s var(--ease); }
+    .sq.hint-piece .piece { animation: hintPiece 1.3s var(--ease) infinite; }
+    .sq .coord {
+      position: absolute;
+      z-index: 4;
+      font: 600 7px/1 var(--body);
+      opacity: .55;
+      pointer-events: none;
+    }
+    .sq .coord.rank { top: 3px; left: 4px; }
+    .sq .coord.file { right: 4px; bottom: 2px; }
+    .sq.light .coord { color: #4f624f; }
+    .sq.dark .coord { color: #eadfc8; }
+    .board-arrows {
+      position: absolute;
+      z-index: 5;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .2s var(--ease);
+    }
+    .board-arrows.show { opacity: 1; }
+    .board-arrows line {
+      stroke: var(--brass);
+      stroke-width: .09;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 4px rgba(214, 167, 86, .7));
+    }
+    .board-arrows .arrow-head { fill: var(--brass); }
+    .solver-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 20px;
+      padding: 0 2px;
+    }
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      color: var(--ivory);
+      font: 700 10px/1.3 var(--body);
+    }
+    .status-left .status-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 9px rgba(52, 211, 153, .55);
+      transition: background .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    .status-dot.brass { background: var(--brass); box-shadow: 0 0 9px rgba(214, 167, 86, .55); }
+    .status-dot.error { background: var(--error); box-shadow: 0 0 9px rgba(248, 113, 113, .55); }
+    .attempts {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 0 0 auto;
+      color: var(--muted);
+      font: 600 8px/1 var(--body);
+      white-space: nowrap;
+    }
+    .attempts .dots { display: flex; gap: 3px; }
+    .attempt-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 7px rgba(52, 211, 153, .3);
+      transition: background .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    .attempt-dot.used { background: var(--surface-3); box-shadow: inset 0 0 0 1px var(--outline); }
+    .move-log {
+      flex: 0 0 auto;
+      height: 92px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      padding: 9px 12px;
+      overflow: hidden;
+      border: 1px solid rgba(51, 84, 74, .65);
+      border-radius: var(--radius-l);
+      background: rgba(17, 31, 26, .45);
+    }
+    .move-log-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--muted);
+      font: 700 8px/1 var(--body);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .move-log-count { color: var(--brass); font: 600 8px/1 var(--mono); letter-spacing: .04em; }
+    .move-log-body {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      overflow: hidden;
+    }
+    .move-log-empty { color: var(--muted); font: 500 10px/1.4 var(--body); opacity: .65; }
+    .move-log .move-pill { padding: 5px 7px; font-size: 9px; }
+    .solver-actions {
+      flex: 0 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 7px;
+      padding: 7px 20px 13px;
+      background: linear-gradient(180deg, transparent, var(--bg) 34%);
+    }
+    .hint-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 50px;
+      border: 1px solid var(--outline);
+      border-radius: 14px;
+      background: var(--surface);
+      color: var(--ivory);
+      font: 700 11px/1 var(--body);
+      cursor: pointer;
+      transition: border-color .18s var(--ease), background .18s var(--ease);
+    }
+    .hint-btn:hover { border-color: rgba(214, 167, 86, .35); background: var(--surface-2); }
+    .hint-btn svg { width: 17px; height: 17px; color: var(--brass); }
+    .hint-btn .token-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 23px;
+      height: 20px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: rgba(214, 167, 86, .12);
+      color: var(--brass);
+      font: 800 9px/1 var(--mono);
+    }
+    .flip-btn {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--outline);
+      border-radius: 14px;
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+      transition: color .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease);
+    }
+    .flip-btn:hover { color: var(--ivory); border-color: rgba(52, 211, 153, .3); background: var(--surface-2); }
+    .flip-btn svg { width: 19px; height: 19px; }
+    .pause-overlay {
+      position: absolute;
+      z-index: 18;
+      inset: 26px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(4, 10, 8, .78);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s var(--ease);
+    }
+    .pause-overlay.show { opacity: 1; pointer-events: auto; }
+    .pause-card {
+      width: 100%;
+      max-width: 280px;
+      padding: 24px 20px 20px;
+      border: 1px solid rgba(244, 240, 229, .1);
+      border-radius: 22px;
+      background: var(--surface);
+      text-align: center;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, .45);
+    }
+    .pause-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: rgba(214, 167, 86, .1);
+      color: var(--brass);
+    }
+    .pause-icon svg { width: 21px; height: 21px; }
+    .pause-card h3 { margin: 0 0 6px; font: 700 21px/1.2 var(--display); letter-spacing: -.02em; }
+    .pause-card p { margin: 0 0 17px; color: var(--muted); font: 500 11px/1.5 var(--body); }
+    .pause-card .btn-primary { width: 100%; height: 46px; }
+
+    /* ---------- Hint sheet ---------- */
+    .sheet-layer {
+      position: absolute;
+      z-index: 24;
+      inset: 26px 0 0;
+      display: none;
+    }
+    .sheet-layer.open { display: block; }
+    .sheet-scrim {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .62);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      animation: fadeIn .2s var(--ease);
+    }
+    .hint-sheet {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 88%;
+      padding: 9px 18px calc(16px + env(safe-area-inset-bottom));
+      overflow-y: auto;
+      border-top: 1px solid rgba(244, 240, 229, .1);
+      border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+      background: var(--surface-3);
+      box-shadow: 0 -24px 70px rgba(0, 0, 0, .5);
+      animation: sheetUp .32s var(--ease);
+      scrollbar-width: none;
+    }
+    .hint-sheet::-webkit-scrollbar { display: none; }
+    .sheet-handle {
+      width: 34px;
+      height: 4px;
+      flex: 0 0 auto;
+      margin: 0 auto 2px;
+      border-radius: 99px;
+      background: rgba(244, 240, 229, .25);
+    }
+    .sheet-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .sheet-head h2 {
+      margin: 0;
+      font: 700 22px/1.1 var(--display);
+      letter-spacing: -.025em;
+    }
+    .sheet-sub {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 4px 0 0;
+      color: var(--muted);
+      font: 500 9px/1.4 var(--body);
+    }
+    .sheet-sub svg { width: 11px; height: 11px; color: var(--brass); }
+    .sheet-close {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid rgba(244, 240, 229, .08);
+      border-radius: 50%;
+      background: rgba(8, 17, 14, .25);
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .sheet-close svg { width: 15px; height: 15px; }
+    .hint-balance {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 9px 11px;
+      border: 1px solid rgba(214, 167, 86, .16);
+      border-radius: 11px;
+      background: rgba(214, 167, 86, .075);
+      color: var(--brass);
+      font: 700 9px/1.3 var(--body);
+    }
+    .hint-balance .balance-right {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font: 800 11px/1 var(--mono);
+      white-space: nowrap;
+    }
+    .hint-balance .balance-right svg { width: 13px; height: 13px; }
+    .hint-balance .balance-right small {
+      color: rgba(214, 167, 86, .6);
+      font: 600 8px/1 var(--body);
+    }
+    .hint-list { display: flex; flex-direction: column; gap: 7px; }
+    .hint-row {
+      display: flex;
+      gap: 9px;
+      padding: 10px;
+      border: 1px solid rgba(244, 240, 229, .07);
+      border-radius: 13px;
+      background: rgba(8, 17, 14, .28);
+      transition: border-color .18s var(--ease), background .18s var(--ease);
+    }
+    .hint-row:hover { border-color: rgba(52, 211, 153, .18); background: rgba(8, 17, 14, .4); }
+    .hint-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      background: rgba(52, 211, 153, .09);
+      color: var(--emerald);
+    }
+    .hint-icon.brass { background: rgba(214, 167, 86, .1); color: var(--brass); }
+    .hint-icon.violet { background: rgba(139, 92, 246, .12); color: var(--violet-soft); }
+    .hint-icon svg { width: 17px; height: 17px; }
+    .hint-body { flex: 1; min-width: 0; }
+    .hint-title-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 7px;
+      margin-bottom: 2px;
+    }
+    .hint-title { font: 700 11px/1.2 var(--body); }
+    .hint-cost {
+      color: var(--brass);
+      font: 700 8px/1 var(--body);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hint-cost.free { color: var(--emerald); }
+    .hint-desc {
+      margin: 0;
+      color: var(--muted);
+      font: 500 9px/1.45 var(--body);
+    }
+    .hint-action-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 7px;
+    }
+    .hint-state {
+      color: var(--muted);
+      font: 500 8px/1 var(--body);
+      opacity: .65;
+    }
+    .hint-open {
+      height: 27px;
+      padding: 0 10px;
+      border: 1px solid rgba(52, 211, 153, .18);
+      border-radius: 8px;
+      background: rgba(52, 211, 153, .1);
+      color: var(--emerald);
+      font: 700 8px/1 var(--body);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .hint-open:hover { background: rgba(52, 211, 153, .17); }
+    .hint-open:disabled {
+      border-color: rgba(244, 240, 229, .07);
+      background: rgba(244, 240, 229, .04);
+      color: var(--muted);
+      opacity: .5;
+      cursor: not-allowed;
+    }
+    .hint-row.used { border-color: rgba(52, 211, 153, .14); }
+    .hint-row.used .hint-open {
+      border-color: rgba(52, 211, 153, .12);
+      background: transparent;
+      color: var(--emerald);
+      opacity: .75;
+    }
+    .sheet-footer { display: flex; gap: 7px; margin-top: 1px; }
+    .btn-ad {
+      flex: 1;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid var(--outline);
+      border-radius: 11px;
+      background: var(--surface-2);
+      color: var(--ivory);
+      font: 700 9px/1 var(--body);
+      cursor: pointer;
+    }
+    .btn-ad svg { width: 14px; height: 14px; color: var(--emerald); }
+    .btn-premium {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0 13px;
+      border: 1px solid rgba(139, 92, 246, .3);
+      border-radius: 11px;
+      background: rgba(139, 92, 246, .13);
+      color: var(--violet-soft);
+      font: 800 9px/1 var(--body);
+      cursor: pointer;
+    }
+    .btn-premium svg { width: 13px; height: 13px; }
+
+    /* ---------- Result ---------- */
+    .result-screen {
+      background:
+        radial-gradient(460px 300px at 50% -4%, rgba(52, 211, 153, .11), transparent 70%),
+        radial-gradient(300px 220px at 100% 70%, rgba(214, 167, 86, .055), transparent 70%),
+        var(--bg);
+    }
+    .result-top {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 20px 0;
+    }
+    .result-top .label {
+      color: var(--muted);
+      font: 700 9px/1 var(--body);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .result-scroll {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      padding: 3px 22px 18px;
+      text-align: center;
+      scrollbar-width: none;
+    }
+    .result-scroll::-webkit-scrollbar { display: none; }
+    .result-stars {
+      display: flex;
+      gap: 8px;
+      margin: 5px 0 10px;
+      filter: drop-shadow(0 8px 20px rgba(214, 167, 86, .25));
+    }
+    .result-star {
+      width: 44px;
+      height: 44px;
+      color: var(--brass);
+      opacity: 0;
+      transform: scale(.55) rotate(-10deg);
+      animation: starIn .48s var(--ease) forwards;
+    }
+    .result-star:nth-child(2) { animation-delay: .08s; }
+    .result-star:nth-child(3) { animation-delay: .16s; }
+    .result-star svg { width: 100%; height: 100%; fill: currentColor; }
+    .result-title {
+      margin: 0 0 5px;
+      font: 700 28px/1.08 var(--display);
+      letter-spacing: -.035em;
+    }
+    .result-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin: 0 0 14px;
+      color: var(--muted);
+      font: 600 9px/1.2 var(--body);
+    }
+    .result-meta b { color: var(--brass); font-weight: 800; }
+    .result-meta .meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--outline);
+    }
+    .result-card {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--outline);
+      border-radius: 14px;
+      background: rgba(17, 31, 26, .82);
+      text-align: left;
+    }
+    .result-card + .result-card { margin-top: 8px; }
+    .result-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .result-card-head h3 {
+      margin: 0;
+      color: var(--muted);
+      font: 700 8px/1 var(--body);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .result-card-head span { color: var(--brass); font: 600 9px/1 var(--mono); }
+    .move-line { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
+    .move-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 8px;
+      border: 1px solid rgba(244, 240, 229, .06);
+      border-radius: 8px;
+      background: var(--surface-2);
+      color: var(--ivory);
+      font: 600 10px/1 var(--mono);
+    }
+    .move-pill .num { color: var(--muted); font: 500 8px/1 var(--mono); }
+    .move-pill.opponent { color: var(--muted); }
+    .move-arrow { color: var(--outline); font: 600 10px/1 var(--mono); }
+    .result-explanation {
+      margin: 0;
+      color: var(--muted);
+      font: 500 10px/1.55 var(--body);
+    }
+    .result-explanation strong { color: var(--ivory); font-weight: 700; }
+    .result-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+      margin-top: 9px;
+    }
+    .result-actions .btn-primary { width: 100%; height: 48px; border-radius: 13px; font-size: 11px; }
+    .result-actions .btn-secondary { width: 100%; height: 46px; border-radius: 13px; font-size: 10px; }
+    .result-actions .btn-text { width: 100%; }
+    .result-footnote {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font: 500 8px/1.3 var(--body);
+      opacity: .65;
+    }
+
+    /* ---------- Toast ---------- */
+    .toast {
+      position: absolute;
+      z-index: 40;
+      right: 16px;
+      bottom: 82px;
+      left: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 9px 12px;
+      border: 1px solid rgba(244, 240, 229, .1);
+      border-radius: 12px;
+      background: rgba(24, 42, 36, .97);
+      color: var(--ivory);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .4);
+      font: 600 9px/1.35 var(--body);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity .2s var(--ease), transform .2s var(--ease);
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast svg { width: 14px; height: 14px; flex: 0 0 auto; color: var(--emerald); }
+    .toast.brass svg { color: var(--brass); }
+    .toast.error svg { color: var(--error); }
+
+    /* ---------- Motion ---------- */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes sheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    @keyframes starIn { to { opacity: 1; transform: scale(1) rotate(0); } }
+    @keyframes timerPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+    @keyframes hintPiece {
+      0%, 100% { filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .28)) drop-shadow(0 0 0 rgba(52, 211, 153, 0)); }
+      50% { filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .28)) drop-shadow(0 0 10px rgba(52, 211, 153, .95)); }
+    }
+    @keyframes wrongFlash {
+      0%, 100% { box-shadow: inset 0 0 0 100px rgba(248, 113, 113, 0); }
+      35% { box-shadow: inset 0 0 0 100px rgba(248, 113, 113, .5); }
+    }
+    @keyframes correctFlash {
+      0%, 100% { box-shadow: inset 0 0 0 100px rgba(52, 211, 153, 0); }
+      35% { box-shadow: inset 0 0 0 100px rgba(52, 211, 153, .42); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 600px) {
+      .studio-bar {
+        height: 52px;
+        flex-basis: 52px;
+        grid-template-columns: auto 1fr auto;
+        gap: 7px;
+        padding: 0 10px;
+      }
+      .brand-mark { width: 30px; height: 30px; border-radius: 10px; }
+      .brand-mark svg { width: 20px; height: 20px; }
+      .brand-text { display: none; }
+      .screen-tabs { padding: 3px; gap: 0; }
+      .screen-tab { gap: 0; padding: 7px 8px; font-size: 9px; }
+      .screen-tab .num { display: none; }
+      .bar-actions { gap: 6px; }
+      .version { display: none; }
+      .lang-toggle { padding: 2px; }
+      .lang-toggle button { width: 26px; height: 22px; font-size: 7px; }
+      .stage { padding: 0; }
+      .stage::before, .stage::after, .stage-note { display: none; }
+      .phone {
+        width: 100vw;
+        height: calc(100dvh - 52px);
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: var(--bg);
+      }
+      .app { border-radius: 0; }
+      .screen { inset: 24px 0 0; }
+      .statusbar { flex-basis: 24px; height: 24px; padding: 0 18px; font-size: 9px; }
+      .camera-dot { top: 8px; }
+      .home-scroll { padding-left: 18px; padding-right: 18px; }
+      .home-title { font-size: 24px; }
+      .home-sub { font-size: 11px; }
+      .daily { min-height: 142px; padding: 14px; }
+      .daily h3 { font-size: 21px; }
+      .mini-board { width: 84px; height: 84px; top: 40px; right: 12px; background-size: 42px 42px; background-position: 0 0, 21px 21px; }
+      .mini-piece { width: 56px; height: 56px; }
+      .solver-content { padding-left: 16px; padding-right: 16px; }
+      .solver-top { padding-left: 13px; padding-right: 13px; }
+      .solver-actions { padding-left: 16px; padding-right: 16px; }
+      .hint-sheet { padding-left: 15px; padding-right: 15px; }
+      .result-scroll { padding-left: 18px; padding-right: 18px; }
+      .result-top { padding-left: 16px; padding-right: 16px; }
+    }
+    @media (max-width: 370px) {
+      .screen-tab { padding: 7px 6px; font-size: 8.5px; }
+      .brand-mark { width: 28px; height: 28px; }
+      .home-header { padding-bottom: 14px; }
+      .home-title { font-size: 22px; }
+      .daily h3 { font-size: 20px; }
+      .daily { min-height: 138px; }
+      .mini-board { width: 76px; height: 76px; top: 44px; background-size: 38px 38px; background-position: 0 0, 19px 19px; }
+      .mini-piece { width: 50px; height: 50px; }
+      .wordmark h1 { font-size: 12px; }
+      .wordmark p { font-size: 7px; }
+      .streak { padding: 0 8px; }
+      .level-card { gap: 9px; padding: 10px; }
+      .level-icon { width: 38px; height: 38px; }
+      .result-title { font-size: 25px; }
+    }
+    .result-star.off { color: var(--surface-3); filter: none; }
+    .result-star.off svg { fill: transparent; stroke: var(--outline); stroke-width: 1.4; }
+    .sq.selected.last {
+      box-shadow: inset 0 0 0 100px rgba(52, 211, 153, .28), inset 0 0 0 2px rgba(52, 211, 153, .55);
+    }
+    .hint-icon.brass svg { width: 21px; height: 21px; }
+    @media (min-width: 900px) {
+      .stage-note { display: flex; }
+    }
+    @media (max-height: 760px) and (min-width: 601px) {
+      .phone { height: calc(100dvh - 88px); }
+      .stage { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <svg class="sr-only" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <symbol id="p-pawn" viewBox="0 0 64 64" fill="currentColor" stroke="var(--piece-stroke, #263a30)" stroke-width="2.2" stroke-linejoin="round">
+        <circle cx="32" cy="16.5" r="8.5"/>
+        <path d="M26.4 26.5h11.2c.3 3.7-1.3 6.8-4 8.8 7 2.8 11 8.4 12 16.2H18.4c1-7.8 5-13.4 12-16.2-2.7-2-4.3-5.1-4-8.8z"/>
+        <rect x="15" y="50.5" width="34" height="6" rx="3"/>
+      </symbol>
+      <symbol id="p-rook" viewBox="0 0 64 64" fill="currentColor" stroke="var(--piece-stroke, #263a30)" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M19 11h6v5h4v-5h6v5h4v-5h6v13l-4 4v18l4 5v5H19v-5l4-5V28l-4-4z"/>
+        <rect x="15" y="50.5" width="34" height="6" rx="3"/>
+      </symbol>
+      <symbol id="p-knight" viewBox="0 0 64 64" fill="currentColor" stroke="var(--piece-stroke, #263a30)" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M22.5 54c0-8.5 2.6-14.5 8.7-19.7l6-5.1-2.5-4.4c-1-1.9-.5-4.4 1.4-6.3l5.7-5.3-1-5.4 4.5 3.8 3-5 1 6.5 5 2.4c4.5 2.4 7 6.3 7 11.7v4.1c0 3.5-1.5 6.4-4.5 8.4l-6 4c-2 1.4-3 3.4-3 5.9v4.4z"/>
+        <rect x="16" y="50.5" width="36" height="6" rx="3"/>
+        <circle cx="43" cy="25.5" r="1.8" fill="var(--piece-eye, #263a30)" stroke="none"/>
+        <path d="M30.5 30c2.8-3.8 5.8-5.9 9.5-6.8" fill="none" stroke="var(--piece-stroke, #263a30)" stroke-width="1.7" opacity=".45"/>
+      </symbol>
+      <symbol id="p-bishop" viewBox="0 0 64 64" fill="currentColor" stroke="var(--piece-stroke, #263a30)" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M32 8c4.5 5.5 7 10 7 14 0 3-1.8 5.6-4.5 7.5 5.6 2.8 9 8 9 14.5H20.5c0-6.5 3.4-11.7 9-14.5-2.7-1.9-4.5-4.5-4.5-7.5 0-4 2.5-8.5 7-14z"/>
+        <rect x="17" y="45.5" width="30" height="5" rx="2.5"/>
+        <rect x="13" y="50.5" width="38" height="6" rx="3"/>
+        <path d="M32 21.5v11" fill="none" stroke="var(--piece-stroke, #263a30)" stroke-width="1.7" opacity=".5"/>
+      </symbol>
+      <symbol id="p-queen" viewBox="0 0 64 64" fill="currentColor" stroke="var(--piece-stroke, #263a30)" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M14.5 20.5l7 8.5 6.5-14 4 14.5 4-14.5 6.5 14 7-8.5-4.2 21H18.7z"/>
+        <path d="M21.5 42h21l3 9h-27z"/>
+        <rect x="14" y="50.5" width="36" height="6" rx="3"/>
+        <circle cx="14.5" cy="18.5" r="3"/>
+        <circle cx="28" cy="13.5" r="3"/>
+        <circle cx="36" cy="13.5" r="3"/>
+        <circle cx="49.5" cy="18.5" r="3"/>
+      </symbol>
+      <symbol id="p-king" viewBox="0 0 64 64" fill="currentColor" stroke="var(--piece-stroke, #263a30)" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M29 6h6v5h5v6h-5v5h-6v-5h-5v-6h5z"/>
+        <path d="M20 24.5c0-2.2 1.8-4 4-4h16c2.2 0 4 1.8 4 4l-3 15.5H23z"/>
+        <rect x="21" y="40" width="22" height="9" rx="2"/>
+        <rect x="14" y="50.5" width="36" height="6" rx="3"/>
+      </symbol>
+
+      <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/><path d="M9 12h12"/>
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/>
+      </symbol>
+      <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.3 1 2.1h5c0-.8.4-1.6 1-2.1A6 6 0 0012 3z"/>
+      </symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="8" cy="17" r="2"/>
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 6.5l9 5.5-9 5.5z" fill="currentColor" stroke="none"/>
+      </symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 6v12"/><path d="M15 6v12"/>
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-6"/>
+      </symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3c1 4 4 5.2 4 9a4 4 0 01-8 0c0-2 1-3.4 2-4.5.2 1.4 1 2.2 2 2.5C12.8 8.4 12 5.6 12 3z"/><path d="M8.5 16.5c1 2.4 2.3 3.5 4 3.5 2.1 0 3.6-1.6 3.6-3.7"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.4l6.2-.9z"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 6l12 12"/><path d="M18 6L6 18"/>
+      </symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+      </symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18l6-6-6-6"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12l4 4L19 6"/>
+      </symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"/><circle cx="12" cy="12" r="2.5"/>
+      </symbol>
+      <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/>
+      </symbol>
+      <symbol id="i-ad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/>
+      </symbol>
+      <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 8l4 3 4-6 4 6 4-3-2 10H6z"/><path d="M6 20h12"/>
+      </symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 11a8 8 0 10-2.3 6.4"/><path d="M20 4v7h-7"/>
+      </symbol>
+      <symbol id="i-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 8h13"/><path d="M13 4l4 4-4 4"/><path d="M20 16H7"/><path d="M11 12l-4 4 4 4"/>
+      </symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/>
+      </symbol>
+      <symbol id="i-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M4 20v-4"/><path d="M9 20v-8"/><path d="M14 20V7"/><path d="M19 20V4"/>
+      </symbol>
+      <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9.5a13 13 0 0118 0"/><path d="M6.5 13a8 8 0 0111 0"/><path d="M10 16.5a3 3 0 014 0"/><circle cx="12" cy="20" r=".6" fill="currentColor" stroke="none"/>
+      </symbol>
+      <symbol id="i-battery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10v4"/><rect x="5" y="9" width="10" height="6" rx="1" fill="currentColor" stroke="none"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="studio">
+    <header class="studio-bar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#p-knight"/></svg></span>
+        <span class="brand-text">
+          <strong>CHESS PROBLEM</strong>
+          <small data-i18n="chrome.prototype">Интерактивный прототип · v0.1</small>
+        </span>
+      </div>
+      <nav class="screen-tabs" aria-label="Экраны прототипа">
+        <button class="screen-tab" type="button" data-screen="home" aria-selected="true"><span class="num">01</span><span data-i18n="tab.home">Главная</span></button>
+        <button class="screen-tab" type="button" data-screen="solver" aria-selected="false"><span class="num">02</span><span data-i18n="tab.solver">Задача</span></button>
+        <button class="screen-tab" type="button" data-screen="hints" aria-selected="false"><span class="num">03</span><span data-i18n="tab.hints">Подсказки</span></button>
+        <button class="screen-tab" type="button" data-screen="result" aria-selected="false"><span class="num">04</span><span data-i18n="tab.result">Итог</span></button>
+      </nav>
+      <div class="bar-actions">
+        <span class="version">360 · 28.10.2026</span>
+        <div class="lang-toggle" role="group" aria-label="Язык прототипа">
+          <button type="button" data-lang="ru" class="active">RU</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="stage">
+      <div class="stage-note"><span class="dot"></span><span data-i18n="chrome.note">360 задач · 3 уровня · RU / EN</span></div>
+      <div class="phone">
+        <div class="app">
+          <div class="statusbar" aria-hidden="true">
+            <span>9:41</span>
+            <span class="status-icons">
+              <svg class="status-icon"><use href="#i-signal"/></svg>
+              <svg class="status-icon"><use href="#i-wifi"/></svg>
+              <svg class="status-icon battery"><use href="#i-battery"/></svg>
+            </span>
+            <span class="camera-dot"></span>
+          </div>
+
+          <!-- 01 · HOME -->
+          <section class="screen home-screen active" id="screen-home" aria-label="Главная">
+            <div class="home-scroll">
+              <header class="home-header">
+                <div class="wordmark">
+                  <span class="wordmark-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#p-knight"/></svg></span>
+                  <div>
+                    <h1>CHESS PROBLEM</h1>
+                    <p data-i18n="home.tagline">Тихая доска</p>
+                  </div>
+                </div>
+                <div class="header-actions">
+                  <button class="streak" type="button" data-toast="streak" aria-label="Серия 7 дней">
+                    <svg><use href="#i-flame"/></svg><span>7</span>
+                  </button>
+                  <button class="icon-btn" type="button" data-toast="settings" aria-label="Настройки">
+                    <svg><use href="#i-settings"/></svg>
+                  </button>
+                </div>
+              </header>
+
+              <p class="eyebrow" data-i18n="home.today">Сегодня</p>
+              <h2 class="home-title" data-i18n="home.title">Один точный ход</h2>
+              <p class="home-sub" data-i18n="home.subtitle">Начните с задачи дня — на неё уйдёт меньше трёх минут.</p>
+
+              <article class="daily" id="dailyCard" role="button" tabindex="0" data-open-solver aria-label="Открыть задачу дня">
+                <div class="daily-top">
+                  <span class="daily-label" data-i18n="home.dailyLabel">Задача дня</span>
+                  <span class="daily-badge" data-i18n="home.dailyBadge">+150 XP</span>
+                </div>
+                <h3 data-i18n="home.dailyTitle">Мат в 2</h3>
+                <p class="daily-meta" data-i18n="home.dailyMeta">Профессионал · 1 480</p>
+                <div class="daily-bottom">
+                  <span class="btn-primary small"><span data-i18n="home.solve">Решить</span><svg><use href="#i-arrow-right"/></svg></span>
+                  <span class="daily-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </div>
+                <span class="mini-board" aria-hidden="true"><svg class="mini-piece" viewBox="0 0 64 64"><use href="#p-knight"/></svg></span>
+              </article>
+
+              <button class="continue-card" type="button" data-open-solver>
+                <span class="continue-icon"><svg><use href="#i-play"/></svg></span>
+                <span class="continue-body">
+                  <span class="continue-title" data-i18n="home.continueTitle">Продолжить · Глава 12</span>
+                  <span class="continue-meta"><span data-i18n="home.continueMeta">Вилка и двойной удар</span><span>7/10</span></span>
+                  <span class="continue-progress"><span></span></span>
+                </span>
+                <span class="continue-time">02:14</span>
+              </button>
+
+              <div class="section-head">
+                <h2 data-i18n="home.levels">Уровни</h2>
+                <span class="section-note" data-i18n="home.levelsNote">360 задач</span>
+              </div>
+
+              <div class="level-list">
+                <button class="level-card" type="button" data-open-solver>
+                  <span class="level-icon"><svg viewBox="0 0 64 64"><use href="#p-pawn"/></svg></span>
+                  <span class="level-body">
+                    <span class="level-name" data-i18n="level.novice">Новичок</span>
+                    <span class="level-meta"><span>600–1199</span><span>42/120</span></span>
+                    <span class="level-bar"><span style="width:35%"></span></span>
+                  </span>
+                  <span class="level-side"><span class="level-stars"><svg><use href="#i-star"/></svg>18</span><svg><use href="#i-chevron-right"/></svg></span>
+                </button>
+                <button class="level-card brass" type="button" data-open-solver>
+                  <span class="level-icon"><svg viewBox="0 0 64 64"><use href="#p-knight"/></svg></span>
+                  <span class="level-body">
+                    <span class="level-name" data-i18n="level.professional">Профессионал</span>
+                    <span class="level-meta"><span>1200–1799</span><span>18/120</span></span>
+                    <span class="level-bar"><span style="width:15%"></span></span>
+                  </span>
+                  <span class="level-side"><span class="level-stars"><svg><use href="#i-star"/></svg>6</span><svg><use href="#i-chevron-right"/></svg></span>
+                </button>
+                <button class="level-card violet" type="button" data-open-solver>
+                  <span class="level-icon"><svg viewBox="0 0 64 64"><use href="#p-queen"/></svg></span>
+                  <span class="level-body">
+                    <span class="level-name" data-i18n="level.grandmaster">Гроссмейстер</span>
+                    <span class="level-meta"><span>1800–2400+</span><span>3/120</span></span>
+                    <span class="level-bar"><span style="width:2.5%"></span></span>
+                  </span>
+                  <span class="level-side"><span class="level-stars"><svg><use href="#i-star"/></svg>0</span><svg><use href="#i-chevron-right"/></svg></span>
+                </button>
+              </div>
+
+              <p class="home-footnote" data-i18n="home.footnote">Без рекламы в решателе. Без аккаунта. Прогресс — на устройстве.</p>
+            </div>
+
+            <nav class="bottom-nav" aria-label="Основная навигация">
+              <button class="nav-item active" type="button" data-nav="play"><svg><use href="#i-play"/></svg><span data-i18n="nav.play">Играть</span></button>
+              <button class="nav-item" type="button" data-nav="progress"><svg><use href="#i-chart"/></svg><span data-i18n="nav.progress">Прогресс</span></button>
+              <button class="nav-item" type="button" data-nav="settings"><svg><use href="#i-settings"/></svg><span data-i18n="nav.settings">Настройки</span></button>
+              <span class="nav-handle" aria-hidden="true"></span>
+            </nav>
+          </section>
+
+          <!-- 02 · SOLVER -->
+          <section class="screen solver-screen" id="screen-solver" aria-label="Решатель">
+            <div class="solver-top">
+              <button class="round-btn" type="button" id="solverBack" aria-label="Назад на главную">
+                <svg><use href="#i-back"/></svg>
+              </button>
+              <div class="solver-title">
+                <span class="solver-kicker" data-i18n="solver.kicker">Профессионал · Глава 12</span>
+                <h2 data-i18n="solver.title">Вилка и двойной удар</h2>
+              </div>
+              <button class="timer-pill" type="button" id="timerPill" aria-label="Поставить на паузу">
+                <svg><use href="#i-clock"/></svg><span id="timerText">03:05</span>
+              </button>
+            </div>
+
+            <div class="solver-content">
+              <div class="puzzle-card">
+                <div class="puzzle-kicker">
+                  <span data-i18n="solver.puzzleLabel">Задача 7 из 10</span>
+                  <span class="rating"><svg><use href="#i-chart"/></svg>1480</span>
+                </div>
+                <p class="puzzle-task"><span data-i18n="solver.taskStart">Ход белых.</span> <strong data-i18n="solver.taskGoal">Выиграйте ферзя.</strong></p>
+                <div class="chips">
+                  <span class="chip brass" data-i18n="solver.theme">Вилка</span>
+                  <span class="chip neutral" data-i18n="solver.theme2">Двойной удар</span>
+                  <span class="chip emerald">WIN · 2</span>
+                </div>
+              </div>
+
+              <div class="board-wrap">
+                <div class="board" id="board" role="grid" aria-label="Шахматная доска. Ход белых."></div>
+                <svg class="board-arrows" id="boardArrows" viewBox="0 0 8 8" aria-hidden="true">
+                  <defs>
+                    <marker id="arrowHead" markerWidth="4" markerHeight="4" refX="2.2" refY="2" orient="auto">
+                      <path class="arrow-head" d="M0 0L4 2L0 4z"/>
+                    </marker>
+                  </defs>
+                  <line id="hintArrowLine" x1="5.5" y1="3.5" x2="4.5" y2="1.5" marker-end="url(#arrowHead)"/>
+                </svg>
+              </div>
+
+              <div class="solver-status">
+                <div class="status-left">
+                  <span class="status-dot" id="statusDot"></span>
+                  <span class="status-text" id="statusText" data-i18n="solver.yourMove">Ваш ход</span>
+                </div>
+                <div class="attempts">
+                  <span data-i18n="solver.attempts">Попытки</span>
+                  <span class="dots" id="attemptDots" aria-label="3 попытки">
+                    <span class="attempt-dot"></span><span class="attempt-dot"></span><span class="attempt-dot"></span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="move-log" id="moveLog" aria-live="polite">
+                <div class="move-log-head">
+                  <span data-i18n="solver.moves">Ходы</span>
+                  <span class="move-log-count" id="moveLogCount">0 / 2</span>
+                </div>
+                <div class="move-log-body" id="moveLogBody">
+                  <span class="move-log-empty" data-i18n="solver.movesEmpty">Ходы появятся после первого хода</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="solver-actions">
+              <button class="hint-btn" type="button" id="openHints">
+                <svg><use href="#i-bulb"/></svg>
+                <span data-i18n="solver.hint">Подсказка</span>
+                <span class="token-count" id="tokenCount">3</span>
+              </button>
+              <button class="flip-btn" type="button" id="flipBtn" aria-label="Перевернуть доску" title="Перевернуть доску">
+                <svg><use href="#i-flip"/></svg>
+              </button>
+            </div>
+          </section>
+
+          <!-- 04 · RESULT -->
+          <section class="screen result-screen" id="screen-result" aria-label="Результат">
+            <div class="result-top">
+              <span class="label" data-i18n="result.label">Результат</span>
+              <button class="round-btn" type="button" id="resultClose" aria-label="На главную">
+                <svg><use href="#i-close"/></svg>
+              </button>
+            </div>
+            <div class="result-scroll">
+              <div class="result-stars" aria-label="3 из 3 звёзд">
+                <span class="result-star"><svg><use href="#i-star"/></svg></span>
+                <span class="result-star"><svg><use href="#i-star"/></svg></span>
+                <span class="result-star"><svg><use href="#i-star"/></svg></span>
+              </div>
+              <h2 class="result-title" data-i18n="result.title">Задача решена!</h2>
+              <p class="result-meta">
+                <b id="resultTime">01:38</b><span class="meta-dot"></span>
+                <span data-i18n="result.moves">2 хода</span><span class="meta-dot"></span>
+                <span id="resultXp">+150 XP</span>
+              </p>
+
+              <div class="result-card">
+                <div class="result-card-head"><h3 data-i18n="result.line">Ваш маршрут</h3><span>WIN</span></div>
+                <div class="move-line">
+                  <span class="move-pill"><span class="num">1.</span>Ne7+</span>
+                  <span class="move-arrow">→</span>
+                  <span class="move-pill opponent"><span class="num">1...</span>Kh8</span>
+                  <span class="move-arrow">→</span>
+                  <span class="move-pill"><span class="num">2.</span>Nxc8</span>
+                </div>
+              </div>
+
+              <div class="result-card">
+                <div class="result-card-head"><h3 data-i18n="result.why">Почему это работает</h3><span id="resultCardXp">+150 XP</span></div>
+                <p class="result-explanation" data-i18n-html="result.explanation"><strong>Конь на e7</strong> даёт шах королю и одновременно атакует ферзя на c8. Король вынужден уйти на h8, после чего конь забирает ферзя.</p>
+              </div>
+
+              <div class="result-actions">
+                <button class="btn-primary" type="button" id="nextPuzzle"><span data-i18n="result.next">Следующая задача</span><svg><use href="#i-arrow-right"/></svg></button>
+                <button class="btn-secondary" type="button" id="reviewPuzzle"><svg><use href="#i-eye"/></svg><span data-i18n="result.review">Разобрать</span></button>
+                <button class="btn-text" type="button" id="retryPuzzle"><svg><use href="#i-refresh"/></svg><span data-i18n="result.retry">Повторить</span></button>
+              </div>
+              <p class="result-footnote" data-i18n="result.footnote">Задача засчитана. Прогресс сохранён на устройстве.</p>
+            </div>
+          </section>
+
+          <!-- 03 · HINT SHEET -->
+          <div class="sheet-layer" id="hintLayer" aria-hidden="true">
+            <div class="sheet-scrim" id="hintScrim"></div>
+            <section class="hint-sheet" role="dialog" aria-modal="true" aria-labelledby="hintTitle">
+              <span class="sheet-handle" aria-hidden="true"></span>
+              <div class="sheet-head">
+                <div>
+                  <h2 id="hintTitle" data-i18n="hints.title">Подсказки</h2>
+                  <p class="sheet-sub"><svg><use href="#i-pause"/></svg><span data-i18n="hints.paused">Таймер на паузе</span></p>
+                </div>
+                <button class="sheet-close" type="button" id="closeHints" aria-label="Закрыть">
+                  <svg><use href="#i-close"/></svg>
+                </button>
+              </div>
+
+              <div class="hint-balance">
+                <span id="balanceText" data-i18n="hints.balance">У вас 3 подсказки</span>
+                <span class="balance-right"><svg><use href="#i-bulb"/></svg><span id="sheetTokens">3</span><small>/ 5</small></span>
+              </div>
+
+              <div class="hint-list">
+                <div class="hint-row" id="hintIdeaRow">
+                  <span class="hint-icon"><svg><use href="#i-bulb"/></svg></span>
+                  <div class="hint-body">
+                    <div class="hint-title-line"><span class="hint-title" data-i18n="hints.idea">Идея</span><span class="hint-cost free" data-i18n="hints.free">Бесплатно</span></div>
+                    <p class="hint-desc" data-i18n="hints.ideaDesc">Ищите вилку на короля и ферзя.</p>
+                    <div class="hint-action-line"><span class="hint-state" id="ideaState" data-i18n="hints.once">1 раз на задачу</span><button class="hint-open" type="button" data-hint="idea" data-i18n="hints.open">Открыть</button></div>
+                  </div>
+                </div>
+
+                <div class="hint-row" id="hintPieceRow">
+                  <span class="hint-icon brass"><svg viewBox="0 0 64 64"><use href="#p-knight"/></svg></span>
+                  <div class="hint-body">
+                    <div class="hint-title-line"><span class="hint-title" data-i18n="hints.piece">Фигура</span><span class="hint-cost" data-i18n="hints.oneToken">1 подсказка</span></div>
+                    <p class="hint-desc" data-i18n="hints.pieceDesc">Подсветить фигуру, которой ходить.</p>
+                    <div class="hint-action-line"><span class="hint-state" data-i18n="hints.helpful">Помогает найти начало</span><button class="hint-open" type="button" data-hint="piece" data-i18n="hints.open">Открыть</button></div>
+                  </div>
+                </div>
+
+                <div class="hint-row" id="hintMoveRow">
+                  <span class="hint-icon violet"><svg><use href="#i-arrow-right"/></svg></span>
+                  <div class="hint-body">
+                    <div class="hint-title-line"><span class="hint-title" data-i18n="hints.move">Ход</span><span class="hint-cost" data-i18n="hints.twoTokens">2 подсказки</span></div>
+                    <p class="hint-desc" data-i18n="hints.moveDesc">Показать первый ход.</p>
+                    <div class="hint-action-line"><span class="hint-state" data-i18n="hints.lastResort">Самый сильный спойлер</span><button class="hint-open" type="button" data-hint="move" data-i18n="hints.open">Открыть</button></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sheet-footer">
+                <button class="btn-ad" type="button" id="watchAd"><svg><use href="#i-ad"/></svg><span data-i18n="hints.ad">Смотреть рекламу +1</span></button>
+                <button class="btn-premium" type="button" id="premiumBtn"><svg><use href="#i-crown"/></svg><span>Premium</span></button>
+              </div>
+            </section>
+          </div>
+
+          <div class="pause-overlay" id="pauseOverlay">
+            <div class="pause-card">
+              <div class="pause-icon"><svg><use href="#i-pause"/></svg></div>
+              <h3 data-i18n="pause.title">Пауза</h3>
+              <p data-i18n="pause.desc">Таймер остановлен. Доска ждёт.</p>
+              <button class="btn-primary" type="button" id="resumeBtn"><svg><use href="#i-play"/></svg><span data-i18n="pause.resume">Продолжить</span></button>
+            </div>
+          </div>
+
+          <div class="toast" id="toast" role="status" aria-live="polite">
+            <svg><use href="#i-check"/></svg><span id="toastText"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    "use strict";
+
+    const I18N = {
+      ru: {
+        "chrome.prototype": "Интерактивный прототип · v0.1",
+        "chrome.note": "360 задач · 3 уровня · RU / EN",
+        "tab.home": "Главная",
+        "tab.solver": "Задача",
+        "tab.hints": "Подсказки",
+        "tab.result": "Итог",
+        "home.tagline": "Тихая доска",
+        "home.today": "Сегодня",
+        "home.title": "Один точный ход",
+        "home.subtitle": "Начните с задачи дня — на неё уйдёт меньше трёх минут.",
+        "home.dailyLabel": "Задача дня",
+        "home.dailyBadge": "+150 XP",
+        "home.dailyTitle": "Мат в 2",
+        "home.dailyMeta": "Профессионал · 1 480",
+        "home.solve": "Решить",
+        "home.continueTitle": "Продолжить · Глава 12",
+        "home.continueMeta": "Вилка и двойной удар",
+        "home.levels": "Уровни",
+        "home.levelsNote": "360 задач",
+        "home.footnote": "Без рекламы в решателе. Без аккаунта. Прогресс — на устройстве.",
+        "level.novice": "Новичок",
+        "level.professional": "Профессионал",
+        "level.grandmaster": "Гроссмейстер",
+        "nav.play": "Играть",
+        "nav.progress": "Прогресс",
+        "nav.settings": "Настройки",
+        "solver.kicker": "Профессионал · Глава 12",
+        "solver.title": "Вилка и двойной удар",
+        "solver.puzzleLabel": "Задача 7 из 10",
+        "solver.taskStart": "Ход белых.",
+        "solver.taskGoal": "Выиграйте ферзя.",
+        "solver.theme": "Вилка",
+        "solver.theme2": "Двойной удар",
+        "solver.yourMove": "Ваш ход",
+        "solver.attempts": "Попытки",
+        "solver.moves": "Ходы",
+        "solver.movesCount": "{n} / {total}",
+        "solver.movesEmpty": "Ходы появятся после первого хода",
+        "solver.hint": "Подсказка",
+        "solver.resign": "Сдаться",
+        "result.label": "Результат",
+        "result.title": "Задача решена!",
+        "result.moves": "2 хода",
+        "result.line": "Ваш маршрут",
+        "result.why": "Почему это работает",
+        "result.explanation": "<strong>Конь на e7</strong> даёт шах королю и одновременно атакует ферзя на c8. Король вынужден уйти на h8, после чего конь забирает ферзя.",
+        "result.next": "Следующая задача",
+        "result.review": "Разобрать",
+        "result.retry": "Повторить",
+        "result.footnote": "Задача засчитана. Прогресс сохранён на устройстве.",
+        "hints.title": "Подсказки",
+        "hints.paused": "Таймер на паузе",
+        "hints.balance": "У вас 3 подсказки",
+        "hints.idea": "Идея",
+        "hints.free": "Бесплатно",
+        "hints.ideaDesc": "Ищите вилку на короля и ферзя.",
+        "hints.once": "1 раз на задачу",
+        "hints.open": "Открыть",
+        "hints.used": "Открыто",
+        "hints.piece": "Фигура",
+        "hints.oneToken": "1 подсказка",
+        "hints.pieceDesc": "Подсветить фигуру, которой ходить.",
+        "hints.helpful": "Помогает найти начало",
+        "hints.move": "Ход",
+        "hints.twoTokens": "2 подсказки",
+        "hints.moveDesc": "Показать первый ход.",
+        "hints.lastResort": "Самый сильный спойлер",
+        "hints.ad": "Смотреть рекламу +1",
+        "pause.title": "Пауза",
+        "pause.desc": "Таймер остановлен. Доска ждёт.",
+        "pause.resume": "Продолжить",
+        "status.yourMove": "Ваш ход",
+        "status.yourMove2": "Ваш ход · 2-й ход",
+        "status.opponent": "Соперник отвечает…",
+        "status.check": "Шах! Король уходит.",
+        "status.wrong": "Не совсем. Ищите вилку.",
+        "status.illegal": "Так нельзя. Попробуйте другой ход.",
+        "status.chooseKnight": "В этой задаче начните с коня.",
+        "status.opponentPiece": "Это фигура соперника.",
+        "status.pieceHint": "Подсказка: конь на f5.",
+        "status.moveHint": "Подсказка: 1. Ne7+",
+        "status.ideaHint": "Идея: вилка на короля и ферзя.",
+        "status.solved": "Ферзь выигран. Задача решена.",
+        "status.timeout": "Время вышло.",
+        "status.paused": "Пауза",
+        "status.resume": "Ваш ход",
+        "status.fail": "Попытки закончились.",
+        "toast.streak": "Серия — 7 дней. Так держать!",
+        "toast.settings": "Настройки появятся в следующей итерации.",
+        "toast.progress": "Экран прогресса появится в следующей итерации.",
+        "toast.idea": "Идея: ищите вилку на короля и ферзя.",
+        "toast.piece": "Подсказка: ходите конём.",
+        "toast.move": "Подсказка: 1. Ne7+",
+        "toast.ad": "Демо: +1 подсказка. В приложении здесь будет rewarded-ролик.",
+        "toast.premium": "Premium появится после подключения платежей RuStore.",
+        "toast.attempts": "Попытка потеряна. Осталось: {n}.",
+        "toast.attemptsZero": "Попытки закончились. В приложении здесь можно продолжить за +60 с.",
+        "toast.attemptsUsed": "Продолжение уже использовано. Начните заново.",
+        "toast.resign": "В приложении откроется разбор. Здесь — демо-переход.",
+        "toast.next": "Следующая задача будет загружена из пака.",
+        "toast.review": "Разбор: линия решения уже открыта на экране результата.",
+        "toast.retry": "Задача сброшена. Таймер снова идёт.",
+        "toast.continue": "Демо: +60 секунд и ещё одна попытка.",
+        "toast.timeoutContinue": "Демо: +60 секунд. Звёзды ограничены одной.",
+        "toast.restart": "Задача сброшена. Максимум — одна звезда.",
+        "fail.title": "Попытки закончились",
+        "fail.desc": "Продолжите за +60 секунд и ещё одну попытку. Звёзды будут ограничены.",
+        "fail.descUsed": "Продолжение уже использовано. Начните заново — звёзды останутся не выше одной.",
+        "fail.resume": "Продолжить +60 с",
+        "fail.restart": "Начать заново",
+        "timeout.title": "Время вышло",
+        "timeout.desc": "Продолжите за +60 секунд или разберите решение.",
+        "timeout.resume": "Продолжить +60 с",
+        "aria.pause": "Поставить на паузу",
+        "aria.resume": "Продолжить",
+        "aria.timer": "Таймер: {time}",
+        "aria.back": "Назад на главную",
+        "aria.close": "Закрыть",
+        "aria.flip": "Перевернуть доску",
+        "aria.settings": "Настройки",
+        "aria.streak": "Серия 7 дней",
+        "aria.openDaily": "Открыть задачу дня",
+        "aria.stars": "{n} из 3 звёзд",
+        "aria.attempts": "Попытки: {n} из 3",
+        "aria.board": "Шахматная доска. Ход белых.",
+        "aria.empty": "пусто",
+        "aria.selected": "выбрано",
+        "aria.canMove": "можно",
+        "aria.check": "шах",
+        "piece.white": "белая",
+        "piece.black": "чёрная",
+        "piece.pawn": "пешка",
+        "piece.knight": "конь",
+        "piece.bishop": "слон",
+        "piece.rook": "ладья",
+        "piece.queen": "ферзь",
+        "piece.king": "король"
+      },
+      en: {
+        "chrome.prototype": "Interactive prototype · v0.1",
+        "chrome.note": "360 puzzles · 3 levels · RU / EN",
+        "tab.home": "Home",
+        "tab.solver": "Puzzle",
+        "tab.hints": "Hints",
+        "tab.result": "Result",
+        "home.tagline": "A quiet board",
+        "home.today": "Today",
+        "home.title": "One precise move",
+        "home.subtitle": "Start with the daily puzzle — it takes less than three minutes.",
+        "home.dailyLabel": "Daily puzzle",
+        "home.dailyBadge": "+150 XP",
+        "home.dailyTitle": "Mate in 2",
+        "home.dailyMeta": "Professional · 1,480",
+        "home.solve": "Solve",
+        "home.continueTitle": "Continue · Chapter 12",
+        "home.continueMeta": "Fork and double attack",
+        "home.levels": "Levels",
+        "home.levelsNote": "360 puzzles",
+        "home.footnote": "No ads in the solver. No account. Progress stays on your device.",
+        "level.novice": "Novice",
+        "level.professional": "Professional",
+        "level.grandmaster": "Grandmaster",
+        "nav.play": "Play",
+        "nav.progress": "Progress",
+        "nav.settings": "Settings",
+        "solver.kicker": "Professional · Chapter 12",
+        "solver.title": "Fork and double attack",
+        "solver.puzzleLabel": "Puzzle 7 of 10",
+        "solver.taskStart": "White to move.",
+        "solver.taskGoal": "Win the queen.",
+        "solver.theme": "Fork",
+        "solver.theme2": "Double attack",
+        "solver.yourMove": "Your move",
+        "solver.attempts": "Attempts",
+        "solver.moves": "Moves",
+        "solver.movesCount": "{n} / {total}",
+        "solver.movesEmpty": "Moves appear after your first move",
+        "solver.hint": "Hint",
+        "solver.resign": "Resign",
+        "result.label": "Result",
+        "result.title": "Puzzle solved!",
+        "result.moves": "2 moves",
+        "result.line": "Your line",
+        "result.why": "Why it works",
+        "result.explanation": "The <strong>knight on e7</strong> checks the king and attacks the queen on c8 at the same time. The king must retreat to h8, and the knight takes the queen.",
+        "result.next": "Next puzzle",
+        "result.review": "Review",
+        "result.retry": "Retry",
+        "result.footnote": "Puzzle counted. Progress saved on this device.",
+        "hints.title": "Hints",
+        "hints.paused": "Timer paused",
+        "hints.balance": "3 hints available",
+        "hints.idea": "Idea",
+        "hints.free": "Free",
+        "hints.ideaDesc": "Look for a fork on the king and queen.",
+        "hints.once": "Once per puzzle",
+        "hints.open": "Open",
+        "hints.used": "Opened",
+        "hints.piece": "Piece",
+        "hints.oneToken": "1 hint",
+        "hints.pieceDesc": "Highlight the piece to move.",
+        "hints.helpful": "Helps you start",
+        "hints.move": "Move",
+        "hints.twoTokens": "2 hints",
+        "hints.moveDesc": "Show the first move.",
+        "hints.lastResort": "The strongest spoiler",
+        "hints.ad": "Watch ad +1",
+        "pause.title": "Paused",
+        "pause.desc": "The timer is stopped. The board is waiting.",
+        "pause.resume": "Resume",
+        "status.yourMove": "Your move",
+        "status.yourMove2": "Your move · move 2",
+        "status.opponent": "Opponent is replying…",
+        "status.check": "Check! The king must move.",
+        "status.wrong": "Not quite. Look for a fork.",
+        "status.illegal": "That move is not allowed. Try another one.",
+        "status.chooseKnight": "In this puzzle, start with the knight.",
+        "status.opponentPiece": "That is the opponent's piece.",
+        "status.pieceHint": "Hint: the knight on f5.",
+        "status.moveHint": "Hint: 1. Ne7+",
+        "status.ideaHint": "Idea: a fork on the king and queen.",
+        "status.solved": "The queen is won. Puzzle solved.",
+        "status.timeout": "Time is up.",
+        "status.paused": "Paused",
+        "status.resume": "Your move",
+        "status.fail": "Out of attempts.",
+        "toast.streak": "7-day streak. Keep it up!",
+        "toast.settings": "Settings will arrive in the next iteration.",
+        "toast.progress": "Progress screen will arrive in the next iteration.",
+        "toast.idea": "Idea: look for a fork on the king and queen.",
+        "toast.piece": "Hint: move the knight.",
+        "toast.move": "Hint: 1. Ne7+",
+        "toast.ad": "Demo: +1 hint. A rewarded ad will appear here in the app.",
+        "toast.premium": "Premium will be available after RuStore payments are connected.",
+        "toast.attempts": "Attempt lost. {n} left.",
+        "toast.attemptsZero": "Out of attempts. In the app you can continue for +60 s.",
+        "toast.attemptsUsed": "Continue already used. Restart the puzzle.",
+        "toast.resign": "The app will open the review. This is a demo transition.",
+        "toast.next": "The next puzzle will load from the pack.",
+        "toast.review": "Review: the solution line is already on the result screen.",
+        "toast.retry": "Puzzle reset. The timer is running again.",
+        "toast.continue": "Demo: +60 seconds and one more attempt.",
+        "toast.timeoutContinue": "Demo: +60 seconds. Stars are capped at one.",
+        "toast.restart": "Puzzle reset. One star maximum.",
+        "fail.title": "Out of attempts",
+        "fail.desc": "Continue for +60 seconds and one more attempt. Stars will be capped.",
+        "fail.descUsed": "The continue has already been used. Restart the puzzle — stars stay capped at one.",
+        "fail.resume": "Continue +60 s",
+        "fail.restart": "Restart puzzle",
+        "timeout.title": "Time is up",
+        "timeout.desc": "Continue for +60 seconds or review the solution.",
+        "timeout.resume": "Continue +60 s",
+        "aria.pause": "Pause",
+        "aria.resume": "Resume",
+        "aria.timer": "Timer: {time}",
+        "aria.back": "Back to home",
+        "aria.close": "Close",
+        "aria.flip": "Flip board",
+        "aria.settings": "Settings",
+        "aria.streak": "7-day streak",
+        "aria.openDaily": "Open daily puzzle",
+        "aria.stars": "{n} of 3 stars",
+        "aria.attempts": "Attempts: {n} of 3",
+        "aria.board": "Chessboard. White to move.",
+        "aria.empty": "empty",
+        "aria.selected": "selected",
+        "aria.canMove": "available",
+        "aria.check": "check",
+        "piece.white": "white",
+        "piece.black": "black",
+        "piece.pawn": "pawn",
+        "piece.knight": "knight",
+        "piece.bishop": "bishop",
+        "piece.rook": "rook",
+        "piece.queen": "queen",
+        "piece.king": "king"
+      }
+    };
+
+    const FEN = "2q3k1/5ppp/8/5N2/8/8/5PPP/6K1 w - - 0 1";
+    const PIECE_SYMBOL = {
+      p: "p-pawn",
+      n: "p-knight",
+      b: "p-bishop",
+      r: "p-rook",
+      q: "p-queen",
+      k: "p-king"
+    };
+    const START_TIME = 185;
+    const MAX_TOKENS = 5;
+    const state = {
+      lang: "ru",
+      screen: "home",
+      board: [],
+      flipped: false,
+      selected: null,
+      legal: [],
+      lastMove: [],
+      checkSquare: null,
+      correctSquare: null,
+      attempts: 3,
+      tokens: 3,
+      timeLeft: START_TIME,
+      paused: false,
+      pauseMode: "manual",
+      sheetOpen: false,
+      finished: false,
+      solved: false,
+      hasStarted: false,
+      continued: false,
+      step: 0,
+      userMoves: 0,
+      moveLog: [],
+      ideaUsed: false,
+      hintsUsed: 0,
+      hintPieceSquare: null,
+      hintArrow: false,
+      boardLocked: false,
+      starsCap: null,
+      statusKey: "status.yourMove",
+      statusTone: "emerald",
+      resultData: null,
+      pendingTimeout: null
+    };
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+    function t(key, vars = {}) {
+      const table = I18N[state.lang] || I18N.ru;
+      let value = table[key] ?? I18N.ru[key] ?? key;
+      for (const [name, replacement] of Object.entries(vars)) {
+        value = value.replaceAll(`{${name}}`, String(replacement));
+      }
+      return value;
+    }
+
+    function parseFen(fen) {
+      const rows = fen.split(" ")[0].split("/");
+      return rows.map((row) => {
+        const squares = [];
+        for (const char of row) {
+          if (/\d/.test(char)) {
+            for (let i = 0; i < Number(char); i += 1) squares.push(null);
+          } else {
+            squares.push(char);
+          }
+        }
+        return squares;
+      });
+    }
+
+    function squareToRC(square) {
+      const file = square.charCodeAt(0) - 97;
+      const rank = Number(square[1]);
+      return [8 - rank, file];
+    }
+
+    function rcToSquare(row, col) {
+      return `${String.fromCharCode(97 + col)}${8 - row}`;
+    }
+
+    function getPiece(square) {
+      const [row, col] = squareToRC(square);
+      return state.board[row]?.[col] ?? null;
+    }
+
+    function isWhite(piece) {
+      return Boolean(piece) && piece === piece.toUpperCase();
+    }
+
+    function pieceType(piece) {
+      return piece ? piece.toLowerCase() : null;
+    }
+
+    function pieceName(piece) {
+      if (!piece) return t("aria.empty");
+      const color = isWhite(piece) ? t("piece.white") : t("piece.black");
+      const type = t(`piece.${pieceType(piece)}`);
+      return `${color} ${type}`;
+    }
+
+    function knightMoves(square) {
+      const [row, col] = squareToRC(square);
+      const piece = state.board[row]?.[col];
+      if (!piece || pieceType(piece) !== "n") return [];
+      const offsets = [
+        [-2, -1], [-2, 1], [-1, -2], [-1, 2],
+        [1, -2], [1, 2], [2, -1], [2, 1]
+      ];
+      return offsets
+        .map(([dr, dc]) => [row + dr, col + dc])
+        .filter(([r, c]) => r >= 0 && r < 8 && c >= 0 && c < 8)
+        .filter(([r, c]) => {
+          const target = state.board[r][c];
+          return !target || !isWhite(target);
+        })
+        .map(([r, c]) => rcToSquare(r, c));
+    }
+
+    function getExpectedMove() {
+      if (state.step === 0) return "e7";
+      if (state.step === 1) return "c8";
+      return null;
+    }
+
+    function formatTime(seconds) {
+      const safe = Math.max(0, Math.floor(seconds));
+      const minutes = Math.floor(safe / 60);
+      const rest = safe % 60;
+      return `${String(minutes).padStart(2, "0")}:${String(rest).padStart(2, "0")}`;
+    }
+
+    function hintBalance(n) {
+      if (state.lang === "en") {
+        return `${n} hint${n === 1 ? "" : "s"} available`;
+      }
+      const mod10 = n % 10;
+      const mod100 = n % 100;
+      let word = "подсказок";
+      if (mod10 === 1 && mod100 !== 11) word = "подсказка";
+      else if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) word = "подсказки";
+      return `У вас ${n} ${word}`;
+    }
+
+    function renderBoard() {
+      const boardEl = $("#board");
+      if (!boardEl) return;
+      const legalSet = new Set(state.legal);
+      boardEl.innerHTML = "";
+
+      for (let row = 0; row < 8; row += 1) {
+        for (let col = 0; col < 8; col += 1) {
+          const boardRow = state.flipped ? 7 - row : row;
+          const boardCol = state.flipped ? 7 - col : col;
+          const square = rcToSquare(boardRow, boardCol);
+          const piece = state.board[boardRow][boardCol];
+          const isLight = (boardRow + boardCol) % 2 === 0;
+          const cell = document.createElement("button");
+          cell.type = "button";
+          cell.className = `sq ${isLight ? "light" : "dark"}`;
+          cell.dataset.square = square;
+          cell.setAttribute("role", "gridcell");
+
+          if (state.selected === square) cell.classList.add("selected");
+          if (state.lastMove.includes(square)) cell.classList.add("last");
+          if (state.checkSquare === square) cell.classList.add("check");
+          if (state.correctSquare === square) cell.classList.add("correct");
+          if (legalSet.has(square)) cell.classList.add(piece ? "legal-capture" : "legal");
+          if (state.hintPieceSquare === square) cell.classList.add("hint-piece");
+
+          if (col === 0) {
+            const rank = document.createElement("span");
+            rank.className = "coord rank";
+            rank.textContent = square[1];
+            cell.appendChild(rank);
+          }
+          if (row === 7) {
+            const file = document.createElement("span");
+            file.className = "coord file";
+            file.textContent = square[0];
+            cell.appendChild(file);
+          }
+
+          if (piece) {
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("viewBox", "0 0 64 64");
+            svg.setAttribute("class", `piece ${isWhite(piece) ? "w" : "b"}`);
+            svg.setAttribute("aria-hidden", "true");
+            const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+            use.setAttribute("href", `#${PIECE_SYMBOL[pieceType(piece)]}`);
+            svg.appendChild(use);
+            cell.appendChild(svg);
+          }
+
+          let label = square;
+          label += piece ? `, ${pieceName(piece)}` : `, ${t("aria.empty")}`;
+          if (state.selected === square) label += `, ${t("aria.selected")}`;
+          if (legalSet.has(square)) label += `, ${t("aria.canMove")}`;
+          if (state.checkSquare === square) label += `, ${t("aria.check")}`;
+          cell.setAttribute("aria-label", label);
+          boardEl.appendChild(cell);
+        }
+      }
+
+      boardEl.setAttribute("aria-label", t("aria.board"));
+      updateArrow();
+    }
+
+    function updateArrow() {
+      const arrows = $("#boardArrows");
+      if (!arrows) return;
+      const visible = Boolean(state.hintArrow) && !state.finished;
+      arrows.classList.toggle("show", visible);
+      if (!visible) return;
+      const from = state.step === 0 ? "f5" : "e7";
+      const to = state.step === 0 ? "e7" : "c8";
+      const displaySquare = (square) => {
+        const [row, col] = squareToRC(square);
+        return state.flipped ? [7 - row, 7 - col] : [row, col];
+      };
+      const [fromRow, fromCol] = displaySquare(from);
+      const [toRow, toCol] = displaySquare(to);
+      const line = $("#hintArrowLine");
+      line.setAttribute("x1", String(fromCol + 0.5));
+      line.setAttribute("y1", String(fromRow + 0.5));
+      line.setAttribute("x2", String(toCol + 0.5));
+      line.setAttribute("y2", String(toRow + 0.5));
+    }
+
+    function setStatus(key, tone = "emerald") {
+      state.statusKey = key;
+      state.statusTone = tone;
+      updateStatus();
+    }
+
+    function updateStatus() {
+      const text = $("#statusText");
+      const dot = $("#statusDot");
+      if (!text || !dot) return;
+      text.textContent = t(state.statusKey);
+      dot.className = `status-dot${state.statusTone === "brass" ? " brass" : state.statusTone === "error" ? " error" : ""}`;
+    }
+
+    function updateAttempts() {
+      const dots = $("#attemptDots");
+      if (!dots) return;
+      dots.innerHTML = "";
+      for (let i = 0; i < 3; i += 1) {
+        const dot = document.createElement("span");
+        dot.className = `attempt-dot${i < state.attempts ? "" : " used"}`;
+        dots.appendChild(dot);
+      }
+      dots.setAttribute("aria-label", t("aria.attempts", { n: state.attempts }));
+    }
+
+    function renderMoveLog() {
+      const body = $("#moveLogBody");
+      const count = $("#moveLogCount");
+      if (!body || !count) return;
+      count.textContent = t("solver.movesCount", { n: state.userMoves, total: 2 });
+      if (state.moveLog.length === 0) {
+        body.innerHTML = `<span class="move-log-empty">${t("solver.movesEmpty")}</span>`;
+        return;
+      }
+      body.innerHTML = state.moveLog
+        .map((ply, index) => {
+          const number = Math.floor(index / 2) + 1;
+          const label = ply.side === "w" ? `${number}.` : `${number}…`;
+          return `<span class="move-pill${ply.side === "b" ? " opponent" : ""}"><span class="num">${label}</span>${ply.san}</span>`;
+        })
+        .join("");
+    }
+
+    function updateTimer() {
+      const timerText = $("#timerText");
+      const pill = $("#timerPill");
+      if (!timerText || !pill) return;
+      timerText.textContent = formatTime(state.timeLeft);
+      const progress = Math.max(0, Math.min(100, (state.timeLeft / START_TIME) * 100));
+      pill.style.setProperty("--timer-progress", `${progress}%`);
+      pill.classList.toggle("warning", state.timeLeft <= START_TIME * 0.2 && state.timeLeft > 10);
+      pill.classList.toggle("danger", state.timeLeft <= 10);
+      pill.classList.toggle("paused", state.paused || state.sheetOpen);
+      const label = state.paused || state.sheetOpen ? t("aria.resume") : t("aria.pause");
+      pill.setAttribute("aria-label", label);
+      pill.title = t("aria.timer", { time: formatTime(state.timeLeft) });
+    }
+
+    function updateTokens() {
+      const count = $("#tokenCount");
+      const sheetCount = $("#sheetTokens");
+      const balance = $("#balanceText");
+      if (count) count.textContent = String(state.tokens);
+      if (sheetCount) sheetCount.textContent = String(state.tokens);
+      if (balance) balance.textContent = hintBalance(state.tokens);
+      updateHintSheet();
+    }
+
+    function updateHintSheet() {
+      const ideaBtn = $('[data-hint="idea"]');
+      const pieceBtn = $('[data-hint="piece"]');
+      const moveBtn = $('[data-hint="move"]');
+      if (!ideaBtn || !pieceBtn || !moveBtn) return;
+
+      ideaBtn.disabled = state.ideaUsed;
+      ideaBtn.textContent = state.ideaUsed ? t("hints.used") : t("hints.open");
+      $("#hintIdeaRow").classList.toggle("used", state.ideaUsed);
+      $("#ideaState").textContent = state.ideaUsed ? t("hints.used") : t("hints.once");
+
+      pieceBtn.disabled = state.tokens < 1;
+      moveBtn.disabled = state.tokens < 2;
+      pieceBtn.textContent = state.hintPieceSquare ? t("hints.used") : t("hints.open");
+      moveBtn.textContent = state.hintArrow ? t("hints.used") : t("hints.open");
+      $("#hintPieceRow").classList.toggle("used", Boolean(state.hintPieceSquare));
+      $("#hintMoveRow").classList.toggle("used", state.hintArrow);
+    }
+
+    function renderPauseOverlay() {
+      const overlay = $("#pauseOverlay");
+      if (!overlay) return;
+      const visible = state.paused && !state.sheetOpen && state.screen === "solver" && !state.finished;
+      overlay.classList.toggle("show", visible);
+      if (!visible) return;
+
+      const title = overlay.querySelector("h3");
+      const desc = overlay.querySelector("p");
+      const buttonLabel = overlay.querySelector("#resumeBtn span");
+      const continueSpent = state.continued && (state.pauseMode === "fail" || state.pauseMode === "timeout");
+      if (continueSpent) {
+        title.textContent = t(state.pauseMode === "timeout" ? "timeout.title" : "fail.title");
+        desc.textContent = t("fail.descUsed");
+        buttonLabel.textContent = t("fail.restart");
+      } else if (state.pauseMode === "fail") {
+        title.textContent = t("fail.title");
+        desc.textContent = t("fail.desc");
+        buttonLabel.textContent = t("fail.resume");
+      } else if (state.pauseMode === "timeout") {
+        title.textContent = t("timeout.title");
+        desc.textContent = t("timeout.desc");
+        buttonLabel.textContent = t("timeout.resume");
+      } else {
+        title.textContent = t("pause.title");
+        desc.textContent = t("pause.desc");
+        buttonLabel.textContent = t("pause.resume");
+      }
+    }
+
+    function setActiveTab(name) {
+      $$(".screen-tab").forEach((tab) => {
+        tab.setAttribute("aria-selected", String(tab.dataset.screen === name));
+      });
+    }
+
+    function updateAria() {
+      $("#solverBack")?.setAttribute("aria-label", t("aria.back"));
+      $("#resultClose")?.setAttribute("aria-label", t("aria.back"));
+      $("#closeHints")?.setAttribute("aria-label", t("aria.close"));
+      $("#flipBtn")?.setAttribute("aria-label", t("aria.flip"));
+      $("#flipBtn")?.setAttribute("title", t("aria.flip"));
+      $("#dailyCard")?.setAttribute("aria-label", t("aria.openDaily"));
+      $(".streak")?.setAttribute("aria-label", t("aria.streak"));
+      $('.icon-btn[data-toast="settings"]')?.setAttribute("aria-label", t("aria.settings"));
+      $("#board")?.setAttribute("aria-label", t("aria.board"));
+    }
+
+    function applyLang() {
+      document.documentElement.lang = state.lang;
+      $$("[data-i18n]").forEach((element) => {
+        element.textContent = t(element.dataset.i18n);
+      });
+      $$("[data-i18n-html]").forEach((element) => {
+        element.innerHTML = t(element.dataset.i18nHtml);
+      });
+      $$(".lang-toggle button").forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === state.lang);
+      });
+      updateStatus();
+      updateTimer();
+      updateAttempts();
+      renderMoveLog();
+      updateTokens();
+      renderPauseOverlay();
+      updateAria();
+      if (state.resultData) renderResult(state.resultData);
+    }
+
+    function renderResult(data) {
+      state.resultData = data;
+      const stars = $$(".result-star");
+      stars.forEach((star, index) => {
+        star.classList.toggle("off", index >= data.stars);
+      });
+      const starContainer = $(".result-stars");
+      if (starContainer) starContainer.setAttribute("aria-label", t("aria.stars", { n: data.stars }));
+      const time = $("#resultTime");
+      const xp = $("#resultXp");
+      const cardXp = $("#resultCardXp");
+      if (time) time.textContent = data.time || "01:38";
+      if (xp) xp.textContent = `+${data.xp} XP`;
+      if (cardXp) cardXp.textContent = `+${data.xp} XP`;
+      const scroll = $(".result-scroll");
+      if (scroll) scroll.scrollTop = 0;
+    }
+
+    function showToast(message, tone = "emerald") {
+      const toast = $("#toast");
+      const text = $("#toastText");
+      if (!toast || !text) return;
+      text.textContent = message;
+      toast.className = `toast show${tone === "brass" ? " brass" : tone === "error" ? " error" : ""}`;
+      const icon = toast.querySelector("use");
+      if (icon) icon.setAttribute("href", tone === "error" ? "#i-close" : tone === "brass" ? "#i-bulb" : "#i-check");
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 3400);
+    }
+
+    function flashSquare(square, className) {
+      const cell = $(`.sq[data-square="${square}"]`);
+      if (!cell) return;
+      cell.classList.add(className);
+      window.setTimeout(() => cell.classList.remove(className), 440);
+    }
+
+    function resetSolver() {
+      window.clearTimeout(state.pendingTimeout);
+      state.board = parseFen(FEN);
+      state.flipped = false;
+      state.selected = null;
+      state.legal = [];
+      state.lastMove = [];
+      state.checkSquare = null;
+      state.correctSquare = null;
+      state.attempts = 3;
+      state.tokens = 3;
+      state.timeLeft = START_TIME;
+      state.paused = false;
+      state.pauseMode = "manual";
+      state.sheetOpen = false;
+      state.finished = false;
+      state.solved = false;
+      state.hasStarted = false;
+      state.continued = false;
+      state.step = 0;
+      state.userMoves = 0;
+      state.moveLog = [];
+      state.ideaUsed = false;
+      state.hintsUsed = 0;
+      state.hintPieceSquare = null;
+      state.hintArrow = false;
+      state.boardLocked = false;
+      state.starsCap = null;
+      state.statusKey = "status.yourMove";
+      state.statusTone = "emerald";
+      state.resultData = null;
+      state.pendingTimeout = null;
+
+      $("#hintLayer").classList.remove("open");
+      $("#hintLayer").setAttribute("aria-hidden", "true");
+      $("#pauseOverlay").classList.remove("show");
+
+      renderBoard();
+      updateStatus();
+      updateAttempts();
+      renderMoveLog();
+      updateTimer();
+      updateTokens();
+      updateAria();
+    }
+
+    function activateScreen(name) {
+      if (name === "solver" && state.finished) resetSolver();
+      if (state.screen === "solver" && name !== "solver" && state.hasStarted && !state.finished) {
+        state.paused = true;
+        state.pauseMode = "manual";
+      }
+
+      state.screen = name;
+      $$(".screen").forEach((screen) => {
+        screen.classList.toggle("active", screen.id === `screen-${name}`);
+      });
+      setActiveTab(name);
+
+      if (name === "solver") {
+        if (!state.hasStarted) {
+          state.hasStarted = true;
+          state.paused = false;
+        }
+        updateTimer();
+        renderPauseOverlay();
+      } else {
+        $("#pauseOverlay").classList.remove("show");
+      }
+    }
+
+    function openHints() {
+      if (state.finished) resetSolver();
+      if (state.screen !== "solver") activateScreen("solver");
+      state.sheetOpen = true;
+      $("#hintLayer").classList.add("open");
+      $("#hintLayer").setAttribute("aria-hidden", "false");
+      setActiveTab("hints");
+      updateTokens();
+      updateTimer();
+      renderPauseOverlay();
+    }
+
+    function closeHints() {
+      state.sheetOpen = false;
+      $("#hintLayer").classList.remove("open");
+      $("#hintLayer").setAttribute("aria-hidden", "true");
+      setActiveTab(state.screen === "home" ? "home" : state.screen === "result" ? "result" : "solver");
+      updateTimer();
+      renderPauseOverlay();
+    }
+
+    function useHint(type) {
+      if (type === "idea") {
+        if (state.ideaUsed) return;
+        state.ideaUsed = true;
+        state.hintsUsed += 1;
+        closeHints();
+        setStatus("status.ideaHint", "brass");
+        showToast(t("toast.idea"), "brass");
+        updateTokens();
+        return;
+      }
+
+      if (type === "piece") {
+        if (state.tokens < 1) return;
+        state.tokens -= 1;
+        state.hintsUsed += 1;
+        state.hintPieceSquare = state.step === 0 ? "f5" : "e7";
+        closeHints();
+        setStatus("status.pieceHint", "brass");
+        renderBoard();
+        showToast(t("toast.piece"), "brass");
+        updateTokens();
+        return;
+      }
+
+      if (type === "move") {
+        if (state.tokens < 2) return;
+        state.tokens -= 2;
+        state.hintsUsed += 2;
+        state.hintArrow = true;
+        closeHints();
+        setStatus("status.moveHint", "brass");
+        updateArrow();
+        showToast(t("toast.move"), "brass");
+        updateTokens();
+      }
+    }
+
+    function calculateStars() {
+      const mistakes = 3 - state.attempts;
+      const elapsed = START_TIME - state.timeLeft;
+      let stars = 3;
+
+      if (state.hintsUsed >= 2 || mistakes >= 3) {
+        stars = 1;
+      } else if (state.hintsUsed === 1 || mistakes === 2 || elapsed > START_TIME * 0.6) {
+        stars = 2;
+      }
+
+      if (state.starsCap) stars = Math.min(stars, state.starsCap);
+      return Math.max(1, stars);
+    }
+
+    function calculateXp(stars, elapsed) {
+      const timeBonus = Math.round(50 * Math.max(0, 1 - elapsed / START_TIME));
+      const starBonus = stars === 3 ? 50 : stars === 2 ? 25 : 0;
+      return Math.max(10, 100 + starBonus + timeBonus - 20 * state.hintsUsed);
+    }
+
+    function executeMove(from, to) {
+      const [fromRow, fromCol] = squareToRC(from);
+      const [toRow, toCol] = squareToRC(to);
+      const piece = state.board[fromRow][fromCol];
+      state.board[fromRow][fromCol] = null;
+      state.board[toRow][toCol] = piece;
+      state.selected = null;
+      state.legal = [];
+      state.lastMove = [from, to];
+      state.hintPieceSquare = null;
+      state.hintArrow = false;
+      state.userMoves += 1;
+      state.step += 1;
+      state.correctSquare = to;
+      state.moveLog = state.userMoves === 1
+        ? [{ san: "Ne7+", side: "w" }]
+        : [...state.moveLog, { san: "Nxc8", side: "w" }];
+      renderBoard();
+      updateArrow();
+      renderMoveLog();
+
+      if (state.userMoves === 1) {
+        state.boardLocked = true;
+        state.checkSquare = "g8";
+        setStatus("status.check", "brass");
+        renderBoard();
+        state.pendingTimeout = window.setTimeout(() => {
+          const king = state.board[0][6];
+          if (king && pieceType(king) === "k" && !isWhite(king)) {
+            state.board[0][6] = null;
+            state.board[0][7] = king;
+          }
+          state.checkSquare = null;
+          state.correctSquare = null;
+          state.lastMove = ["g8", "h8"];
+          state.boardLocked = false;
+          state.moveLog = [...state.moveLog, { san: "Kh8", side: "b" }];
+          setStatus("status.yourMove2", "emerald");
+          renderBoard();
+          renderMoveLog();
+        }, 650);
+        return;
+      }
+
+      state.finished = true;
+      state.solved = true;
+      state.boardLocked = true;
+      setStatus("status.solved", "emerald");
+      const elapsed = Math.max(1, START_TIME - state.timeLeft);
+      const stars = calculateStars();
+      const data = {
+        time: formatTime(elapsed),
+        stars,
+        xp: calculateXp(stars, elapsed),
+        hintsUsed: state.hintsUsed
+      };
+      state.resultData = data;
+      state.pendingTimeout = window.setTimeout(() => showResult(data), 720);
+    }
+
+    function registerMistake(square) {
+      if (state.attempts > 0) state.attempts -= 1;
+      if (square) flashSquare(square, "wrong");
+      updateAttempts();
+
+      if (state.attempts <= 0) {
+        state.paused = true;
+        state.pauseMode = "fail";
+        state.boardLocked = true;
+        setStatus("status.fail", "error");
+        renderPauseOverlay();
+        showToast(t(state.continued ? "toast.attemptsUsed" : "toast.attemptsZero"), "error");
+      } else {
+        setStatus("status.wrong", "error");
+        showToast(t("toast.attempts", { n: state.attempts }), "error");
+      }
+    }
+
+    function handleSquareClick(square) {
+      if (state.boardLocked || state.finished || state.paused || state.sheetOpen) return;
+      const piece = getPiece(square);
+
+      if (!state.selected) {
+        if (!piece) return;
+        if (!isWhite(piece)) {
+          setStatus("status.opponentPiece", "error");
+          return;
+        }
+        if (pieceType(piece) !== "n") {
+          setStatus("status.chooseKnight", "brass");
+          return;
+        }
+        state.selected = square;
+        state.legal = knightMoves(square);
+        renderBoard();
+        return;
+      }
+
+      if (square === state.selected) {
+        state.selected = null;
+        state.legal = [];
+        renderBoard();
+        return;
+      }
+
+      if (piece && isWhite(piece)) {
+        if (pieceType(piece) === "n") {
+          state.selected = square;
+          state.legal = knightMoves(square);
+          renderBoard();
+        } else {
+          setStatus("status.chooseKnight", "brass");
+        }
+        return;
+      }
+
+      if (!state.legal.includes(square)) {
+        registerMistake(square);
+        return;
+      }
+
+      if (square !== getExpectedMove()) {
+        registerMistake(square);
+        return;
+      }
+
+      executeMove(state.selected, square);
+    }
+
+    function showResult(data) {
+      renderResult(data);
+      activateScreen("result");
+    }
+
+    function tick() {
+      if (state.screen !== "solver" || !state.hasStarted || state.paused || state.sheetOpen || state.finished) return;
+      state.timeLeft -= 1;
+      if (state.timeLeft <= 0) {
+        state.timeLeft = 0;
+        state.paused = true;
+        state.pauseMode = "timeout";
+        state.boardLocked = true;
+        setStatus("status.timeout", "error");
+        renderPauseOverlay();
+        showToast(t("toast.timeoutContinue"), "error");
+      }
+      updateTimer();
+    }
+
+    function openPuzzle() {
+      closeHints();
+      resetSolver();
+      activateScreen("solver");
+    }
+
+    $$("[data-open-solver]").forEach((element) => {
+      element.addEventListener("click", openPuzzle);
+    });
+
+    $("#dailyCard").addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openPuzzle();
+      }
+    });
+
+    $$(".screen-tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const name = tab.dataset.screen;
+        if (name === "hints") {
+          openHints();
+          return;
+        }
+        if (name === "result") {
+          closeHints();
+          if (!state.finished) {
+            state.finished = true;
+            state.solved = true;
+            state.resultData = { time: "01:38", stars: 3, xp: 150 };
+          }
+          renderResult(state.resultData);
+          activateScreen("result");
+          return;
+        }
+        if (name === "solver") {
+          closeHints();
+          if (state.finished) resetSolver();
+          activateScreen("solver");
+          return;
+        }
+        closeHints();
+        activateScreen("home");
+      });
+    });
+
+    $$(".lang-toggle button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.lang = button.dataset.lang;
+        applyLang();
+      });
+    });
+
+    $("#timerPill").addEventListener("click", () => {
+      if (state.finished || state.sheetOpen) return;
+      if (state.paused) {
+        if (state.pauseMode !== "manual") return;
+        state.paused = false;
+        state.pauseMode = "manual";
+        setStatus(state.step === 0 ? "status.yourMove" : "status.yourMove2", "emerald");
+      } else {
+        state.paused = true;
+        state.pauseMode = "manual";
+      }
+      updateTimer();
+      renderPauseOverlay();
+    });
+
+    $("#resumeBtn").addEventListener("click", () => {
+      const spentContinue = state.continued && (state.pauseMode === "fail" || state.pauseMode === "timeout");
+      if (spentContinue) {
+        resetSolver();
+        state.continued = true;
+        state.starsCap = 1;
+        activateScreen("solver");
+        showToast(t("toast.restart"), "brass");
+      } else if (state.pauseMode === "fail") {
+        state.continued = true;
+        state.attempts = 1;
+        state.timeLeft += 60;
+        state.starsCap = 1;
+        state.boardLocked = false;
+        state.paused = false;
+        state.pauseMode = "manual";
+        setStatus("status.yourMove", "emerald");
+        showToast(t("toast.continue"), "brass");
+      } else if (state.pauseMode === "timeout") {
+        state.continued = true;
+        state.timeLeft = 60;
+        state.starsCap = 1;
+        state.boardLocked = false;
+        state.paused = false;
+        state.pauseMode = "manual";
+        setStatus("status.yourMove", "emerald");
+        showToast(t("toast.timeoutContinue"), "brass");
+      } else {
+        state.paused = false;
+        state.pauseMode = "manual";
+        setStatus(state.step === 0 ? "status.yourMove" : "status.yourMove2", "emerald");
+      }
+      updateAttempts();
+      updateTimer();
+      renderPauseOverlay();
+    });
+
+    $("#openHints").addEventListener("click", openHints);
+    $("#closeHints").addEventListener("click", closeHints);
+    $("#hintScrim").addEventListener("click", closeHints);
+    $$("[data-hint]").forEach((button) => {
+      button.addEventListener("click", () => useHint(button.dataset.hint));
+    });
+
+    $("#watchAd").addEventListener("click", () => {
+      if (state.tokens < MAX_TOKENS) state.tokens += 1;
+      updateTokens();
+      showToast(t("toast.ad"), "brass");
+    });
+
+    $("#premiumBtn").addEventListener("click", () => {
+      showToast(t("toast.premium"), "brass");
+    });
+
+    $$("[data-toast]").forEach((element) => {
+      element.addEventListener("click", () => {
+        showToast(t(element.dataset.toast === "streak" ? "toast.streak" : "toast.settings"), "brass");
+      });
+    });
+
+    $$(".nav-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        if (item.dataset.nav === "play") {
+          activateScreen("home");
+          return;
+        }
+        showToast(t(item.dataset.nav === "progress" ? "toast.progress" : "toast.settings"), "brass");
+      });
+    });
+
+    $("#solverBack").addEventListener("click", () => {
+      activateScreen("home");
+    });
+
+    $("#flipBtn").addEventListener("click", () => {
+      if (state.finished) return;
+      state.flipped = !state.flipped;
+      renderBoard();
+      updateArrow();
+    });
+
+    $("#resultClose").addEventListener("click", () => {
+      activateScreen("home");
+    });
+
+    $("#nextPuzzle").addEventListener("click", () => {
+      resetSolver();
+      activateScreen("solver");
+      showToast(t("toast.next"), "brass");
+    });
+
+    $("#reviewPuzzle").addEventListener("click", () => {
+      showToast(t("toast.review"), "brass");
+    });
+
+    $("#retryPuzzle").addEventListener("click", () => {
+      resetSolver();
+      activateScreen("solver");
+      showToast(t("toast.retry"), "emerald");
+    });
+
+    $("#board").addEventListener("click", (event) => {
+      const cell = event.target.closest(".sq");
+      if (!cell) return;
+      handleSquareClick(cell.dataset.square);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      if (state.sheetOpen) {
+        closeHints();
+        return;
+      }
+      if (state.screen === "solver" && state.paused && state.pauseMode === "manual") {
+        state.paused = false;
+        state.pauseMode = "manual";
+        updateTimer();
+        renderPauseOverlay();
+      }
+    });
+
+    resetSolver();
+    activateScreen("home");
+    applyLang();
+    window.setInterval(tick, 1000);
+  </script>
+</body>
+</html>
+

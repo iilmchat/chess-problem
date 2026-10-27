@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iiruchating.ru/chess-problem/schema/puzzle-pack.schema.json",
+  "title": "Chess Problem puzzle pack",
+  "description": "Один уровень задач Chess Problem: метаданные пака и массив задач. FEN хранится до setupMove; solution — UCI-ходы, начиная с хода пользователя.",
+  "type": "object",
+  "required": ["schemaVersion", "contentVersion", "level", "puzzles"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1,
+      "description": "Версия схемы. Ломающие изменения увеличивают значение."
+    },
+    "contentVersion": {
+      "type": "string",
+      "pattern": "^[0-9]{4}\\.[0-9]{2}\\.[0-9]+$",
+      "description": "Версия контента: YYYY.MM.N."
+    },
+    "level": {
+      "enum": ["NOVICE", "PROFESSIONAL", "GRANDMASTER"]
+    },
+    "puzzles": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 120,
+      "items": { "$ref": "#/$defs/puzzle" }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "level": { "const": "NOVICE" } },
+        "required": ["level"]
+      },
+      "then": {
+        "properties": {
+          "puzzles": {
+            "items": {
+              "properties": { "rating": { "minimum": 600, "maximum": 1199 } }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "level": { "const": "PROFESSIONAL" } },
+        "required": ["level"]
+      },
+      "then": {
+        "properties": {
+          "puzzles": {
+            "items": {
+              "properties": { "rating": { "minimum": 1200, "maximum": 1799 } }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "level": { "const": "GRANDMASTER" } },
+        "required": ["level"]
+      },
+      "then": {
+        "properties": {
+          "puzzles": {
+            "items": {
+              "properties": { "rating": { "minimum": 1800, "maximum": 2600 } }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "localizedText": {
+      "type": "object",
+      "required": ["ru", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "ru": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "en": { "type": "string", "minLength": 1, "maxLength": 2000 }
+      }
+    },
+    "uci": {
+      "type": "string",
+      "pattern": "^[a-h][1-8][a-h][1-8][qrbn]?$",
+      "description": "UCI-ход: e2e4, e1g1, a7a8q."
+    },
+    "hint": {
+      "type": "object",
+      "required": ["tier", "ru", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "tier": { "type": "integer", "enum": [1, 2, 3] },
+        "ru": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "en": { "type": "string", "minLength": 1, "maxLength": 500 }
+      }
+    },
+    "task": {
+      "type": "object",
+      "required": ["type", "plies"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["MATE", "WIN", "DRAW"] },
+        "plies": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Число ходов пользователя, не полуходов."
+        }
+      }
+    },
+    "source": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["provider", "id", "url", "license"],
+          "additionalProperties": false,
+          "properties": {
+            "provider": { "const": "lichess" },
+            "id": { "type": "string", "minLength": 1, "maxLength": 32 },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://lichess\\.org/training/[A-Za-z0-9]+$"
+            },
+            "license": { "const": "CC0-1.0" }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["provider", "id", "license"],
+          "additionalProperties": false,
+          "properties": {
+            "provider": { "const": "original" },
+            "id": { "type": "string", "minLength": 1, "maxLength": 64 },
+            "license": { "const": "proprietary" }
+          }
+        }
+      ]
+    },
+    "puzzle": {
+      "type": "object",
+      "required": [
+        "id",
+        "chapter",
+        "fen",
+        "setupMove",
+        "solution",
+        "task",
+        "rating",
+        "themes",
+        "timeLimitSec",
+        "title",
+        "prompt",
+        "hints",
+        "explanation",
+        "source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(nov|pro|grm)-[0-9]{3}$"
+        },
+        "chapter": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "maxLength": 64
+        },
+        "fen": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 120
+        },
+        "setupMove": {
+          "oneOf": [
+            { "$ref": "#/$defs/uci" },
+            { "type": "null" }
+          ]
+        },
+        "solution": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 11,
+          "items": { "$ref": "#/$defs/uci" }
+        },
+        "task": { "$ref": "#/$defs/task" },
+        "rating": {
+          "type": "integer",
+          "minimum": 600,
+          "maximum": 2600
+        },
+        "themes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9]{1,31}$"
+          }
+        },
+        "timeLimitSec": {
+          "type": "integer",
+          "minimum": 60,
+          "maximum": 420
+        },
+        "title": { "$ref": "#/$defs/localizedText" },
+        "prompt": { "$ref": "#/$defs/localizedText" },
+        "hints": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/hint" }
+        },
+        "explanation": { "$ref": "#/$defs/localizedText" },
+        "source": { "$ref": "#/$defs/source" }
+      }
+    }
+  }
+}

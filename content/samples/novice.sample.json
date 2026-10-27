@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.1",
+  "level": "NOVICE",
+  "puzzles": [
+    {
+      "id": "nov-001",
+      "chapter": "mate-in-1",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
+      "setupMove": null,
+      "solution": ["e1e8"],
+      "task": { "type": "MATE", "plies": 1 },
+      "rating": 800,
+      "themes": ["mateIn1", "backRankMate"],
+      "timeLimitSec": 115,
+      "title": { "ru": "Мат в один ход", "en": "Mate in one" },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в один ход.",
+        "en": "White to move. Find mate in one."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Посмотрите на последнюю горизонталь: у чёрного короля нет свободного поля.",
+          "en": "Look at the back rank: the black king has no escape squares."
+        },
+        {
+          "tier": 2,
+          "ru": "Ладья — единственная фигура, которая может атаковать по восьмой горизонтали.",
+          "en": "The rook is the only piece that can attack along the eighth rank."
+        },
+        {
+          "tier": 3,
+          "ru": "Сыграйте ладьёй с e1 на e8.",
+          "en": "Play the rook from e1 to e8."
+        }
+      ],
+      "explanation": {
+        "ru": "Король на g8 заперт пешками f7, g7 и h7. Ладья идёт на e8 и контролирует восьмую горизонталь, поэтому у короля нет ни одного хода. Это типичный мат по последней горизонтали.",
+        "en": "The king on g8 is boxed in by the pawns on f7, g7, and h7. The rook goes to e8 and controls the eighth rank, leaving the king with no moves. This is a classic back-rank mate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "chess-problem-original-001",
+        "license": "proprietary"
+      }
+    },
+    {
+      "id": "nov-002",
+      "chapter": "promotion",
+      "fen": "6k1/P7/8/8/8/8/8/6K1 w - - 0 1",
+      "setupMove": null,
+      "solution": ["a7a8q"],
+      "task": { "type": "WIN", "plies": 1 },
+      "rating": 850,
+      "themes": ["promotion", "endgame"],
+      "timeLimitSec": 120,
+      "title": { "ru": "Превращение пешки", "en": "Pawn promotion" },
+      "prompt": {
+        "ru": "Ход белых. Проведите пешку в ферзи.",
+        "en": "White to move. Promote the pawn to a queen."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешка на a7 в одном шаге от последней горизонтали.",
+          "en": "The pawn on a7 is one step from the last rank."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь на a8 сразу создаст угрозу, а чёрный король далеко.",
+          "en": "A queen on a8 creates an immediate threat, and the black king is far away."
+        },
+        {
+          "tier": 3,
+          "ru": "Сыграйте a7–a8 и выберите ферзя.",
+          "en": "Play a7–a8 and choose a queen."
+        }
+      ],
+      "explanation": {
+        "ru": "Пешка проходит на a8 и превращается в ферзя. Новый ферзь контролирует ключевые поля и обеспечивает белым решающее материальное преимущество. Превращение в ферзя здесь сильнее, чем в ладью или коня.",
+        "en": "The pawn advances to a8 and becomes a queen. The new queen controls key squares and gives White a decisive material advantage. Promoting to a queen is stronger here than choosing a rook or a knight."
+      },
+      "source": {
+        "provider": "original",
+        "id": "chess-problem-original-002",
+        "license": "proprietary"
+      }
+    }
+  ]
+}
