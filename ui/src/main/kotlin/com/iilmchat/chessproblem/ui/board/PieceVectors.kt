@@ -42,7 +42,10 @@ private sealed interface PiecePart {
     ) : PiecePart
 }
 
-private data class PieceArt(val parts: List<PiecePart>)
+private data class PieceArt(
+    val parts: List<PiecePart>,
+    val scale: Float = 1f,
+)
 
 private val pawnArt = PieceArt(
     listOf(
@@ -59,13 +62,16 @@ private val rookArt = PieceArt(
     ),
 )
 
-// Silhouette adapted from the brand knight in design/icon.svg.
+// Standard knight silhouette from the user-provided icon666 reference.
+// The path is authored in a 195-unit viewBox; the art scale maps it to 64.
 private val knightArt = PieceArt(
-    listOf(
-        PiecePart.Svg("M22.625 53.25L22.625 47C22.625 42.938 24.188 39.5 27 37L32.938 31.688L30.438 28.25C29.188 26.375 29.5 23.875 31.063 22.313L36.063 17.938L35.125 13.25L38.875 17L41.375 12L42.625 17.938L46.688 19.5C49.813 20.75 51.688 23.563 52 27L52.313 31.375C52.313 34.188 51.063 36.688 48.875 38.25L44.813 41.063C42.938 42.313 42 44.5 42.313 46.688L42.938 53.25Z"),
-        PiecePart.Rect(x = 15.5f, y = 50.5f, width = 33f, height = 6f, radius = 3f),
-        PiecePart.Circle(cx = 45.75f, cy = 26.375f, radius = 2f, fill = true, stroke = false, detail = true),
+    parts = listOf(
+        PiecePart.Svg(
+            data = "m171 119.4c-1.4-8.6-3.6-17-6.7-25.2-4.1-10.9-10-20.8-17.5-29.8-5.2-6.3-11-12-18.2-16.1-5.3-3.1-10.9-5-17.1-5.2-1.9-.1-3.8.1-5.8.2-.6-1.9-1.3-3.9-2-5.9-.8-2.4-1.6-4.7-3.1-6.8-2.2-2.9-5.1-5-8.1-7-1.1-.7-2-.7-3 0-.2.2-.5.3-.7.5-2.4 1.9-4.2 4.3-5.9 6.8-.9 1.3-1.7 2.6-2.6 3.9-8.8-5.2-17.8-9.1-28.3-8.3 0 .4 0 .7.1 1 .4 3.9.9 7.9 1.1 11.8.1 2.9.1 5.9-.6 8.7-2 7.5-5.4 14.5-8.7 21.6-4.6 9.9-9.3 19.8-13.9 29.7-3.1 6.8-5.9 13.8-8 21-.6 2.1-.8 4 .6 5.8.1.1.2.3.3.5 2.4 4.8 5.9 8.3 10.8 10.3 3.2 1.3 6.6 2.1 9.8 3.2 2.5.9 4.6 0 6.4-1.8.3-.3.6-.6.9-1 .2 1.1.2 2.1.5 3 .5 2 1.5 3.7 3.6 4.3 3.2.9 5.1.2 6.7-2.4 2.6-4.2 5.3-8.4 8-12.6 5.3-8.1 12.7-13.8 21.4-17.8 1.1-.5 2.2-.9 3.3-1.4 0 .2.1.3.1.4 0 .2 0 .4-.1.6-.7 5.2-2.6 9.9-5.7 14.2-3.5 4.9-7.2 9.8-10.8 14.7-4.3 5.7-7.9 11.9-10 18.8-1.3 4.2-2 8.6-2.2 13.1h106.9c0-.3.1-.6.1-.9.3-4.3.6-8.5.8-12.8.4-13.2-.2-26.2-2.4-39.1zm-141.6 6.2c-.2 0-.6-.2-.6-.4-.2-.6-.5-1.3-.6-2-.2-4.4 4-8.3 8.5-7.8 2 5.2-1.8 10.5-7.3 10.2zm43.8-56.4c-.3 1-.8 2-1.4 2.8-2.8 3.6-6.1 6.8-10.3 8.6-1.6.7-3.4 1-5.1 1.2s-2.8-.7-3.2-2.4c-.5-2.1-.3-4.2.8-6.1 2.2-3.8 5.1-6.8 9.5-8.1 1.3-.4 2.7-.5 4-.7 1.3.2 2.5.3 3.7.6 1.9.6 2.6 2.1 2 4.1z",
+            strokeWidth = 6.7f,
+        ),
     ),
+    scale = 64f / 195f,
 )
 
 private val bishopArt = PieceArt(
@@ -151,83 +157,89 @@ private fun DrawScope.drawArt(
     strokeColor: Color,
     detailColor: Color,
 ) {
-    art.parts.forEach { part ->
-        when (part) {
-            is PiecePart.Svg -> {
-                val path = cachedPath(part.data)
-                if (part.fill) {
-                    drawPath(
-                        path = path,
-                        color = if (shadow) Color.Black.copy(alpha = 0.2f) else if (part.detail) detailColor else fillColor,
-                    )
-                } else if (shadow) {
-                    return@forEach
-                }
-                if (!shadow && part.stroke) {
-                    drawPath(
-                        path = path,
-                        color = if (part.detail) detailColor else strokeColor,
-                        style = Stroke(
-                            width = part.strokeWidth,
-                            cap = StrokeCap.Round,
-                            join = androidx.compose.ui.graphics.StrokeJoin.Round,
-                        ),
-                        alpha = part.alpha,
-                    )
-                }
-            }
-
-            is PiecePart.Rect -> {
-                if (shadow) {
-                    drawRoundRect(
-                        color = Color.Black.copy(alpha = 0.2f),
-                        topLeft = Offset(part.x, part.y),
-                        size = androidx.compose.ui.geometry.Size(part.width, part.height),
-                        cornerRadius = androidx.compose.ui.geometry.CornerRadius(part.radius),
-                    )
-                } else {
+    withTransform({
+        if (art.scale != 1f) {
+            scale(art.scale, art.scale, pivot = Offset.Zero)
+        }
+    }) {
+        art.parts.forEach { part ->
+            when (part) {
+                is PiecePart.Svg -> {
+                    val path = cachedPath(part.data)
                     if (part.fill) {
+                        drawPath(
+                            path = path,
+                            color = if (shadow) Color.Black.copy(alpha = 0.2f) else if (part.detail) detailColor else fillColor,
+                        )
+                    } else if (shadow) {
+                        return@forEach
+                    }
+                    if (!shadow && part.stroke) {
+                        drawPath(
+                            path = path,
+                            color = if (part.detail) detailColor else strokeColor,
+                            style = Stroke(
+                                width = part.strokeWidth,
+                                cap = StrokeCap.Round,
+                                join = androidx.compose.ui.graphics.StrokeJoin.Round,
+                            ),
+                            alpha = part.alpha,
+                        )
+                    }
+                }
+
+                is PiecePart.Rect -> {
+                    if (shadow) {
                         drawRoundRect(
-                            color = fillColor,
+                            color = Color.Black.copy(alpha = 0.2f),
                             topLeft = Offset(part.x, part.y),
                             size = androidx.compose.ui.geometry.Size(part.width, part.height),
                             cornerRadius = androidx.compose.ui.geometry.CornerRadius(part.radius),
                         )
-                    }
-                    if (part.stroke) {
-                        drawRoundRect(
-                            color = strokeColor,
-                            topLeft = Offset(part.x, part.y),
-                            size = androidx.compose.ui.geometry.Size(part.width, part.height),
-                            cornerRadius = androidx.compose.ui.geometry.CornerRadius(part.radius),
-                            style = Stroke(width = 2.2f),
-                        )
+                    } else {
+                        if (part.fill) {
+                            drawRoundRect(
+                                color = fillColor,
+                                topLeft = Offset(part.x, part.y),
+                                size = androidx.compose.ui.geometry.Size(part.width, part.height),
+                                cornerRadius = androidx.compose.ui.geometry.CornerRadius(part.radius),
+                            )
+                        }
+                        if (part.stroke) {
+                            drawRoundRect(
+                                color = strokeColor,
+                                topLeft = Offset(part.x, part.y),
+                                size = androidx.compose.ui.geometry.Size(part.width, part.height),
+                                cornerRadius = androidx.compose.ui.geometry.CornerRadius(part.radius),
+                                style = Stroke(width = 2.2f),
+                            )
+                        }
                     }
                 }
-            }
 
-            is PiecePart.Circle -> {
-                if (shadow) {
-                    drawCircle(
-                        color = Color.Black.copy(alpha = 0.2f),
-                        radius = part.radius,
-                        center = Offset(part.cx, part.cy),
-                    )
-                } else {
-                    if (part.fill) {
+                is PiecePart.Circle -> {
+                    if (shadow) {
                         drawCircle(
-                            color = if (part.detail) detailColor else fillColor,
+                            color = Color.Black.copy(alpha = 0.2f),
                             radius = part.radius,
                             center = Offset(part.cx, part.cy),
                         )
-                    }
-                    if (part.stroke) {
-                        drawCircle(
-                            color = strokeColor,
-                            radius = part.radius,
-                            center = Offset(part.cx, part.cy),
-                            style = Stroke(width = 2.2f),
-                        )
+                    } else {
+                        if (part.fill) {
+                            drawCircle(
+                                color = if (part.detail) detailColor else fillColor,
+                                radius = part.radius,
+                                center = Offset(part.cx, part.cy),
+                            )
+                        }
+                        if (part.stroke) {
+                            drawCircle(
+                                color = strokeColor,
+                                radius = part.radius,
+                                center = Offset(part.cx, part.cy),
+                                style = Stroke(width = 2.2f),
+                            )
+                        }
                     }
                 }
             }

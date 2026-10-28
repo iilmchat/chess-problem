@@ -7,9 +7,10 @@
 
 ### Fixed
 
-- Конь на доске ревьюера и Android-доске приведён к силуэту фирменного
-  `design/icon.svg`: убрана искажённая форма из прототипа, обновлены
-  `tools/review/template.html`, `design/prototype/index.html` и `PieceVectors.kt`.
+- Конь на доске ревьюера и Android-доске заменён на стандартный шахматный
+  силуэт из шапки приложения (референс icon666): убрана искажённая форма из
+  прототипа, обновлены `tools/review/template.html`,
+  `design/prototype/index.html` и `PieceVectors.kt`.
 
 ## [0.3.0-180-puzzles] — 2026-10-29
 
