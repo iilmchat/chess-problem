@@ -59,19 +59,12 @@ private val rookArt = PieceArt(
     ),
 )
 
+// Silhouette adapted from the brand knight in design/icon.svg.
 private val knightArt = PieceArt(
     listOf(
-        PiecePart.Svg("M22.5 54c0-8.5 2.6-14.5 8.7-19.7l6-5.1-2.5-4.4c-1-1.9-.5-4.4 1.4-6.3l5.7-5.3-1-5.4 4.5 3.8 3-5 1 6.5 5 2.4c4.5 2.4 7 6.3 7 11.7v4.1c0 3.5-1.5 6.4-4.5 8.4l-6 4c-2 1.4-3 3.4-3 5.9v4.4z"),
-        PiecePart.Rect(x = 16f, y = 50.5f, width = 36f, height = 6f, radius = 3f),
-        PiecePart.Circle(cx = 43f, cy = 25.5f, radius = 1.8f, fill = true, stroke = false, detail = true),
-        PiecePart.Svg(
-            data = "M30.5 30c2.8-3.8 5.8-5.9 9.5-6.8",
-            fill = false,
-            stroke = true,
-            detail = false,
-            strokeWidth = 1.7f,
-            alpha = 0.45f,
-        ),
+        PiecePart.Svg("M22.625 53.25L22.625 47C22.625 42.938 24.188 39.5 27 37L32.938 31.688L30.438 28.25C29.188 26.375 29.5 23.875 31.063 22.313L36.063 17.938L35.125 13.25L38.875 17L41.375 12L42.625 17.938L46.688 19.5C49.813 20.75 51.688 23.563 52 27L52.313 31.375C52.313 34.188 51.063 36.688 48.875 38.25L44.813 41.063C42.938 42.313 42 44.5 42.313 46.688L42.938 53.25Z"),
+        PiecePart.Rect(x = 15.5f, y = 50.5f, width = 33f, height = 6f, radius = 3f),
+        PiecePart.Circle(cx = 45.75f, cy = 26.375f, radius = 2f, fill = true, stroke = false, detail = true),
     ),
 )
 

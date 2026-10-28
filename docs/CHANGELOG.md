@@ -3,6 +3,14 @@
 Все заметные изменения проекта. Формат — [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/),
 версии — [SemVer](https://semver.org/lang/ru/).
 
+## [Unreleased]
+
+### Fixed
+
+- Конь на доске ревьюера и Android-доске приведён к силуэту фирменного
+  `design/icon.svg`: убрана искажённая форма из прототипа, обновлены
+  `tools/review/template.html`, `design/prototype/index.html` и `PieceVectors.kt`.
+
 ## [0.3.0-180-puzzles] — 2026-10-29
 
 ### Added
