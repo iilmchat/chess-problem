@@ -133,8 +133,18 @@ async function collectFiles() {
   }
 
   const files = [];
-  for (const dir of ["content/samples", "content/puzzles"]) {
-    const resolved = path.join(ROOT, dir);
+  const productionDir = path.join(ROOT, "content/puzzles");
+  const sampleDir = path.join(ROOT, "content/samples");
+  const dirs = [];
+  if (existsSync(productionDir) &&
+      (await readdir(productionDir, { withFileTypes: true })).some(
+        (entry) => entry.isFile() && entry.name.endsWith(".json"),
+      )) {
+    dirs.push(productionDir);
+  } else {
+    dirs.push(sampleDir);
+  }
+  for (const resolved of dirs) {
     if (!existsSync(resolved)) continue;
     const entries = await readdir(resolved, { withFileTypes: true });
     for (const entry of entries) {
@@ -450,7 +460,9 @@ async function main() {
 Usage:
   node tools/validate-content.mjs [--strict] [files...]
 
-Without files, validates content/samples/*.json and content/puzzles/*.json.
+Without files, validates production packs content/puzzles/*.json when present,
+otherwise content/samples/*.json. Validate samples explicitly after production
+packs exist: node tools/validate-content.mjs content/samples
 --strict treats warnings as errors.`);
     return;
   }

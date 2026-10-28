@@ -19,13 +19,15 @@
  *                drafts, so machine fields stay untouched.
  *
  * Usage:
- *   node tools/import-lichess.mjs filter --input lichess_db_puzzle.csv.zst
+ *   node tools/import-lichess.mjs filter --input lichess_db_puzzle.csv
  *   node tools/import-lichess.mjs draft  --pool <ndjson> --level NOVICE --chapter mate-in-1
  *   node tools/import-lichess.mjs merge  --drafts "tools/var/import-drafts/*.draft.json"
  *   node tools/import-lichess.mjs split  --level NOVICE
  *   node tools/import-lichess.mjs author --texts tools/var/import-texts.json
  *
- * `filter` accepts plain CSV as well as `.csv.zst` (streamed, no temp files).
+ * `filter` accepts plain CSV as well as `.csv.zst`. The published Lichess
+ * archive contains concatenated/skippable frames that Node's zstd decoder
+ * rejects; decompress with the `zstd` CLI first for reliability.
  *
  * Lichess CSV row layout (comma-separated, unquoted):
  *   PuzzleId,FEN,Moves,Rating,RatingDeviation,Popularity,NbPlays,Themes,
@@ -482,7 +484,7 @@ async function cmdDraft(args) {
 function draftPack(level, chapter, records) {
   return {
     schemaVersion: 1,
-    contentVersion: "2026.10.1",
+    contentVersion: "2026.10.2",
     level,
     chapter,
     puzzles: records.map((rec) => ({
@@ -571,17 +573,19 @@ async function cmdAuthor(args) {
   const issues = [];
   const applied = new Map(); // lichessId -> draft file
   const stillEmpty = new Map(); // draft -> missing ids
+  const updated = [];
   for (const name of files) {
     const file = path.join(dir, name);
     const draft = JSON.parse(await readFile(file, "utf8"));
     const missing = [];
+    let changed = false;
     for (const puzzle of draft.puzzles) {
       const lid = puzzle.lichessId ?? "?";
       const text = sidecar[lid];
       if (text) {
         const problem = validateAuthored(lid, text);
         if (problem) {
-          issues.push(`${name}: ${lid} — ${problem}`);
+          issues.push(`${name}: ${lid} - ${problem}`);
           continue;
         }
         puzzle.title = text.title;
@@ -589,23 +593,20 @@ async function cmdAuthor(args) {
         puzzle.hints = text.hints;
         puzzle.explanation = text.explanation;
         applied.set(lid, name);
+        changed = true;
       } else {
         missing.push(lid);
       }
     }
     if (missing.length > 0) stillEmpty.set(name, missing);
+    if (changed) updated.push({ file, draft });
   }
 
   const unknown = Object.keys(sidecar).filter((lid) => !applied.has(lid));
   for (const lid of unknown) issues.push(`texts for ${lid} do not match any draft puzzle`);
 
-  await Promise.all(files.map(async (name) => {
-    const file = path.join(dir, name);
-    const draft = JSON.parse(await readFile(file, "utf8"));
-    if (draft.puzzles.some((p) => applied.has(p.lichessId))) {
-      await writeFile(file, JSON.stringify(draft, null, 2) + "\n", "utf8");
-    }
-  }));
+  await Promise.all(updated.map(({ file, draft }) =>
+    writeFile(file, JSON.stringify(draft, null, 2) + "\n", "utf8")));
 
   console.log(`Applied texts to ${applied.size} puzzle(s) from ${relative(ROOT, textsFile)}`);
   for (const [name, missing] of stillEmpty) {
@@ -652,11 +653,11 @@ function isObject(value) {
 // --- 3. merge --------------------------------------------------------------
 
 async function cmdMerge(args) {
-  const draftsArg = args.drafts ?? path.join(DRAFT_DIR, "*.draft.json");
+  const pattern = (args.drafts ?? "*.draft.json").split(/[\\/]/).pop();
   const dir = path.resolve(ROOT, args.draftsDir ?? DRAFT_DIR);
   const files = (await readdir(dir))
     .filter((name) => name.endsWith(".draft.json"))
-    .filter((name) => !draftsArg || matchGlob(name, draftsArg.replace(/^.*\//, "")));
+    .filter((name) => matchGlob(name, pattern));
   if (files.length === 0) {
     fail(`no drafts matched ${draftsArg} in ${relative(ROOT, dir)}`);
     return;
@@ -800,6 +801,9 @@ function composePack(level, chapters, drafts, existing, usedIds, usedFens) {
 
   if (puzzles.length > 0) {
     for (const p of puzzles) {
+      // Re-merging a master pack must not treat its own existing FENs as
+      // duplicates; only newly introduced puzzles need the global check.
+      if (oldById.has(p.source.id)) continue;
       if (usedFens.has(fenKey(p.fen))) {
         fail(`${p.id}: FEN already used in another pack`);
         process.exitCode = 1;
@@ -845,7 +849,7 @@ function finalPuzzle(puzzle, chapter) {
 function packShell(level, puzzles) {
   return {
     schemaVersion: 1,
-    contentVersion: "2026.10.1",
+    contentVersion: "2026.10.2",
     level,
     puzzles,
   };

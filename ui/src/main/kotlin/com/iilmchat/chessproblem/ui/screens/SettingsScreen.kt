@@ -75,7 +75,7 @@ fun SettingsScreen(
     val version = remember {
         runCatching {
             context.packageManager.getPackageInfo(context.packageName, 0).versionName
-        }.getOrNull() ?: "0.2.0"
+        }.getOrNull() ?: "0.2.1"
     }
 
     LaunchedEffect(state.resetDone) {
@@ -234,7 +234,7 @@ fun SettingsScreen(
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.weight(1f),
                         )
-                        InfoPill(text = "v0.2")
+                        InfoPill(text = "v0.2.1")
                     }
                 }
             }

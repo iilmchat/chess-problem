@@ -1,6 +1,6 @@
 # Контент
 
-**Статус:** контент-фаза; 4 демо-задачи в Android · **Дата:** 28.10.2026
+**Статус:** v0.2.1 — 60 production-задач в Android · **Дата:** 28.10.2026
 **Связано:** [CONTENT PLAN](../docs/design/CONTENT_PLAN.md) ·
 [CONTENT AUTHORING](../docs/development/CONTENT_AUTHORING.md) ·
 [схема](schema/puzzle-pack.schema.json)
@@ -21,15 +21,22 @@ content/
 │   ├── professional.sample.json  ← 1 задача
 │   └── grandmaster.sample.json   ← 1 задача
 ├── puzzles/
-│   ├── novice.json               ← production, появится в v0.2.1
-│   ├── professional.json
-│   └── grandmaster.json
+│   ├── novice.json               ← production, 20 задач
+│   ├── professional.json         ← production, 20 задач
+│   └── grandmaster.json          ← production, 20 задач
 └── README.md
 ```
 
-Один файл — один уровень. Production-паки собираются из 12 глав по 10 задач
-(120 на уровень, 360 всего). Примеры нужны для проверки схемы, валидатора и
-CI, а не для релиза.
+Один файл — один уровень. В v0.2.1 в каждом уровне 2 главы по 10 задач
+(60 всего); целевой v1.0 — 12 глав по 10 задач (120 на уровень, 360 всего).
+Примеры нужны для проверки схемы и валидатора, а не для релиза; их ID
+(`nov-001` и т.п.) — только примеры формата. Production-паки используют тот
+же диапазон ID для другого набора задач и проверяются отдельным запуском
+валидатора (см. §4).
+
+Production-паки собраны из Lichess puzzle DB (CC0 1.0) по
+[`tools/lichess-selection.json`](../tools/lichess-selection.json) и проходят
+`tools/import-lichess.mjs author/merge` + `validate-content.mjs`.
 
 ---
 
@@ -84,8 +91,10 @@ CI, а не для релиза.
 | `pro-001` | Профессионал | Вилка конём | Выиграть ферзя | 1450 | 185 с |
 | `grm-001` | Гроссмейстер | Мат в 2 | Мат в 2 | 2100 | 245 с |
 
-Все четыре задачи — авторские (`source.provider = "original"`), проверены
-вручную и проходят валидатор. Это не финальный контент, а эталон формата.
+Все четыре примера — авторские (`source.provider = "original"`), проверены
+вручную и проходят валидатор. Это не production-контент, а эталон формата.
+Production-задачи имеют `source.provider = "lichess"`, `source.url` и
+лицензию `CC0-1.0`.
 
 ---
 
@@ -94,14 +103,20 @@ CI, а не для релиза.
 ```bash
 npm ci --prefix tools
 
-node tools/validate-content.mjs content/samples/novice.sample.json
-node tools/validate-content.mjs content/samples/professional.sample.json
-node tools/validate-content.mjs content/samples/grandmaster.sample.json
+# Production: 3 пака, 60 задач (валидатор выбирает content/puzzles)
+node tools/validate-content.mjs
+
+# Примеры формата проверяются отдельно
+node tools/validate-content.mjs content/samples
 ```
 
 Ожидаемый вывод:
 
 ```text
+OK  content/puzzles/grandmaster.json: 20 puzzles
+OK  content/puzzles/novice.json: 20 puzzles
+OK  content/puzzles/professional.json: 20 puzzles
+...
 OK  content/samples/novice.sample.json: 2 puzzles
 OK  content/samples/professional.sample.json: 1 puzzle
 OK  content/samples/grandmaster.sample.json: 1 puzzle
@@ -163,8 +178,8 @@ GitHub Actions (`docs-content`) запускает:
 ```bash
 npm ci --prefix tools
 node tools/check-docs.mjs
-node tools/validate-content.mjs content/samples/*.json
+node tools/validate-content.mjs
+node tools/validate-content.mjs content/samples
 ```
 
-Production-паки добавляются в проверку после v0.2.0. Красный валидатор —
-блокер мержа.
+Красный валидатор — блокер мержа.

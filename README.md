@@ -5,13 +5,13 @@
 > таймер и подсказки, которые учат думать, а не угадывать.
 
 [![CI](https://github.com/iilmchat/chess-problem/actions/workflows/ci.yml/badge.svg)](https://github.com/iilmchat/chess-problem/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/badge/version-0.2.0--vertical--slice-c9a45c.svg)](docs/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.1--60--puzzles-c9a45c.svg)](docs/CHANGELOG.md)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.2.10-7F52FF.svg)](docs/development/ARCHITECTURE.md)
 [![Compose](https://img.shields.io/badge/Jetpack-Compose-4285F4.svg)](docs/design/UI_UX_SPEC.md)
 [![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3ddc84.svg)](docs/development/RUSTORE.md)
 [![License](https://img.shields.io/badge/license-proprietary-lightgrey.svg)](#лицензия)
 
-**Версия:** `v0.2.0-vertical-slice` · **Фаза:** Android vertical slice
+**Версия:** `v0.2.1-60-puzzles` · **Фаза:** Android vertical slice + контент
 **Стек:** Kotlin 2.2.10 · Jetpack Compose · Material 3 · chesslib
 **Платформа:** Android 8.0+ (minSdk 26), compileSdk 37 / targetSdk 36
 **Локализация:** RU · EN
@@ -20,8 +20,9 @@
 
 > **Статус:** Android-проект собирается и запускается. Реализованы доска,
 > решатель, подсказки, таймер, пауза, продолжение, звёзды/XP, Room-прогресс,
-> настройки, RU/EN и 4 демо-задачи. Полные 360 задач, drag-and-drop,
-> TalkBack-навигация по доске, Premium и rewarded-реклама — следующие этапы.
+> настройки, RU/EN и **60 production-задач** (20 на уровень, 2 главы).
+> Полные 360 задач, drag-and-drop, TalkBack-навигация по доске, Premium и
+> rewarded-реклама — следующие этапы.
 
 ---
 
@@ -51,10 +52,6 @@ Debug-сборка на эмуляторе Pixel 6 (Android 16, 1080×2400). Б�
 | Подсказки | Результат |
 | --- | --- |
 | [![Android: подсказки](docs/screenshots/android/hints-light-en.png)](docs/screenshots/android/hints-light-en.png) | [![Android: результат](docs/screenshots/android/result-solved-light-en.png)](docs/screenshots/android/result-solved-light-en.png) |
-
-| 360×800 | 430×932 |
-| --- | --- |
-| [![360×800](docs/screenshots/android/home-360-en.png)](docs/screenshots/android/home-360-en.png) | [![430×932](docs/screenshots/android/home-430-en.png)](docs/screenshots/android/home-430-en.png) |
 
 ---
 
@@ -90,7 +87,8 @@ Debug-сборка на эмуляторе Pixel 6 (Android 16, 1080×2400). Б�
 - **Три уровня:** Новичок (рейтинг 600–1199), Профессионал (1200–1799),
   Гроссмейстер (1800–2400+).
 - **Реальные позиции:** основа — открытая база задач Lichess (CC0 1.0),
-  дополненная авторскими позициями; каждая задача проходит ручную проверку.
+  дополненная авторскими позициями; линии проверяются автоматически,
+  тексты и подсказки — выборочно вручную (KI-017).
 - **Темы:** мат в 1/2/3, вилка, связка, отвлечение, завлечение, перекрытие,
   рентген, промежуточный ход, превращение, цугцванг, крепость, этюдные идеи.
 - **Разбор:** короткое объяснение идеи на RU и EN, а не только «правильный ход».
@@ -229,7 +227,8 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```bash
 npm ci --prefix tools
 node tools/check-docs.mjs
-node tools/validate-content.mjs content/samples/novice.sample.json
+node tools/validate-content.mjs
+node tools/validate-content.mjs content/samples
 ```
 
 Открыть интерактивный прототип (источник визуальных решений):
@@ -260,9 +259,11 @@ chess-problem/
 │   └── icon.svg                       ← концепт иконки
 ├── content/
 │   ├── schema/                        ← JSON Schema паков задач
-│   ├── samples/                       ← проверенные примеры задач
+│   ├── samples/                       ← 4 примера формата
+│   ├── puzzles/                       ← 60 production-задач (3 пака)
 │   └── README.md                      ← контент-пайплайн и лицензии
-├── tools/                             ← валидатор контента и проверка ссылок
+├── tools/                             ← import-lichess, replay, валидаторы
+│   └── lichess-selection.json          ← воспроизводимый отбор 60 задач
 ├── store/                             ← черновик карточки RuStore
 ├── app/                               ← Activity, DI, Navigation Compose
 ├── core/                              ← правила, сессия, звёзды, XP, таймер
@@ -306,12 +307,12 @@ chess-problem/
 
 | Показатель | Значение |
 | --- | --- |
-| Версия | **v0.2.0-vertical-slice** |
-| Фаза | Android vertical slice: доска, решатель, прогресс, настройки |
+| Версия | **v0.2.1-60-puzzles** |
+| Фаза | Android vertical slice + первые 60 production-задач |
 | Документов | 25+ (дизайн, разработка, QA, legal, ADR) |
 | Прототип | 4 экрана в `design/prototype/index.html` |
 | Android | 4 модуля, debug APK, Compose Canvas, chesslib, Room, DataStore |
-| Контент | 4 проверенные демо-задачи; план — 360 |
+| Контент | 60 задач (20 на уровень, 2 главы); цель — 360 |
 | Тесты | 21 unit-тест `core`, lint; CI собирает debug APK |
 | Сборка | `./gradlew :app:assembleDebug` — успешно |
 | Магазин | Черновик карточки RuStore и концепт иконки в `store/` |
@@ -324,7 +325,7 @@ chess-problem/
 | --- | --- | --- |
 | **v0.1.0-design** | Дизайн, UI/UX, прототип, схема контента, документация | **готово** |
 | **v0.2.0** | Android vertical slice: доска, решатель, таймер, подсказки, результат, Room-прогресс, настройки, RU/EN, 4 демо-задачи | **готово** |
-| v0.2.1 | 60 задач (20 на уровень), отбор контента, CI Android job | в работе |
+| **v0.2.1** | 60 production-задач (20 на уровень), Lichess-пайплайн, CI Android job | **готово** |
 | v0.3.0 | 180 задач, статистика по темам, задача дня, достижения | план |
 | v0.4.0 | 360 задач, drag-and-drop, TalkBack, планшетная раскладка | план |
 | v0.5.0 | RuStore closed beta, подпись, скриншоты, политика | план |

@@ -53,14 +53,14 @@
     <string name="chapter_subtitle">Chapter</string>
     <string name="chapter_empty">No puzzles in this chapter yet</string>
     <string name="chapter_mate_in_1">Mate in one</string>
-    <string name="chapter_promotion">Promotion</string>
-    <string name="chapter_mixed_review">Mixed review</string>
-    <string name="chapter_final_exam">Final exam</string>
     <string name="chapter_capture_queen">Win the queen</string>
     <string name="chapter_mate_in_2">Mate in two</string>
     <string name="chapter_deflection">Deflection</string>
     <string name="chapter_quiet_move">Quiet move</string>
     <string name="chapter_deep_sacrifice">Deep sacrifice</string>
+    <string name="chapter_promotion">Promotion</string>
+    <string name="chapter_mixed_review">Mixed review</string>
+    <string name="chapter_final_exam">Final exam</string>
 
     <string name="puzzle_task_mate">Mate in %1$d</string>
     <string name="puzzle_task_win">Win in %1$d</string>
@@ -185,7 +185,7 @@
     <string name="about_title">About</string>
     <string name="about_body">Chess Problem is an offline chess puzzle trainer for calm daily practice. No account, no ads, no rush.</string>
     <string name="about_content_title">Content</string>
-    <string name="about_content_body">Puzzles are based on the Lichess database (CC0 1.0) and original material. Every position is reviewed by hand.</string>
+    <string name="about_content_body">Puzzles are based on the Lichess database (CC0 1.0) and original material. Lines are checked automatically and selectively by hand.</string>
     <string name="about_licenses_title">Licenses</string>
     <string name="about_licenses_body">Chesslib is Apache 2.0. Montserrat, Manrope and Roboto Mono are SIL OFL 1.1.</string>
     <string name="about_privacy_title">Privacy</string>

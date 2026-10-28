@@ -3,6 +3,39 @@
 Все заметные изменения проекта. Формат — [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/),
 версии — [SemVer](https://semver.org/lang/ru/).
 
+## [0.2.1-60-puzzles] — 2026-10-28
+
+### Added
+
+- Lichess import pipeline `tools/import-lichess.mjs` (filter → draft → author →
+  merge/split) и воспроизводимый отбор `tools/lichess-selection.json`.
+- 60 production-задач (`contentVersion 2026.10.2`): по 20 на уровень,
+  2 главы × 10 задач:
+  `mate-in-1`, `capture-queen`, `mate-in-2`, `deflection`, `quiet-move`,
+  `deep-sacrifice`.
+- `syncPuzzlePacks`: production-паки из `content/puzzles/` копируются в
+  generated assets через AGP 9 Variant API.
+- RU/EN тексты, три подсказки и разборы для всех 60 задач; Lichess source URL
+  и CC0-1.0.
+- Локализованные названия новых глав в Android UI.
+
+### Changed
+
+- `validate-content.mjs` по умолчанию проверяет production-паки, если они
+  есть; примеры `content/samples` проверяются отдельной командой.
+- `tools/import-lichess.mjs author` сохраняет изменённые drafts (исправлен
+  повторный merge), `merge` идемпотентен и работает с Windows-путями.
+- README, CHANGELOG, KNOWN_ISSUES, CONTENT_AUTHORING, GETTING_STARTED,
+  USER_GUIDE, ARCHITECTURE и QA-гайд обновлены под 60 задач.
+
+### Notes
+
+- Валидатор предупреждает о `grm-020` (мат в 4 хода) — это редкий, но
+  допустимый случай.
+- До 360 задач остаётся 300; следующие главы добавляются тем же пайплайном.
+- DEMO-контент `content/samples` сохранён для схемы и примеров, но не
+  попадает в APK.
+
 ## [0.2.0-vertical-slice] — 2026-10-28
 
 ### Added

@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.iilmchat.chessproblem.core.chess.Side
 import com.iilmchat.chessproblem.core.session.PlayedMove
 import com.iilmchat.chessproblem.ui.R
 import com.iilmchat.chessproblem.ui.theme.SanTextStyle
@@ -71,8 +72,8 @@ fun MoveLog(
                     horizontalArrangement = Arrangement.spacedBy(6.dp),
                 ) {
                     itemsIndexed(moves) { index, move ->
-                        val number = index / 2 + 1
-                        val prefix = if (index % 2 == 0) "$number." else "$number…"
+                        val moveNumber = 1 + moves.take(index).count { it.side == Side.BLACK }
+                        val prefix = if (move.side == Side.WHITE) "$moveNumber." else "$moveNumber…"
                         MovePill(
                             text = "$prefix ${move.san}",
                             byUser = move.byUser,

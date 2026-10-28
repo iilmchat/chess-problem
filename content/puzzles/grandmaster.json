@@ -1,0 +1,1190 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.2",
+  "level": "GRANDMASTER",
+  "puzzles": [
+    {
+      "fen": "2r2r1k/1b4b1/p4q1p/1p1P2p1/1PP1Q3/P6P/B4PP1/4RRK1 b - - 0 27",
+      "setupMove": "b5c4",
+      "solution": [
+        "a2b1",
+        "f6f5",
+        "e4f5",
+        "f8f5",
+        "b1f5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1802,
+      "themes": [
+        "quietMove"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Тихий ход",
+        "en": "Quiet move"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Шах не обязателен: найдите тихий ход, который улучшает фигуру и ставит соперника в цугцванг.",
+          "en": "A check is not required: find a quiet move that improves a piece and puts the opponent in zugzwang."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля a2.",
+          "en": "The bishop from a2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bb1.",
+          "en": "First move: Bb1."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bb1: слон делает тихий ход. Соперник отвечает Qf5, Rxf5; затем Qxf5, Bxf5. Белые получают решающий перевес; линия — Bb1 Qf5 Qxf5 Rxf5 Bxf5.",
+        "en": "The first move is Bb1: the bishop makes a quiet move. The opponent replies Qf5, Rxf5; then comes Qxf5, Bxf5. The side to move gets a decisive advantage; the line is Bb1 Qf5 Qxf5 Rxf5 Bxf5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0lIJ1",
+        "url": "https://lichess.org/training/0lIJ1",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-001"
+    },
+    {
+      "fen": "8/8/7P/8/6P1/2k5/5PK1/3r4 b - - 0 46",
+      "setupMove": "d1d6",
+      "solution": [
+        "g4g5",
+        "d6d5",
+        "f2f4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1843,
+      "themes": [
+        "quietMove",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Точная защита",
+        "en": "Precise defence"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Шах не обязателен: найдите тихий ход, который улучшает фигуру и ставит соперника в цугцванг.",
+          "en": "A check is not required: find a quiet move that improves a piece and puts the opponent in zugzwang."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g4.",
+          "en": "The pawn from g4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g5.",
+          "en": "First move: g5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g5: пешка делает тихий ход. Соперник отвечает Rd5; затем f4. Белые получают решающий перевес; линия — g5 Rd5 f4.",
+        "en": "The first move is g5: the pawn makes a quiet move. The opponent replies Rd5; then comes f4. The side to move gets a decisive advantage; the line is g5 Rd5 f4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1A9gr",
+        "url": "https://lichess.org/training/1A9gr",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-002"
+    },
+    {
+      "fen": "6k1/5ppp/2P1p3/8/1p6/1q4PK/1P3P2/2R5 b - - 0 31",
+      "setupMove": "b3b2",
+      "solution": [
+        "c1d1",
+        "g7g5",
+        "c6c7",
+        "g8g7",
+        "c7c8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1849,
+      "themes": [
+        "quietMove",
+        "advancedPawn",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Тихий ход к ферзю",
+        "en": "A quiet path to promotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Тихий ход должен помочь пешке пройти в ферзи.",
+          "en": "The quiet move should help the pawn promote."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля c1.",
+          "en": "The rook from c1 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rd1.",
+          "en": "First move: Rd1."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rd1: ладья делает тихий ход. Соперник отвечает g5, Kg7; затем c7, c8=Q. Белые получают решающий перевес; линия — Rd1 g5 c7 Kg7 c8=Q.",
+        "en": "The first move is Rd1: the rook makes a quiet move. The opponent replies g5, Kg7; then comes c7, c8=Q. The side to move gets a decisive advantage; the line is Rd1 g5 c7 Kg7 c8=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0HASi",
+        "url": "https://lichess.org/training/0HASi",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-003"
+    },
+    {
+      "fen": "8/p7/8/1p2k1pp/3pP3/1P1K2P1/P6P/8 b - - 3 41",
+      "setupMove": "g5g4",
+      "solution": [
+        "b3b4",
+        "h5h4",
+        "g3h4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1850,
+      "themes": [
+        "quietMove",
+        "endgame",
+        "zugzwang"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Цугцванг",
+        "en": "Zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля b3.",
+          "en": "The pawn from b3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: b4.",
+          "en": "First move: b4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — b4: пешка делает тихий ход. Соперник отвечает h4; затем gxh4. Белые получают решающий перевес; линия — b4 h4 gxh4.",
+        "en": "The first move is b4: the pawn makes a quiet move. The opponent replies h4; then comes gxh4. The side to move gets a decisive advantage; the line is b4 h4 gxh4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "9AAyE",
+        "url": "https://lichess.org/training/9AAyE",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-004"
+    },
+    {
+      "fen": "8/8/8/4p1p1/P1k5/5K2/2P5/8 w - - 3 59",
+      "setupMove": "f3e4",
+      "solution": [
+        "g5g4",
+        "a4a5",
+        "c4b5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1851,
+      "themes": [
+        "quietMove",
+        "endgame"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Тихий ход",
+        "en": "Quiet move"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Шах не обязателен: найдите тихий ход, который улучшает фигуру и ставит соперника в цугцванг.",
+          "en": "A check is not required: find a quiet move that improves a piece and puts the opponent in zugzwang."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g5.",
+          "en": "The pawn from g5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g4.",
+          "en": "First move: g4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g4: пешка делает тихий ход. Соперник отвечает a5; затем Kb5. Чёрные получают решающий перевес; линия — g4 a5 Kb5.",
+        "en": "The first move is g4: the pawn makes a quiet move. The opponent replies a5; then comes Kb5. The side to move gets a decisive advantage; the line is g4 a5 Kb5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1AnAt",
+        "url": "https://lichess.org/training/1AnAt",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-005"
+    },
+    {
+      "fen": "8/8/8/6K1/7P/8/3p1k2/2bB4 w - - 1 64",
+      "setupMove": "h4h5",
+      "solution": [
+        "f2e1",
+        "h5h6",
+        "e1d1",
+        "h6h7",
+        "c1b2",
+        "h7h8r",
+        "b2h8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1932,
+      "themes": [
+        "quietMove",
+        "endgame"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Тихий ход",
+        "en": "Quiet move"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Шах не обязателен: найдите тихий ход, который улучшает фигуру и ставит соперника в цугцванг.",
+          "en": "A check is not required: find a quiet move that improves a piece and puts the opponent in zugzwang."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля f2.",
+          "en": "The king from f2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ke1.",
+          "en": "First move: Ke1."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ke1: король делает тихий ход. Соперник отвечает h6, h7, h8=R; затем Kxd1, Bb2, Bxh8. Чёрные получают решающий перевес; линия — Ke1 h6 Kxd1 h7 Bb2 h8=R Bxh8.",
+        "en": "The first move is Ke1: the king makes a quiet move. The opponent replies h6, h7, h8=R; then comes Kxd1, Bb2, Bxh8. The side to move gets a decisive advantage; the line is Ke1 h6 Kxd1 h7 Bb2 h8=R Bxh8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "BQsFG",
+        "url": "https://lichess.org/training/BQsFG",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-006"
+    },
+    {
+      "fen": "rnb1k1nr/pppp1ppp/8/8/4P3/2QP2P1/P1P2K1P/RNq2BNR b kq - 2 10",
+      "setupMove": "g8f6",
+      "solution": [
+        "b1d2",
+        "c1a1",
+        "c3a1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1936,
+      "themes": [
+        "quietMove",
+        "trappedPiece"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Тихий ход",
+        "en": "Quiet move"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Шах не обязателен: найдите тихий ход, который улучшает фигуру и ставит соперника в цугцванг.",
+          "en": "A check is not required: find a quiet move that improves a piece and puts the opponent in zugzwang."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля b1.",
+          "en": "The knight from b1 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nd2.",
+          "en": "First move: Nd2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nd2: конь делает тихий ход. Соперник отвечает Qxa1; затем Qxa1. В итоге вы выигрываете ферзя; линия — Nd2 Qxa1 Qxa1.",
+        "en": "The first move is Nd2: the knight makes a quiet move. The opponent replies Qxa1; then comes Qxa1. In the end you win the queen; the line is Nd2 Qxa1 Qxa1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4K5IO",
+        "url": "https://lichess.org/training/4K5IO",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-007"
+    },
+    {
+      "fen": "8/5p1p/4kp2/8/4K3/7P/5PP1/8 b - - 4 41",
+      "setupMove": "h7h6",
+      "solution": [
+        "g2g4",
+        "f6f5",
+        "g4f5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1952,
+      "themes": [
+        "quietMove",
+        "endgame"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Тихий ход",
+        "en": "Quiet move"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Шах не обязателен: найдите тихий ход, который улучшает фигуру и ставит соперника в цугцванг.",
+          "en": "A check is not required: find a quiet move that improves a piece and puts the opponent in zugzwang."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g2.",
+          "en": "The pawn from g2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g4.",
+          "en": "First move: g4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g4: пешка делает тихий ход. Соперник отвечает f5+; затем gxf5+. Белые получают решающий перевес; линия — g4 f5+ gxf5+.",
+        "en": "The first move is g4: the pawn makes a quiet move. The opponent replies f5+; then comes gxf5+. The side to move gets a decisive advantage; the line is g4 f5+ gxf5+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4W0fE",
+        "url": "https://lichess.org/training/4W0fE",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-008"
+    },
+    {
+      "fen": "6k1/1p4p1/2p5/p2p3Q/8/2P2P2/1r2r1P1/6RK w - - 1 37",
+      "setupMove": "f3f4",
+      "solution": [
+        "e2e6",
+        "g1a1",
+        "e6h6",
+        "h5h6",
+        "g7h6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1991,
+      "themes": [
+        "quietMove",
+        "endgame",
+        "pin"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Тихий ход",
+        "en": "Quiet move"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Шах не обязателен: найдите тихий ход, который улучшает фигуру и ставит соперника в цугцванг.",
+          "en": "A check is not required: find a quiet move that improves a piece and puts the opponent in zugzwang."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля e2.",
+          "en": "The rook from e2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Re6.",
+          "en": "First move: Re6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Re6: ладья делает тихий ход. Соперник отвечает Ra1, Qxh6; затем Rh6, gxh6. В итоге вы выигрываете ферзя; линия — Re6 Ra1 Rh6 Qxh6 gxh6.",
+        "en": "The first move is Re6: the rook makes a quiet move. The opponent replies Ra1, Qxh6; then comes Rh6, gxh6. In the end you win the queen; the line is Re6 Ra1 Rh6 Qxh6 gxh6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4RM8w",
+        "url": "https://lichess.org/training/4RM8w",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-009"
+    },
+    {
+      "fen": "8/8/1N6/8/p2Pk3/2P3p1/1P6/3n2K1 w - - 3 64",
+      "setupMove": "b6a4",
+      "solution": [
+        "e4f3",
+        "c3c4",
+        "d1f2",
+        "a4c3",
+        "f2h3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2032,
+      "themes": [
+        "quietMove",
+        "endgame"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Тихий ход",
+        "en": "Quiet move"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Шах не обязателен: найдите тихий ход, который улучшает фигуру и ставит соперника в цугцванг.",
+          "en": "A check is not required: find a quiet move that improves a piece and puts the opponent in zugzwang."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля e4.",
+          "en": "The king from e4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kf3.",
+          "en": "First move: Kf3."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kf3: король делает тихий ход. Соперник отвечает c4, Nc3; затем Nf2, Nh3+. Чёрные получают решающий перевес; линия — Kf3 c4 Nf2 Nc3 Nh3+.",
+        "en": "The first move is Kf3: the king makes a quiet move. The opponent replies c4, Nc3; then comes Nf2, Nh3+. The side to move gets a decisive advantage; the line is Kf3 c4 Nf2 Nc3 Nh3+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1cFyH",
+        "url": "https://lichess.org/training/1cFyH",
+        "license": "CC0-1.0"
+      },
+      "chapter": "quiet-move",
+      "id": "grm-010"
+    },
+    {
+      "fen": "2r3k1/5p1p/3Qbqp1/1B6/PP4P1/5P2/P6P/1K1R4 w - - 3 32",
+      "setupMove": "f3f4",
+      "solution": [
+        "e6a2",
+        "b1a2",
+        "c8c2",
+        "a2b3",
+        "f6b2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1813,
+      "themes": [
+        "deepSacrifice",
+        "decoy",
+        "endgame",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля e6.",
+          "en": "The bishop from e6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bxa2+.",
+          "en": "First move: Bxa2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bxa2+: слон берёт пешку. Соперник отвечает Kxa2, Kb3; затем Rc2+, Qb2#. Финальный Qb2# ставит мат; линия — Bxa2+ Kxa2 Rc2+ Kb3 Qb2#.",
+        "en": "The first move is Bxa2+: the bishop captures the pawn. The opponent replies Kxa2, Kb3; then comes Rc2+, Qb2#. The final Qb2# delivers mate; the line is Bxa2+ Kxa2 Rc2+ Kb3 Qb2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0RRXu",
+        "url": "https://lichess.org/training/0RRXu",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-011"
+    },
+    {
+      "fen": "6k1/p1Rb1rnp/6pB/8/3R4/6P1/PrP2P1P/6K1 b - - 0 28",
+      "setupMove": "g7f5",
+      "solution": [
+        "c7c8",
+        "d7c8",
+        "d4d8",
+        "f7f8",
+        "d8f8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1822,
+      "themes": [
+        "deepSacrifice",
+        "fork",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля c7.",
+          "en": "The rook from c7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rc8+.",
+          "en": "First move: Rc8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rc8+: ладья даёт шах. Соперник отвечает Bxc8, Rf8; затем Rd8+, Rxf8#. Финальный Rxf8# ставит мат; линия — Rc8+ Bxc8 Rd8+ Rf8 Rxf8#.",
+        "en": "The first move is Rc8+: the rook gives check. The opponent replies Bxc8, Rf8; then comes Rd8+, Rxf8#. The final Rxf8# delivers mate; the line is Rc8+ Bxc8 Rd8+ Rf8 Rxf8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2K9Pd",
+        "url": "https://lichess.org/training/2K9Pd",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-012"
+    },
+    {
+      "fen": "2b1n1k1/2Rp1p1p/p3pPpQ/n7/3qP1P1/3P3P/Br6/5R1K b - - 1 28",
+      "setupMove": "d4d3",
+      "solution": [
+        "h6g7",
+        "e8g7",
+        "c7c8",
+        "g7e8",
+        "c8e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1849,
+      "themes": [
+        "deepSacrifice",
+        "kingsideAttack",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля h6.",
+          "en": "The queen from h6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qg7+.",
+          "en": "First move: Qg7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qg7+: ферзь даёт шах. Соперник отвечает Nxg7, Ne8; затем Rxc8+, Rxe8#. Финальный Rxe8# ставит мат; линия — Qg7+ Nxg7 Rxc8+ Ne8 Rxe8#.",
+        "en": "The first move is Qg7+: the queen gives check. The opponent replies Nxg7, Ne8; then comes Rxc8+, Rxe8#. The final Rxe8# delivers mate; the line is Qg7+ Nxg7 Rxc8+ Ne8 Rxe8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1xpVf",
+        "url": "https://lichess.org/training/1xpVf",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-013"
+    },
+    {
+      "fen": "2q3k1/8/6p1/3Q3p/1P5B/2r3P1/6KP/8 b - - 2 47",
+      "setupMove": "g8h7",
+      "solution": [
+        "d5f7",
+        "h7h6",
+        "h4g5",
+        "h6g5",
+        "f7f4"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1863,
+      "themes": [
+        "deepSacrifice",
+        "decoy",
+        "endgame",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля d5.",
+          "en": "The queen from d5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf7+.",
+          "en": "First move: Qf7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qf7+: ферзь даёт шах. Соперник отвечает Kh6, Kxg5; затем Bg5+, Qf4#. Финальный Qf4# ставит мат; линия — Qf7+ Kh6 Bg5+ Kxg5 Qf4#.",
+        "en": "The first move is Qf7+: the queen gives check. The opponent replies Kh6, Kxg5; then comes Bg5+, Qf4#. The final Qf4# delivers mate; the line is Qf7+ Kh6 Bg5+ Kxg5 Qf4#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1hI94",
+        "url": "https://lichess.org/training/1hI94",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-014"
+    },
+    {
+      "fen": "rb3rk1/1p1q1ppp/2p5/p2bB2Q/5R2/PP1P3P/2P3PK/R7 b - - 3 21",
+      "setupMove": "g7g6",
+      "solution": [
+        "h5h7",
+        "g8h7",
+        "f4h4",
+        "h7g8",
+        "h4h8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1866,
+      "themes": [
+        "deepSacrifice",
+        "decoy",
+        "kingsideAttack",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля h5.",
+          "en": "The queen from h5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxh7+.",
+          "en": "First move: Qxh7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxh7+: ферзь берёт пешку. Соперник отвечает Kxh7, Kg8; затем Rh4+, Rh8#. Финальный Rh8# ставит мат; линия — Qxh7+ Kxh7 Rh4+ Kg8 Rh8#.",
+        "en": "The first move is Qxh7+: the queen captures the pawn. The opponent replies Kxh7, Kg8; then comes Rh4+, Rh8#. The final Rh8# delivers mate; the line is Qxh7+ Kxh7 Rh4+ Kg8 Rh8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3KjFT",
+        "url": "https://lichess.org/training/3KjFT",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-015"
+    },
+    {
+      "fen": "3b4/1p1r2p1/2k1p1Pp/1RP2p1P/1R1P1P2/3K3r/3N4/8 w - - 13 45",
+      "setupMove": "d3c4",
+      "solution": [
+        "d7d4",
+        "c4d4",
+        "d8f6",
+        "d4c4",
+        "h3c3"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1957,
+      "themes": [
+        "deepSacrifice",
+        "decoy",
+        "endgame",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля d7.",
+          "en": "The rook from d7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxd4+.",
+          "en": "First move: Rxd4+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxd4+: ладья берёт пешку. Соперник отвечает Kxd4, Kc4; затем Bf6+, Rc3#. Финальный Rc3# ставит мат; линия — Rxd4+ Kxd4 Bf6+ Kc4 Rc3#.",
+        "en": "The first move is Rxd4+: the rook captures the pawn. The opponent replies Kxd4, Kc4; then comes Bf6+, Rc3#. The final Rc3# delivers mate; the line is Rxd4+ Kxd4 Bf6+ Kc4 Rc3#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1dYKd",
+        "url": "https://lichess.org/training/1dYKd",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-016"
+    },
+    {
+      "fen": "5rk1/ppp2ppp/1q6/1n2N3/1Q6/8/PPP5/2K1R3 b - - 3 26",
+      "setupMove": "b5d4",
+      "solution": [
+        "b4f8",
+        "g8f8",
+        "e5d7",
+        "f8g8",
+        "e1e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1985,
+      "themes": [
+        "deepSacrifice",
+        "decoy",
+        "backRankMate",
+        "endgame",
+        "fork"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля b4.",
+          "en": "The queen from b4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf8+.",
+          "en": "First move: Qxf8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf8+: ферзь берёт ладью. Соперник отвечает Kxf8, Kg8; затем Nd7+, Re8#. Финальный Re8# ставит мат; линия — Qxf8+ Kxf8 Nd7+ Kg8 Re8#.",
+        "en": "The first move is Qxf8+: the queen captures the rook. The opponent replies Kxf8, Kg8; then comes Nd7+, Re8#. The final Re8# delivers mate; the line is Qxf8+ Kxf8 Nd7+ Kg8 Re8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2ybqN",
+        "url": "https://lichess.org/training/2ybqN",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-017"
+    },
+    {
+      "fen": "6QR/5pp1/1p2bqkp/p1b5/P5P1/4P2P/5P2/6K1 b - - 2 32",
+      "setupMove": "e6d5",
+      "solution": [
+        "h8h6",
+        "g6h6",
+        "g8h8",
+        "h6g5",
+        "h8h5"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 2011,
+      "themes": [
+        "deepSacrifice",
+        "decoy",
+        "endgame",
+        "mateIn3",
+        "pin"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля h8.",
+          "en": "The rook from h8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxh6+.",
+          "en": "First move: Rxh6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxh6+: ладья берёт пешку. Соперник отвечает Kxh6, Kg5; затем Qh8+, Qh5#. Финальный Qh5# ставит мат; линия — Rxh6+ Kxh6 Qh8+ Kg5 Qh5#.",
+        "en": "The first move is Rxh6+: the rook captures the pawn. The opponent replies Kxh6, Kg5; then comes Qh8+, Qh5#. The final Qh5# delivers mate; the line is Rxh6+ Kxh6 Qh8+ Kg5 Qh5#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0gFr6",
+        "url": "https://lichess.org/training/0gFr6",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-018"
+    },
+    {
+      "fen": "r5k1/1p2nppp/1b4r1/1P4Nq/2b1R3/6B1/3Q1PPP/3R2K1 b - - 0 27",
+      "setupMove": "e7f5",
+      "solution": [
+        "d2d8",
+        "a8d8",
+        "d1d8",
+        "b6d8",
+        "e4e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 2036,
+      "themes": [
+        "deepSacrifice",
+        "kingsideAttack",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля d2.",
+          "en": "The queen from d2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qd8+.",
+          "en": "First move: Qd8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qd8+: ферзь даёт шах. Соперник отвечает Rxd8, Bxd8; затем Rxd8+, Re8#. Финальный Re8# ставит мат; линия — Qd8+ Rxd8 Rxd8+ Bxd8 Re8#.",
+        "en": "The first move is Qd8+: the queen gives check. The opponent replies Rxd8, Bxd8; then comes Rxd8+, Re8#. The final Re8# delivers mate; the line is Qd8+ Rxd8 Rxd8+ Bxd8 Re8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1LDth",
+        "url": "https://lichess.org/training/1LDth",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-019"
+    },
+    {
+      "fen": "1k5r/p1q3p1/QbP1p3/P7/4N1p1/8/5rP1/1R2R1K1 w - - 0 29",
+      "setupMove": "a5b6",
+      "solution": [
+        "f2g2",
+        "g1g2",
+        "c7h2",
+        "g2f1",
+        "h8f8",
+        "e4f2",
+        "h2f2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 4
+      },
+      "rating": 2170,
+      "themes": [
+        "deepSacrifice",
+        "decoy",
+        "sacrifice"
+      ],
+      "timeLimitSec": 275,
+      "title": {
+        "ru": "Жертва ради мата",
+        "en": "Sacrifice for mate"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "en": "Black to move. Find mate in 4."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Начните с жертвы: она вскроет позицию короля и подключит тяжёлые фигуры.",
+          "en": "Start with a sacrifice to open the king and bring the heavy pieces into the attack."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля f2.",
+          "en": "The rook from f2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxg2+.",
+          "en": "First move: Rxg2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxg2+: ладья берёт пешку. Соперник отвечает Kxg2, Kf1, Nf2; затем Qh2+, Rf8+, Qxf2#. Финальный Qxf2# ставит мат; линия — Rxg2+ Kxg2 Qh2+ Kf1 Rf8+ Nf2 Qxf2#.",
+        "en": "The first move is Rxg2+: the rook captures the pawn. The opponent replies Kxg2, Kf1, Nf2; then comes Qh2+, Rf8+, Qxf2#. The final Qxf2# delivers mate; the line is Rxg2+ Kxg2 Qh2+ Kf1 Rf8+ Nf2 Qxf2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "45Li2",
+        "url": "https://lichess.org/training/45Li2",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deep-sacrifice",
+      "id": "grm-020"
+    }
+  ]
+}

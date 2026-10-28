@@ -37,8 +37,11 @@ jobs:
       - name: Check documentation links
         run: node tools/check-docs.mjs
 
-      - name: Validate sample puzzles
+      - name: Validate production puzzles
         run: node tools/validate-content.mjs
+
+      - name: Validate sample puzzles
+        run: node tools/validate-content.mjs content/samples
 
   android:
     name: Android build & tests

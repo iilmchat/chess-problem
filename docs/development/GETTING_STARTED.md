@@ -1,12 +1,12 @@
 # Getting Started
 
-**Статус:** Android vertical slice · **Дата:** 28.10.2026
+**Статус:** Android-проект + 60 production-задач · **Дата:** 28.10.2026
 **Связано:** [ARCHITECTURE](ARCHITECTURE.md) · [RULES](RULES.md) · [RUSTORE](RUSTORE.md)
 
-Android-проект собран в v0.2.0: `app`, `core`, `data`, `ui`, Gradle wrapper,
-convention-плагины, Room/DataStore и 4 демо-задачи. Этот документ описывает
-требования, сборку, запуск и проверку vertical slice. Полный контент-пак и
-instrumented-тесты — следующие этапы.
+Android-проект собран в v0.2.0 и наполнен 60 задачами в v0.2.1: `app`, `core`,
+`data`, `ui`, Gradle wrapper, convention-плагины, Room/DataStore. Этот документ
+описывает требования, сборку, запуск и проверку vertical slice. Оставшиеся 300
+задач, instrumented/screenshot-тесты и release-подпись — следующие этапы.
 
 ---
 
@@ -44,25 +44,29 @@ npm ci --prefix tools
 # Все относительные ссылки в Markdown существуют
 node tools/check-docs.mjs
 
-# Примеры задач: FEN, линия, мат, локализация, время
-node tools/validate-content.mjs content/samples/novice.sample.json
-node tools/validate-content.mjs content/samples/professional.sample.json
-node tools/validate-content.mjs content/samples/grandmaster.sample.json
+# Production-паки: 60 задач (по умолчанию content/puzzles)
+node tools/validate-content.mjs
+
+# Примеры формата
+node tools/validate-content.mjs content/samples
 ```
 
 Ожидаемый результат:
 
 ```text
-OK  novice.sample.json: 2 puzzles
-OK  professional.sample.json: 1 puzzle
-OK  grandmaster.sample.json: 1 puzzle
+OK  content/puzzles/grandmaster.json: 20 puzzles
+OK  content/puzzles/novice.json: 20 puzzles
+OK  content/puzzles/professional.json: 20 puzzles
+OK  content/samples/novice.sample.json: 2 puzzles
+OK  content/samples/professional.sample.json: 1 puzzle
+OK  content/samples/grandmaster.sample.json: 1 puzzle
 ```
 
 Если валидатор падает — читайте сообщение: оно указывает `id`, поле и причину.
 
 ---
 
-## 3. Android-проект (v0.2.0)
+## 3. Android-проект (v0.2.1)
 
 ### 3.1. Требования
 
@@ -136,18 +140,25 @@ adb shell am start -n com.iilmchat.chessproblem/.MainActivity
 
 ### 3.5. Контент
 
-Единственный источник контента — `content/puzzles/*.json`: перед сборкой
-Gradle-задача `syncPuzzlePacks` копирует паки в генерируемый assets-каталог
-`data` (статические `data/src/main/assets/content/` удалены в v0.2.1).
-Паки читаются `AssetPuzzleSource` при старте. Пока production-паки
-содержатся не полностью, приложение показывает соответствующие уровни
-пустыми — это ожидаемо в контент-фазе.
+Единственный источник контента — `content/puzzles/*.json` (60 задач: по 20 на
+уровень). Перед сборкой Gradle-задача `syncPuzzlePacks` копирует паки в
+генерируемый assets-каталог `data` (статические
+`data/src/main/assets/content/` удалены в v0.2.1). Паки читаются
+`AssetPuzzleSource` при старте.
 
 После изменения:
 
 ```bash
-node tools/validate-content.mjs content/samples/novice.sample.json
+node tools/import-lichess.mjs merge --drafts "*.draft.json"
+node tools/validate-content.mjs
+node tools/validate-content.mjs content/samples
 ./gradlew :app:assembleDebug
+```
+
+Проверить, что паки попали в APK:
+
+```bash
+jar tf app/build/outputs/apk/debug/app-debug.apk | findstr assets/content
 ```
 
 Подробно — [CONTENT_AUTHORING.md](CONTENT_AUTHORING.md).

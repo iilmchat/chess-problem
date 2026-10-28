@@ -53,6 +53,7 @@
 | Схему пака задач | [puzzle-pack.schema.json](../content/schema/puzzle-pack.schema.json) |
 | Примеры задач | [content/samples](../content/samples) |
 | Валидатор контента | [tools/validate-content.mjs](../tools/validate-content.mjs) |
+| Воспроизводимый отбор 60 задач | [tools/lichess-selection.json](../tools/lichess-selection.json) |
 | Модули и состояние сессии | [ARCHITECTURE.md](development/ARCHITECTURE.md) |
 | Требования RuStore | [RUSTORE.md](development/RUSTORE.md) |
 | Политику конфиденциальности | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md) |
@@ -64,14 +65,14 @@
 
 | Документ | Статус |
 | --- | --- |
-| README | актуален на v0.2.0-vertical-slice |
+| README | актуален на v0.2.1-60-puzzles |
 | DESIGN v0.1 | первая редакция, правила реализуются в Android |
 | UI/UX SPEC | первая редакция, прототип и Android-срезы сверены |
-| CONTENT PLAN | первая редакция, 4 демо-задачи проверены |
+| CONTENT PLAN | первая редакция, 60 production-задач проверены; цель — 360 |
 | USER_GUIDE | черновик до первого публичного билда |
-| MANUAL_TESTING_GUIDE | ручной smoke на Pixel 6 API 36 выполнен; полная матрица — перед релизом |
-| ARCHITECTURE | реализованная архитектура v0.2.0 |
-| GETTING_STARTED | Android vertical slice, сборка и troubleshooting |
+| MANUAL_TESTING_GUIDE | smoke 60 задач на Pixel 6 API 36; полная матрица — перед релизом |
+| ARCHITECTURE | реализованная архитектура v0.2.1 |
+| GETTING_STARTED | Android-проект, 60 задач, сборка и troubleshooting |
 | CONTENT_AUTHORING | первая редакция, валидатор работает |
 | RUSTORE | требования выверены по документации RuStore (10.2026) |
 | RELEASES | первая редакция |

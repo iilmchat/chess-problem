@@ -55,14 +55,14 @@
     <string name="chapter_subtitle">Глава</string>
     <string name="chapter_empty">В этой главе пока нет задач</string>
     <string name="chapter_mate_in_1">Мат в один ход</string>
-    <string name="chapter_promotion">Превращение</string>
-    <string name="chapter_mixed_review">Смешанное повторение</string>
-    <string name="chapter_final_exam">Финальный экзамен</string>
-    <string name="chapter_capture_queen">Заберите ферзя</string>
-    <string name="chapter_mate_in_2">Мат в два хода</string>
+    <string name="chapter_capture_queen">Выигрыш ферзя</string>
+    <string name="chapter_mate_in_2">Мат в два</string>
     <string name="chapter_deflection">Отвлечение</string>
     <string name="chapter_quiet_move">Тихий ход</string>
     <string name="chapter_deep_sacrifice">Глубокая жертва</string>
+    <string name="chapter_promotion">Превращение</string>
+    <string name="chapter_mixed_review">Смешанное повторение</string>
+    <string name="chapter_final_exam">Финальный экзамен</string>
 
     <string name="puzzle_task_mate">Мат в %1$d</string>
     <string name="puzzle_task_win">Выигрыш в %1$d</string>
@@ -187,7 +187,7 @@
     <string name="about_title">О приложении</string>
     <string name="about_body">Chess Problem — офлайн-тренажёр шахматных задач для спокойной ежедневной практики. Без аккаунта, рекламы и спешки.</string>
     <string name="about_content_title">Контент</string>
-    <string name="about_content_body">Задачи основаны на базе Lichess (CC0 1.0) и оригинальных материалах. Каждая позиция проверяется вручную.</string>
+    <string name="about_content_body">Задачи основаны на базе Lichess (CC0 1.0) и оригинальных материалах. Линии проверяются автоматически и выборочно вручную.</string>
     <string name="about_licenses_title">Лицензии</string>
     <string name="about_licenses_body">Chesslib — Apache 2.0. Шрифты Montserrat, Manrope и Roboto Mono — SIL OFL 1.1.</string>
     <string name="about_privacy_title">Приватность</string>

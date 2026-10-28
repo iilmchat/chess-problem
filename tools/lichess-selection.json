@@ -1,6 +1,6 @@
 {
   "purpose": "Selection of 60 Lichess puzzles for v0.2.1 production packs (20 per level, 2 chapters x 10). Committed so the drafts can be regenerated on any machine without session context.",
-  "contentVersion": "2026.10.1",
+  "contentVersion": "2026.10.2",
   "pool": "tools/var/lichess-pool/candidates-v2.ndjson",
   "sourceDb": "lichess_db_puzzle.csv (2026-10, 6.1M rows), unpacked with zstd",
   "howToRegenerate": [

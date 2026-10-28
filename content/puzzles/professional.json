@@ -1,0 +1,1136 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.10.2",
+  "level": "PROFESSIONAL",
+  "puzzles": [
+    {
+      "fen": "r5k1/6bp/p1p3p1/2NbB1q1/2pQ4/5r2/PP4PP/R3R1K1 w - - 0 23",
+      "setupMove": "e5g7",
+      "solution": [
+        "f3f1",
+        "e1f1",
+        "g5g2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1217,
+      "themes": [
+        "mateIn2",
+        "kingsideAttack",
+        "sacrifice"
+      ],
+      "timeLimitSec": 165,
+      "title": {
+        "ru": "Мат в два: жертва",
+        "en": "Mate in two: sacrifice"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля f3.",
+          "en": "The rook from f3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rf1+.",
+          "en": "First move: Rf1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rf1+: ладья даёт шах. Соперник отвечает Rxf1; затем Qxg2#. Финальный Qxg2# ставит мат; линия — Rf1+ Rxf1 Qxg2#.",
+        "en": "The first move is Rf1+: the rook gives check. The opponent replies Rxf1; then comes Qxg2#. The final Qxg2# delivers mate; the line is Rf1+ Rxf1 Qxg2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0GrCZ",
+        "url": "https://lichess.org/training/0GrCZ",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-001"
+    },
+    {
+      "fen": "5rk1/1p5p/p5p1/3pq3/3b2Q1/P1N3PP/1P3rK1/4RR2 w - - 2 23",
+      "setupMove": "f1f2",
+      "solution": [
+        "f8f2",
+        "g2h1",
+        "e5e1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1232,
+      "themes": [
+        "mateIn2"
+      ],
+      "timeLimitSec": 165,
+      "title": {
+        "ru": "Мат в два",
+        "en": "Mate in two"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля f8.",
+          "en": "The rook from f8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxf2+.",
+          "en": "First move: Rxf2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxf2+: ладья берёт ладью. Соперник отвечает Kh1; затем Qxe1#. Финальный Qxe1# ставит мат; линия — Rxf2+ Kh1 Qxe1#.",
+        "en": "The first move is Rxf2+: the rook captures the rook. The opponent replies Kh1; then comes Qxe1#. The final Qxe1# delivers mate; the line is Rxf2+ Kh1 Qxe1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0EaK3",
+        "url": "https://lichess.org/training/0EaK3",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-002"
+    },
+    {
+      "fen": "7k/6p1/6K1/RP2rN2/p7/6P1/r7/8 b - - 2 56",
+      "setupMove": "e5f5",
+      "solution": [
+        "a5a8",
+        "f5f8",
+        "a8f8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1259,
+      "themes": [
+        "mateIn2",
+        "endgame"
+      ],
+      "timeLimitSec": 165,
+      "title": {
+        "ru": "Мат в два: эндшпиль",
+        "en": "Mate in two: endgame"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля a5.",
+          "en": "The rook from a5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ra8+.",
+          "en": "First move: Ra8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ra8+: ладья даёт шах. Соперник отвечает Rf8; затем Rxf8#. Финальный Rxf8# ставит мат; линия — Ra8+ Rf8 Rxf8#.",
+        "en": "The first move is Ra8+: the rook gives check. The opponent replies Rf8; then comes Rxf8#. The final Rxf8# delivers mate; the line is Ra8+ Rf8 Rxf8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "05hU2",
+        "url": "https://lichess.org/training/05hU2",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-003"
+    },
+    {
+      "fen": "r1bq1rk1/ppp2ppp/1bnp1n2/3Np1N1/1PP5/P3P3/2QP1PPP/R1B1KB1R b KQ - 2 9",
+      "setupMove": "h7h6",
+      "solution": [
+        "d5f6",
+        "g7f6",
+        "c2h7"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1268,
+      "themes": [
+        "mateIn2",
+        "kingsideAttack"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Мат в два: атака",
+        "en": "Mate in two: attack"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля d5.",
+          "en": "The knight from d5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxf6+.",
+          "en": "First move: Nxf6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxf6+: конь берёт коня. Соперник отвечает gxf6; затем Qh7#. Финальный Qh7# ставит мат; линия — Nxf6+ gxf6 Qh7#.",
+        "en": "The first move is Nxf6+: the knight captures the knight. The opponent replies gxf6; then comes Qh7#. The final Qh7# delivers mate; the line is Nxf6+ gxf6 Qh7#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "03Ht0",
+        "url": "https://lichess.org/training/03Ht0",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-004"
+    },
+    {
+      "fen": "5q1k/ppp4p/3p3b/4p3/4P1Q1/3B2P1/PPP4P/7K w - - 0 27",
+      "setupMove": "g4d7",
+      "solution": [
+        "f8f3",
+        "h1g1",
+        "h6e3"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1290,
+      "themes": [
+        "mateIn2",
+        "endgame"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Мат в два: эндшпиль",
+        "en": "Mate in two: endgame"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля f8.",
+          "en": "The queen from f8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf3+.",
+          "en": "First move: Qf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qf3+: ферзь даёт шах. Соперник отвечает Kg1; затем Be3#. Финальный Be3# ставит мат; линия — Qf3+ Kg1 Be3#.",
+        "en": "The first move is Qf3+: the queen gives check. The opponent replies Kg1; then comes Be3#. The final Be3# delivers mate; the line is Qf3+ Kg1 Be3#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0DJnC",
+        "url": "https://lichess.org/training/0DJnC",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-005"
+    },
+    {
+      "fen": "2rq2k1/1p3p1p/p3p1pP/3pP1Q1/1P1P4/5N2/2R2PP1/6K1 b - - 0 39",
+      "setupMove": "d8g5",
+      "solution": [
+        "c2c8",
+        "g5d8",
+        "c8d8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1300,
+      "themes": [
+        "mateIn2",
+        "endgame",
+        "hangingPiece"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Мат в два: эндшпиль",
+        "en": "Mate in two: endgame"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля c2.",
+          "en": "The rook from c2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxc8+.",
+          "en": "First move: Rxc8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxc8+: ладья берёт ладью. Соперник отвечает Qd8; затем Rxd8#. Финальный Rxd8# ставит мат; линия — Rxc8+ Qd8 Rxd8#.",
+        "en": "The first move is Rxc8+: the rook captures the rook. The opponent replies Qd8; then comes Rxd8#. The final Rxd8# delivers mate; the line is Rxc8+ Qd8 Rxd8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "03BAr",
+        "url": "https://lichess.org/training/03BAr",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-006"
+    },
+    {
+      "fen": "1k5r/ppp3p1/3bQ3/3pB2r/3P4/2P2RP1/P1P1q1B1/R5K1 w - - 0 22",
+      "setupMove": "a1f1",
+      "solution": [
+        "h5h1",
+        "g2h1",
+        "e2h2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1306,
+      "themes": [
+        "mateIn2",
+        "kingsideAttack",
+        "sacrifice"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Мат в два: жертва",
+        "en": "Mate in two: sacrifice"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля h5.",
+          "en": "The rook from h5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rh1+.",
+          "en": "First move: Rh1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rh1+: ладья даёт шах. Соперник отвечает Bxh1; затем Qh2#. Финальный Qh2# ставит мат; линия — Rh1+ Bxh1 Qh2#.",
+        "en": "The first move is Rh1+: the rook gives check. The opponent replies Bxh1; then comes Qh2#. The final Qh2# delivers mate; the line is Rh1+ Bxh1 Qh2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "07KFG",
+        "url": "https://lichess.org/training/07KFG",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-007"
+    },
+    {
+      "fen": "8/p1Q2ppk/5b1p/4P3/5q2/8/PP2B1P1/3R1K2 w - - 2 29",
+      "setupMove": "f1e1",
+      "solution": [
+        "f6h4",
+        "g2g3",
+        "h4g3"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1315,
+      "themes": [
+        "mateIn2",
+        "endgame"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Мат в два: эндшпиль",
+        "en": "Mate in two: endgame"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля f6.",
+          "en": "The bishop from f6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bh4+.",
+          "en": "First move: Bh4+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bh4+: слон даёт шах. Соперник отвечает g3; затем Bxg3#. Финальный Bxg3# ставит мат; линия — Bh4+ g3 Bxg3#.",
+        "en": "The first move is Bh4+: the bishop gives check. The opponent replies g3; then comes Bxg3#. The final Bxg3# delivers mate; the line is Bh4+ g3 Bxg3#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0BX0z",
+        "url": "https://lichess.org/training/0BX0z",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-008"
+    },
+    {
+      "fen": "2r4r/1p1k1ppp/1b1N4/4n3/6b1/4P3/PP3PPP/R3KB1R w KQ - 2 17",
+      "setupMove": "d6c8",
+      "solution": [
+        "b6a5",
+        "b2b4",
+        "a5b4"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1392,
+      "themes": [
+        "mateIn2"
+      ],
+      "timeLimitSec": 180,
+      "title": {
+        "ru": "Мат в два",
+        "en": "Mate in two"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля b6.",
+          "en": "The bishop from b6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ba5+.",
+          "en": "First move: Ba5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ba5+: слон даёт шах. Соперник отвечает b4; затем Bxb4#. Финальный Bxb4# ставит мат; линия — Ba5+ b4 Bxb4#.",
+        "en": "The first move is Ba5+: the bishop gives check. The opponent replies b4; then comes Bxb4#. The final Bxb4# delivers mate; the line is Ba5+ b4 Bxb4#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0AgtT",
+        "url": "https://lichess.org/training/0AgtT",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-009"
+    },
+    {
+      "fen": "8/8/P1p5/2P5/2P1Pk1p/7p/6p1/6K1 w - - 1 43",
+      "setupMove": "a6a7",
+      "solution": [
+        "f4g3",
+        "e4e5",
+        "h3h2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1444,
+      "themes": [
+        "mateIn2",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 185,
+      "title": {
+        "ru": "Мат в два: эндшпиль",
+        "en": "Mate in two: endgame"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
+          "en": "The first move is a check; decide which square to cut off before delivering mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля f4.",
+          "en": "The king from f4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kg3.",
+          "en": "First move: Kg3."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kg3: король делает тихий ход. Соперник отвечает e5; затем h2#. Финальный h2# ставит мат; линия — Kg3 e5 h2#.",
+        "en": "The first move is Kg3: the king makes a quiet move. The opponent replies e5; then comes h2#. The final h2# delivers mate; the line is Kg3 e5 h2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "06PHz",
+        "url": "https://lichess.org/training/06PHz",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-2",
+      "id": "pro-010"
+    },
+    {
+      "fen": "2b2r1k/1p1q1rp1/p3p1QR/3pP3/2pN1P2/2P1P1R1/PP4P1/6K1 b - - 0 26",
+      "setupMove": "g7h6",
+      "solution": [
+        "g6h6",
+        "f7h7",
+        "h6f8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1251,
+      "themes": [
+        "deflection",
+        "kingsideAttack",
+        "mateIn2"
+      ],
+      "timeLimitSec": 165,
+      "title": {
+        "ru": "Отвлечение",
+        "en": "Deflection"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля g6.",
+          "en": "The queen from g6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxh6+.",
+          "en": "First move: Qxh6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxh6+: ферзь берёт пешку. Соперник отвечает Rh7; затем Qxf8#. Финальный Qxf8# ставит мат; линия — Qxh6+ Rh7 Qxf8#.",
+        "en": "The first move is Qxh6+: the queen captures the pawn. The opponent replies Rh7; then comes Qxf8#. The final Qxf8# delivers mate; the line is Qxh6+ Rh7 Qxf8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0Qp6f",
+        "url": "https://lichess.org/training/0Qp6f",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-011"
+    },
+    {
+      "fen": "6r1/PQ2bk2/1p2b2p/1P6/3pNq2/5pP1/5R1K/8 b - - 0 48",
+      "setupMove": "f4e5",
+      "solution": [
+        "f2f3",
+        "f7g7",
+        "b7e7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1285,
+      "themes": [
+        "deflection"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Отвлечение",
+        "en": "Deflection"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля f2.",
+          "en": "The rook from f2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxf3+.",
+          "en": "First move: Rxf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxf3+: ладья берёт пешку. Соперник отвечает Kg7; затем Qxe7+. Белые получают решающий перевес; линия — Rxf3+ Kg7 Qxe7+.",
+        "en": "The first move is Rxf3+: the rook captures the pawn. The opponent replies Kg7; then comes Qxe7+. The side to move gets a decisive advantage; the line is Rxf3+ Kg7 Qxe7+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0GTbb",
+        "url": "https://lichess.org/training/0GTbb",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-012"
+    },
+    {
+      "fen": "5k2/8/7p/1B2n1p1/P7/6PK/1r3P1P/5R2 w - - 0 41",
+      "setupMove": "f2f4",
+      "solution": [
+        "g5g4",
+        "h3h4",
+        "b2h2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1290,
+      "themes": [
+        "deflection",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Отвлечение",
+        "en": "Deflection"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g5.",
+          "en": "The pawn from g5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g4+.",
+          "en": "First move: g4+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g4+: пешка даёт шах. Соперник отвечает Kh4; затем Rxh2#. Финальный Rxh2# ставит мат; линия — g4+ Kh4 Rxh2#.",
+        "en": "The first move is g4+: the pawn gives check. The opponent replies Kh4; then comes Rxh2#. The final Rxh2# delivers mate; the line is g4+ Kh4 Rxh2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0OIxJ",
+        "url": "https://lichess.org/training/0OIxJ",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-013"
+    },
+    {
+      "fen": "Q7/7p/6p1/4bp2/P2pk2P/1q4P1/5PK1/8 b - - 4 44",
+      "setupMove": "b3d5",
+      "solution": [
+        "f2f3",
+        "e4d3",
+        "a8d5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1302,
+      "themes": [
+        "deflection",
+        "endgame"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Отвлечение",
+        "en": "Deflection"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля f2.",
+          "en": "The pawn from f2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: f3+.",
+          "en": "First move: f3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — f3+: пешка даёт шах. Соперник отвечает Kd3; затем Qxd5. В итоге вы выигрываете ферзя; линия — f3+ Kd3 Qxd5.",
+        "en": "The first move is f3+: the pawn gives check. The opponent replies Kd3; then comes Qxd5. In the end you win the queen; the line is f3+ Kd3 Qxd5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1JNiL",
+        "url": "https://lichess.org/training/1JNiL",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-014"
+    },
+    {
+      "fen": "7r/5pk1/3R2p1/3P4/2P1P3/2q3p1/6P1/r2N1RK1 w - - 0 35",
+      "setupMove": "d1c3",
+      "solution": [
+        "h8h1",
+        "g1h1",
+        "a1f1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1378,
+      "themes": [
+        "deflection",
+        "decoy",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 180,
+      "title": {
+        "ru": "Завлечение",
+        "en": "Decoy"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля h8.",
+          "en": "The rook from h8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rh1+.",
+          "en": "First move: Rh1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rh1+: ладья даёт шах. Соперник отвечает Kxh1; затем Rxf1#. Финальный Rxf1# ставит мат; линия — Rh1+ Kxh1 Rxf1#.",
+        "en": "The first move is Rh1+: the rook gives check. The opponent replies Kxh1; then comes Rxf1#. The final Rxf1# delivers mate; the line is Rh1+ Kxh1 Rxf1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "09GVA",
+        "url": "https://lichess.org/training/09GVA",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-015"
+    },
+    {
+      "fen": "6R1/5Kpk/7p/1p1pR2P/p2P2r1/P1P5/2b5/8 w - - 32 61",
+      "setupMove": "e5e6",
+      "solution": [
+        "g4f4",
+        "f7e7",
+        "h7g8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1448,
+      "themes": [
+        "deflection",
+        "endgame"
+      ],
+      "timeLimitSec": 185,
+      "title": {
+        "ru": "Отвлечение",
+        "en": "Deflection"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля g4.",
+          "en": "The rook from g4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rf4+.",
+          "en": "First move: Rf4+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rf4+: ладья даёт шах. Соперник отвечает Ke7; затем Kxg8. Чёрные получают решающий перевес; линия — Rf4+ Ke7 Kxg8.",
+        "en": "The first move is Rf4+: the rook gives check. The opponent replies Ke7; then comes Kxg8. The side to move gets a decisive advantage; the line is Rf4+ Ke7 Kxg8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0dO3M",
+        "url": "https://lichess.org/training/0dO3M",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-016"
+    },
+    {
+      "fen": "3r2k1/1b4p1/1p4P1/2bnN2p/P1BN1P2/2P1P3/1PK5/3R4 w - - 5 36",
+      "setupMove": "d4e6",
+      "solution": [
+        "d5e3",
+        "c2b3",
+        "d8d1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1504,
+      "themes": [
+        "deflection",
+        "discoveredAttack",
+        "fork"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Вилка и отвлечение",
+        "en": "Fork and deflection"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля d5.",
+          "en": "The knight from d5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxe3+.",
+          "en": "First move: Nxe3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxe3+: конь берёт пешку. Соперник отвечает Kb3; затем Rxd1. Чёрные получают решающий перевес; линия — Nxe3+ Kb3 Rxd1.",
+        "en": "The first move is Nxe3+: the knight captures the pawn. The opponent replies Kb3; then comes Rxd1. The side to move gets a decisive advantage; the line is Nxe3+ Kb3 Rxd1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1YHqe",
+        "url": "https://lichess.org/training/1YHqe",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-017"
+    },
+    {
+      "fen": "r1b3R1/4qB1k/p1p1Pr2/3p1p2/P2P2p1/1Pp5/2P4Q/2K5 b - - 3 37",
+      "setupMove": "f6h6",
+      "solution": [
+        "g8h8",
+        "h7h8",
+        "h2h6"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1529,
+      "themes": [
+        "deflection",
+        "decoy",
+        "mateIn2"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Завлечение",
+        "en": "Decoy"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля g8.",
+          "en": "The rook from g8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rh8+.",
+          "en": "First move: Rh8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rh8+: ладья даёт шах. Соперник отвечает Kxh8; затем Qxh6#. Финальный Qxh6# ставит мат; линия — Rh8+ Kxh8 Qxh6#.",
+        "en": "The first move is Rh8+: the rook gives check. The opponent replies Kxh8; then comes Qxh6#. The final Qxh6# delivers mate; the line is Rh8+ Kxh8 Qxh6#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0lxWT",
+        "url": "https://lichess.org/training/0lxWT",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-018"
+    },
+    {
+      "fen": "5q1k/1p4p1/p1p2r1p/6b1/3PQ3/1BP5/P5PP/4R1K1 w - - 12 35",
+      "setupMove": "e4e8",
+      "solution": [
+        "f6f1",
+        "e1f1",
+        "f8e8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1542,
+      "themes": [
+        "deflection",
+        "endgame"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Отвлечение",
+        "en": "Deflection"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля f6.",
+          "en": "The rook from f6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rf1+.",
+          "en": "First move: Rf1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rf1+: ладья даёт шах. Соперник отвечает Rxf1; затем Qxe8. В итоге вы выигрываете ферзя; линия — Rf1+ Rxf1 Qxe8.",
+        "en": "The first move is Rf1+: the rook gives check. The opponent replies Rxf1; then comes Qxe8. In the end you win the queen; the line is Rf1+ Rxf1 Qxe8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "05Sv2",
+        "url": "https://lichess.org/training/05Sv2",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-019"
+    },
+    {
+      "fen": "2r3k1/1b2bpp1/p3p2P/1p1pN3/3P1P2/1P2qQ2/P1B2R1P/6K1 b - - 0 27",
+      "setupMove": "e3f3",
+      "solution": [
+        "h6h7",
+        "g8h8",
+        "e5f7"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1752,
+      "themes": [
+        "deflection",
+        "advancedPawn",
+        "kingsideAttack",
+        "mateIn2"
+      ],
+      "timeLimitSec": 210,
+      "title": {
+        "ru": "Отвлечение",
+        "en": "Deflection"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Отвлеките защитника короля, чтобы освободить ключевое поле.",
+          "en": "Deflect the king's defender to free the key square."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля h6.",
+          "en": "The pawn from h6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: h7+.",
+          "en": "First move: h7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — h7+: пешка даёт шах. Соперник отвечает Kh8; затем Nxf7#. Финальный Nxf7# ставит мат; линия — h7+ Kh8 Nxf7#.",
+        "en": "The first move is h7+: the pawn gives check. The opponent replies Kh8; then comes Nxf7#. The final Nxf7# delivers mate; the line is h7+ Kh8 Nxf7#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0mJJ3",
+        "url": "https://lichess.org/training/0mJJ3",
+        "license": "CC0-1.0"
+      },
+      "chapter": "deflection",
+      "id": "pro-020"
+    }
+  ]
+}
