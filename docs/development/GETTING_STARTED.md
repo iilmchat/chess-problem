@@ -136,10 +136,12 @@ adb shell am start -n com.iilmchat.chessproblem/.MainActivity
 
 ### 3.5. Контент
 
-Сейчас в `data/src/main/assets/content/` лежат 4 демо-пака: `novice.json`
-(2 задачи), `professional.json` (1), `grandmaster.json` (1). Они читаются
-`AssetPuzzleSource` при старте. Production-паки будут копироваться сюда из
-`content/puzzles/` после контент-фазы.
+Единственный источник контента — `content/puzzles/*.json`: перед сборкой
+Gradle-задача `syncPuzzlePacks` копирует паки в генерируемый assets-каталог
+`data` (статические `data/src/main/assets/content/` удалены в v0.2.1).
+Паки читаются `AssetPuzzleSource` при старте. Пока production-паки
+содержатся не полностью, приложение показывает соответствующие уровни
+пустыми — это ожидаемо в контент-фазе.
 
 После изменения:
 

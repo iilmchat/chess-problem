@@ -30,6 +30,7 @@ desktop.ini
 
 # Node / content tools
 tools/node_modules/
+tools/var/
 npm-debug.log*
 yarn-error.log*
 

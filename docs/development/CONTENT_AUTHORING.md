@@ -19,9 +19,9 @@ content/puzzles/professional.json
 content/puzzles/grandmaster.json
 ```
 
-Production-папки `content/puzzles/` пока нет: в v0.2.0 Android читает 4
-демо-пака из `data/src/main/assets/content/`. После контент-фазы файлы
-копируются туда из `content/puzzles/` (Gradle-задача или ручной шаг релиза).
+Production-паки `content/puzzles/` — единственный источник контента:
+перед сборкой Gradle-задача `syncPuzzlePacks` копирует их в генерируемый
+assets-каталог модуля `data` (статические демо-паки удалены в v0.2.1).
 
 Валидатор принимает и одиночный пак, и примеры из `content/samples/`.
 

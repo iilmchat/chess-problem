@@ -289,7 +289,9 @@ class PuzzleTimer(
 
 ### 6.1. Контент
 
-- JSON-паки в `app/src/main/assets/content/` (копируются из `content/puzzles/`).
+- JSON-паки в assets: Gradle-задача `syncPuzzlePacks` в `data/build.gradle.kts`
+  копирует `content/puzzles/*.json` в генерируемый каталог
+  `data/build/generated/puzzlePacks/content/` перед каждой сборкой.
 - Загрузка через `kotlinx.serialization`; валидация в debug и CI.
 - `PuzzleRepository` отдаёт `Flow<List<Puzzle>>` по уровню/главе; кэш в памяти.
 - `contentVersion` показывается в «О приложении».
