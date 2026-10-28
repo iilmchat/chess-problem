@@ -1210,8 +1210,8 @@
         "en": "King zugzwang"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Поставьте соперника в цугцванг.",
+        "en": "Black to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1268,8 +1268,8 @@
         "en": "Pawn zugzwang"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Поставьте соперника в цугцванг.",
+        "en": "White to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1325,8 +1325,8 @@
         "en": "King zugzwang"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Поставьте соперника в цугцванг.",
+        "en": "White to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1383,8 +1383,8 @@
         "en": "Pawn zugzwang"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Поставьте соперника в цугцванг.",
+        "en": "White to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1442,8 +1442,8 @@
         "en": "Pawn zugzwang"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Поставьте соперника в цугцванг.",
+        "en": "White to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1500,8 +1500,8 @@
         "en": "King zugzwang"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Поставьте соперника в цугцванг.",
+        "en": "White to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1557,8 +1557,8 @@
         "en": "King zugzwang"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Поставьте соперника в цугцванг.",
+        "en": "White to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1617,8 +1617,8 @@
         "en": "King zugzwang"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Поставьте соперника в цугцванг.",
+        "en": "Black to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1675,8 +1675,8 @@
         "en": "King zugzwang"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Поставьте соперника в цугцванг.",
+        "en": "Black to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1732,8 +1732,8 @@
         "en": "Pawn zugzwang"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Поставьте соперника в цугцванг.",
+        "en": "Black to move. Put the opponent in zugzwang."
       },
       "hints": [
         {
@@ -1915,8 +1915,8 @@
         "en": "Knight underpromotion"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -1978,8 +1978,8 @@
         "en": "Knight underpromotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -2036,8 +2036,8 @@
         "en": "Knight underpromotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ладью.",
+        "en": "White to move. Win the rook."
       },
       "hints": [
         {
@@ -2097,8 +2097,8 @@
         "en": "Knight underpromotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -2219,8 +2219,8 @@
         "en": "Knight underpromotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -2280,8 +2280,8 @@
         "en": "Knight underpromotion"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -2341,8 +2341,8 @@
         "en": "Knight underpromotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Проведите пешку в коня.",
+        "en": "White to move. Promote the pawn to a knight."
       },
       "hints": [
         {
@@ -3028,8 +3028,8 @@
         "en": "Pawn calculation"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Добейтесь решающего перевеса.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
@@ -3086,8 +3086,8 @@
         "en": "Pawn calculation"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Добейтесь решающего перевеса.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
@@ -3145,8 +3145,8 @@
         "en": "Rook calculation"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -3262,8 +3262,8 @@
         "en": "Queen calculation"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -3321,8 +3321,8 @@
         "en": "Pawn calculation"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Добейтесь решающего перевеса.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
@@ -3378,8 +3378,8 @@
         "en": "Rook calculation"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -3438,8 +3438,8 @@
         "en": "Queen calculation"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -3496,8 +3496,8 @@
         "en": "Knight calculation"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -3553,8 +3553,8 @@
         "en": "Rook calculation"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ладью.",
+        "en": "White to move. Win the rook."
       },
       "hints": [
         {

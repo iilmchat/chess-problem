@@ -587,8 +587,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Bg5+: слон даёт шах. Соперник отвечает Qxg5; затем Qxg5+. В итоге вы выигрываете ферзя; линия — Bg5+ Qxg5 Qxg5+.",
-        "en": "The first move is Bg5+: the bishop gives check. The opponent replies Qxg5; then comes Qxg5+. In the end you win the queen; the line is Bg5+ Qxg5 Qxg5+."
+        "ru": "Подводка: O-O-O — белые рокировали в длинную сторону, ладья с a1 встала на d1. Первый ход — Bg5+: слон даёт шах. Соперник отвечает Qxg5; затем Qxg5+. В итоге вы выигрываете ферзя; линия — Bg5+ Qxg5 Qxg5+.",
+        "en": "Setup: O-O-O, White castles long; the rook moves from a1 to d1. The first move is Bg5+: the bishop gives check. The opponent replies Qxg5; then comes Qxg5+. In the end you win the queen; the line is Bg5+ Qxg5 Qxg5+."
       },
       "source": {
         "provider": "lichess",
@@ -1080,8 +1080,8 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Ищите шах с двойным ударом: после ответа ферзь соперника должен остаться под боем.",
-          "en": "Look for a check with a double attack: after the reply, the enemy queen must remain under fire."
+          "ru": "Ищите шах конём: после него ферзь соперника должен остаться под ударом.",
+          "en": "Look for a knight check that leaves the enemy queen under attack."
         },
         {
           "tier": 2,
@@ -1095,8 +1095,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Nxe5+: конь берёт пешку. Соперник отвечает Kxe2; затем Nxc4. В итоге вы выигрываете ферзя; линия — Nxe5+ Kxe2 Nxc4.",
-        "en": "The first move is Nxe5+: the knight captures the pawn. The opponent replies Kxe2; then comes Nxc4. In the end you win the queen; the line is Nxe5+ Kxe2 Nxc4."
+        "ru": "Подводка: dxe5 — пешка забирает ладью. Затем Nxe5+ — конь забирает пешку с шахом. После Kxe2 конь уходит на c4 и забирает ферзя; линия — Nxe5+ Kxe2 Nxc4.",
+        "en": "Setup: dxe5, the pawn captures the rook. Then Nxe5+ captures the pawn with check. After Kxe2 the knight goes to c4 and takes the queen; the line is Nxe5+ Kxe2 Nxc4."
       },
       "source": {
         "provider": "lichess",
@@ -1130,8 +1130,8 @@
         "en": "Bishop fork"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -1151,8 +1151,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Bf3+: слон даёт шах. Соперник отвечает Kh4; затем Bxd1. Чёрные получают решающий перевес; линия — Bf3+ Kh4 Bxd1.",
-        "en": "The first move is Bf3+: the bishop gives check. The opponent replies Kh4; then comes Bxd1. The side to move gets a decisive advantage; the line is Bf3+ Kh4 Bxd1."
+        "ru": "Первый ход — Bf3+: слон даёт шах. Соперник отвечает Kh4; затем Bxd1. В итоге чёрные выигрывают ладью. Линия — Bf3+ Kh4 Bxd1.",
+        "en": "The first move is Bf3+: the bishop gives check. The opponent replies Kh4; then comes Bxd1. In the end Black wins the rook. The line is Bf3+ Kh4 Bxd1."
       },
       "source": {
         "provider": "lichess",
@@ -1187,8 +1187,8 @@
         "en": "Knight fork"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ладью.",
+        "en": "White to move. Win the rook."
       },
       "hints": [
         {
@@ -1208,8 +1208,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Nf8+: конь даёт шах. Соперник отвечает Kg8; затем Nxe6+. Белые получают решающий перевес; линия — Nf8+ Kg8 Nxe6+.",
-        "en": "The first move is Nf8+: the knight gives check. The opponent replies Kg8; then comes Nxe6+. The side to move gets a decisive advantage; the line is Nf8+ Kg8 Nxe6+."
+        "ru": "Первый ход — Nf8+: конь даёт шах. Соперник отвечает Kg8; затем Nxe6+. В итоге белые выигрывают ладью. Линия — Nf8+ Kg8 Nxe6+.",
+        "en": "The first move is Nf8+: the knight gives check. The opponent replies Kg8; then comes Nxe6+. In the end White wins the rook. The line is Nf8+ Kg8 Nxe6+."
       },
       "source": {
         "provider": "lichess",
@@ -1242,8 +1242,8 @@
         "en": "Queen fork"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте коня.",
+        "en": "Black to move. Win the knight."
       },
       "hints": [
         {
@@ -1263,8 +1263,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Qb6+: ферзь даёт шах. Соперник отвечает Kh1; затем Qxa7. Чёрные получают решающий перевес; линия — Qb6+ Kh1 Qxa7.",
-        "en": "The first move is Qb6+: the queen gives check. The opponent replies Kh1; then comes Qxa7. The side to move gets a decisive advantage; the line is Qb6+ Kh1 Qxa7."
+        "ru": "Первый ход — Qb6+: ферзь даёт шах. Соперник отвечает Kh1; затем Qxa7. В итоге чёрные выигрывают коня. Линия — Qb6+ Kh1 Qxa7.",
+        "en": "The first move is Qb6+: the queen gives check. The opponent replies Kh1; then comes Qxa7. In the end Black wins the knight. The line is Qb6+ Kh1 Qxa7."
       },
       "source": {
         "provider": "lichess",
@@ -1298,8 +1298,8 @@
         "en": "Knight fork"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -1319,8 +1319,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Nxf3+: конь берёт пешку. Соперник отвечает Kg2; затем Nxe5. Чёрные получают решающий перевес; линия — Nxf3+ Kg2 Nxe5.",
-        "en": "The first move is Nxf3+: the knight captures the pawn. The opponent replies Kg2; then comes Nxe5. The side to move gets a decisive advantage; the line is Nxf3+ Kg2 Nxe5."
+        "ru": "Первый ход — Nxf3+: конь берёт пешку. Соперник отвечает Kg2; затем Nxe5. В итоге чёрные выигрывают ладью. Линия — Nxf3+ Kg2 Nxe5.",
+        "en": "The first move is Nxf3+: the knight captures the pawn. The opponent replies Kg2; then comes Nxe5. In the end Black wins the rook. The line is Nxf3+ Kg2 Nxe5."
       },
       "source": {
         "provider": "lichess",
@@ -1354,8 +1354,8 @@
         "en": "Knight fork"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ладью.",
+        "en": "White to move. Win the rook."
       },
       "hints": [
         {
@@ -1375,8 +1375,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Nf5+: конь даёт шах. Соперник отвечает Ke6; затем Nxd4+. Белые получают решающий перевес; линия — Nf5+ Ke6 Nxd4+.",
-        "en": "The first move is Nf5+: the knight gives check. The opponent replies Ke6; then comes Nxd4+. The side to move gets a decisive advantage; the line is Nf5+ Ke6 Nxd4+."
+        "ru": "Первый ход — Nf5+: конь даёт шах. Соперник отвечает Ke6; затем Nxd4+. В итоге белые выигрывают ладью. Линия — Nf5+ Ke6 Nxd4+.",
+        "en": "The first move is Nf5+: the knight gives check. The opponent replies Ke6; then comes Nxd4+. In the end White wins the rook. The line is Nf5+ Ke6 Nxd4+."
       },
       "source": {
         "provider": "lichess",
@@ -1410,8 +1410,8 @@
         "en": "Pawn fork"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте слона.",
+        "en": "Black to move. Win the bishop."
       },
       "hints": [
         {
@@ -1431,8 +1431,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — f3+: пешка даёт шах. Соперник отвечает Bxf3; затем gxf3+. Чёрные получают решающий перевес; линия — f3+ Bxf3 gxf3+.",
-        "en": "The first move is f3+: the pawn gives check. The opponent replies Bxf3; then comes gxf3+. The side to move gets a decisive advantage; the line is f3+ Bxf3 gxf3+."
+        "ru": "Первый ход — f3+: пешка даёт шах. Соперник отвечает Bxf3; затем gxf3+. В итоге чёрные выигрывают слона. Линия — f3+ Bxf3 gxf3+.",
+        "en": "The first move is f3+: the pawn gives check. The opponent replies Bxf3; then comes gxf3+. In the end Black wins the bishop. The line is f3+ Bxf3 gxf3+."
       },
       "source": {
         "provider": "lichess",
@@ -1466,8 +1466,8 @@
         "en": "Queen fork"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ладью.",
+        "en": "White to move. Win the rook."
       },
       "hints": [
         {
@@ -1487,8 +1487,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Qd5+: ферзь даёт шах. Соперник отвечает Kg7; затем Qxa8. Белые получают решающий перевес; линия — Qd5+ Kg7 Qxa8.",
-        "en": "The first move is Qd5+: the queen gives check. The opponent replies Kg7; then comes Qxa8. The side to move gets a decisive advantage; the line is Qd5+ Kg7 Qxa8."
+        "ru": "Первый ход — Qd5+: ферзь даёт шах. Соперник отвечает Kg7; затем Qxa8. В итоге белые выигрывают ладью. Линия — Qd5+ Kg7 Qxa8.",
+        "en": "The first move is Qd5+: the queen gives check. The opponent replies Kg7; then comes Qxa8. In the end White wins the rook. The line is Qd5+ Kg7 Qxa8."
       },
       "source": {
         "provider": "lichess",
@@ -1522,8 +1522,8 @@
         "en": "Rook fork"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте слона.",
+        "en": "Black to move. Win the bishop."
       },
       "hints": [
         {
@@ -1543,8 +1543,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Rxe4: ладья берёт пешку. Соперник отвечает Bxd6+; затем cxd6. Чёрные получают решающий перевес; линия — Rxe4 Bxd6+ cxd6.",
-        "en": "The first move is Rxe4: the rook captures the pawn. The opponent replies Bxd6+; then comes cxd6. The side to move gets a decisive advantage; the line is Rxe4 Bxd6+ cxd6."
+        "ru": "Подводка: Bxc4 — белый слон забирает коня. Затем Rxe4 — ладья забирает пешку. Соперник может ответить Bxd6+ (один из вариантов); после cxd6 чёрные выигрывают слона; линия — Rxe4 Bxd6+ cxd6.",
+        "en": "Setup: Bxc4, the bishop captures the knight. Then Rxe4 captures the pawn. The opponent may reply Bxd6+ (one possible line); after cxd6 Black wins the bishop; the line is Rxe4 Bxd6+ cxd6."
       },
       "source": {
         "provider": "lichess",
@@ -1578,8 +1578,8 @@
         "en": "Rook fork"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте коня.",
+        "en": "White to move. Win the knight."
       },
       "hints": [
         {
@@ -1599,8 +1599,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Re7+: ладья даёт шах. Соперник отвечает Kf8; затем Rxc7. Белые получают решающий перевес; линия — Re7+ Kf8 Rxc7.",
-        "en": "The first move is Re7+: the rook gives check. The opponent replies Kf8; then comes Rxc7. The side to move gets a decisive advantage; the line is Re7+ Kf8 Rxc7."
+        "ru": "Первый ход — Re7+: ладья даёт шах. Соперник отвечает Kf8; затем Rxc7. В итоге белые выигрывают коня. Линия — Re7+ Kf8 Rxc7.",
+        "en": "The first move is Re7+: the rook gives check. The opponent replies Kf8; then comes Rxc7. In the end White wins the knight. The line is Re7+ Kf8 Rxc7."
       },
       "source": {
         "provider": "lichess",
@@ -1634,8 +1634,8 @@
         "en": "Queen fork"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ладью.",
+        "en": "White to move. Win the rook."
       },
       "hints": [
         {
@@ -1690,8 +1690,8 @@
         "en": "Knight pin"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -1804,8 +1804,8 @@
         "en": "Bishop pin"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -1913,8 +1913,8 @@
         "en": "Bishop pin"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -1968,8 +1968,8 @@
         "en": "Knight pin"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -2023,8 +2023,8 @@
         "en": "Bishop pin"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -2078,8 +2078,8 @@
         "en": "Bishop pin"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -2192,8 +2192,8 @@
         "en": "Bishop pin"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -2825,8 +2825,8 @@
         "en": "Queen promotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Проведите пешку в ферзи.",
+        "en": "White to move. Promote the pawn to a queen."
       },
       "hints": [
         {
@@ -2882,8 +2882,8 @@
         "en": "Queen promotion"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Проведите пешку в ферзи.",
+        "en": "Black to move. Promote the pawn to a queen."
       },
       "hints": [
         {
@@ -2939,8 +2939,8 @@
         "en": "Queen promotion"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Проведите пешку в ферзи.",
+        "en": "Black to move. Promote the pawn to a queen."
       },
       "hints": [
         {
@@ -3055,8 +3055,8 @@
         "en": "Queen promotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Проведите пешку в ферзи.",
+        "en": "White to move. Promote the pawn to a queen."
       },
       "hints": [
         {
@@ -3112,8 +3112,8 @@
         "en": "Queen promotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Проведите пешку в ферзи.",
+        "en": "White to move. Promote the pawn to a queen."
       },
       "hints": [
         {
@@ -3347,8 +3347,8 @@
         "en": "Queen promotion"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Проведите пешку в ферзи.",
+        "en": "White to move. Promote the pawn to a queen."
       },
       "hints": [
         {

@@ -644,8 +644,8 @@
         "en": "Deflection"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте слона.",
+        "en": "White to move. Win the bishop."
       },
       "hints": [
         {
@@ -757,8 +757,8 @@
         "en": "Deflection"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -871,8 +871,8 @@
         "en": "Deflection"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -928,8 +928,8 @@
         "en": "Fork and deflection"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -1041,8 +1041,8 @@
         "en": "Deflection"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -1275,8 +1275,8 @@
         "en": "Rook decoy"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -1391,8 +1391,8 @@
         "en": "Bishop decoy"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Добейтесь решающего перевеса.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
@@ -1449,8 +1449,8 @@
         "en": "Bishop decoy"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -1797,8 +1797,8 @@
         "en": "Queen interference"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте коня.",
+        "en": "Black to move. Win the knight."
       },
       "hints": [
         {
@@ -1853,8 +1853,8 @@
         "en": "Rook interference"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Добейтесь решающего перевеса.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
@@ -1909,8 +1909,8 @@
         "en": "Rook interference"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Добейтесь решающего перевеса.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
@@ -1964,8 +1964,8 @@
         "en": "Rook interference"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте слона.",
+        "en": "White to move. Win the bishop."
       },
       "hints": [
         {
@@ -2134,8 +2134,8 @@
         "en": "Bishop interference"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -2189,8 +2189,8 @@
         "en": "Pawn interference"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте слона.",
+        "en": "White to move. Win the bishop."
       },
       "hints": [
         {
@@ -2244,8 +2244,8 @@
         "en": "Bishop interference"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте слона.",
+        "en": "Black to move. Win the bishop."
       },
       "hints": [
         {
@@ -2300,8 +2300,8 @@
         "en": "Rook endgame"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -2359,8 +2359,8 @@
         "en": "Bishop endgame"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -2418,8 +2418,8 @@
         "en": "Pawn endgame"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Проведите пешку в ферзи.",
+        "en": "White to move. Promote the pawn to a queen."
       },
       "hints": [
         {
@@ -2479,8 +2479,8 @@
         "en": "Pawn endgame"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Проведите пешку в ферзи.",
+        "en": "Black to move. Promote the pawn to a queen."
       },
       "hints": [
         {
@@ -2593,8 +2593,8 @@
         "en": "Queen endgame"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ладью.",
+        "en": "White to move. Win the rook."
       },
       "hints": [
         {
@@ -2649,8 +2649,8 @@
         "en": "Rook endgame"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -2705,8 +2705,8 @@
         "en": "Bishop endgame"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ладью.",
+        "en": "Black to move. Win the rook."
       },
       "hints": [
         {
@@ -2764,8 +2764,8 @@
         "en": "King endgame"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Добейтесь решающего перевеса.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
@@ -2821,8 +2821,8 @@
         "en": "Rook endgame"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ладью.",
+        "en": "White to move. Win the rook."
       },
       "hints": [
         {
@@ -2876,8 +2876,8 @@
         "en": "Queen sacrifice"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Добейтесь решающего перевеса.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
@@ -3052,8 +3052,8 @@
         "en": "Rook sacrifice"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте материал.",
-        "en": "White to move. Win material."
+        "ru": "Ход белых. Выиграйте ферзя.",
+        "en": "White to move. Win the queen."
       },
       "hints": [
         {
@@ -3168,8 +3168,8 @@
         "en": "Rook sacrifice"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Выиграйте ферзя.",
+        "en": "Black to move. Win the queen."
       },
       "hints": [
         {
@@ -3227,8 +3227,8 @@
         "en": "Pawn sacrifice"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте материал.",
-        "en": "Black to move. Win material."
+        "ru": "Ход чёрных. Добейтесь решающего перевеса.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {

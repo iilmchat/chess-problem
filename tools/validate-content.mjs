@@ -414,6 +414,10 @@ function checkPuzzle(file, level, puzzle, index) {
 
   checkLocalized(file, id, "title", puzzle.title);
   checkLocalized(file, id, "prompt", puzzle.prompt);
+  if (localized(puzzle.prompt) &&
+      /Выиграйте\s+материал|Win\s+material/i.test(`${puzzle.prompt.ru} ${puzzle.prompt.en}`)) {
+    fail(file, id, 'prompt must name the target piece or goal, not generic "material"');
+  }
   checkLocalized(file, id, "explanation", puzzle.explanation);
   if (localized(puzzle.explanation)) {
     for (const lang of ["ru", "en"]) {

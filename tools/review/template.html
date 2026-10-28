@@ -813,7 +813,7 @@
         <div class="panel board-card">
           <h3>Доска задачи</h3>
           <div class="board" id="board-start"></div>
-          <div class="sub">Позиция после setup-хода · ${escapeHtml(p.sideToMove === "w" ? "ход белых" : "ход чёрных")}</div>
+          <div class="sub">${p.setup ? `Подводка ${escapeHtml(p.setup.san)} · ` : ""}позиция после setup-хода · ${escapeHtml(p.sideToMove === "w" ? "ход белых" : "ход чёрных")}</div>
         </div>
         <div class="panel board-card">
           <h3>Финальная позиция</h3>
