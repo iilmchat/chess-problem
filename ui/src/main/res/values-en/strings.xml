@@ -56,6 +56,11 @@
     <string name="chapter_promotion">Promotion</string>
     <string name="chapter_mixed_review">Mixed review</string>
     <string name="chapter_final_exam">Final exam</string>
+    <string name="chapter_capture_queen">Win the queen</string>
+    <string name="chapter_mate_in_2">Mate in two</string>
+    <string name="chapter_deflection">Deflection</string>
+    <string name="chapter_quiet_move">Quiet move</string>
+    <string name="chapter_deep_sacrifice">Deep sacrifice</string>
 
     <string name="puzzle_task_mate">Mate in %1$d</string>
     <string name="puzzle_task_win">Win in %1$d</string>

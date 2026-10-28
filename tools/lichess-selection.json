@@ -1,0 +1,59 @@
+{
+  "purpose": "Selection of 60 Lichess puzzles for v0.2.1 production packs (20 per level, 2 chapters x 10). Committed so the drafts can be regenerated on any machine without session context.",
+  "contentVersion": "2026.10.1",
+  "pool": "tools/var/lichess-pool/candidates-v2.ndjson",
+  "sourceDb": "lichess_db_puzzle.csv (2026-10, 6.1M rows), unpacked with zstd",
+  "howToRegenerate": [
+    "1. node tools/import-lichess.mjs filter --input <lichess_db_puzzle.csv> --out tools/var/lichess-pool/candidates-v2.ndjson  (~8 min, 144 candidates)",
+    "2. node tools/import-lichess.mjs draft --pool tools/var/lichess-pool/candidates-v2.ndjson --level <LEVEL> --chapter <chapter> --ids <ids from selection>",
+    "3. Author texts into tools/var/import-texts.json (key = lichessId), then: node tools/import-lichess.mjs author",
+    "4. node tools/import-lichess.mjs merge  (writes content/puzzles/*.json and runs the validator)",
+    "Verify plots with: node tools/replay.mjs \"<ids>\" tools/var/lichess-pool/candidates-v2.ndjson"
+  ],
+  "notes": [
+    "Solver side = opposite of FEN side-to-move; FEN holds the position before the setup move (setup = opponent's move, sanLine[0]).",
+    "task.type is decided by the actual end of the line (mate -> MATE, otherwise WIN), not by the chapter.",
+    "capture-queen chapter uses userPlies [1, 2]: all 1-ply candidates were mate finals, so 2-ply queen captures were taken (all WIN).",
+    "IDs are assigned by merge: per level in PLAN_ORDER (mate-in-1 -> nov-001..010, capture-queen -> nov-011..020, etc.), sorted by rating within a chapter."
+  ],
+  "selection": [
+    {
+      "level": "NOVICE",
+      "chapter": "mate-in-1",
+      "ids": ["1j4RC", "0acZr", "1Cc3N", "0s80I", "0Q2Fk", "1L9Ec", "0SIxa", "0WoTU", "07VlN", "0FOX5"]
+    },
+    {
+      "level": "NOVICE",
+      "chapter": "capture-queen",
+      "ids": ["1CJ5K", "1AR2g", "1UnbO", "0vtQF", "0H4GA", "1nadw", "1oRGu", "12Kol", "0LD6t", "0Ib8u"]
+    },
+    {
+      "level": "PROFESSIONAL",
+      "chapter": "mate-in-2",
+      "ids": ["0GrCZ", "0EaK3", "05hU2", "03Ht0", "0DJnC", "03BAr", "0BX0z", "07KFG", "0AgtT", "06PHz"]
+    },
+    {
+      "level": "PROFESSIONAL",
+      "chapter": "deflection",
+      "ids": ["0Qp6f", "0GTbb", "0OIxJ", "1JNiL", "09GVA", "0dO3M", "1YHqe", "0lxWT", "05Sv2", "0mJJ3"]
+    },
+    {
+      "level": "GRANDMASTER",
+      "chapter": "quiet-move",
+      "ids": ["0lIJ1", "1A9gr", "0HASi", "9AAyE", "1AnAt", "BQsFG", "4K5IO", "4W0fE", "4RM8w", "1cFyH"]
+    },
+    {
+      "level": "GRANDMASTER",
+      "chapter": "deep-sacrifice",
+      "ids": ["0RRXu", "2K9Pd", "1hI94", "1xpVf", "3KjFT", "1dYKd", "2ybqN", "0gFr6", "1LDth", "45Li2"]
+    }
+  ],
+  "spares": {
+    "capture-queen": ["0quHA", "0RlEL", "02WQg", "1G3WY", "0auSX", "0S8an", "0Yshf", "0mXah", "0o4Dp", "0uans", "0kS8b", "0fEzb"],
+    "deflection": ["0auUK", "0mXah", "0fEzb", "0wjce", "1G3WY", "0S8an", "0Yshf", "0auSX", "0o4Dp", "0uans", "0kS8b", "02WQg"],
+    "mate-in-1": [],
+    "mate-in-2": [],
+    "quiet-move": [],
+    "deep-sacrifice": []
+  }
+}

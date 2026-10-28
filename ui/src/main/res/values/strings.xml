@@ -58,6 +58,11 @@
     <string name="chapter_promotion">Превращение</string>
     <string name="chapter_mixed_review">Смешанное повторение</string>
     <string name="chapter_final_exam">Финальный экзамен</string>
+    <string name="chapter_capture_queen">Заберите ферзя</string>
+    <string name="chapter_mate_in_2">Мат в два хода</string>
+    <string name="chapter_deflection">Отвлечение</string>
+    <string name="chapter_quiet_move">Тихий ход</string>
+    <string name="chapter_deep_sacrifice">Глубокая жертва</string>
 
     <string name="puzzle_task_mate">Мат в %1$d</string>
     <string name="puzzle_task_win">Выигрыш в %1$d</string>
