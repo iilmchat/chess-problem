@@ -8,6 +8,7 @@
     "check:docs": "node check-docs.mjs",
     "check:content": "node validate-content.mjs",
     "check:samples": "node validate-content.mjs content/samples",
+    "review": "node review/build-review.mjs",
     "check": "npm run check:docs && npm run check:content && npm run check:samples"
   },
   "dependencies": {

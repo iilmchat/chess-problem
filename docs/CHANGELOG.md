@@ -19,6 +19,9 @@
   названия глав и задач.
 - Android UI: названия и локализация новых глав; app versionName `0.3.0`,
   versionCode `300`.
+- `tools/review`: автономный офлайн-ревьюер 180 задач (`build-review.mjs`,
+  `template.html`, generated `index.html`), две доски, RU/EN тексты, статусы,
+  комментарии, localStorage и экспорт JSON/Markdown.
 
 ### Changed
 

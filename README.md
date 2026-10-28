@@ -293,6 +293,7 @@ chess-problem/
 | [ARCHITECTURE.md](docs/development/ARCHITECTURE.md) | разработчик | Модули, состояние, доска, данные, сборка, тесты |
 | [GETTING_STARTED.md](docs/development/GETTING_STARTED.md) | новый разработчик | Развёртывание, сборка, troubleshooting |
 | [CONTENT_AUTHORING.md](docs/development/CONTENT_AUTHORING.md) | контент-мейкер, разработчик | Как добавить и проверить задачу |
+| [Content review](tools/review/README.md) | ревьюер контента | Офлайн-ревьюер 180 задач: доски, тексты, статусы, экспорт |
 | [RUSTORE.md](docs/development/RUSTORE.md) | релиз-менеджер | Требования RuStore, карточка, монетизация, риски |
 | [RELEASES.md](docs/development/RELEASES.md) | релиз-менеджер | Пошаговый чек-лист выпуска |
 | [RULES.md](docs/development/RULES.md) | вся команда | Код, контент, документация, git, PR, лицензии |

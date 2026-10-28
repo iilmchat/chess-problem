@@ -35,6 +35,7 @@
 | --- | --- |
 | [RELEASES.md](development/RELEASES.md) | Пошаговый чек-лист выпуска версии |
 | [MANUAL_TESTING_GUIDE.md](qa/MANUAL_TESTING_GUIDE.md) | Ручные кейсы, матрица устройств, шаблон баг-репорта |
+| [Content review](../tools/review/README.md) | Офлайн-ревьюер 180 задач: две доски, RU/EN тексты, статусы, экспорт |
 | [KNOWN_ISSUES.md](KNOWN_ISSUES.md) | Реестр известных проблем и ограничений (KI-XXX) |
 | [CHANGELOG.md](CHANGELOG.md) | История версий в формате Keep a Changelog |
 | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md) | Политика конфиденциальности RU/EN |

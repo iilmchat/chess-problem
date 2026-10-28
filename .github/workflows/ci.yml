@@ -43,6 +43,9 @@ jobs:
       - name: Validate sample puzzles
         run: node tools/validate-content.mjs content/samples
 
+      - name: Build content review
+        run: npm run review --prefix tools
+
   android:
     name: Android build & tests
     runs-on: ubuntu-latest
