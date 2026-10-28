@@ -1,6 +1,6 @@
 # Контент
 
-**Статус:** v0.2.1 — 60 production-задач в Android · **Дата:** 28.10.2026
+**Статус:** v0.3.0 — 180 production-задач в Android · **Дата:** 28.10.2026
 **Связано:** [CONTENT PLAN](../docs/design/CONTENT_PLAN.md) ·
 [CONTENT AUTHORING](../docs/development/CONTENT_AUTHORING.md) ·
 [схема](schema/puzzle-pack.schema.json)
@@ -21,22 +21,22 @@ content/
 │   ├── professional.sample.json  ← 1 задача
 │   └── grandmaster.sample.json   ← 1 задача
 ├── puzzles/
-│   ├── novice.json               ← production, 20 задач
-│   ├── professional.json         ← production, 20 задач
-│   └── grandmaster.json          ← production, 20 задач
+│   ├── novice.json               ← production, 60 задач
+│   ├── professional.json         ← production, 60 задач
+│   └── grandmaster.json          ← production, 60 задач
 └── README.md
 ```
 
-Один файл — один уровень. В v0.2.1 в каждом уровне 2 главы по 10 задач
-(60 всего); целевой v1.0 — 12 глав по 10 задач (120 на уровень, 360 всего).
+Один файл — один уровень. В v0.3.0 в каждом уровне 6 глав по 10 задач
+(180 всего); целевой v1.0 — 12 глав по 10 задач (120 на уровень, 360 всего).
 Примеры нужны для проверки схемы и валидатора, а не для релиза; их ID
 (`nov-001` и т.п.) — только примеры формата. Production-паки используют тот
 же диапазон ID для другого набора задач и проверяются отдельным запуском
 валидатора (см. §4).
 
 Production-паки собраны из Lichess puzzle DB (CC0 1.0) по
-[`tools/lichess-selection.json`](../tools/lichess-selection.json) и проходят
-`tools/import-lichess.mjs author/merge` + `validate-content.mjs`.
+[`tools/lichess-selection-v030.json`](../tools/lichess-selection-v030.json) и
+проходят `tools/import-lichess.mjs author/merge` + `validate-content.mjs`.
 
 ---
 
@@ -103,7 +103,7 @@ Production-задачи имеют `source.provider = "lichess"`, `source.url` �
 ```bash
 npm ci --prefix tools
 
-# Production: 3 пака, 60 задач (валидатор выбирает content/puzzles)
+# Production: 3 пака, 180 задач (валидатор выбирает content/puzzles)
 node tools/validate-content.mjs
 
 # Примеры формата проверяются отдельно
@@ -113,9 +113,9 @@ node tools/validate-content.mjs content/samples
 Ожидаемый вывод:
 
 ```text
-OK  content/puzzles/grandmaster.json: 20 puzzles
-OK  content/puzzles/novice.json: 20 puzzles
-OK  content/puzzles/professional.json: 20 puzzles
+OK  content/puzzles/grandmaster.json: 60 puzzles
+OK  content/puzzles/novice.json: 60 puzzles
+OK  content/puzzles/professional.json: 60 puzzles
 ...
 OK  content/samples/novice.sample.json: 2 puzzles
 OK  content/samples/professional.sample.json: 1 puzzle

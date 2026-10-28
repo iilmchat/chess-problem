@@ -83,7 +83,7 @@ fun AboutScreen(
             )
             Spacer(Modifier.height(12.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                InfoPill(text = "v0.2.1")
+                InfoPill(text = "v0.3.0")
                 InfoPill(text = stringResource(R.string.about_offline))
                 InfoPill(text = stringResource(R.string.about_languages))
             }
@@ -151,3 +151,4 @@ private fun AboutCard(
         )
     }
 }
+

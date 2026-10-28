@@ -45,6 +45,7 @@ import com.iilmchat.chessproblem.ui.util.formatShortTime
 import com.iilmchat.chessproblem.ui.util.levelTitle
 import com.iilmchat.chessproblem.ui.util.localized
 import com.iilmchat.chessproblem.ui.viewmodel.CatalogUiState
+import kotlin.math.roundToInt
 
 @Composable
 fun ProgressScreen(
@@ -61,7 +62,11 @@ fun ProgressScreen(
             val solved = state.solvedCount
             val total = state.total
             val stars = state.totalStars
-            val accuracy = if (total > 0) solved * 100 / total else 0
+            val accuracy = if (total > 0) {
+                ((solved * 100.0) / total).roundToInt()
+            } else {
+                0
+            }
             val bestTimes = state.progress.values.mapNotNull { it.bestTimeMs }
             val avgTime = if (bestTimes.isEmpty()) 0L else bestTimes.average().toLong()
             val recent = state.recentProgress(5)

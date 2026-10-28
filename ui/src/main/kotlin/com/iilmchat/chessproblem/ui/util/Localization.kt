@@ -67,13 +67,24 @@ fun chapterTitle(chapter: String, level: Level): String {
     val key = "chapter_${level.id.lowercase()}_${chapter.replace('-', '_')}"
     val id = when (key) {
         "chapter_novice_mate_in_1" -> R.string.chapter_mate_in_1
-        "chapter_novice_promotion" -> R.string.chapter_promotion
         "chapter_novice_capture_queen" -> R.string.chapter_capture_queen
+        "chapter_novice_fork" -> R.string.chapter_fork
+        "chapter_novice_pin" -> R.string.chapter_pin
+        "chapter_novice_back_rank" -> R.string.chapter_back_rank
+        "chapter_novice_promotion" -> R.string.chapter_promotion
         "chapter_professional_mate_in_2" -> R.string.chapter_mate_in_2
         "chapter_professional_deflection" -> R.string.chapter_deflection
+        "chapter_professional_decoy" -> R.string.chapter_decoy
+        "chapter_professional_interference" -> R.string.chapter_interference
+        "chapter_professional_endgame" -> R.string.chapter_endgame
+        "chapter_professional_sacrifice" -> R.string.chapter_sacrifice
         "chapter_professional_mixed_review" -> R.string.chapter_mixed_review
         "chapter_grandmaster_quiet_move" -> R.string.chapter_quiet_move
         "chapter_grandmaster_deep_sacrifice" -> R.string.chapter_deep_sacrifice
+        "chapter_grandmaster_zugzwang" -> R.string.chapter_zugzwang
+        "chapter_grandmaster_underpromotion" -> R.string.chapter_underpromotion
+        "chapter_grandmaster_rare_mate" -> R.string.chapter_rare_mate
+        "chapter_grandmaster_calculation" -> R.string.chapter_calculation
         "chapter_grandmaster_final_exam" -> R.string.chapter_final_exam
         else -> null
     }

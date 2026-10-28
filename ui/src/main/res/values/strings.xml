@@ -60,7 +60,18 @@
     <string name="chapter_deflection">Отвлечение</string>
     <string name="chapter_quiet_move">Тихий ход</string>
     <string name="chapter_deep_sacrifice">Глубокая жертва</string>
+    <string name="chapter_fork">Вилка</string>
+    <string name="chapter_pin">Связка</string>
+    <string name="chapter_back_rank">Последняя горизонталь</string>
     <string name="chapter_promotion">Превращение</string>
+    <string name="chapter_decoy">Завлечение</string>
+    <string name="chapter_interference">Перекрытие</string>
+    <string name="chapter_endgame">Эндшпиль</string>
+    <string name="chapter_sacrifice">Жертва</string>
+    <string name="chapter_zugzwang">Цугцванг</string>
+    <string name="chapter_underpromotion">Слабое превращение</string>
+    <string name="chapter_rare_mate">Редкий мат</string>
+    <string name="chapter_calculation">Расчёт</string>
     <string name="chapter_mixed_review">Смешанное повторение</string>
     <string name="chapter_final_exam">Финальный экзамен</string>
 

@@ -186,7 +186,7 @@ private fun HomeHeader(
         Column(Modifier.weight(1f)) {
             Text(
                 text = stringResource(R.string.app_title),
-                style = MaterialTheme.typography.headlineMedium,
+                style = MaterialTheme.typography.headlineMedium.copy(fontSize = 20.sp),
                 color = MaterialTheme.colorScheme.onBackground,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -406,19 +406,13 @@ private fun LevelCard(
             }
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = levelTitle(level),
-                        style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.onSurface,
-                        modifier = Modifier.weight(1f),
-                    )
-                    Text(
-                        text = level.ratingLabel,
-                        style = MaterialTheme.typography.labelSmall,
-                        color = accent,
-                    )
-                }
+                Text(
+                    text = levelTitle(level),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
                 Spacer(Modifier.height(2.dp))
                 Text(
                     text = levelDescription(level),
@@ -449,6 +443,11 @@ private fun LevelCard(
                     text = stringResource(R.string.home_level_progress, solved, total),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Text(
+                    text = level.ratingLabel,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = accent,
                 )
                 Spacer(Modifier.height(4.dp))
                 StarRow(stars = stars.coerceAtMost(3), size = 12.dp)

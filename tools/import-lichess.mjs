@@ -124,12 +124,134 @@ const CHAPTERS = {
     captureQueen: false,
     primaryTag: "deepSacrifice",
   },
+
+  // --- v0.3.0 chapters (4 new per level, 10 tasks each) --------------------
+  "novice.fork": {
+    level: "NOVICE",
+    chapter: "fork",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: ["fork"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "fork",
+  },
+  "novice.pin": {
+    level: "NOVICE",
+    chapter: "pin",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: ["pin"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "pin",
+  },
+  "novice.back-rank": {
+    level: "NOVICE",
+    chapter: "back-rank",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: ["backRankMate"],
+    lastIsMate: true,
+    captureQueen: false,
+    primaryTag: "backRankMate",
+  },
+  "novice.promotion": {
+    level: "NOVICE",
+    chapter: "promotion",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: ["promotion"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "promotion",
+  },
+  "professional.decoy": {
+    level: "PROFESSIONAL",
+    chapter: "decoy",
+    rating: [1200, 1799],
+    userPlies: [2, 2],
+    requireAny: ["attraction"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "attraction",
+  },
+  "professional.interference": {
+    level: "PROFESSIONAL",
+    chapter: "interference",
+    rating: [1200, 1799],
+    userPlies: [2, 2],
+    requireAny: ["interference"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "interference",
+  },
+  "professional.endgame": {
+    level: "PROFESSIONAL",
+    chapter: "endgame",
+    rating: [1200, 1799],
+    userPlies: [2, 3],
+    requireAny: ["endgame"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "endgame",
+  },
+  "professional.sacrifice": {
+    level: "PROFESSIONAL",
+    chapter: "sacrifice",
+    rating: [1200, 1799],
+    userPlies: [2, 3],
+    requireAny: ["sacrifice"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "sacrifice",
+  },
+  "grandmaster.zugzwang": {
+    level: "GRANDMASTER",
+    chapter: "zugzwang",
+    rating: [1800, 2600],
+    userPlies: [2, 4],
+    requireAny: ["zugzwang"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "zugzwang",
+  },
+  "grandmaster.underpromotion": {
+    level: "GRANDMASTER",
+    chapter: "underpromotion",
+    rating: [1800, 2600],
+    userPlies: [2, 4],
+    requireAny: ["underPromotion"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "underPromotion",
+  },
+  "grandmaster.rare-mate": {
+    level: "GRANDMASTER",
+    chapter: "rare-mate",
+    rating: [1800, 2600],
+    userPlies: [3, 5],
+    requireAny: ["mateIn4", "mateIn5"],
+    lastIsMate: true,
+    captureQueen: false,
+    primaryTag: "mateIn4",
+  },
+  "grandmaster.calculation": {
+    level: "GRANDMASTER",
+    chapter: "calculation",
+    rating: [1800, 2600],
+    userPlies: [3, 5],
+    requireAny: ["endgame"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "endgame",
+  },
 };
 
 const PLAN_ORDER = [
-  ["NOVICE", ["mate-in-1", "capture-queen"]],
-  ["PROFESSIONAL", ["mate-in-2", "deflection"]],
-  ["GRANDMASTER", ["quiet-move", "deep-sacrifice"]],
+  ["NOVICE", ["mate-in-1", "capture-queen", "fork", "pin", "back-rank", "promotion"]],
+  ["PROFESSIONAL", ["mate-in-2", "deflection", "decoy", "interference", "endgame", "sacrifice"]],
+  ["GRANDMASTER", ["quiet-move", "deep-sacrifice", "zugzwang", "underpromotion", "rare-mate", "calculation"]],
 ];
 
 const LEVEL_PREFIX = { NOVICE: "nov", PROFESSIONAL: "pro", GRANDMASTER: "grm" };
@@ -484,7 +606,7 @@ async function cmdDraft(args) {
 function draftPack(level, chapter, records) {
   return {
     schemaVersion: 1,
-    contentVersion: "2026.10.2",
+    contentVersion: "2026.10.3",
     level,
     chapter,
     puzzles: records.map((rec) => ({
@@ -849,7 +971,7 @@ function finalPuzzle(puzzle, chapter) {
 function packShell(level, puzzles) {
   return {
     schemaVersion: 1,
-    contentVersion: "2026.10.2",
+    contentVersion: "2026.10.3",
     level,
     puzzles,
   };
@@ -910,3 +1032,4 @@ if (!command || command === "--help" || command === "-h") {
   fail(`unknown command: ${command}`);
   help();
 }
+

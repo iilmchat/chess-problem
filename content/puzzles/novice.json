@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.10.2",
+  "contentVersion": "2026.10.3",
   "level": "NOVICE",
   "puzzles": [
     {
@@ -1106,6 +1106,2279 @@
       },
       "chapter": "capture-queen",
       "id": "nov-020"
+    },
+    {
+      "fen": "8/p7/8/P2p1p1p/kPp1b2K/2P4P/8/3R4 w - - 3 39",
+      "setupMove": "h4h5",
+      "solution": [
+        "e4f3",
+        "h5h4",
+        "f3d1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 705,
+      "themes": [
+        "fork",
+        "endgame"
+      ],
+      "timeLimitSec": 115,
+      "title": {
+        "ru": "Вилка слоном",
+        "en": "Bishop fork"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля e4.",
+          "en": "The bishop from e4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bf3+.",
+          "en": "First move: Bf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bf3+: слон даёт шах. Соперник отвечает Kh4; затем Bxd1. Чёрные получают решающий перевес; линия — Bf3+ Kh4 Bxd1.",
+        "en": "The first move is Bf3+: the bishop gives check. The opponent replies Kh4; then comes Bxd1. The side to move gets a decisive advantage; the line is Bf3+ Kh4 Bxd1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0TCrY",
+        "url": "https://lichess.org/training/0TCrY",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-021"
+    },
+    {
+      "fen": "2R5/3N2pk/p3r2p/8/2p5/7P/r4PP1/6K1 b - - 3 37",
+      "setupMove": "a2c2",
+      "solution": [
+        "d7f8",
+        "h7g8",
+        "f8e6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1045,
+      "themes": [
+        "fork",
+        "discoveredAttack",
+        "endgame"
+      ],
+      "timeLimitSec": 150,
+      "title": {
+        "ru": "Вилка конём",
+        "en": "Knight fork"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля d7.",
+          "en": "The knight from d7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nf8+.",
+          "en": "First move: Nf8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nf8+: конь даёт шах. Соперник отвечает Kg8; затем Nxe6+. Белые получают решающий перевес; линия — Nf8+ Kg8 Nxe6+.",
+        "en": "The first move is Nf8+: the knight gives check. The opponent replies Kg8; then comes Nxe6+. The side to move gets a decisive advantage; the line is Nf8+ Kg8 Nxe6+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0NFsc",
+        "url": "https://lichess.org/training/0NFsc",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-022"
+    },
+    {
+      "fen": "3q1rk1/pp2bppp/2rp1n2/1N2n3/2P2B2/1P3PP1/P5BP/R2Q1RK1 w - - 1 16",
+      "setupMove": "b5a7",
+      "solution": [
+        "d8b6",
+        "g1h1",
+        "b6a7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1069,
+      "themes": [
+        "fork"
+      ],
+      "timeLimitSec": 150,
+      "title": {
+        "ru": "Вилка ферзём",
+        "en": "Queen fork"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля d8.",
+          "en": "The queen from d8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qb6+.",
+          "en": "First move: Qb6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qb6+: ферзь даёт шах. Соперник отвечает Kh1; затем Qxa7. Чёрные получают решающий перевес; линия — Qb6+ Kh1 Qxa7.",
+        "en": "The first move is Qb6+: the queen gives check. The opponent replies Kh1; then comes Qxa7. The side to move gets a decisive advantage; the line is Qb6+ Kh1 Qxa7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "07CmO",
+        "url": "https://lichess.org/training/07CmO",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-023"
+    },
+    {
+      "fen": "2kr4/2p3pp/p7/2R1p3/3nPp2/2N2P2/PP3P1P/6K1 w - - 6 29",
+      "setupMove": "c5e5",
+      "solution": [
+        "d4f3",
+        "g1g2",
+        "f3e5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1115,
+      "themes": [
+        "fork",
+        "endgame"
+      ],
+      "timeLimitSec": 155,
+      "title": {
+        "ru": "Вилка конём",
+        "en": "Knight fork"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля d4.",
+          "en": "The knight from d4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxf3+.",
+          "en": "First move: Nxf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxf3+: конь берёт пешку. Соперник отвечает Kg2; затем Nxe5. Чёрные получают решающий перевес; линия — Nxf3+ Kg2 Nxe5.",
+        "en": "The first move is Nxf3+: the knight captures the pawn. The opponent replies Kg2; then comes Nxe5. The side to move gets a decisive advantage; the line is Nxf3+ Kg2 Nxe5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0MoZQ",
+        "url": "https://lichess.org/training/0MoZQ",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-024"
+    },
+    {
+      "fen": "8/1r4pp/1P2kp2/1R6/3r3P/4N1P1/5PK1/8 b - - 0 37",
+      "setupMove": "e6d6",
+      "solution": [
+        "e3f5",
+        "d6e6",
+        "f5d4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1117,
+      "themes": [
+        "fork",
+        "endgame"
+      ],
+      "timeLimitSec": 155,
+      "title": {
+        "ru": "Вилка конём",
+        "en": "Knight fork"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля e3.",
+          "en": "The knight from e3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nf5+.",
+          "en": "First move: Nf5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nf5+: конь даёт шах. Соперник отвечает Ke6; затем Nxd4+. Белые получают решающий перевес; линия — Nf5+ Ke6 Nxd4+.",
+        "en": "The first move is Nf5+: the knight gives check. The opponent replies Ke6; then comes Nxd4+. The side to move gets a decisive advantage; the line is Nf5+ Ke6 Nxd4+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0Fasr",
+        "url": "https://lichess.org/training/0Fasr",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-025"
+    },
+    {
+      "fen": "8/8/1p1bk3/2pp4/p2P1pp1/P1P3P1/1P2KPB1/8 w - - 0 35",
+      "setupMove": "d4c5",
+      "solution": [
+        "f4f3",
+        "g2f3",
+        "g4f3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1150,
+      "themes": [
+        "fork",
+        "endgame"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Вилка пешкой",
+        "en": "Pawn fork"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля f4.",
+          "en": "The pawn from f4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: f3+.",
+          "en": "First move: f3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — f3+: пешка даёт шах. Соперник отвечает Bxf3; затем gxf3+. Чёрные получают решающий перевес; линия — f3+ Bxf3 gxf3+.",
+        "en": "The first move is f3+: the pawn gives check. The opponent replies Bxf3; then comes gxf3+. The side to move gets a decisive advantage; the line is f3+ Bxf3 gxf3+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0LFOu",
+        "url": "https://lichess.org/training/0LFOu",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-026"
+    },
+    {
+      "fen": "r7/4pk2/p2p4/2p1bQ2/2P4r/N3P2p/PP4P1/6K1 b - - 1 25",
+      "setupMove": "e5f6",
+      "solution": [
+        "f5d5",
+        "f7g7",
+        "d5a8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1167,
+      "themes": [
+        "fork",
+        "endgame"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Вилка ферзём",
+        "en": "Queen fork"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля f5.",
+          "en": "The queen from f5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qd5+.",
+          "en": "First move: Qd5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qd5+: ферзь даёт шах. Соперник отвечает Kg7; затем Qxa8. Белые получают решающий перевес; линия — Qd5+ Kg7 Qxa8.",
+        "en": "The first move is Qd5+: the queen gives check. The opponent replies Kg7; then comes Qxa8. The side to move gets a decisive advantage; the line is Qd5+ Kg7 Qxa8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0HcMp",
+        "url": "https://lichess.org/training/0HcMp",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-027"
+    },
+    {
+      "fen": "4rk2/2p3p1/1pbp1p2/p4P2/P1n1PB2/R2B4/2P2KP1/8 w - - 0 31",
+      "setupMove": "d3c4",
+      "solution": [
+        "e8e4",
+        "f4d6",
+        "c7d6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1175,
+      "themes": [
+        "fork",
+        "endgame"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Вилка ладьёй",
+        "en": "Rook fork"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля e8.",
+          "en": "The rook from e8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxe4.",
+          "en": "First move: Rxe4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxe4: ладья берёт пешку. Соперник отвечает Bxd6+; затем cxd6. Чёрные получают решающий перевес; линия — Rxe4 Bxd6+ cxd6.",
+        "en": "The first move is Rxe4: the rook captures the pawn. The opponent replies Bxd6+; then comes cxd6. The side to move gets a decisive advantage; the line is Rxe4 Bxd6+ cxd6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0VNg9",
+        "url": "https://lichess.org/training/0VNg9",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-028"
+    },
+    {
+      "fen": "6k1/2n3pp/1pp2r2/p3Rp2/3r4/P7/1P3PPP/2N1R1K1 b - - 1 29",
+      "setupMove": "g8f7",
+      "solution": [
+        "e5e7",
+        "f7f8",
+        "e7c7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1178,
+      "themes": [
+        "fork",
+        "endgame"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Вилка ладьёй",
+        "en": "Rook fork"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля e5.",
+          "en": "The rook from e5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Re7+.",
+          "en": "First move: Re7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Re7+: ладья даёт шах. Соперник отвечает Kf8; затем Rxc7. Белые получают решающий перевес; линия — Re7+ Kf8 Rxc7.",
+        "en": "The first move is Re7+: the rook gives check. The opponent replies Kf8; then comes Rxc7. The side to move gets a decisive advantage; the line is Re7+ Kf8 Rxc7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "06yh9",
+        "url": "https://lichess.org/training/06yh9",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-029"
+    },
+    {
+      "fen": "1k6/pp3Q1p/3p1p2/2p2q2/P5r1/6P1/5P1P/2R3K1 b - - 0 26",
+      "setupMove": "g4a4",
+      "solution": [
+        "f7e8",
+        "f5c8",
+        "e8a4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1191,
+      "themes": [
+        "fork",
+        "endgame"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Вилка ферзём",
+        "en": "Queen fork"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите двойной удар: одна фигура должна напасть на две цели.",
+          "en": "Look for a double attack: one piece must hit two targets."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля f7.",
+          "en": "The queen from f7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe8+.",
+          "en": "First move: Qe8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe8+: ферзь даёт шах. Соперник отвечает Qc8; затем Qxa4. Белые получают решающий перевес; линия — Qe8+ Qc8 Qxa4.",
+        "en": "The first move is Qe8+: the queen gives check. The opponent replies Qc8; then comes Qxa4. The side to move gets a decisive advantage; the line is Qe8+ Qc8 Qxa4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0Ps4Q",
+        "url": "https://lichess.org/training/0Ps4Q",
+        "license": "CC0-1.0"
+      },
+      "chapter": "fork",
+      "id": "nov-030"
+    },
+    {
+      "fen": "8/8/2kp4/4p1R1/3nP3/5P1P/3r2PK/4R3 w - - 2 44",
+      "setupMove": "g5g8",
+      "solution": [
+        "d4f3",
+        "h2g3",
+        "f3e1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 927,
+      "themes": [
+        "pin",
+        "endgame"
+      ],
+      "timeLimitSec": 135,
+      "title": {
+        "ru": "Связка конём",
+        "en": "Knight pin"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля d4.",
+          "en": "The knight from d4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxf3+.",
+          "en": "First move: Nxf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxf3+: конь берёт пешку. Соперник отвечает Kg3; затем Nxe1. Чёрные получают решающий перевес; линия — Nxf3+ Kg3 Nxe1.",
+        "en": "The first move is Nxf3+: the knight captures the pawn. The opponent replies Kg3; then comes Nxe1. The side to move gets a decisive advantage; the line is Nxf3+ Kg3 Nxe1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0gzNE",
+        "url": "https://lichess.org/training/0gzNE",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-031"
+    },
+    {
+      "fen": "3R1bk1/5pp1/7p/p4N2/8/1brB2PP/5P2/6K1 b - - 13 42",
+      "setupMove": "a5a4",
+      "solution": [
+        "f5e7",
+        "g8h8",
+        "d8f8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1012,
+      "themes": [
+        "pin",
+        "deflection",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 145,
+      "title": {
+        "ru": "Связка конём",
+        "en": "Knight pin"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля f5.",
+          "en": "The knight from f5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ne7+.",
+          "en": "First move: Ne7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ne7+: конь даёт шах. Соперник отвечает Kh8; затем Rxf8#. Финальный Rxf8# ставит мат; линия — Ne7+ Kh8 Rxf8#.",
+        "en": "The first move is Ne7+: the knight gives check. The opponent replies Kh8; then comes Rxf8#. The final Rxf8# delivers mate; the line is Ne7+ Kh8 Rxf8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0JCvT",
+        "url": "https://lichess.org/training/0JCvT",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-032"
+    },
+    {
+      "fen": "r3k2r/pp2pp1p/1q1p2p1/2pB4/4P1bP/P2P2Q1/1b3PP1/R1B1K1NR w KQkq - 0 13",
+      "setupMove": "a1b1",
+      "solution": [
+        "b2c3",
+        "e1f1",
+        "b6b1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1023,
+      "themes": [
+        "pin",
+        "discoveredAttack"
+      ],
+      "timeLimitSec": 145,
+      "title": {
+        "ru": "Связка слоном",
+        "en": "Bishop pin"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля b2.",
+          "en": "The bishop from b2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bc3+.",
+          "en": "First move: Bc3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bc3+: слон даёт шах. Соперник отвечает Kf1; затем Qxb1. Чёрные получают решающий перевес; линия — Bc3+ Kf1 Qxb1.",
+        "en": "The first move is Bc3+: the bishop gives check. The opponent replies Kf1; then comes Qxb1. The side to move gets a decisive advantage; the line is Bc3+ Kf1 Qxb1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0dPT5",
+        "url": "https://lichess.org/training/0dPT5",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-033"
+    },
+    {
+      "fen": "r1bq3r/p3pQbk/2p3pp/3p4/8/3BB3/PPP2PPP/R4RK1 b - - 5 15",
+      "setupMove": "d8e8",
+      "solution": [
+        "d3g6"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 1
+      },
+      "rating": 1129,
+      "themes": [
+        "pin",
+        "mateIn1"
+      ],
+      "timeLimitSec": 145,
+      "title": {
+        "ru": "Связка слоном",
+        "en": "Bishop pin"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в один ход.",
+        "en": "White to move. Find mate in 1."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля d3.",
+          "en": "The bishop from d3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bxg6#.",
+          "en": "First move: Bxg6#."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bxg6#: слон ставит мат. Этого хода достаточно: Bxg6#.",
+        "en": "The first move is Bxg6#: the bishop delivers mate. That is enough: Bxg6#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1gk0g",
+        "url": "https://lichess.org/training/1gk0g",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-034"
+    },
+    {
+      "fen": "3rkb1r/p1q2ppp/1pp1pn2/8/8/3BQP2/PPP1N1PP/R1B2RK1 w k - 0 14",
+      "setupMove": "b2b3",
+      "solution": [
+        "f8c5",
+        "e3c5",
+        "b6c5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1142,
+      "themes": [
+        "pin"
+      ],
+      "timeLimitSec": 155,
+      "title": {
+        "ru": "Связка слоном",
+        "en": "Bishop pin"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля f8.",
+          "en": "The bishop from f8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bc5.",
+          "en": "First move: Bc5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bc5: слон делает тихий ход. Соперник отвечает Qxc5; затем bxc5. В итоге вы выигрываете ферзя; линия — Bc5 Qxc5 bxc5.",
+        "en": "The first move is Bc5: the bishop makes a quiet move. The opponent replies Qxc5; then comes bxc5. In the end you win the queen; the line is Bc5 Qxc5 bxc5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1vqO2",
+        "url": "https://lichess.org/training/1vqO2",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-035"
+    },
+    {
+      "fen": "7r/5kb1/3p2p1/BP1Ppp2/2P1n3/4q1P1/2Q4P/R4R1K w - - 2 26",
+      "setupMove": "c2g2",
+      "solution": [
+        "e4g3",
+        "g2g3",
+        "e3g3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1149,
+      "themes": [
+        "pin"
+      ],
+      "timeLimitSec": 155,
+      "title": {
+        "ru": "Связка конём",
+        "en": "Knight pin"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля e4.",
+          "en": "The knight from e4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxg3+.",
+          "en": "First move: Nxg3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxg3+: конь берёт пешку. Соперник отвечает Qxg3; затем Qxg3. В итоге вы выигрываете ферзя; линия — Nxg3+ Qxg3 Qxg3.",
+        "en": "The first move is Nxg3+: the knight captures the pawn. The opponent replies Qxg3; then comes Qxg3. In the end you win the queen; the line is Nxg3+ Qxg3 Qxg3."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0jBsn",
+        "url": "https://lichess.org/training/0jBsn",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-036"
+    },
+    {
+      "fen": "r6r/pp4p1/1nk3bp/5p2/3pNPPq/1B1P3P/PPP1Q3/R2K3R w - - 0 20",
+      "setupMove": "g4f5",
+      "solution": [
+        "g6h5",
+        "e2h5",
+        "h4h5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1162,
+      "themes": [
+        "pin"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Связка слоном",
+        "en": "Bishop pin"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля g6.",
+          "en": "The bishop from g6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bh5.",
+          "en": "First move: Bh5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bh5: слон делает тихий ход. Соперник отвечает Qxh5; затем Qxh5+. В итоге вы выигрываете ферзя; линия — Bh5 Qxh5 Qxh5+.",
+        "en": "The first move is Bh5: the bishop makes a quiet move. The opponent replies Qxh5; then comes Qxh5+. In the end you win the queen; the line is Bh5 Qxh5 Qxh5+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0oVgv",
+        "url": "https://lichess.org/training/0oVgv",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-037"
+    },
+    {
+      "fen": "r2qk2r/ppp1ppb1/2np4/4Pbp1/3P4/6B1/PPPQ1PPP/2KR1BNR w kq - 0 11",
+      "setupMove": "d2g5",
+      "solution": [
+        "g7h6",
+        "g5h6",
+        "h8h6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1166,
+      "themes": [
+        "pin"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Связка слоном",
+        "en": "Bishop pin"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля g7.",
+          "en": "The bishop from g7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bh6.",
+          "en": "First move: Bh6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bh6: слон делает тихий ход. Соперник отвечает Qxh6; затем Rxh6. В итоге вы выигрываете ферзя; линия — Bh6 Qxh6 Rxh6.",
+        "en": "The first move is Bh6: the bishop makes a quiet move. The opponent replies Qxh6; then comes Rxh6. In the end you win the queen; the line is Bh6 Qxh6 Rxh6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "14bqG",
+        "url": "https://lichess.org/training/14bqG",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-038"
+    },
+    {
+      "fen": "2r1k2r/1p2p1bp/p2pp1p1/2n1P3/3BNP2/8/qPPQ2PP/2KR1B1R w k - 0 15",
+      "setupMove": "e4c3",
+      "solution": [
+        "a2a1",
+        "c3b1",
+        "c5b3"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1170,
+      "themes": [
+        "pin",
+        "mateIn2",
+        "queensideAttack",
+        "smotheredMate"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Связка ферзём",
+        "en": "Queen pin"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля a2.",
+          "en": "The queen from a2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qa1+.",
+          "en": "First move: Qa1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qa1+: ферзь даёт шах. Соперник отвечает Nb1; затем Nb3#. Финальный Nb3# ставит мат; линия — Qa1+ Nb1 Nb3#.",
+        "en": "The first move is Qa1+: the queen gives check. The opponent replies Nb1; then comes Nb3#. The final Nb3# delivers mate; the line is Qa1+ Nb1 Nb3#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0bd00",
+        "url": "https://lichess.org/training/0bd00",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-039"
+    },
+    {
+      "fen": "4kb1r/3p4/p3p3/1p2qpp1/3r4/P1P2PPp/1P3Q1P/R4RK1 w k - 0 23",
+      "setupMove": "f2d4",
+      "solution": [
+        "f8c5",
+        "d4c5",
+        "e5c5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1195,
+      "themes": [
+        "pin",
+        "endgame"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Связка слоном",
+        "en": "Bishop pin"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Используйте связку: пригвоздите фигуру к королю или более ценной цели.",
+          "en": "Use a pin: freeze a piece against the king or a more valuable target."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля f8.",
+          "en": "The bishop from f8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bc5.",
+          "en": "First move: Bc5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bc5: слон делает тихий ход. Соперник отвечает Qxc5; затем Qxc5+. В итоге вы выигрываете ферзя; линия — Bc5 Qxc5 Qxc5+.",
+        "en": "The first move is Bc5: the bishop makes a quiet move. The opponent replies Qxc5; then comes Qxc5+. In the end you win the queen; the line is Bc5 Qxc5 Qxc5+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1UNgx",
+        "url": "https://lichess.org/training/1UNgx",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pin",
+      "id": "nov-040"
+    },
+    {
+      "fen": "3r2k1/5ppp/4pb2/5P2/2qPQ3/2P3P1/1r1B1R1P/4R1K1 b - - 0 33",
+      "setupMove": "e6f5",
+      "solution": [
+        "e4e8",
+        "d8e8",
+        "e1e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 635,
+      "themes": [
+        "backRankMate",
+        "mateIn2",
+        "sacrifice"
+      ],
+      "timeLimitSec": 110,
+      "title": {
+        "ru": "Мат ладьёй по последней горизонтали",
+        "en": "Back-rank mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля e4.",
+          "en": "The queen from e4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe8+.",
+          "en": "First move: Qe8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe8+: ферзь даёт шах. Соперник отвечает Rxe8; затем Rxe8#. Финальный Rxe8# ставит мат; линия — Qe8+ Rxe8 Rxe8#.",
+        "en": "The first move is Qe8+: the queen gives check. The opponent replies Rxe8; then comes Rxe8#. The final Rxe8# delivers mate; the line is Qe8+ Rxe8 Rxe8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1Vk3b",
+        "url": "https://lichess.org/training/1Vk3b",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-041"
+    },
+    {
+      "fen": "r5k1/5ppp/8/4p3/p2p4/3bNQP1/5PKP/2r5 b - - 1 28",
+      "setupMove": "d4e3",
+      "solution": [
+        "f3a8",
+        "c1c8",
+        "a8c8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 792,
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "hangingPiece",
+        "mateIn2"
+      ],
+      "timeLimitSec": 125,
+      "title": {
+        "ru": "Мат ферзём по последней горизонтали",
+        "en": "Back-rank mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля f3.",
+          "en": "The queen from f3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxa8+.",
+          "en": "First move: Qxa8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxa8+: ферзь берёт ладью. Соперник отвечает Rc8; затем Qxc8#. Финальный Qxc8# ставит мат; линия — Qxa8+ Rc8 Qxc8#.",
+        "en": "The first move is Qxa8+: the queen captures the rook. The opponent replies Rc8; then comes Qxc8#. The final Qxc8# delivers mate; the line is Qxa8+ Rc8 Qxc8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0kB2g",
+        "url": "https://lichess.org/training/0kB2g",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-042"
+    },
+    {
+      "fen": "1N1r2k1/6pp/2P1p3/p2p4/bP2p3/P1q1P1Q1/5PPP/R5K1 w - - 0 23",
+      "setupMove": "c6c7",
+      "solution": [
+        "c3a1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 1
+      },
+      "rating": 949,
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "hangingPiece",
+        "mateIn1"
+      ],
+      "timeLimitSec": 125,
+      "title": {
+        "ru": "Мат ферзём по последней горизонтали",
+        "en": "Back-rank mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в один ход.",
+        "en": "Black to move. Find mate in 1."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля c3.",
+          "en": "The queen from c3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxa1#.",
+          "en": "First move: Qxa1#."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxa1#: ферзь ставит мат. Этого хода достаточно: Qxa1#.",
+        "en": "The first move is Qxa1#: the queen delivers mate. That is enough: Qxa1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4DCjm",
+        "url": "https://lichess.org/training/4DCjm",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-043"
+    },
+    {
+      "fen": "4rQk1/p5pp/1bN5/3pN3/2pPb2P/2P3P1/PP1q2P1/R4RK1 b - - 0 22",
+      "setupMove": "e8f8",
+      "solution": [
+        "c6e7",
+        "g8h8",
+        "f1f8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1027,
+      "themes": [
+        "backRankMate",
+        "deflection",
+        "mateIn2"
+      ],
+      "timeLimitSec": 145,
+      "title": {
+        "ru": "Мат ладьёй по последней горизонтали",
+        "en": "Back-rank mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля c6.",
+          "en": "The knight from c6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ne7+.",
+          "en": "First move: Ne7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ne7+: конь даёт шах. Соперник отвечает Kh8; затем Rxf8#. Финальный Rxf8# ставит мат; линия — Ne7+ Kh8 Rxf8#.",
+        "en": "The first move is Ne7+: the knight gives check. The opponent replies Kh8; then comes Rxf8#. The final Rxf8# delivers mate; the line is Ne7+ Kh8 Rxf8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1RLAP",
+        "url": "https://lichess.org/training/1RLAP",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-044"
+    },
+    {
+      "fen": "6k1/2QP2pp/p7/1p2p3/3r4/5PN1/P2q2PP/2R4K w - - 1 36",
+      "setupMove": "g3e4",
+      "solution": [
+        "d2d1",
+        "c1d1",
+        "d4d1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1058,
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "mateIn2",
+        "sacrifice"
+      ],
+      "timeLimitSec": 150,
+      "title": {
+        "ru": "Мат ладьёй по последней горизонтали",
+        "en": "Back-rank mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля d2.",
+          "en": "The queen from d2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qd1+.",
+          "en": "First move: Qd1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qd1+: ферзь даёт шах. Соперник отвечает Rxd1; затем Rxd1#. Финальный Rxd1# ставит мат; линия — Qd1+ Rxd1 Rxd1#.",
+        "en": "The first move is Qd1+: the queen gives check. The opponent replies Rxd1; then comes Rxd1#. The final Rxd1# delivers mate; the line is Qd1+ Rxd1 Rxd1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1b6YG",
+        "url": "https://lichess.org/training/1b6YG",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-045"
+    },
+    {
+      "fen": "4r1k1/1qp2ppp/p5r1/8/2B2Q2/B1NP1b1P/2P2P1K/6R1 b - - 8 28",
+      "setupMove": "g6g1",
+      "solution": [
+        "f4f7",
+        "g8h8",
+        "f7e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1074,
+      "themes": [
+        "backRankMate",
+        "fork",
+        "mateIn2"
+      ],
+      "timeLimitSec": 150,
+      "title": {
+        "ru": "Мат ферзём по последней горизонтали",
+        "en": "Back-rank mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля f4.",
+          "en": "The queen from f4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf7+.",
+          "en": "First move: Qxf7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf7+: ферзь берёт пешку. Соперник отвечает Kh8; затем Qxe8#. Финальный Qxe8# ставит мат; линия — Qxf7+ Kh8 Qxe8#.",
+        "en": "The first move is Qxf7+: the queen captures the pawn. The opponent replies Kh8; then comes Qxe8#. The final Qxe8# delivers mate; the line is Qxf7+ Kh8 Qxe8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0pSaN",
+        "url": "https://lichess.org/training/0pSaN",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-046"
+    },
+    {
+      "fen": "1r4k1/2Q2ppp/4b3/p2p4/3q4/1P6/P1P5/1K2R3 b - - 0 27",
+      "setupMove": "b8c8",
+      "solution": [
+        "c7c8",
+        "e6c8",
+        "e1e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1133,
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "mateIn2",
+        "sacrifice"
+      ],
+      "timeLimitSec": 155,
+      "title": {
+        "ru": "Мат ладьёй по последней горизонтали",
+        "en": "Back-rank mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля c7.",
+          "en": "The queen from c7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxc8+.",
+          "en": "First move: Qxc8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxc8+: ферзь берёт ладью. Соперник отвечает Bxc8; затем Re8#. Финальный Re8# ставит мат; линия — Qxc8+ Bxc8 Re8#.",
+        "en": "The first move is Qxc8+: the queen captures the rook. The opponent replies Bxc8; then comes Re8#. The final Re8# delivers mate; the line is Qxc8+ Bxc8 Re8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1EH2y",
+        "url": "https://lichess.org/training/1EH2y",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-047"
+    },
+    {
+      "fen": "8/2p4k/Q2p3p/1p1q1Pb1/8/2P5/PP6/1K3R2 w - - 0 41",
+      "setupMove": "f5f6",
+      "solution": [
+        "d5d3",
+        "b1a1",
+        "d3f1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1133,
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "fork",
+        "mateIn2"
+      ],
+      "timeLimitSec": 155,
+      "title": {
+        "ru": "Мат ферзём по последней горизонтали",
+        "en": "Back-rank mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля d5.",
+          "en": "The queen from d5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qd3+.",
+          "en": "First move: Qd3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qd3+: ферзь даёт шах. Соперник отвечает Ka1; затем Qxf1#. Финальный Qxf1# ставит мат; линия — Qd3+ Ka1 Qxf1#.",
+        "en": "The first move is Qd3+: the queen gives check. The opponent replies Ka1; then comes Qxf1#. The final Qxf1# delivers mate; the line is Qd3+ Ka1 Qxf1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3Z0fv",
+        "url": "https://lichess.org/training/3Z0fv",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-048"
+    },
+    {
+      "fen": "QB4k1/3K1ppp/4p3/8/1p6/6P1/1P1p3P/2r5 b - - 5 39",
+      "setupMove": "d2d1q",
+      "solution": [
+        "b8d6",
+        "c1c8",
+        "a8c8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1134,
+      "themes": [
+        "backRankMate",
+        "discoveredAttack",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 155,
+      "title": {
+        "ru": "Мат ферзём по последней горизонтали",
+        "en": "Back-rank mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает слон с поля b8.",
+          "en": "The bishop from b8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bd6+.",
+          "en": "First move: Bd6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bd6+: слон даёт шах. Соперник отвечает Rc8; затем Qxc8#. Финальный Qxc8# ставит мат; линия — Bd6+ Rc8 Qxc8#.",
+        "en": "The first move is Bd6+: the bishop gives check. The opponent replies Rc8; then comes Qxc8#. The final Qxc8# delivers mate; the line is Bd6+ Rc8 Qxc8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3GJHh",
+        "url": "https://lichess.org/training/3GJHh",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-049"
+    },
+    {
+      "fen": "2Rr3k/6pp/p3Q3/1p4q1/4P3/PP4P1/5n1P/6K1 b - - 1 33",
+      "setupMove": "f2d1",
+      "solution": [
+        "e6e8",
+        "d8e8",
+        "c8e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1176,
+      "themes": [
+        "backRankMate",
+        "xRay",
+        "endgame",
+        "mateIn2",
+        "sacrifice"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Мат ладьёй по последней горизонтали",
+        "en": "Back-rank mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите мат по последней горизонтали: король заперт своими фигурами.",
+          "en": "Look for a back-rank mate: the king is boxed in by its own pieces."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля e6.",
+          "en": "The queen from e6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe8+.",
+          "en": "First move: Qe8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe8+: ферзь даёт шах. Соперник отвечает Rxe8; затем Rxe8#. Финальный Rxe8# ставит мат; линия — Qe8+ Rxe8 Rxe8#.",
+        "en": "The first move is Qe8+: the queen gives check. The opponent replies Rxe8; then comes Rxe8#. The final Rxe8# delivers mate; the line is Qe8+ Rxe8 Rxe8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0suc4",
+        "url": "https://lichess.org/training/0suc4",
+        "license": "CC0-1.0"
+      },
+      "chapter": "back-rank",
+      "id": "nov-050"
+    },
+    {
+      "fen": "4k3/5N2/3PP1p1/5p2/4n1r1/8/8/5K2 b - - 2 59",
+      "setupMove": "f5f4",
+      "solution": [
+        "d6d7",
+        "e8e7",
+        "d7d8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 853,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 130,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля d6.",
+          "en": "The pawn from d6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: d7+.",
+          "en": "First move: d7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — d7+: пешка даёт шах. Соперник отвечает Ke7; затем d8=Q+. Белые получают решающий перевес; линия — d7+ Ke7 d8=Q+.",
+        "en": "The first move is d7+: the pawn gives check. The opponent replies Ke7; then comes d8=Q+. The side to move gets a decisive advantage; the line is d7+ Ke7 d8=Q+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3cU9L",
+        "url": "https://lichess.org/training/3cU9L",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-051"
+    },
+    {
+      "fen": "8/kpR5/2p5/5P2/8/8/pr4P1/3R2K1 w - - 0 39",
+      "setupMove": "d1a1",
+      "solution": [
+        "b2b1",
+        "a1b1",
+        "a2b1q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 940,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 140,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля b2.",
+          "en": "The rook from b2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rb1+.",
+          "en": "First move: Rb1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rb1+: ладья даёт шах. Соперник отвечает Rxb1; затем axb1=Q+. Чёрные получают решающий перевес; линия — Rb1+ Rxb1 axb1=Q+.",
+        "en": "The first move is Rb1+: the rook gives check. The opponent replies Rxb1; then comes axb1=Q+. The side to move gets a decisive advantage; the line is Rb1+ Rxb1 axb1=Q+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3pw2D",
+        "url": "https://lichess.org/training/3pw2D",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-052"
+    },
+    {
+      "fen": "5R2/1P6/8/6p1/P2KP3/1r4k1/5p2/8 w - - 3 58",
+      "setupMove": "b7b8q",
+      "solution": [
+        "b3b8",
+        "f8b8",
+        "f2f1q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 952,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 140,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля b3.",
+          "en": "The rook from b3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxb8.",
+          "en": "First move: Rxb8."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxb8: ладья берёт ферзя. Соперник отвечает Rxb8; затем f1=Q. Чёрные получают решающий перевес; линия — Rxb8 Rxb8 f1=Q.",
+        "en": "The first move is Rxb8: the rook captures the queen. The opponent replies Rxb8; then comes f1=Q. The side to move gets a decisive advantage; the line is Rxb8 Rxb8 f1=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3jVyk",
+        "url": "https://lichess.org/training/3jVyk",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-053"
+    },
+    {
+      "fen": "2kr2r1/5pPp/2p1b3/1P6/8/6Q1/1Pp2PPP/q4RK1 w - - 0 23",
+      "setupMove": "f1a1",
+      "solution": [
+        "d8d1",
+        "a1d1",
+        "c2d1q"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 970,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "backRankMate",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 140,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля d8.",
+          "en": "The rook from d8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rd1+.",
+          "en": "First move: Rd1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rd1+: ладья даёт шах. Соперник отвечает Rxd1; затем cxd1=Q#. Финальный cxd1=Q# ставит мат; линия — Rd1+ Rxd1 cxd1=Q#.",
+        "en": "The first move is Rd1+: the rook gives check. The opponent replies Rxd1; then comes cxd1=Q#. The final cxd1=Q# delivers mate; the line is Rd1+ Rxd1 cxd1=Q#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1LhNg",
+        "url": "https://lichess.org/training/1LhNg",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-054"
+    },
+    {
+      "fen": "3R4/5ppk/P6p/8/1n6/2bp2P1/5PKP/8 b - - 0 41",
+      "setupMove": "d3d2",
+      "solution": [
+        "a6a7",
+        "b4c6",
+        "a7a8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1020,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 145,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля a6.",
+          "en": "The pawn from a6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: a7.",
+          "en": "First move: a7."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — a7: пешка делает тихий ход. Соперник отвечает Nc6; затем a8=Q. Белые получают решающий перевес; линия — a7 Nc6 a8=Q.",
+        "en": "The first move is a7: the pawn makes a quiet move. The opponent replies Nc6; then comes a8=Q. The side to move gets a decisive advantage; the line is a7 Nc6 a8=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3TN4L",
+        "url": "https://lichess.org/training/3TN4L",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-055"
+    },
+    {
+      "fen": "4k3/1pBr2p1/1PB5/4P2p/8/1b2K1P1/8/8 b - - 0 41",
+      "setupMove": "b7c6",
+      "solution": [
+        "b6b7",
+        "d7c7",
+        "b7b8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1033,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 145,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля b6.",
+          "en": "The pawn from b6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: b7.",
+          "en": "First move: b7."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — b7: пешка делает тихий ход. Соперник отвечает Rxc7; затем b8=Q+. Белые получают решающий перевес; линия — b7 Rxc7 b8=Q+.",
+        "en": "The first move is b7: the pawn makes a quiet move. The opponent replies Rxc7; then comes b8=Q+. The side to move gets a decisive advantage; the line is b7 Rxc7 b8=Q+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3pAtU",
+        "url": "https://lichess.org/training/3pAtU",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-056"
+    },
+    {
+      "fen": "3r2k1/5ppp/p3p3/8/4N3/8/QP1p1qPP/2R4K w - - 0 37",
+      "setupMove": "c1d1",
+      "solution": [
+        "f2e1",
+        "d1e1",
+        "d2e1q"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1058,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "backRankMate",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 150,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля f2.",
+          "en": "The queen from f2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe1+.",
+          "en": "First move: Qe1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe1+: ферзь даёт шах. Соперник отвечает Rxe1; затем dxe1=Q#. Финальный dxe1=Q# ставит мат; линия — Qe1+ Rxe1 dxe1=Q#.",
+        "en": "The first move is Qe1+: the queen gives check. The opponent replies Rxe1; then comes dxe1=Q#. The final dxe1=Q# delivers mate; the line is Qe1+ Rxe1 dxe1=Q#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0H27F",
+        "url": "https://lichess.org/training/0H27F",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-057"
+    },
+    {
+      "fen": "3r3k/p2P1Qpp/1p6/2p3P1/8/P4P1q/5b1P/3R3K b - - 1 35",
+      "setupMove": "f2g3",
+      "solution": [
+        "f7e8",
+        "d8e8",
+        "d7e8q"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1074,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "backRankMate",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 150,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля f7.",
+          "en": "The queen from f7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe8+.",
+          "en": "First move: Qe8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe8+: ферзь даёт шах. Соперник отвечает Rxe8; затем dxe8=Q#. Финальный dxe8=Q# ставит мат; линия — Qe8+ Rxe8 dxe8=Q#.",
+        "en": "The first move is Qe8+: the queen gives check. The opponent replies Rxe8; then comes dxe8=Q#. The final dxe8=Q# delivers mate; the line is Qe8+ Rxe8 dxe8=Q#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0md9A",
+        "url": "https://lichess.org/training/0md9A",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-058"
+    },
+    {
+      "fen": "r4n1k/4N1p1/p5PQ/1p5p/1PpPp2P/B4b2/P1P2P1q/2K3R1 b - - 5 28",
+      "setupMove": "g7h6",
+      "solution": [
+        "g6g7",
+        "h8h7",
+        "g7g8q"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1165,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "fork",
+        "mateIn2"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g6.",
+          "en": "The pawn from g6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g7+.",
+          "en": "First move: g7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g7+: пешка даёт шах. Соперник отвечает Kh7; затем g8=Q#. Финальный g8=Q# ставит мат; линия — g7+ Kh7 g8=Q#.",
+        "en": "The first move is g7+: the pawn gives check. The opponent replies Kh7; then comes g8=Q#. The final g8=Q# delivers mate; the line is g7+ Kh7 g8=Q#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "17Ddp",
+        "url": "https://lichess.org/training/17Ddp",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-059"
+    },
+    {
+      "fen": "8/RP4pp/3pk3/1r2pp2/8/5PP1/6KP/8 b - - 4 38",
+      "setupMove": "e6d5",
+      "solution": [
+        "a7a5",
+        "b5a5",
+        "b7b8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1171,
+      "themes": [
+        "promotion",
+        "advancedPawn",
+        "deflection",
+        "endgame",
+        "pin"
+      ],
+      "timeLimitSec": 160,
+      "title": {
+        "ru": "Превращение: ферзь",
+        "en": "Queen promotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку в ферзи, используя отвлекающий удар.",
+          "en": "Promote the pawn, using a distraction to clear the way."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля a7.",
+          "en": "The rook from a7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ra5.",
+          "en": "First move: Ra5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ra5: ладья делает тихий ход. Соперник отвечает Rxa5; затем b8=Q. Белые получают решающий перевес; линия — Ra5 Rxa5 b8=Q.",
+        "en": "The first move is Ra5: the rook makes a quiet move. The opponent replies Rxa5; then comes b8=Q. The side to move gets a decisive advantage; the line is Ra5 Rxa5 b8=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1ukNL",
+        "url": "https://lichess.org/training/1ukNL",
+        "license": "CC0-1.0"
+      },
+      "chapter": "promotion",
+      "id": "nov-060"
     }
   ]
 }

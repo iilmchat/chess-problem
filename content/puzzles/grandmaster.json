@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.10.2",
+  "contentVersion": "2026.10.3",
   "level": "GRANDMASTER",
   "puzzles": [
     {
@@ -1185,6 +1185,2406 @@
       },
       "chapter": "deep-sacrifice",
       "id": "grm-020"
+    },
+    {
+      "fen": "8/8/p3kp1K/1p6/1P5P/P7/8/8 w - - 1 41",
+      "setupMove": "h4h5",
+      "solution": [
+        "e6f7",
+        "h6h7",
+        "f6f5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1830,
+      "themes": [
+        "zugzwang",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Цугцванг: король",
+        "en": "King zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля e6.",
+          "en": "The king from e6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kf7.",
+          "en": "First move: Kf7."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kf7: король делает тихий ход. Соперник отвечает Kh7; затем f5. Чёрные получают решающий перевес; линия — Kf7 Kh7 f5.",
+        "en": "The first move is Kf7: the king makes a quiet move. The opponent replies Kh7; then comes f5. The side to move gets a decisive advantage; the line is Kf7 Kh7 f5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5fWpk",
+        "url": "https://lichess.org/training/5fWpk",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-021"
+    },
+    {
+      "fen": "8/8/4k1p1/5pP1/5K1P/8/8/8 b - - 1 60",
+      "setupMove": "e6d5",
+      "solution": [
+        "h4h5",
+        "d5e6",
+        "h5g6",
+        "e6e7",
+        "f4f5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1912,
+      "themes": [
+        "zugzwang",
+        "endgame"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Цугцванг: пешка",
+        "en": "Pawn zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля h4.",
+          "en": "The pawn from h4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: h5.",
+          "en": "First move: h5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — h5: пешка делает тихий ход. Соперник отвечает Ke6, Ke7; затем hxg6, Kxf5. Белые получают решающий перевес; линия — h5 Ke6 hxg6 Ke7 Kxf5.",
+        "en": "The first move is h5: the pawn makes a quiet move. The opponent replies Ke6, Ke7; then comes hxg6, Kxf5. The side to move gets a decisive advantage; the line is h5 Ke6 hxg6 Ke7 Kxf5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3qoVx",
+        "url": "https://lichess.org/training/3qoVx",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-022"
+    },
+    {
+      "fen": "8/8/1p1k4/1P6/3K4/8/8/8 b - - 4 64",
+      "setupMove": "d6e7",
+      "solution": [
+        "d4e5",
+        "e7d7",
+        "e5d5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1932,
+      "themes": [
+        "zugzwang",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Цугцванг: король",
+        "en": "King zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля d4.",
+          "en": "The king from d4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ke5.",
+          "en": "First move: Ke5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ke5: король делает тихий ход. Соперник отвечает Kd7; затем Kd5. Белые получают решающий перевес; линия — Ke5 Kd7 Kd5.",
+        "en": "The first move is Ke5: the king makes a quiet move. The opponent replies Kd7; then comes Kd5. The side to move gets a decisive advantage; the line is Ke5 Kd7 Kd5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2KTG5",
+        "url": "https://lichess.org/training/2KTG5",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-023"
+    },
+    {
+      "fen": "8/8/8/5Kpp/8/6kP/6P1/8 b - - 1 43",
+      "setupMove": "g3h4",
+      "solution": [
+        "g2g4",
+        "h5g4",
+        "h3g4",
+        "h4h3",
+        "f5g5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2016,
+      "themes": [
+        "zugzwang",
+        "endgame"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Цугцванг: пешка",
+        "en": "Pawn zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g2.",
+          "en": "The pawn from g2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g4.",
+          "en": "First move: g4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g4: пешка делает тихий ход. Соперник отвечает hxg4, Kh3; затем hxg4, Kxg5. Белые получают решающий перевес; линия — g4 hxg4 hxg4 Kh3 Kxg5.",
+        "en": "The first move is g4: the pawn makes a quiet move. The opponent replies hxg4, Kh3; then comes hxg4, Kxg5. The side to move gets a decisive advantage; the line is g4 hxg4 hxg4 Kh3 Kxg5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5YaRf",
+        "url": "https://lichess.org/training/5YaRf",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-024"
+    },
+    {
+      "fen": "8/p7/1pp1k3/P5p1/1PP1Kp1p/5P1P/6P1/8 b - - 0 38",
+      "setupMove": "c6c5",
+      "solution": [
+        "a5b6",
+        "a7b6",
+        "b4b5",
+        "e6f6",
+        "e4d5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2024,
+      "themes": [
+        "zugzwang",
+        "endgame",
+        "quietMove"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Цугцванг: пешка",
+        "en": "Pawn zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля a5.",
+          "en": "The pawn from a5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: axb6.",
+          "en": "First move: axb6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — axb6: пешка берёт пешку. Соперник отвечает axb6, Kf6; затем b5, Kd5. Белые получают решающий перевес; линия — axb6 axb6 b5 Kf6 Kd5.",
+        "en": "The first move is axb6: the pawn captures the pawn. The opponent replies axb6, Kf6; then comes b5, Kd5. The side to move gets a decisive advantage; the line is axb6 axb6 b5 Kf6 Kd5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1g6ER",
+        "url": "https://lichess.org/training/1g6ER",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-025"
+    },
+    {
+      "fen": "8/8/pp6/3k3p/PP3p1P/3K1P2/8/8 b - - 2 40",
+      "setupMove": "d5e5",
+      "solution": [
+        "d3c4",
+        "e5e6",
+        "c4d4",
+        "e6d6",
+        "d4e4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2026,
+      "themes": [
+        "zugzwang",
+        "endgame"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Цугцванг: король",
+        "en": "King zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля d3.",
+          "en": "The king from d3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kc4.",
+          "en": "First move: Kc4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kc4: король делает тихий ход. Соперник отвечает Ke6, Kd6; затем Kd4, Ke4. Белые получают решающий перевес; линия — Kc4 Ke6 Kd4 Kd6 Ke4.",
+        "en": "The first move is Kc4: the king makes a quiet move. The opponent replies Ke6, Kd6; then comes Kd4, Ke4. The side to move gets a decisive advantage; the line is Kc4 Ke6 Kd4 Kd6 Ke4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5mehz",
+        "url": "https://lichess.org/training/5mehz",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-026"
+    },
+    {
+      "fen": "8/8/4k3/6p1/3K1p1p/5P1P/6P1/8 b - - 9 49",
+      "setupMove": "e6f5",
+      "solution": [
+        "d4d5",
+        "f5f6",
+        "d5d6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 2050,
+      "themes": [
+        "zugzwang",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Цугцванг: король",
+        "en": "King zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля d4.",
+          "en": "The king from d4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kd5.",
+          "en": "First move: Kd5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kd5: король делает тихий ход. Соперник отвечает Kf6; затем Kd6. Белые получают решающий перевес; линия — Kd5 Kf6 Kd6.",
+        "en": "The first move is Kd5: the king makes a quiet move. The opponent replies Kf6; then comes Kd6. The side to move gets a decisive advantage; the line is Kd5 Kf6 Kd6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3B6tP",
+        "url": "https://lichess.org/training/3B6tP",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-027"
+    },
+    {
+      "fen": "8/8/8/8/8/3k1p1K/5P2/8 w - - 1 65",
+      "setupMove": "h3h2",
+      "solution": [
+        "d3d2",
+        "h2h3",
+        "d2e1",
+        "h3g3",
+        "e1e2",
+        "g3f4",
+        "e2f2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 2057,
+      "themes": [
+        "zugzwang",
+        "endgame"
+      ],
+      "timeLimitSec": 265,
+      "title": {
+        "ru": "Цугцванг: король",
+        "en": "King zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля d3.",
+          "en": "The king from d3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kd2.",
+          "en": "First move: Kd2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kd2: король делает тихий ход. Соперник отвечает Kh3, Kg3, Kf4; затем Ke1, Ke2, Kxf2. Чёрные получают решающий перевес; линия — Kd2 Kh3 Ke1 Kg3 Ke2 Kf4 Kxf2.",
+        "en": "The first move is Kd2: the king makes a quiet move. The opponent replies Kh3, Kg3, Kf4; then comes Ke1, Ke2, Kxf2. The side to move gets a decisive advantage; the line is Kd2 Kh3 Ke1 Kg3 Ke2 Kf4 Kxf2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "49kfY",
+        "url": "https://lichess.org/training/49kfY",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-028"
+    },
+    {
+      "fen": "8/8/3k4/2p1p3/p3K3/2PP4/1P6/8 w - - 4 50",
+      "setupMove": "e4f5",
+      "solution": [
+        "d6d5",
+        "f5f6",
+        "e5e4",
+        "d3e4",
+        "d5e4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2077,
+      "themes": [
+        "zugzwang",
+        "endgame"
+      ],
+      "timeLimitSec": 255,
+      "title": {
+        "ru": "Цугцванг: король",
+        "en": "King zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля d6.",
+          "en": "The king from d6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kd5.",
+          "en": "First move: Kd5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kd5: король делает тихий ход. Соперник отвечает Kf6, dxe4+; затем e4, Kxe4. Чёрные получают решающий перевес; линия — Kd5 Kf6 e4 dxe4+ Kxe4.",
+        "en": "The first move is Kd5: the king makes a quiet move. The opponent replies Kf6, dxe4+; then comes e4, Kxe4. The side to move gets a decisive advantage; the line is Kd5 Kf6 e4 dxe4+ Kxe4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2600x",
+        "url": "https://lichess.org/training/2600x",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-029"
+    },
+    {
+      "fen": "8/6pp/8/p5PP/2k1K3/Pp6/1P6/8 w - - 0 41",
+      "setupMove": "h5h6",
+      "solution": [
+        "g7h6",
+        "g5h6",
+        "a5a4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 2229,
+      "themes": [
+        "zugzwang",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 255,
+      "title": {
+        "ru": "Цугцванг: пешка",
+        "en": "Pawn zugzwang"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Найдите ход, после которого у соперника закончатся полезные ходы.",
+          "en": "Find a move after which the opponent runs out of useful moves."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g7.",
+          "en": "The pawn from g7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: gxh6.",
+          "en": "First move: gxh6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — gxh6: пешка берёт пешку. Соперник отвечает gxh6; затем a4. Чёрные получают решающий перевес; линия — gxh6 gxh6 a4.",
+        "en": "The first move is gxh6: the pawn captures the pawn. The opponent replies gxh6; then comes a4. The side to move gets a decisive advantage; the line is gxh6 gxh6 a4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "12kUF",
+        "url": "https://lichess.org/training/12kUF",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zugzwang",
+      "id": "grm-030"
+    },
+    {
+      "fen": "5r1k/6p1/3p1pPp/pp1BqP1Q/3pP2P/3p1K2/PPr5/6R1 b - - 1 29",
+      "setupMove": "e5h2",
+      "solution": [
+        "h5h6",
+        "g7h6",
+        "g6g7",
+        "h8h7",
+        "g7f8n",
+        "h7h8",
+        "g1g8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 4
+      },
+      "rating": 1836,
+      "themes": [
+        "underPromotion",
+        "advancedPawn",
+        "endgame",
+        "fork",
+        "promotion"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в четыре хода.",
+        "en": "White to move. Find mate in 4."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля h5.",
+          "en": "The queen from h5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxh6+.",
+          "en": "First move: Qxh6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxh6+: ферзь берёт пешку. Соперник отвечает gxh6, Kh7, Kh8; затем g7+, gxf8=N+, Rg8#. Финальный Rg8# ставит мат; линия — Qxh6+ gxh6 g7+ Kh7 gxf8=N+ Kh8 Rg8#.",
+        "en": "The first move is Qxh6+: the queen captures the pawn. The opponent replies gxh6, Kh7, Kh8; then comes g7+, gxf8=N+, Rg8#. The final Rg8# delivers mate; the line is Qxh6+ gxh6 g7+ Kh7 gxf8=N+ Kh8 Rg8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5Lk7m",
+        "url": "https://lichess.org/training/5Lk7m",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-031"
+    },
+    {
+      "fen": "8/1R1P2pp/4k3/1p1b1p2/5P1B/6P1/6PK/4q3 b - - 3 43",
+      "setupMove": "e1f2",
+      "solution": [
+        "d7d8n",
+        "e6d6",
+        "h4e7"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1845,
+      "themes": [
+        "underPromotion",
+        "advancedPawn",
+        "endgame",
+        "mateIn2",
+        "promotion"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in 2."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля d7.",
+          "en": "The pawn from d7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: d8=N+.",
+          "en": "First move: d8=N+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — d8=N+: пешка даёт шах. Соперник отвечает Kd6; затем Be7#. Финальный Be7# ставит мат; линия — d8=N+ Kd6 Be7#.",
+        "en": "The first move is d8=N+: the pawn gives check. The opponent replies Kd6; then comes Be7#. The final Be7# delivers mate; the line is d8=N+ Kd6 Be7#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "K5sBt",
+        "url": "https://lichess.org/training/K5sBt",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-032"
+    },
+    {
+      "fen": "6k1/7p/4p1p1/2N5/2P5/1P3QPK/P2qp3/8 w - - 0 35",
+      "setupMove": "c5e6",
+      "solution": [
+        "d2h6",
+        "h3g2",
+        "e2e1n",
+        "g2f2",
+        "e1f3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1862,
+      "themes": [
+        "underPromotion",
+        "advancedPawn",
+        "endgame",
+        "fork",
+        "promotion"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля d2.",
+          "en": "The queen from d2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qh6+.",
+          "en": "First move: Qh6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qh6+: ферзь даёт шах. Соперник отвечает Kg2, Kf2; затем e1=N+, Nxf3. В итоге вы выигрываете ферзя; линия — Qh6+ Kg2 e1=N+ Kf2 Nxf3.",
+        "en": "The first move is Qh6+: the queen gives check. The opponent replies Kg2, Kf2; then comes e1=N+, Nxf3. In the end you win the queen; the line is Qh6+ Kg2 e1=N+ Kf2 Nxf3."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "uL1BA",
+        "url": "https://lichess.org/training/uL1BA",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-033"
+    },
+    {
+      "fen": "8/1q3P1k/p4Qp1/1p3p1p/1P1pR2P/P2r4/2r3P1/5R1K b - - 0 36",
+      "setupMove": "b7e4",
+      "solution": [
+        "f7f8n",
+        "h7g8",
+        "f6g6",
+        "g8f8",
+        "f1f5",
+        "e4f5",
+        "g6f5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1887,
+      "themes": [
+        "underPromotion",
+        "advancedPawn",
+        "deflection",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля f7.",
+          "en": "The pawn from f7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: f8=N+.",
+          "en": "First move: f8=N+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — f8=N+: пешка даёт шах. Соперник отвечает Kg8, Kxf8, Qxf5; затем Qxg6+, Rxf5+, Qxf5+. В итоге вы выигрываете ферзя; линия — f8=N+ Kg8 Qxg6+ Kxf8 Rxf5+ Qxf5 Qxf5+.",
+        "en": "The first move is f8=N+: the pawn gives check. The opponent replies Kg8, Kxf8, Qxf5; then comes Qxg6+, Rxf5+, Qxf5+. In the end you win the queen; the line is f8=N+ Kg8 Qxg6+ Kxf8 Rxf5+ Qxf5 Qxf5+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "TiPTO",
+        "url": "https://lichess.org/training/TiPTO",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-034"
+    },
+    {
+      "fen": "5r2/1R3P2/6k1/7p/8/r1p5/2P2R2/1K6 b - - 2 43",
+      "setupMove": "f8a8",
+      "solution": [
+        "f7f8n",
+        "a8f8",
+        "f2f8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 2145,
+      "themes": [
+        "underPromotion",
+        "advancedPawn",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля f7.",
+          "en": "The pawn from f7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: f8=N+.",
+          "en": "First move: f8=N+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — f8=N+: пешка даёт шах. Соперник отвечает Rxf8; затем Rxf8. Белые получают решающий перевес; линия — f8=N+ Rxf8 Rxf8.",
+        "en": "The first move is f8=N+: the pawn gives check. The opponent replies Rxf8; then comes Rxf8. The side to move gets a decisive advantage; the line is f8=N+ Rxf8 Rxf8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "o4Cgz",
+        "url": "https://lichess.org/training/o4Cgz",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-035"
+    },
+    {
+      "fen": "r7/ppq1P1k1/2p2p2/5Qp1/2P2pP1/5P1r/PP6/3R1RK1 b - - 1 33",
+      "setupMove": "a8h8",
+      "solution": [
+        "e7e8n",
+        "h8e8",
+        "d1d7",
+        "c7d7",
+        "f5d7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2201,
+      "themes": [
+        "underPromotion",
+        "advancedPawn",
+        "endgame",
+        "fork",
+        "promotion"
+      ],
+      "timeLimitSec": 265,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля e7.",
+          "en": "The pawn from e7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: e8=N+.",
+          "en": "First move: e8=N+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — e8=N+: пешка даёт шах. Соперник отвечает Rxe8, Qxd7; затем Rd7+, Qxd7+. В итоге вы выигрываете ферзя; линия — e8=N+ Rxe8 Rd7+ Qxd7 Qxd7+.",
+        "en": "The first move is e8=N+: the pawn gives check. The opponent replies Rxe8, Qxd7; then comes Rd7+, Qxd7+. In the end you win the queen; the line is e8=N+ Rxe8 Rd7+ Qxd7 Qxd7+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "HPaZL",
+        "url": "https://lichess.org/training/HPaZL",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-036"
+    },
+    {
+      "fen": "1r6/3R2bk/2Q3pp/p5q1/2b1B3/P7/1pP3PP/1K2R3 w - - 4 33",
+      "setupMove": "h2h4",
+      "solution": [
+        "g5c1",
+        "e1c1",
+        "c4a2",
+        "b1a2",
+        "b2c1n"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 2228,
+      "themes": [
+        "underPromotion",
+        "decoy",
+        "advancedPawn",
+        "mateIn3",
+        "promotion"
+      ],
+      "timeLimitSec": 265,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля g5.",
+          "en": "The queen from g5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qc1+.",
+          "en": "First move: Qc1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qc1+: ферзь даёт шах. Соперник отвечает Rxc1, Kxa2; затем Ba2+, bxc1=N#. Финальный bxc1=N# ставит мат; линия — Qc1+ Rxc1 Ba2+ Kxa2 bxc1=N#.",
+        "en": "The first move is Qc1+: the queen gives check. The opponent replies Rxc1, Kxa2; then comes Ba2+, bxc1=N#. The final bxc1=N# delivers mate; the line is Qc1+ Rxc1 Ba2+ Kxa2 bxc1=N#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5EV7p",
+        "url": "https://lichess.org/training/5EV7p",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-037"
+    },
+    {
+      "fen": "5r2/pp6/2p1P1k1/3nB1Np/1P1Q3P/P7/6PK/5q2 b - - 4 39",
+      "setupMove": "f1f2",
+      "solution": [
+        "e6e7",
+        "f2d4",
+        "e7f8n",
+        "g6f5",
+        "e5d4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2372,
+      "themes": [
+        "underPromotion",
+        "zwischenzug",
+        "advancedPawn",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля e6.",
+          "en": "The pawn from e6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: e7.",
+          "en": "First move: e7."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — e7: пешка делает тихий ход. Соперник отвечает Qxd4, Kf5; затем exf8=N+, Bxd4. В итоге вы выигрываете ферзя; линия — e7 Qxd4 exf8=N+ Kf5 Bxd4.",
+        "en": "The first move is e7: the pawn makes a quiet move. The opponent replies Qxd4, Kf5; then comes exf8=N+, Bxd4. In the end you win the queen; the line is e7 Qxd4 exf8=N+ Kf5 Bxd4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "IsBsZ",
+        "url": "https://lichess.org/training/IsBsZ",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-038"
+    },
+    {
+      "fen": "2kr4/ppp5/q7/2b5/5p2/P1N1pP1P/1PQ3P1/1R3RK1 w - - 1 30",
+      "setupMove": "b1d1",
+      "solution": [
+        "e3e2",
+        "g1h2",
+        "e2f1n",
+        "d1f1",
+        "a6f1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2487,
+      "themes": [
+        "underPromotion",
+        "advancedPawn",
+        "discoveredAttack",
+        "fork",
+        "promotion"
+      ],
+      "timeLimitSec": 290,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля e3.",
+          "en": "The pawn from e3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: e2+.",
+          "en": "First move: e2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — e2+: пешка даёт шах. Соперник отвечает Kh2, Rxf1; затем exf1=N+, Qxf1. Чёрные получают решающий перевес; линия — e2+ Kh2 exf1=N+ Rxf1 Qxf1.",
+        "en": "The first move is e2+: the pawn gives check. The opponent replies Kh2, Rxf1; then comes exf1=N+, Qxf1. The side to move gets a decisive advantage; the line is e2+ Kh2 exf1=N+ Rxf1 Qxf1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "qK6Ix",
+        "url": "https://lichess.org/training/qK6Ix",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-039"
+    },
+    {
+      "fen": "8/4k2p/3p2PP/p1pP1K2/P1n5/8/4P3/8 b - - 0 53",
+      "setupMove": "c4e3",
+      "solution": [
+        "f5g5",
+        "e3c4",
+        "g6h7",
+        "c4e5",
+        "h7h8n"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2562,
+      "themes": [
+        "underPromotion",
+        "advancedPawn",
+        "defensiveMove",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 295,
+      "title": {
+        "ru": "Слабое превращение: конь",
+        "en": "Knight underpromotion"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Проведите пешку не в ферзи: превращение в коня или ладью может дать мат.",
+          "en": "Do not promote to a queen: a knight or rook may deliver mate."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля f5.",
+          "en": "The king from f5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kg5.",
+          "en": "First move: Kg5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kg5: король делает тихий ход. Соперник отвечает Nc4, Ne5; затем gxh7, h8=N. Белые получают решающий перевес; линия — Kg5 Nc4 gxh7 Ne5 h8=N.",
+        "en": "The first move is Kg5: the king makes a quiet move. The opponent replies Nc4, Ne5; then comes gxh7, h8=N. The side to move gets a decisive advantage; the line is Kg5 Nc4 gxh7 Ne5 h8=N."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "UJFHe",
+        "url": "https://lichess.org/training/UJFHe",
+        "license": "CC0-1.0"
+      },
+      "chapter": "underpromotion",
+      "id": "grm-040"
+    },
+    {
+      "fen": "R7/8/P3p3/8/6pp/4Pk2/r4P2/6K1 w - - 3 45",
+      "setupMove": "a6a7",
+      "solution": [
+        "a2a1",
+        "g1h2",
+        "g4g3",
+        "f2g3",
+        "h4g3",
+        "h2h3",
+        "a1h1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 4
+      },
+      "rating": 1804,
+      "themes": [
+        "mateIn4",
+        "endgame"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Редкий мат ладьёй",
+        "en": "Rare mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "en": "Black to move. Find mate in 4."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля a2.",
+          "en": "The rook from a2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ra1+.",
+          "en": "First move: Ra1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ra1+: ладья даёт шах. Соперник отвечает Kh2, fxg3, Kh3; затем g3+, hxg3+, Rh1#. Финальный Rh1# ставит мат; линия — Ra1+ Kh2 g3+ fxg3 hxg3+ Kh3 Rh1#.",
+        "en": "The first move is Ra1+: the rook gives check. The opponent replies Kh2, fxg3, Kh3; then comes g3+, hxg3+, Rh1#. The final Rh1# delivers mate; the line is Ra1+ Kh2 g3+ fxg3 hxg3+ Kh3 Rh1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5ryfq",
+        "url": "https://lichess.org/training/5ryfq",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-041"
+    },
+    {
+      "fen": "r4k1r/1pR1nppp/1p2p3/3pP3/1Q6/8/1B3PPP/1q2N1K1 b - - 9 21",
+      "setupMove": "a8e8",
+      "solution": [
+        "b4e7",
+        "e8e7",
+        "c7c8",
+        "e7e8",
+        "b2a3",
+        "b1b4",
+        "a3b4",
+        "f8g8",
+        "c8e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 5
+      },
+      "rating": 1826,
+      "themes": [
+        "mateIn4",
+        "backRankMate",
+        "sacrifice"
+      ],
+      "timeLimitSec": 255,
+      "title": {
+        "ru": "Редкий мат ладьёй",
+        "en": "Rare mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в четыре хода.",
+        "en": "White to move. Find mate in 5."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля b4.",
+          "en": "The queen from b4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxe7+.",
+          "en": "First move: Qxe7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxe7+: ферзь берёт коня. Соперник отвечает Rxe7, Re8, Qb4, Kg8; затем Rc8+, Ba3+, Bxb4+, Rxe8#. Финальный Rxe8# ставит мат; линия — Qxe7+ Rxe7 Rc8+ Re8 Ba3+ Qb4 Bxb4+ Kg8 Rxe8#.",
+        "en": "The first move is Qxe7+: the queen captures the knight. The opponent replies Rxe7, Re8, Qb4, Kg8; then comes Rc8+, Ba3+, Bxb4+, Rxe8#. The final Rxe8# delivers mate; the line is Qxe7+ Rxe7 Rc8+ Re8 Ba3+ Qb4 Bxb4+ Kg8 Rxe8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0RrTi",
+        "url": "https://lichess.org/training/0RrTi",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-042"
+    },
+    {
+      "fen": "6rk/1pR4p/1p1p1p1Q/1P2qP2/P4R2/7r/6PK/8 w - - 0 34",
+      "setupMove": "h2h3",
+      "solution": [
+        "e5e3",
+        "h3h4",
+        "e3g3",
+        "h4h5",
+        "g8g5",
+        "h6g5",
+        "g3g5"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 4
+      },
+      "rating": 1839,
+      "themes": [
+        "mateIn4",
+        "endgame",
+        "exposedKing"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Редкий мат ферзём",
+        "en": "Rare mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "en": "Black to move. Find mate in 4."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля e5.",
+          "en": "The queen from e5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe3+.",
+          "en": "First move: Qe3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe3+: ферзь даёт шах. Соперник отвечает Kh4, Kh5, Qxg5; затем Qg3+, Rg5+, Qxg5#. Финальный Qxg5# ставит мат; линия — Qe3+ Kh4 Qg3+ Kh5 Rg5+ Qxg5 Qxg5#.",
+        "en": "The first move is Qe3+: the queen gives check. The opponent replies Kh4, Kh5, Qxg5; then comes Qg3+, Rg5+, Qxg5#. The final Qxg5# delivers mate; the line is Qe3+ Kh4 Qg3+ Kh5 Rg5+ Qxg5 Qxg5#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "8x9ue",
+        "url": "https://lichess.org/training/8x9ue",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-043"
+    },
+    {
+      "fen": "3r2k1/1Q3pbp/1B4p1/p7/2B1P3/8/PPPq3P/1K2R3 w - - 4 24",
+      "setupMove": "e1c1",
+      "solution": [
+        "d2c1",
+        "b1c1",
+        "g7h6",
+        "b6e3",
+        "h6e3",
+        "c1b1",
+        "d8d1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 4
+      },
+      "rating": 1851,
+      "themes": [
+        "mateIn4",
+        "decoy",
+        "backRankMate",
+        "sacrifice"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Редкий мат ладьёй",
+        "en": "Rare mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "en": "Black to move. Find mate in 4."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля d2.",
+          "en": "The queen from d2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxc1+.",
+          "en": "First move: Qxc1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxc1+: ферзь берёт ладью. Соперник отвечает Kxc1, Be3, Kb1; затем Bh6+, Bxe3+, Rd1#. Финальный Rd1# ставит мат; линия — Qxc1+ Kxc1 Bh6+ Be3 Bxe3+ Kb1 Rd1#.",
+        "en": "The first move is Qxc1+: the queen captures the rook. The opponent replies Kxc1, Be3, Kb1; then comes Bh6+, Bxe3+, Rd1#. The final Rd1# delivers mate; the line is Qxc1+ Kxc1 Bh6+ Be3 Bxe3+ Kb1 Rd1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "9MoLB",
+        "url": "https://lichess.org/training/9MoLB",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-044"
+    },
+    {
+      "fen": "4r1k1/2R1B1bp/2b1p1p1/p2p2N1/4n1P1/2q5/P5BP/5Q1K b - - 4 28",
+      "setupMove": "e8e7",
+      "solution": [
+        "c7c8",
+        "c6e8",
+        "c8e8",
+        "e7e8",
+        "f1f7",
+        "g8h8",
+        "f7e8",
+        "g7f8",
+        "e8f8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 5
+      },
+      "rating": 1861,
+      "themes": [
+        "mateIn4",
+        "decoy",
+        "fork",
+        "sacrifice"
+      ],
+      "timeLimitSec": 255,
+      "title": {
+        "ru": "Редкий мат ферзём",
+        "en": "Rare mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в четыре хода.",
+        "en": "White to move. Find mate in 5."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля c7.",
+          "en": "The rook from c7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rc8+.",
+          "en": "First move: Rc8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rc8+: ладья даёт шах. Соперник отвечает Be8, Rxe8, Kh8, Bf8; затем Rxe8+, Qf7+, Qxe8+, Qxf8#. Финальный Qxf8# ставит мат; линия — Rc8+ Be8 Rxe8+ Rxe8 Qf7+ Kh8 Qxe8+ Bf8 Qxf8#.",
+        "en": "The first move is Rc8+: the rook gives check. The opponent replies Be8, Rxe8, Kh8, Bf8; then comes Rxe8+, Qf7+, Qxe8+, Qxf8#. The final Qxf8# delivers mate; the line is Rc8+ Be8 Rxe8+ Rxe8 Qf7+ Kh8 Qxe8+ Bf8 Qxf8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "6Qvqx",
+        "url": "https://lichess.org/training/6Qvqx",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-045"
+    },
+    {
+      "fen": "r1b3kr/pp1nQpq1/2p5/5B2/4RPpp/1NP5/PP3PPP/2K5 b - - 0 23",
+      "setupMove": "g7f8",
+      "solution": [
+        "e7g5",
+        "f8g7",
+        "e4e8",
+        "d7f8",
+        "e8f8",
+        "g8f8",
+        "g5d8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 4
+      },
+      "rating": 1874,
+      "themes": [
+        "mateIn4",
+        "decoy",
+        "clearance",
+        "kingsideAttack",
+        "pin"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Редкий мат ферзём",
+        "en": "Rare mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в четыре хода.",
+        "en": "White to move. Find mate in 4."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля e7.",
+          "en": "The queen from e7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qg5+.",
+          "en": "First move: Qg5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qg5+: ферзь даёт шах. Соперник отвечает Qg7, Nf8, Kxf8; затем Re8+, Rxf8+, Qd8#. Финальный Qd8# ставит мат; линия — Qg5+ Qg7 Re8+ Nf8 Rxf8+ Kxf8 Qd8#.",
+        "en": "The first move is Qg5+: the queen gives check. The opponent replies Qg7, Nf8, Kxf8; then comes Re8+, Rxf8+, Qd8#. The final Qd8# delivers mate; the line is Qg5+ Qg7 Re8+ Nf8 Rxf8+ Kxf8 Qd8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "6ogRt",
+        "url": "https://lichess.org/training/6ogRt",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-046"
+    },
+    {
+      "fen": "r7/p5b1/1kRp3q/4pb2/Q2n3P/3PN3/6P1/4K3 b - - 5 39",
+      "setupMove": "d4c6",
+      "solution": [
+        "e3d5",
+        "b6b7",
+        "a4b5",
+        "b7c8",
+        "b5c6",
+        "c8d8",
+        "c6c7",
+        "d8e8",
+        "c7e7"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 5
+      },
+      "rating": 1915,
+      "themes": [
+        "mateIn4",
+        "deflection",
+        "exposedKing",
+        "fork"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Редкий мат ферзём",
+        "en": "Rare mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в четыре хода.",
+        "en": "White to move. Find mate in 5."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля e3.",
+          "en": "The knight from e3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nd5+.",
+          "en": "First move: Nd5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nd5+: конь даёт шах. Соперник отвечает Kb7, Kc8, Kd8, Ke8; затем Qb5+, Qxc6+, Qc7+, Qe7#. Финальный Qe7# ставит мат; линия — Nd5+ Kb7 Qb5+ Kc8 Qxc6+ Kd8 Qc7+ Ke8 Qe7#.",
+        "en": "The first move is Nd5+: the knight gives check. The opponent replies Kb7, Kc8, Kd8, Ke8; then comes Qb5+, Qxc6+, Qc7+, Qe7#. The final Qe7# delivers mate; the line is Nd5+ Kb7 Qb5+ Kc8 Qxc6+ Kd8 Qc7+ Ke8 Qe7#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "6IHi0",
+        "url": "https://lichess.org/training/6IHi0",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-047"
+    },
+    {
+      "fen": "r5k1/pb4pp/1b6/n1p1p3/4N1p1/2NP1rPq/PPP1QP1P/R1B2RK1 w - - 1 19",
+      "setupMove": "e4g5",
+      "solution": [
+        "f3g3",
+        "f2g3",
+        "c5c4",
+        "d3d4",
+        "b6d4",
+        "c1e3",
+        "d4e3",
+        "f1f2",
+        "h3g2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 5
+      },
+      "rating": 1987,
+      "themes": [
+        "mateIn4",
+        "discoveredAttack",
+        "kingsideAttack",
+        "pin",
+        "sacrifice"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Редкий мат ферзём",
+        "en": "Rare mate: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "en": "Black to move. Find mate in 5."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля f3.",
+          "en": "The rook from f3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxg3+.",
+          "en": "First move: Rxg3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxg3+: ладья берёт пешку. Соперник отвечает fxg3, d4, Be3, Rf2; затем c4+, Bxd4+, Bxe3+, Qg2#. Финальный Qg2# ставит мат; линия — Rxg3+ fxg3 c4+ d4 Bxd4+ Be3 Bxe3+ Rf2 Qg2#.",
+        "en": "The first move is Rxg3+: the rook captures the pawn. The opponent replies fxg3, d4, Be3, Rf2; then comes c4+, Bxd4+, Bxe3+, Qg2#. The final Qg2# delivers mate; the line is Rxg3+ fxg3 c4+ d4 Bxd4+ Be3 Bxe3+ Rf2 Qg2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3bBWE",
+        "url": "https://lichess.org/training/3bBWE",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-048"
+    },
+    {
+      "fen": "1r6/8/R3R2p/6p1/5k2/1Pr4P/P5P1/7K w - - 0 40",
+      "setupMove": "e6h6",
+      "solution": [
+        "f4g3",
+        "a6c6",
+        "b8c8",
+        "c6c8",
+        "c3c8",
+        "h6f6",
+        "c8c1",
+        "f6f1",
+        "c1f1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 5
+      },
+      "rating": 2003,
+      "themes": [
+        "mateIn4",
+        "xRay",
+        "endgame"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Редкий мат ладьёй",
+        "en": "Rare mate: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "en": "Black to move. Find mate in 5."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает король с поля f4.",
+          "en": "The king from f4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kg3.",
+          "en": "First move: Kg3."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kg3: король делает тихий ход. Соперник отвечает Rac6, Rxc8, Rf6, Rf1; затем Rc8, Rxc8, Rc1+, Rxf1#. Финальный Rxf1# ставит мат; линия — Kg3 Rac6 Rc8 Rxc8 Rxc8 Rf6 Rc1+ Rf1 Rxf1#.",
+        "en": "The first move is Kg3: the king makes a quiet move. The opponent replies Rac6, Rxc8, Rf6, Rf1; then comes Rc8, Rxc8, Rc1+, Rxf1#. The final Rxf1# delivers mate; the line is Kg3 Rac6 Rc8 Rxc8 Rxc8 Rf6 Rc1+ Rf1 Rxf1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "8d5je",
+        "url": "https://lichess.org/training/8d5je",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-049"
+    },
+    {
+      "fen": "2Q5/p2Q1pkp/1p6/6p1/P4n2/5P1q/7P/2R2KR1 w - - 3 34",
+      "setupMove": "f1f2",
+      "solution": [
+        "h3h2",
+        "g1g2",
+        "h2g2",
+        "f2e3",
+        "g2e2",
+        "e3d4",
+        "e2d3",
+        "d4e5",
+        "f4g6"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 5
+      },
+      "rating": 2044,
+      "themes": [
+        "mateIn4",
+        "endgame"
+      ],
+      "timeLimitSec": 275,
+      "title": {
+        "ru": "Редкий мат конём",
+        "en": "Rare mate: knight"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "en": "Black to move. Find mate in 5."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите нестандартный мат: проверьте все шахи и отрезающие ходы.",
+          "en": "Look for an unusual mate: check every check and cut-off move."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля h3.",
+          "en": "The queen from h3 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxh2+.",
+          "en": "First move: Qxh2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxh2+: ферзь берёт пешку. Соперник отвечает Rg2, Ke3, Kd4, Ke5; затем Qxg2+, Qe2+, Qd3+, Ng6#. Финальный Ng6# ставит мат; линия — Qxh2+ Rg2 Qxg2+ Ke3 Qe2+ Kd4 Qd3+ Ke5 Ng6#.",
+        "en": "The first move is Qxh2+: the queen captures the pawn. The opponent replies Rg2, Ke3, Kd4, Ke5; then comes Qxg2+, Qe2+, Qd3+, Ng6#. The final Ng6# delivers mate; the line is Qxh2+ Rg2 Qxg2+ Ke3 Qe2+ Kd4 Qd3+ Ke5 Ng6#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "9M9rL",
+        "url": "https://lichess.org/training/9M9rL",
+        "license": "CC0-1.0"
+      },
+      "chapter": "rare-mate",
+      "id": "grm-050"
+    },
+    {
+      "fen": "8/pp3pp1/6p1/3kp1PP/6P1/1P2K3/P7/8 b - - 0 38",
+      "setupMove": "d5e6",
+      "solution": [
+        "h5h6",
+        "g7h6",
+        "g5h6",
+        "e6f6",
+        "g4g5",
+        "f6g5",
+        "h6h7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1800,
+      "themes": [
+        "endgame",
+        "advancedPawn"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Расчёт: пешка",
+        "en": "Pawn calculation"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля h5.",
+          "en": "The pawn from h5 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: h6.",
+          "en": "First move: h6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — h6: пешка делает тихий ход. Соперник отвечает gxh6, Kf6, Kxg5; затем gxh6, g5+, h7. Белые получают решающий перевес; линия — h6 gxh6 gxh6 Kf6 g5+ Kxg5 h7.",
+        "en": "The first move is h6: the pawn makes a quiet move. The opponent replies gxh6, Kf6, Kxg5; then comes gxh6, g5+, h7. The side to move gets a decisive advantage; the line is h6 gxh6 gxh6 Kf6 g5+ Kxg5 h7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0rL3W",
+        "url": "https://lichess.org/training/0rL3W",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-051"
+    },
+    {
+      "fen": "k7/8/3p4/1K1P4/5ppp/8/5PPP/8 w - - 0 46",
+      "setupMove": "b5c6",
+      "solution": [
+        "g4g3",
+        "f2g3",
+        "h4h3",
+        "g3f4",
+        "h3g2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1830,
+      "themes": [
+        "endgame",
+        "advancedPawn"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Расчёт: пешка",
+        "en": "Pawn calculation"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g4.",
+          "en": "The pawn from g4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g3.",
+          "en": "First move: g3."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g3: пешка делает тихий ход. Соперник отвечает fxg3, gxf4; затем h3, hxg2. Чёрные получают решающий перевес; линия — g3 fxg3 h3 gxf4 hxg2.",
+        "en": "The first move is g3: the pawn makes a quiet move. The opponent replies fxg3, gxf4; then comes h3, hxg2. The side to move gets a decisive advantage; the line is g3 fxg3 h3 gxf4 hxg2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0K9j4",
+        "url": "https://lichess.org/training/0K9j4",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-052"
+    },
+    {
+      "fen": "7r/p1kn1Rp1/Ppp1p3/6p1/3Pp1q1/2P5/1P1Q2P1/5KR1 w - - 4 31",
+      "setupMove": "f7g7",
+      "solution": [
+        "h8f8",
+        "f1e1",
+        "g4g3",
+        "e1d1",
+        "f8f2",
+        "g1e1",
+        "f2d2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1844,
+      "themes": [
+        "endgame"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Расчёт: ладья",
+        "en": "Rook calculation"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля h8.",
+          "en": "The rook from h8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rf8+.",
+          "en": "First move: Rf8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rf8+: ладья даёт шах. Соперник отвечает Ke1, Kd1, Re1; затем Qg3+, Rf2, Rxd2+. В итоге вы выигрываете ферзя; линия — Rf8+ Ke1 Qg3+ Kd1 Rf2 Re1 Rxd2+.",
+        "en": "The first move is Rf8+: the rook gives check. The opponent replies Ke1, Kd1, Re1; then comes Qg3+, Rf2, Rxd2+. In the end you win the queen; the line is Rf8+ Ke1 Qg3+ Kd1 Rf2 Re1 Rxd2+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0W1Uk",
+        "url": "https://lichess.org/training/0W1Uk",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-053"
+    },
+    {
+      "fen": "2r5/p1p2k1p/2R3p1/5p2/4rK1P/P3P1P1/5P2/2R5 w - - 3 28",
+      "setupMove": "f4g5",
+      "solution": [
+        "h7h6",
+        "g5h6",
+        "c8h8",
+        "h6g5",
+        "e4g4"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1846,
+      "themes": [
+        "endgame",
+        "decoy",
+        "mateIn3"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Расчёт: пешка",
+        "en": "Pawn calculation"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in 3."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля h7.",
+          "en": "The pawn from h7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: h6+.",
+          "en": "First move: h6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — h6+: пешка даёт шах. Соперник отвечает Kxh6, Kg5; затем Rh8+, Rg4#. Финальный Rg4# ставит мат; линия — h6+ Kxh6 Rh8+ Kg5 Rg4#.",
+        "en": "The first move is h6+: the pawn gives check. The opponent replies Kxh6, Kg5; then comes Rh8+, Rg4#. The final Rg4# delivers mate; the line is h6+ Kxh6 Rh8+ Kg5 Rg4#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0Iwtn",
+        "url": "https://lichess.org/training/0Iwtn",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-054"
+    },
+    {
+      "fen": "7k/4Npp1/7p/1p1Q4/2p5/3n3P/1q3PP1/r4RK1 w - - 6 36",
+      "setupMove": "f1a1",
+      "solution": [
+        "b2a1",
+        "g1h2",
+        "a1e5",
+        "d5e5",
+        "d3e5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1870,
+      "themes": [
+        "endgame",
+        "fork"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Расчёт: ферзь",
+        "en": "Queen calculation"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля b2.",
+          "en": "The queen from b2 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxa1+.",
+          "en": "First move: Qxa1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxa1+: ферзь берёт ладью. Соперник отвечает Kh2, Qxe5; затем Qe5+, Nxe5. В итоге вы выигрываете ферзя; линия — Qxa1+ Kh2 Qe5+ Qxe5 Nxe5.",
+        "en": "The first move is Qxa1+: the queen captures the rook. The opponent replies Kh2, Qxe5; then comes Qe5+, Nxe5. In the end you win the queen; the line is Qxa1+ Kh2 Qe5+ Qxe5 Nxe5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0krWJ",
+        "url": "https://lichess.org/training/0krWJ",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-055"
+    },
+    {
+      "fen": "8/8/1k4p1/p7/3N2p1/3K4/8/8 w - - 0 68",
+      "setupMove": "d3c3",
+      "solution": [
+        "g4g3",
+        "d4e2",
+        "g3g2",
+        "c3d2",
+        "a5a4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1896,
+      "themes": [
+        "endgame",
+        "advancedPawn",
+        "defensiveMove"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Расчёт: пешка",
+        "en": "Pawn calculation"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Выиграйте материал.",
+        "en": "Black to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает пешка с поля g4.",
+          "en": "The pawn from g4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g3.",
+          "en": "First move: g3."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g3: пешка делает тихий ход. Соперник отвечает Ne2, Kd2; затем g2, a4. Чёрные получают решающий перевес; линия — g3 Ne2 g2 Kd2 a4.",
+        "en": "The first move is g3: the pawn makes a quiet move. The opponent replies Ne2, Kd2; then comes g2, a4. The side to move gets a decisive advantage; the line is g3 Ne2 g2 Kd2 a4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1TiA2",
+        "url": "https://lichess.org/training/1TiA2",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-056"
+    },
+    {
+      "fen": "3q1rk1/pp3p2/4pRp1/2r1P1Qp/8/2P5/PP4P1/5R1K b - - 1 28",
+      "setupMove": "g8g7",
+      "solution": [
+        "f6f7",
+        "f8f7",
+        "f1f7",
+        "g7f7",
+        "g5d8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1920,
+      "themes": [
+        "endgame"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Расчёт: ладья",
+        "en": "Rook calculation"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля f6.",
+          "en": "The rook from f6 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxf7+.",
+          "en": "First move: Rxf7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxf7+: ладья берёт пешку. Соперник отвечает Rxf7, Kxf7; затем Rxf7+, Qxd8. В итоге вы выигрываете ферзя; линия — Rxf7+ Rxf7 Rxf7+ Kxf7 Qxd8.",
+        "en": "The first move is Rxf7+: the rook captures the pawn. The opponent replies Rxf7, Kxf7; then comes Rxf7+, Qxd8. In the end you win the queen; the line is Rxf7+ Rxf7 Rxf7+ Kxf7 Qxd8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "09k5o",
+        "url": "https://lichess.org/training/09k5o",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-057"
+    },
+    {
+      "fen": "2Q3k1/6p1/7q/5r2/2p3n1/P1Pp2P1/1P6/5BK1 b - - 8 47",
+      "setupMove": "g8h7",
+      "solution": [
+        "c8f5",
+        "h6g6",
+        "f5g6",
+        "h7g6",
+        "a3a4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1926,
+      "themes": [
+        "endgame",
+        "defensiveMove",
+        "fork",
+        "hangingPiece"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Расчёт: ферзь",
+        "en": "Queen calculation"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ферзь с поля c8.",
+          "en": "The queen from c8 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf5+.",
+          "en": "First move: Qxf5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf5+: ферзь берёт ладью. Соперник отвечает Qg6, Kxg6; затем Qxg6+, a4. Белые получают решающий перевес; линия — Qxf5+ Qg6 Qxg6+ Kxg6 a4.",
+        "en": "The first move is Qxf5+: the queen captures the rook. The opponent replies Qg6, Kxg6; then comes Qxg6+, a4. The side to move gets a decisive advantage; the line is Qxf5+ Qg6 Qxg6+ Kxg6 a4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0VEZG",
+        "url": "https://lichess.org/training/0VEZG",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-058"
+    },
+    {
+      "fen": "8/1p6/p7/2Q4P/4qNb1/P1kp2P1/7K/8 b - - 1 65",
+      "setupMove": "e4c4",
+      "solution": [
+        "f4d5",
+        "c3b3",
+        "c5c4",
+        "b3c4",
+        "d5e3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1980,
+      "themes": [
+        "endgame",
+        "decoy"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Расчёт: конь",
+        "en": "Knight calculation"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает конь с поля f4.",
+          "en": "The knight from f4 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nd5+.",
+          "en": "First move: Nd5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nd5+: конь даёт шах. Соперник отвечает Kb3, Kxc4; затем Qxc4+, Ne3+. Белые получают решающий перевес; линия — Nd5+ Kb3 Qxc4+ Kxc4 Ne3+.",
+        "en": "The first move is Nd5+: the knight gives check. The opponent replies Kb3, Kxc4; then comes Qxc4+, Ne3+. The side to move gets a decisive advantage; the line is Nd5+ Kb3 Qxc4+ Kxc4 Ne3+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0YYgy",
+        "url": "https://lichess.org/training/0YYgy",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-059"
+    },
+    {
+      "fen": "3r2k1/R6p/5Kp1/4N3/1p3nPP/5P2/8/8 b - - 0 49",
+      "setupMove": "b4b3",
+      "solution": [
+        "a7g7",
+        "g8f8",
+        "e5d7",
+        "d8d7",
+        "g7d7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2031,
+      "themes": [
+        "endgame"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Расчёт: ладья",
+        "en": "Rook calculation"
+      },
+      "prompt": {
+        "ru": "Ход белых. Выиграйте материал.",
+        "en": "White to move. Win material."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
+          "en": "Calculate the forcing line to the end, including the opponent's replies."
+        },
+        {
+          "tier": 2,
+          "ru": "Решает ладья с поля a7.",
+          "en": "The rook from a7 is the key piece."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rg7+.",
+          "en": "First move: Rg7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rg7+: ладья даёт шах. Соперник отвечает Kf8, Rxd7; затем Nd7+, Rxd7. Белые получают решающий перевес; линия — Rg7+ Kf8 Nd7+ Rxd7 Rxd7.",
+        "en": "The first move is Rg7+: the rook gives check. The opponent replies Kf8, Rxd7; then comes Nd7+, Rxd7. The side to move gets a decisive advantage; the line is Rg7+ Kf8 Nd7+ Rxd7 Rxd7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0JLPX",
+        "url": "https://lichess.org/training/0JLPX",
+        "license": "CC0-1.0"
+      },
+      "chapter": "calculation",
+      "id": "grm-060"
     }
   ]
 }

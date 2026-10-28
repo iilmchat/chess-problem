@@ -58,7 +58,18 @@
     <string name="chapter_deflection">Deflection</string>
     <string name="chapter_quiet_move">Quiet move</string>
     <string name="chapter_deep_sacrifice">Deep sacrifice</string>
+    <string name="chapter_fork">Fork</string>
+    <string name="chapter_pin">Pin</string>
+    <string name="chapter_back_rank">Back rank</string>
     <string name="chapter_promotion">Promotion</string>
+    <string name="chapter_decoy">Decoy</string>
+    <string name="chapter_interference">Interference</string>
+    <string name="chapter_endgame">Endgame</string>
+    <string name="chapter_sacrifice">Sacrifice</string>
+    <string name="chapter_zugzwang">Zugzwang</string>
+    <string name="chapter_underpromotion">Underpromotion</string>
+    <string name="chapter_rare_mate">Rare mate</string>
+    <string name="chapter_calculation">Calculation</string>
     <string name="chapter_mixed_review">Mixed review</string>
     <string name="chapter_final_exam">Final exam</string>
 

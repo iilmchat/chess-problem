@@ -25,7 +25,7 @@ const LEVELS = {
 };
 const KNOWN_CHAPTERS = {
   NOVICE: new Set([
-    "mate-in-1", "capture-queen", "fork", "pin-skewer", "back-rank",
+    "mate-in-1", "capture-queen", "fork", "pin", "pin-skewer", "back-rank",
     "double-attack", "remove-defender", "promotion", "discovered-attack",
     "defense", "mate-in-2", "mixed-review",
   ]),

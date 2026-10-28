@@ -1,8 +1,8 @@
 # Content Authoring
 
-**Статус:** 60 production-задач в v0.2.1 · **Дата:** 28.10.2026
+**Статус:** 180 production-задач в v0.3.0 · **Дата:** 28.10.2026
 **Связано:** [CONTENT PLAN](../design/CONTENT_PLAN.md) · [схема](../../content/schema/puzzle-pack.schema.json) ·
-[валидатор](../../tools/validate-content.mjs) · [Lichess selection](../../tools/lichess-selection.json)
+[валидатор](../../tools/validate-content.mjs) · [Lichess selection](../../tools/lichess-selection-v030.json)
 
 Как добавить шахматную задачу, проверить линию, написать подсказки и разбор,
 собрать пак и не сломать прогресс игроков.
@@ -37,7 +37,7 @@ assets-каталог модуля `data` (статические демо-па�
 ### 1.1. Lichess-пайплайн
 
 Для production-контента используется `tools/import-lichess.mjs`; отбор
-60 задач зафиксирован в `tools/lichess-selection.json`:
+180 задач зафиксирован в `tools/lichess-selection-v030.json`:
 
 ```bash
 # 1. Скачать lichess_db_puzzle.csv.zst с database.lichess.org и распаковать
@@ -46,14 +46,14 @@ zstd -d lichess_db_puzzle.csv.zst -o lichess_db_puzzle.csv
 # 2. Отфильтровать пул (≈20 минут на 6.1M строк)
 node tools/import-lichess.mjs filter \
   --input lichess_db_puzzle.csv \
-  --out tools/var/lichess-pool/candidates-v2.ndjson
+  --out tools/var/lichess-pool/candidates-v3.ndjson
 
 # 3. Собрать drafts по ID из selection
-node tools/import-lichess.mjs draft --pool tools/var/lichess-pool/candidates-v2.ndjson \
+node tools/import-lichess.mjs draft --pool tools/var/lichess-pool/candidates-v3.ndjson \
   --level NOVICE --chapter mate-in-1 --ids "1j4RC,0acZr,..."
 
 # 4. Проверить факты линии
-node tools/replay.mjs "1j4RC,0acZr,..." tools/var/lichess-pool/candidates-v2.ndjson
+node tools/replay.mjs "<ids>" tools/var/lichess-pool/candidates-v3.ndjson
 
 # 5. Авторинг tools/var/import-texts.json → применить и смержить
 node tools/import-lichess.mjs author --texts tools/var/import-texts.json
@@ -379,3 +379,4 @@ node tools/validate-content.mjs content/puzzles/novice.json
 - [ ] Валидатор зелёный.
 - [ ] Второй человек решил задачу.
 - [ ] Проверено на устройстве.
+

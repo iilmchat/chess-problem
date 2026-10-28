@@ -1,11 +1,11 @@
 # Архитектура Chess Problem
 
-**Статус:** реализовано в v0.2.1 · **Версия:** 0.2 · **Дата:** 28.10.2026
+**Статус:** реализовано в v0.3.0 · **Версия:** 0.3 · **Дата:** 28.10.2026
 **Связано:** [DESIGN](../design/DESIGN_V01_MVP.md) · [RULES](RULES.md) · [ADR](adr/README.md)
 
 Документ описывает реализованную архитектуру Android-приложения и границы
 следующих этапов. `core`, `data`, `ui`, `app` и `build-logic` собираются;
-60 production-задач проходят путь от `content/puzzles` через generated assets
+180 production-задач проходят путь от `content/puzzles` через generated assets
 до Canvas-доски и Room-прогресса.
 
 ---
@@ -549,3 +549,4 @@ Compose UI и screenshot tests.
 6. **Планшет.** Одна колонка max 560 dp или две панели в v0.4.0.
 7. **Локальные напоминания.** `POST_NOTIFICATIONS` и политика — только если
    реально нужно.
+

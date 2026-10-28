@@ -3,6 +3,38 @@
 Все заметные изменения проекта. Формат — [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/),
 версии — [SemVer](https://semver.org/lang/ru/).
 
+## [0.3.0-180-puzzles] — 2026-10-29
+
+### Added
+
+- 180 production-задач (`contentVersion 2026.10.3`): по 60 на уровень,
+  6 глав × 10 задач.
+- Новые главы:
+  - Новичок: `fork`, `pin`, `back-rank`, `promotion`;
+  - Профессионал: `decoy`, `interference`, `endgame`, `sacrifice`;
+  - Гроссмейстер: `zugzwang`, `underpromotion`, `rare-mate`, `calculation`.
+- Воспроизводимый отбор 180 ID:
+  `tools/lichess-selection-v030.json`; пул `candidates-v3.ndjson`.
+- RU/EN названия, подсказки и разборы для 120 новых задач; неспойлерные
+  названия глав и задач.
+- Android UI: названия и локализация новых глав; app versionName `0.3.0`,
+  versionCode `300`.
+
+### Changed
+
+- Пайплайн расширен с 6 до 18 глав; filter проверяет 6.1M строк и держит
+  24 кандидата на главу.
+- Валидатор KNOWN_CHAPTERS дополнен `pin`; production-паки 3 × 60.
+- Обновлены README, CHANGELOG, KNOWN_ISSUES, CONCEPT/UI/ARCHITECTURE,
+  CONTENT_AUTHORING, GETTING_STARTED, QA, USER_GUIDE и screenshots.
+
+### Notes
+
+- 12 WARN `grm-*`: маты в 4–5 ходов в главе `rare-mate`; это ожидаемые
+  редкие случаи, ошибок нет.
+- 180 из 360 задач; осталось 6 глав на уровень.
+- Тексты 180 задач требуют второго человеческого ревью (KI-017).
+
 ## [0.2.1-60-puzzles] — 2026-10-28
 
 ### Added
