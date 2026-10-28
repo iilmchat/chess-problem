@@ -1,0 +1,30 @@
+package com.iilmchat.chessproblem.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+val InkBackground = Color(0xFF08110E)
+val InkSurface = Color(0xFF111F1A)
+val InkSurfaceVariant = Color(0xFF182A24)
+val InkSurfaceHigh = Color(0xFF223A32)
+val Parchment = Color(0xFFF4F0E5)
+val ParchmentMuted = Color(0xFFB9C6BE)
+val InkOutline = Color(0xFF33544A)
+val Emerald = Color(0xFF34D399)
+val EmeraldDeep = Color(0xFF059669)
+val OnEmerald = Color(0xFF06251A)
+val Brass = Color(0xFFD6A756)
+val OnBrass = Color(0xFF2A1C05)
+val Violet = Color(0xFF8B5CF6)
+val OnViolet = Color(0xFFFFFFFF)
+val ErrorRed = Color(0xFFF87171)
+val OnErrorRed = Color(0xFF2A0A0A)
+
+val PaperBackground = Color(0xFFFAF7EF)
+val PaperSurface = Color(0xFFFFFFFF)
+val PaperSurfaceVariant = Color(0xFFF0EADF)
+val PaperSurfaceHigh = Color(0xFFE6DED0)
+val PaperOnBackground = Color(0xFF1B2420)
+val PaperOnSurfaceVariant = Color(0xFF5B6B63)
+val PaperOutline = Color(0xFFC9D3CB)
+val PaperBrass = Color(0xFFB98A3E)
+val PaperError = Color(0xFFDC2626)

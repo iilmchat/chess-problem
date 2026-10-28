@@ -16,29 +16,32 @@
 | Компонент | Версия | Лицензия | Использование | Уведомление |
 | --- | --- | --- | --- | --- |
 | Kotlin stdlib | 2.2.10 | Apache 2.0 | Язык и runtime | Copyright JetBrains s.r.o. |
-| AndroidX / Jetpack Compose | по BOM | Apache 2.0 | UI, lifecycle, navigation | Copyright The Android Open Source Project |
+| AndroidX / Jetpack Compose | BOM 2026.09.00 | Apache 2.0 | UI, lifecycle, navigation | Copyright The Android Open Source Project |
 | Material 3 (Compose) | по BOM | Apache 2.0 | Компоненты и тема | Copyright The Android Open Source Project |
-| Room | по BOM | Apache 2.0 | Локальная БД прогресса | Copyright The Android Open Source Project |
-| DataStore | по BOM | Apache 2.0 | Настройки | Copyright The Android Open Source Project |
-| kotlinx.serialization | 1.9.x | Apache 2.0 | JSON-контент | Copyright JetBrains s.r.o. |
-| kotlinx.coroutines | 1.10.x | Apache 2.0 | Асинхронность | Copyright JetBrains s.r.o. |
+| Room | 2.8.5 | Apache 2.0 | Локальная БД прогресса | Copyright The Android Open Source Project |
+| DataStore | 1.3.0 | Apache 2.0 | Настройки и кошелёк подсказок | Copyright The Android Open Source Project |
+| kotlinx.serialization | 1.9.0 | Apache 2.0 | JSON-контент | Copyright JetBrains s.r.o. |
+| kotlinx.coroutines | 1.10.2 | Apache 2.0 | Асинхронность | Copyright JetBrains s.r.o. |
 | chesslib | 1.3.7 | Apache 2.0 | FEN, ходы, мат, SAN | Copyright bhlangonijr |
-| Montserrat | 7.x | SIL OFL 1.1 | Заголовки (план) | Copyright The Montserrat Project Authors |
-| Manrope | 1.x | SIL OFL 1.1 | Интерфейс (план) | Copyright The Manrope Project Authors |
-| Roboto Mono | 3.x | Apache 2.0 | SAN и табличные числа (план) | Copyright Google LLC |
-| Material Symbols | по версии | Apache 2.0 | Иконки (план) | Copyright Google LLC |
+| Montserrat | variable | SIL OFL 1.1 | Заголовки | Copyright The Montserrat Project Authors |
+| Manrope | variable | SIL OFL 1.1 | Интерфейс | Copyright The Manrope Project Authors |
+| Roboto Mono | variable | SIL OFL 1.1 | SAN и табличные числа | Copyright Google LLC |
+| Material Icons Extended | по BOM | Apache 2.0 | Иконки интерфейса | Copyright Google LLC |
 
-> Версии AndroidX/Compose будут зафиксированы в `gradle/libs.versions.toml`
-> после scaffold v0.2.0. Таблица обновляется вместе с зависимостями.
+> Версии зафиксированы в `gradle/libs.versions.toml`; таблица обновляется
+> вместе с зависимостями.
 
 ### 1.1. Шрифты
 
-Шрифты ещё не добавлены в репозиторий. При добавлении:
+Variable-шрифты добавлены в `ui/src/main/res/font/`; полные тексты OFL лежат в
+`licenses/fonts/`:
 
-- рядом с файлами шрифтов кладётся `OFL.txt` или `LICENSE.txt`;
-- шрифты сабсетятся только по нужным глифам (RU/EN + цифры + SAN);
-- названия файлов и лицензии фиксируются в этой таблице;
-- нельзя использовать шрифт без права на встраивание в приложение.
+- `OFL-Montserrat.txt`
+- `OFL-Manrope.txt`
+- `OFL-RobotoMono.txt`
+
+Шрифты покрывают RU/EN, цифры и SAN. Перед релизом тексты лицензий будут
+продублированы в assets для экрана «О приложении → Лицензии».
 
 ### 1.2. Иконки и фигуры
 

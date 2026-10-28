@@ -1,6 +1,6 @@
 # Контент
 
-**Статус:** дизайн-фаза · **Дата:** 28.10.2026
+**Статус:** контент-фаза; 4 демо-задачи в Android · **Дата:** 28.10.2026
 **Связано:** [CONTENT PLAN](../docs/design/CONTENT_PLAN.md) ·
 [CONTENT AUTHORING](../docs/development/CONTENT_AUTHORING.md) ·
 [схема](schema/puzzle-pack.schema.json)
@@ -21,7 +21,7 @@ content/
 │   ├── professional.sample.json  ← 1 задача
 │   └── grandmaster.sample.json   ← 1 задача
 ├── puzzles/
-│   ├── novice.json               ← production, появится в v0.2.0
+│   ├── novice.json               ← production, появится в v0.2.1
 │   ├── professional.json
 │   └── grandmaster.json
 └── README.md

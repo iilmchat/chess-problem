@@ -47,10 +47,10 @@ Chess Problem — Android-приложение для RuStore: портрет, �
 
 ### Что сделать
 
-- [ ] Scaffold Compose-проекта в v0.2.0.
-- [ ] Вынести тему в `:ui/theme`, токены — из `design/tokens.json`.
-- [ ] Настроить screenshot-тесты (Paparazzi или Roborazzi) после scaffold.
-- [ ] Проверить размер APK и cold start на устройстве 2 ГБ RAM.
+- [x] Scaffold Compose-проекта в v0.2.0.
+- [x] Вынести тему в `:ui/theme`, токены — из `design/tokens.json`.
+- [ ] Настроить screenshot-тесты (Paparazzi или Roborazzi) — KI-014.
+- [ ] Проверить размер APK и cold start на устройстве 2 ГБ RAM — KI-015.
 
 ## Альтернативы
 

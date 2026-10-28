@@ -41,8 +41,8 @@
 | Название проекта | Chess Problem / «Шахматные задачи» |
 | Package | `com.iilmchat.chessproblem` (рабочий, проверить до ключа) |
 | minSdk | 26 (Android 8.0) |
-| targetSdk / compileSdk | 36 |
-| Ориентация | Портрет |
+| targetSdk / compileSdk | 36 / 37 (Compose 1.12.1) |
+| Ориентация | Не фиксируется; дизайн оптимизирован под портрет |
 | ABI | arm64-v8a, armeabi-v7a, x86_64 (эмулятор) |
 | Сеть | Нет в v1.0.0; `INTERNET` только с рекламой/покупками |
 | Разрешения | Нет в v1.0.0; `VIBRATE` — если нужен haptic |

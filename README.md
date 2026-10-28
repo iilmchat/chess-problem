@@ -5,18 +5,23 @@
 > таймер и подсказки, которые учат думать, а не угадывать.
 
 [![CI](https://github.com/iilmchat/chess-problem/actions/workflows/ci.yml/badge.svg)](https://github.com/iilmchat/chess-problem/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/badge/version-0.1.0--design-c9a45c.svg)](docs/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0--vertical--slice-c9a45c.svg)](docs/CHANGELOG.md)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.2.10-7F52FF.svg)](docs/development/ARCHITECTURE.md)
 [![Compose](https://img.shields.io/badge/Jetpack-Compose-4285F4.svg)](docs/design/UI_UX_SPEC.md)
 [![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3ddc84.svg)](docs/development/RUSTORE.md)
 [![License](https://img.shields.io/badge/license-proprietary-lightgrey.svg)](#лицензия)
 
-**Версия:** `v0.1.0-design` · **Фаза:** дизайн и документация
+**Версия:** `v0.2.0-vertical-slice` · **Фаза:** Android vertical slice
 **Стек:** Kotlin 2.2.10 · Jetpack Compose · Material 3 · chesslib
-**Платформа:** Android 8.0+ (RuStore), портрет
+**Платформа:** Android 8.0+ (minSdk 26), compileSdk 37 / targetSdk 36
 **Локализация:** RU · EN
 **Сеть:** офлайн, без аккаунта и сбора персональных данных
 **© 2026 RuChating (iilmchat)**
+
+> **Статус:** Android-проект собирается и запускается. Реализованы доска,
+> решатель, подсказки, таймер, пауза, продолжение, звёзды/XP, Room-прогресс,
+> настройки, RU/EN и 4 демо-задачи. Полные 360 задач, drag-and-drop,
+> TalkBack-навигация по доске, Premium и rewarded-реклама — следующие этапы.
 
 ---
 
@@ -33,6 +38,23 @@
 | Подсказки | Результат |
 | --- | --- |
 | [![Подсказки](design/prototype/screenshots/hints-360.png)](design/prototype/screenshots/hints-360.png) | [![Результат](design/prototype/screenshots/result-360.png)](design/prototype/screenshots/result-360.png) |
+
+## Android vertical slice
+
+Debug-сборка на эмуляторе Pixel 6 (Android 16, 1080×2400). Больше снимков и
+чек-лист проверки — в [docs/screenshots/android](docs/screenshots/android/README.md).
+
+| Главная | Решатель |
+| --- | --- |
+| [![Android: главная](docs/screenshots/android/home-dark-ru.png)](docs/screenshots/android/home-dark-ru.png) | [![Android: решатель](docs/screenshots/android/puzzle-light-en.png)](docs/screenshots/android/puzzle-light-en.png) |
+
+| Подсказки | Результат |
+| --- | --- |
+| [![Android: подсказки](docs/screenshots/android/hints-light-en.png)](docs/screenshots/android/hints-light-en.png) | [![Android: результат](docs/screenshots/android/result-solved-light-en.png)](docs/screenshots/android/result-solved-light-en.png) |
+
+| 360×800 | 430×932 |
+| --- | --- |
+| [![360×800](docs/screenshots/android/home-360-en.png)](docs/screenshots/android/home-360-en.png) | [![430×932](docs/screenshots/android/home-430-en.png)](docs/screenshots/android/home-430-en.png) |
 
 ---
 
@@ -162,39 +184,47 @@
 | **Шахматные правила** | chesslib 1.3.7 (Apache 2.0): FEN, SAN, легальные ходы, мат |
 | **Данные** | Room (прогресс), DataStore (настройки), JSON-контент в assets |
 | **Сборка** | Gradle 9.8.2, AGP 9.4.1, version catalog, convention plugins |
-| **Android** | minSdk 26 (Android 8.0), target/compile SDK 36, R8, AAB/APK |
-| **Тесты** | JUnit + kotlin-test, Compose UI tests, perft-тесты правил, screenshot tests |
+| **Android** | minSdk 26 (Android 8.0), compileSdk 37, targetSdk 36, R8, AAB/APK |
+| **Тесты** | JUnit + kotlin-test: 21 unit-тест `core` (правила, сессия, звёзды, XP, таймер); lint; Compose UI tests и screenshot tests — план |
 | **Контент-пайплайн** | Node.js + chess.js (BSD-2-Clause), JSON Schema, CI-валидация |
-| **Статика** | detekt + detekt-formatting (ktlint) |
-| **CI/CD** | GitHub Actions: документация, контент, затем сборка и тесты Android |
+| **Статика** | lint; detekt + detekt-formatting — план |
+| **CI/CD** | GitHub Actions: документация, контент, Android unit-тесты, debug APK и lint |
 | **Публикация** | RuStore, AAB, подпись, R8, arm64-v8a / armeabi-v7a / x86_64 |
 
-> Точные версии фиксируются в `gradle/libs.versions.toml` после scaffold
-> Android-проекта в v0.2.0. Версии в таблице — целевой стек, а не обещание
-> конкретного патча.
+Точные версии — в `gradle/libs.versions.toml`. AGP 9.4.1 использует встроенный
+Kotlin 2.2.10; KSP подключён для Room.
 
 ---
 
 ## Быстрый старт
 
-### Сейчас: дизайн-фаза
-
-Кода Android пока нет — сначала фиксируем продукт, UX и контент-пайплайн.
+**Требования:** JDK **21** · Android SDK (platform **37.0**, build-tools
+**36.0.0** или **37.0.0**) · Android Studio или command-line tools. Gradle
+устанавливать не нужно — в репозитории есть wrapper 9.8.2.
 
 ```bash
 git clone https://github.com/iilmchat/chess-problem.git
 cd chess-problem
 
-# Открыть интерактивный прототип в браузере
-start design/prototype/index.html      # Windows
-open design/prototype/index.html       # macOS
-xdg-open design/prototype/index.html   # Linux
+# Указать путь к Android SDK (macOS/Linux — свой путь)
+printf 'sdk.dir=D\:/Dev/Android/Sdk\n' > local.properties
+# Windows PowerShell:
+# "sdk.dir=D\:/Dev/Android/Sdk" | Set-Content -Encoding ascii local.properties
 
-# Прочитать дизайн
-start docs/design/DESIGN_V01_MVP.md
+# Собрать debug APK
+./gradlew :app:assembleDebug
+
+# Unit-тесты ядра и lint
+./gradlew :core:test :app:lintDebug
+
+# Установить на подключённый эмулятор/устройство
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+
+# Release AAB для RuStore (нужен signing config)
+./gradlew :app:bundleRelease
 ```
 
-Проверить контент и ссылки в документации:
+Проверить документацию и примеры контента:
 
 ```bash
 npm ci --prefix tools
@@ -202,23 +232,12 @@ node tools/check-docs.mjs
 node tools/validate-content.mjs content/samples/novice.sample.json
 ```
 
-### После scaffold (v0.2.0)
-
-**Требования:** JDK **21** · Android SDK (platform **36**, build-tools **36.0.0**) ·
-Android Studio. Gradle не нужен — в репозитории будет wrapper.
+Открыть интерактивный прототип (источник визуальных решений):
 
 ```bash
-# Указать путь к Android SDK
-echo "sdk.dir=D:/Dev/Android/Sdk" > local.properties
-
-# Собрать debug APK
-./gradlew :app:assembleDebug
-
-# Тесты, lint и статический анализ
-./gradlew :app:testDebugUnitTest :app:lintDebug detekt
-
-# Release AAB для RuStore
-./gradlew :app:bundleRelease
+start design/prototype/index.html      # Windows
+open design/prototype/index.html       # macOS
+xdg-open design/prototype/index.html   # Linux
 ```
 
 Подробно — в [GETTING_STARTED.md](docs/development/GETTING_STARTED.md).
@@ -245,9 +264,13 @@ chess-problem/
 │   └── README.md                      ← контент-пайплайн и лицензии
 ├── tools/                             ← валидатор контента и проверка ссылок
 ├── store/                             ← черновик карточки RuStore
-├── app/  core/  data/  ui/            ← появятся в v0.2.0
-├── build-logic/                       ← convention-плагины (v0.2.0)
-└── .github/workflows/                 ← CI: документация и контент
+├── app/                               ← Activity, DI, Navigation Compose
+├── core/                              ← правила, сессия, звёзды, XP, таймер
+├── data/                              ← assets, Room, DataStore, JSON
+├── ui/                                ← тема, доска, экраны, ViewModel
+├── build-logic/                       ← convention-плагины AGP
+├── gradle/                            ← version catalog и wrapper
+└── .github/workflows/                 ← CI: docs, content, Android
 ```
 
 ---
@@ -283,14 +306,14 @@ chess-problem/
 
 | Показатель | Значение |
 | --- | --- |
-| Версия | **v0.1.0-design** |
-| Фаза | Дизайн: продукт, UX, контент-пайплайн, документация |
-| Документов | 20+ (дизайн, разработка, QA, legal, ADR) |
+| Версия | **v0.2.0-vertical-slice** |
+| Фаза | Android vertical slice: доска, решатель, прогресс, настройки |
+| Документов | 25+ (дизайн, разработка, QA, legal, ADR) |
 | Прототип | 4 экрана в `design/prototype/index.html` |
-| Контент | 4 проверенные задачи в `content/samples`; план — 360 |
-| Код | Android-проект появится в **v0.2.0** |
-| Тесты | CI проверяет ссылки в документации и валидность примеров задач |
-| Сборка | Пока нет; Gradle-сборка — в v0.2.0 |
+| Android | 4 модуля, debug APK, Compose Canvas, chesslib, Room, DataStore |
+| Контент | 4 проверенные демо-задачи; план — 360 |
+| Тесты | 21 unit-тест `core`, lint; CI собирает debug APK |
+| Сборка | `./gradlew :app:assembleDebug` — успешно |
 | Магазин | Черновик карточки RuStore и концепт иконки в `store/` |
 
 ---
@@ -300,9 +323,10 @@ chess-problem/
 | Версия | Содержание | Статус |
 | --- | --- | --- |
 | **v0.1.0-design** | Дизайн, UI/UX, прототип, схема контента, документация | **готово** |
-| v0.2.0 | Android scaffold, доска, таймер, 60 задач (20 на уровень), результат | план |
-| v0.3.0 | 180 задач, прогресс, статистика, EN, задача дня | план |
-| v0.4.0 | 360 задач, достижения, доступность, планшетная раскладка | план |
+| **v0.2.0** | Android vertical slice: доска, решатель, таймер, подсказки, результат, Room-прогресс, настройки, RU/EN, 4 демо-задачи | **готово** |
+| v0.2.1 | 60 задач (20 на уровень), отбор контента, CI Android job | в работе |
+| v0.3.0 | 180 задач, статистика по темам, задача дня, достижения | план |
+| v0.4.0 | 360 задач, drag-and-drop, TalkBack, планшетная раскладка | план |
 | v0.5.0 | RuStore closed beta, подпись, скриншоты, политика | план |
 | **v1.0.0** | Публичный релиз в RuStore: 360 задач, RU/EN, офлайн | план |
 | v1.1.0 | Premium lifetime + опциональная rewarded-реклама после ИП/юрлица | исследование |

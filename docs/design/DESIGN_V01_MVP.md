@@ -1,8 +1,8 @@
 # Гейм-дизайн Chess Problem — MVP v0.1
 
-**Версия документа:** 0.1 · **Статус:** первая редакция, готова к ревью
+**Версия документа:** 0.1 · **Статус:** первая редакция; vertical slice реализован
 **Владелец:** продукт/гейм-дизайн · **Дата:** 28.10.2026
-**Целевая платформа:** Android 8.0+, портрет, публикация в RuStore
+**Целевая платформа:** Android 8.0+, портретная композиция, публикация в RuStore
 **Связанные документы:** [UI/UX SPEC](UI_UX_SPEC.md) · [CONTENT PLAN](CONTENT_PLAN.md) ·
 [ARCHITECTURE](../development/ARCHITECTURE.md) · [RUSTORE](../development/RUSTORE.md)
 

@@ -16,6 +16,7 @@
 | [CONTENT PLAN](design/CONTENT_PLAN.md) | 360 задач, 36 глав, темы, схема пака, производство и QA |
 | [USER_GUIDE.md](user_guide/USER_GUIDE.md) | Руководство игрока: как решать, подсказки, звёзды, настройки, FAQ |
 | [Прототип](../design/prototype/README.md) | Как открыть, сценарии проверки, скриншоты и ограничения; сам прототип — [index.html](../design/prototype/index.html) |
+| [Android screenshots](screenshots/android/README.md) | 12 снимков vertical slice и чек-лист проверки на эмуляторе |
 | [RUSTORE.md](development/RUSTORE.md) | Требования RuStore, карточка, монетизация, риски модерации |
 
 ### Разработка
@@ -63,21 +64,21 @@
 
 | Документ | Статус |
 | --- | --- |
-| README | актуален на v0.1.0-design |
-| DESIGN v0.1 | первая редакция, готов к ревью |
-| UI/UX SPEC | первая редакция, прототип собран |
-| CONTENT PLAN | первая редакция, 4 примера проверены |
+| README | актуален на v0.2.0-vertical-slice |
+| DESIGN v0.1 | первая редакция, правила реализуются в Android |
+| UI/UX SPEC | первая редакция, прототип и Android-срезы сверены |
+| CONTENT PLAN | первая редакция, 4 демо-задачи проверены |
 | USER_GUIDE | черновик до первого публичного билда |
-| MANUAL_TESTING_GUIDE | первая редакция, кейсы не прогонялись на устройстве |
-| ARCHITECTURE | целевая архитектура до scaffold |
-| GETTING_STARTED | дизайн-фаза + план после v0.2.0 |
+| MANUAL_TESTING_GUIDE | ручной smoke на Pixel 6 API 36 выполнен; полная матрица — перед релизом |
+| ARCHITECTURE | реализованная архитектура v0.2.0 |
+| GETTING_STARTED | Android vertical slice, сборка и troubleshooting |
 | CONTENT_AUTHORING | первая редакция, валидатор работает |
 | RUSTORE | требования выверены по документации RuStore (10.2026) |
 | RELEASES | первая редакция |
-| KNOWN_ISSUES | актуален |
+| KNOWN_ISSUES | актуален, KI-001/KI-005 закрыты |
 | ADR | 8 решений зафиксировано |
 | PRIVACY_POLICY | черновик для офлайн-запуска |
-| THIRD_PARTY_LICENSES | актуален для дизайн-фазы |
+| THIRD_PARTY_LICENSES | актуален для Android-сборки |
 
 ---
 

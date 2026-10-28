@@ -1,10 +1,11 @@
 # Архитектура Chess Problem
 
-**Статус:** целевая архитектура до scaffold · **Версия:** 0.1 · **Дата:** 28.10.2026
+**Статус:** реализовано в v0.2.0-vertical-slice · **Версия:** 0.2 · **Дата:** 28.10.2026
 **Связано:** [DESIGN](../design/DESIGN_V01_MVP.md) · [RULES](RULES.md) · [ADR](adr/README.md)
 
-Документ описывает целевую архитектуру Android-приложения. Код появится в
-v0.2.0; до этого документ — контракт для реализации и ревью.
+Документ описывает реализованную архитектуру Android-приложения и границы
+следующих этапов. `core`, `data`, `ui`, `app` и `build-logic` уже собираются;
+4 демо-задачи проходят путь от assets до Canvas-доски и Room-прогресса.
 
 ---
 
@@ -44,7 +45,7 @@ graph TD
 | `:ui` | Compose theme, components, board, screens, ViewModels | `:core` |
 | `:data` | Room, DataStore, JSON loader, repository implementations | `:core` |
 | `:core` | модели, chesslib wrapper, `PuzzleSession`, scoring, timer, repository interfaces | Kotlin, chesslib |
-| `build-logic` | convention plugins: Android app, Kotlin JVM, Compose, detekt | Gradle, AGP, KGP |
+| `build-logic` | convention plugins: Android app, Android library, Compose | Gradle, AGP, KGP |
 
 **Правила зависимостей:**
 
@@ -274,11 +275,13 @@ class PuzzleTimer(
 }
 ```
 
-- UI вызывает `tick()` раз в 250 мс; таймер не создаёт собственный поток.
-- Пауза на lifecycle, hint sheet, ad, диалогах.
-- `elapsedMs` сохраняется в Room/DataStore после каждого хода и при паузе.
-- После process death — восстановление с `status = READY` и `elapsedMs`,
-  таймер на паузе; игрок нажимает «Продолжить».
+- `PuzzleViewModel` вызывает `tick()` раз в 250 мс; таймер не создаёт
+  собственный поток.
+- Пауза на lifecycle, hint sheet, pause/exit dialog; при возврате из фона
+  показывается overlay «Пауза».
+- При выходе/уходе в фон сохраняются `lastPlayedAt`, ошибки и число подсказок
+  для карточки «Продолжить»; текущий `elapsedMs` не восстанавливается.
+- Process death/restore и сохранение таймера — следующий этап (KI-014).
 
 ---
 
@@ -436,15 +439,19 @@ class AppContainer(context: Context) {
 
 ### 8.2. Gradle
 
-- Gradle 9.8.2, AGP 9.4.1, Kotlin 2.2.10, JDK 21, target 17.
+- Gradle 9.8.2, AGP 9.4.1 (built-in Kotlin 2.2.10), JDK 21, target 17.
+- `compileSdk = 37` (Compose 1.12.1 / AndroidX 2026.09), `targetSdk = 36`,
+  `minSdk = 26`.
 - `gradle/libs.versions.toml` — единственный источник версий.
 - `build-logic` — convention plugins:
-  - `chessproblem.android.application`
-  - `chessproblem.android.library`
-  - `chessproblem.kotlin.jvm`
-  - `chessproblem.compose`
-  - `chessproblem.detekt`
+  - `chessproblem.android.application` — compileSdk, min/target, packaging;
+  - `chessproblem.android.library` — то же для библиотек;
+  - `chessproblem.android.compose` — compose compiler plugin.
 - `org.gradle.caching=true`, `org.gradle.configuration-cache=true`.
+- KSP 2.2.10-2.0.2 для Room; `android.disallowKotlinSourceSets=false` —
+  вынужденный обход до миграции KSP на built-in Kotlin source sets.
+- Compose BOM 2026.09.00, Room 2.8.5, DataStore 1.3.0,
+  Navigation 2.10.2, Lifecycle 2.11.0.
 - R8 + shrinkResources в release.
 - Подпись — из `keystore.properties` (не коммитится).
 
@@ -452,24 +459,28 @@ class AppContainer(context: Context) {
 
 ## 9. Тестирование
 
-| Уровень | Что | Где |
-| --- | --- | --- |
-| Unit | perft, FEN, SAN, сессия, таймер, звёзды, XP, серия | `core/src/test` |
-| Unit | JSON-парсинг, Room DAO, репозитории | `data/src/test` |
-| UI | выбор фигуры, ход, подсказка, результат, смена языка | `ui/src/androidTest` |
-| Screenshot | главная, решатель, результат, подсказки (Paparazzi/Roborazzi) | `ui/src/test` |
-| Content | схема, легальность, мат, дубли, локализация | `tools/validate-content.mjs` |
-| Manual | устройства, lifecycle, TalkBack, таймер | [QA guide](../qa/MANUAL_TESTING_GUIDE.md) |
+| Уровень | Что | Где | Статус |
+| --- | --- | --- | --- |
+| Unit | FEN, SAN, легальные ходы, мат, превращение | `core/src/test` | 21 тест, зелёный |
+| Unit | сессия: ошибки, continue, таймаут, подсказки, ответ соперника | `core/src/test` | зелёный |
+| Unit | звёзды, XP, формула таймера | `core/src/test` | зелёный |
+| Unit | JSON-парсинг, Room DAO, репозитории | `data/src/test` | план |
+| UI | выбор фигуры, ход, подсказка, результат, смена языка | `ui/src/androidTest` | план (KI-014) |
+| Screenshot | главная, решатель, результат, подсказки | `ui/src/test` | план (KI-014) |
+| Content | схема, легальность, мат, дубли, локализация | `tools/validate-content.mjs` | зелёный |
+| Manual | устройства, lifecycle, TalkBack, таймер | [QA guide](../qa/MANUAL_TESTING_GUIDE.md) | частично: Pixel 6 API 36 |
 
-**Обязательные тесты сессии:**
+**Проверенные тесты сессии:**
 
 - неверный ход возвращает позицию и уменьшает попытки;
 - третий неверный ход → FAILED;
 - правильный ход применяет ответ соперника;
 - последний ход → SOLVED, звёзды по политике;
 - таймаут → FAILED, continue даёт +60 с и 1 попытку;
-- process death → восстановление с паузой;
 - альтернативный мат принимается.
+
+**Следующие тесты:** process death/restore, Room DAO на in-memory базе,
+Compose UI и screenshot tests.
 
 ---
 
@@ -526,11 +537,12 @@ class AppContainer(context: Context) {
 
 1. **JitPack и chesslib.** Если JitPack недоступен — вендорим исходники
    Apache 2.0 в `third_party/chesslib` и собираем локально.
-2. **Paparazzi vs Roborazzi.** Выбрать после scaffold; Paparazzi быстрее, но
-   требует JVM-совместимости.
-3. **Room и KSP.** Проверить версии под Kotlin 2.2.10/AGP 9.4.1.
-4. **Compose BOM.** Зафиксировать после scaffold.
-5. **Baseline Profile.** Нужен ли в v0.2.0 или после контента.
+2. **Paparazzi vs Roborazzi.** Выбрать перед screenshot-тестами (KI-014).
+3. **Room и KSP.** Решено: Room 2.8.5 + KSP 2.2.10-2.0.2; нужен
+   `android.disallowKotlinSourceSets=false`, пока KSP не мигрирует.
+4. **Compose BOM.** Зафиксирован: 2026.09.00; compileSdk 37.
+5. **Baseline Profile.** Отложен до появления полного контента; сначала
+   измерить холодный старт на реальном устройстве (KI-015).
 6. **Планшет.** Одна колонка max 560 dp или две панели в v0.4.0.
 7. **Локальные напоминания.** `POST_NOTIFICATIONS` и политика — только если
    реально нужно.

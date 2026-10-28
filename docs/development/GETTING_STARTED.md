@@ -1,20 +1,23 @@
 # Getting Started
 
-**Статус:** дизайн-фаза · **Дата:** 28.10.2026
+**Статус:** Android vertical slice · **Дата:** 28.10.2026
 **Связано:** [ARCHITECTURE](ARCHITECTURE.md) · [RULES](RULES.md) · [RUSTORE](RUSTORE.md)
 
-В репозитории пока нет Android-проекта: сначала зафиксированы продукт, UX и
-контент-пайплайн. Этот документ описывает, что можно сделать сейчас, и что
-понадобится после scaffold в v0.2.0.
+Android-проект собран в v0.2.0: `app`, `core`, `data`, `ui`, Gradle wrapper,
+convention-плагины, Room/DataStore и 4 демо-задачи. Этот документ описывает
+требования, сборку, запуск и проверку vertical slice. Полный контент-пак и
+instrumented-тесты — следующие этапы.
 
 ---
 
-## 1. Что нужно сейчас
+## 1. Что нужно
 
 | Инструмент | Версия | Зачем |
 | --- | --- | --- |
 | Git | любая актуальная | Клонирование |
-| Браузер | Chrome/Edge/Firefox | Прототип |
+| JDK | **21** | Gradle/AGP, target 17 |
+| Android SDK | platform **37.0**, build-tools **36.0.0** или **37.0.0** | Compose 1.12 / AndroidX 2026.09 |
+| Android Studio | последняя стабильная | IDE и эмулятор |
 | Node.js | 24 LTS | Валидатор контента и проверка ссылок |
 | Python | не обязателен | Только для локальных экспериментов |
 
@@ -27,8 +30,8 @@ start design/prototype/index.html      # Windows
 open design/prototype/index.html       # macOS
 xdg-open design/prototype/index.html   # Linux
 
-# Документация
-start docs/design/DESIGN_V01_MVP.md
+# Android-проект
+./gradlew :app:assembleDebug
 ```
 
 ---
@@ -59,15 +62,15 @@ OK  grandmaster.sample.json: 1 puzzle
 
 ---
 
-## 3. После scaffold Android (v0.2.0)
+## 3. Android-проект (v0.2.0)
 
 ### 3.1. Требования
 
-- **JDK 21** (toolchain; target 17).
+- **JDK 21** (Gradle/AGP; Kotlin target 17).
 - **Android Studio** — последняя стабильная.
-- **Android SDK:** platform **36**, build-tools **36.0.0**.
-- **Gradle** не нужен: wrapper будет в репозитории.
-- **Эмулятор** или устройство Android 8.0+.
+- **Android SDK:** platform **37.0**, build-tools **36.0.0** или **37.0.0**.
+- **Gradle** не нужен: wrapper 9.8.2 в репозитории.
+- **Эмулятор** или устройство Android 8.0+ (minSdk 26).
 
 Проверка:
 
@@ -79,7 +82,7 @@ java -version
 Если `java` не найден, задайте `JAVA_HOME`:
 
 ```powershell
-$env:JAVA_HOME = "C:\Program Files\Java\jdk-21"
+$env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-21.0.13.21-hotspot"
 $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 ```
 
@@ -88,23 +91,33 @@ $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 Создайте `local.properties` в корне (файл не коммитится):
 
 ```properties
-sdk.dir=D:/Dev/Android/Sdk
+sdk.dir=D\:/Dev/Android/Sdk
 ```
 
-Windows-путь — с прямыми слэшами или экранированными обратными.
+На Windows lint требует экранировать двоеточие; в Git файл не попадает.
+Установить нужные пакеты:
 
-### 3.3. Сборка
+```bash
+sdkmanager "platform-tools" "platforms;android-37.0" "build-tools;36.0.0"
+```
+
+### 3.3. Сборка и проверки
 
 ```bash
 # Debug APK
 ./gradlew :app:assembleDebug
 # → app/build/outputs/apk/debug/app-debug.apk
 
-# Unit-тесты
-./gradlew :app:testDebugUnitTest
+# Unit-тесты ядра (21 тест)
+./gradlew :core:test
 
-# Lint + detekt
-./gradlew :app:lintDebug detekt
+# Lint (включая Android-ресурсы и Compose)
+./gradlew :app:lintDebug
+
+# Всё сразу
+./gradlew :core:test :app:assembleDebug :app:lintDebug
+
+# Windows PowerShell: .\gradlew.bat :app:assembleDebug
 
 # Release AAB (нужна подпись)
 ./gradlew :app:bundleRelease
@@ -118,15 +131,20 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 adb shell am start -n com.iilmchat.chessproblem/.MainActivity
 ```
 
-Или через Android Studio: Run → `app`.
+Или через Android Studio: Run → `app`. Debug-приложение использует
+`applicationId com.iilmchat.chessproblem`.
 
 ### 3.5. Контент
 
-Production-паки лежат в `content/puzzles/` и копируются в
-`app/src/main/assets/content/` Gradle-задачей. После изменения контента:
+Сейчас в `data/src/main/assets/content/` лежат 4 демо-пака: `novice.json`
+(2 задачи), `professional.json` (1), `grandmaster.json` (1). Они читаются
+`AssetPuzzleSource` при старте. Production-паки будут копироваться сюда из
+`content/puzzles/` после контент-фазы.
+
+После изменения:
 
 ```bash
-node tools/validate-content.mjs content/puzzles/novice.json
+node tools/validate-content.mjs content/samples/novice.sample.json
 ./gradlew :app:assembleDebug
 ```
 
@@ -134,7 +152,7 @@ node tools/validate-content.mjs content/puzzles/novice.json
 
 ---
 
-## 4. Структура, которую увидите после scaffold
+## 4. Структура проекта
 
 ```text
 app/                     ← entry point, DI, navigation
@@ -159,6 +177,17 @@ gradle/libs.versions.toml
 
 Запущен не JDK 21. Проверьте `java -version` и `JAVA_HOME`.
 
+### `Failed to find package 'platforms;android-37'`
+
+Пакет называется `platforms;android-37.0` (minor API). Установите его через
+`sdkmanager`; `compileSdk = 37` в convention-плагине сам подхватит платформу.
+
+### `android.disallowKotlinSourceSets=false` warning
+
+KSP 2.2.10 всё ещё регистрирует generated sources через `kotlin.sourceSets`.
+AGP 9 built-in Kotlin по умолчанию это запрещает; property оставлен до
+миграции KSP. Warning ожидаем.
+
 ### `Could not resolve com.github.bhlangonijr:chesslib`
 
 JitPack временно недоступен или не добавлен репозиторий. Проверьте
@@ -182,7 +211,7 @@ JitPack временно недоступен или не добавлен ре�
 
 ### Прототип выглядит иначе на Windows
 
-Прототип использует Unicode-фигуры; шрифт зависит от ОС. Это ограничение
+Прототип использует инлайновые SVG, но шрифт зависит от ОС. Это ограничение
 прототипа (KI-013), не продакшена.
 
 ---
@@ -190,15 +219,20 @@ JitPack временно недоступен или не добавлен ре�
 ## 6. Полезные команды
 
 ```bash
-# Все проверки, которые есть сейчас
+# Контент и документация
 npm ci --prefix tools
 node tools/check-docs.mjs
 for f in content/samples/*.json; do node tools/validate-content.mjs "$f"; done
 
-# После scaffold
-./gradlew build
-./gradlew :app:lintDebug detekt
-./gradlew :app:testDebugUnitTest
+# Android
+./gradlew :core:test
+./gradlew :app:assembleDebug
+./gradlew :app:lintDebug
+./gradlew :core:test :app:assembleDebug :app:lintDebug
+
+# Устройство
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+adb shell am start -n com.iilmchat.chessproblem/.MainActivity
 ```
 
 ---

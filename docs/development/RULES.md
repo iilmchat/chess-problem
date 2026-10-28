@@ -9,7 +9,8 @@
 
 ### 1.1. Стиль
 
-- Kotlin — официальный стиль; форматирование — `detekt-formatting` (ktlint).
+- Kotlin — официальный стиль; форматирование — `detekt-formatting` (ktlint),
+  подключается в v0.2.x (KI-016).
 - Имена: `camelCase` — функции/переменные, `PascalCase` — типы,
   `SCREAMING_SNAKE_CASE` — константы в `companion object`.
 - Комментарии — по-русски, объясняют «почему», а не «что».
@@ -140,7 +141,7 @@ chore(deps): обновлён chesslib до 1.3.7
 ## 5. Pull request
 
 1. PR описывает **что** и **зачем**; шаблон — `.github/pull_request_template.md`.
-2. CI зелёный: docs, content, затем Android (после scaffold).
+2. CI зелёный: docs, content, Android unit-тесты, debug APK и lint.
 3. Минимум один аппрув.
 4. Изменённые документы перечислены.
 5. Крупная архитектура — сначала ADR, потом код.
