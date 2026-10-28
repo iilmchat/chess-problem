@@ -318,4 +318,3 @@ Full English privacy policy: [PRIVACY_POLICY.md](../legal/PRIVACY_POLICY.md).
 - E-mail: [info@iiruchating.ru](mailto:info@iiruchating.ru)
 - GitHub: [github.com/iilmchat](https://github.com/iilmchat)
 - Сайт: [iiruchating.ru](https://iiruchating.ru)
-

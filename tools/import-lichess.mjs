@@ -1032,4 +1032,3 @@ if (!command || command === "--help" || command === "-h") {
   fail(`unknown command: ${command}`);
   help();
 }
-

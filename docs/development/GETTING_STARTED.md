@@ -257,4 +257,3 @@ adb shell am start -n com.iilmchat.chessproblem/.MainActivity
 3. Прочитать [ARCHITECTURE](ARCHITECTURE.md).
 4. Для контента — [CONTENT_AUTHORING](CONTENT_AUTHORING.md).
 5. Для релиза — [RUSTORE](RUSTORE.md) и [RELEASES](RELEASES.md).
-

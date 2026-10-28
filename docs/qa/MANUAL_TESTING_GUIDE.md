@@ -357,4 +357,3 @@ for f in content/puzzles/*.json; do node tools/validate-content.mjs "$f"; done
 3. P0/P1 — исправить и повторить smoke.
 4. P2/P3 — занести в backlog; не блокировать релиз без решения.
 5. После релиза — проверить отзывы/краши и обновить `KNOWN_ISSUES.md`.
-

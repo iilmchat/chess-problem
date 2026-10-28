@@ -379,4 +379,3 @@ node tools/validate-content.mjs content/puzzles/novice.json
 - [ ] Валидатор зелёный.
 - [ ] Второй человек решил задачу.
 - [ ] Проверено на устройстве.
-

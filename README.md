@@ -359,4 +359,3 @@ chess-problem/
 - GitHub: [github.com/iilmchat](https://github.com/iilmchat)
 - E-mail: [info@iiruchating.ru](mailto:info@iiruchating.ru)
 - Сайт: [iiruchating.ru](https://iiruchating.ru)
-
