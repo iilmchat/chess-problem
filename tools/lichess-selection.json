@@ -16,6 +16,13 @@
     "capture-queen chapter uses userPlies [1, 2]: all 1-ply candidates were mate finals, so 2-ply queen captures were taken (all WIN).",
     "IDs are assigned by merge: per level in PLAN_ORDER (mate-in-1 -> nov-001..010, capture-queen -> nov-011..020, etc.), sorted by rating within a chapter."
   ],
+  "finishChecklist": [
+    "Author RU/EN texts for all 60 into tools/var/import-texts.json: title (short), prompt (one phrase, no spoilers), hints tier1 idea without naming the piece / tier2 names the piece / tier3 names the move, explanation 2-4 sentences (>= 40 chars). Check facts with node tools/replay.mjs \"<ids>\" <pool>.",
+    "node tools/import-lichess.mjs author (validates sidecar) then node tools/import-lichess.mjs merge (writes content/puzzles/novice|professional|grandmaster.json + runs validate-content.mjs).",
+    "Docs: docs/CHANGELOG.md (v0.2.1), docs/KNOWN_ISSUES.md (KI-003 -> 60 puzzles, KI-008 -> resolved), README.md (version badge, puzzle counter), content/README.md, content/puzzles/README.md, docs/development/CONTENT_AUTHORING.md, and replace remaining '4 demo puzzles' mentions in docs (USER_GUIDE, GETTING_STARTED, ARCHITECTURE, qa/*).",
+    "Gates: node tools/check-docs.mjs && node tools/validate-content.mjs && JAVA_HOME=<jdk21> ./gradlew :core:test :app:assembleDebug :app:lintDebug (JAVA_HOME is machine-specific; this machine used D:\\Dev\\jdk-21.0.12.1+1).",
+    "Verify assets/content/*.json exist inside app/build/outputs/apk/debug/app-debug.apk, delete any temp files, then commit 'release: v0.2.1' and push."
+  ],
   "selection": [
     {
       "level": "NOVICE",
