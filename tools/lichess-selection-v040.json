@@ -1,0 +1,257 @@
+{
+  "purpose": "Selection of 150 Lichess puzzles added in v0.4.0 (50 per level, new chapters only; existing v0.3.0 chapters keep their v030 selection).",
+  "contentVersion": "2026.10.4",
+  "pool": "tools/var/lichess-pool/candidates-v4.ndjson + equality-rows.ndjson (study-draw)",
+  "sourceDb": "lichess_db_puzzle.csv (2026-10), unpacked with zstd",
+  "previous": "tools/lichess-selection-v030.json",
+  "note": "study-draw uses relaxed quality gates (popularity >= 20, plays >= 100, deviation <= 250) because the equality theme is rare and rarely played; selected via tools/study-draw-select.mjs.",
+  "howToRegenerate": [
+    "1. node tools/import-lichess.mjs filter --input <lichess_db_puzzle.csv.zst> --out tools/var/lichess-pool/candidates-v4.ndjson",
+    "2. node tools/probe-equality.mjs && node tools/study-draw-select.mjs (study-draw only)",
+    "3. node tools/import-lichess.mjs draft --pool <pool> --level <LEVEL> --chapter <chapter> --ids <ids>",
+    "4. node tools/gen-texts.mjs && node tools/import-lichess.mjs author --texts tools/var/import-texts-v040.json",
+    "5. node tools/import-lichess.mjs merge"
+  ],
+  "selection": [
+    {
+      "level": "NOVICE",
+      "chapter": "double-attack",
+      "ids": [
+        "1QVU4",
+        "12v93",
+        "0YwWD",
+        "1Gu6C",
+        "1OnyZ",
+        "1DzRy",
+        "0qeGk",
+        "1HYtZ",
+        "0iUMo",
+        "05Apb"
+      ]
+    },
+    {
+      "level": "NOVICE",
+      "chapter": "remove-defender",
+      "ids": [
+        "LUPt9",
+        "KsVsl",
+        "TxA8i",
+        "TkTIG",
+        "LmRzt",
+        "PGsky",
+        "WjTG7",
+        "33VbG",
+        "50heL",
+        "L5VS8"
+      ]
+    },
+    {
+      "level": "NOVICE",
+      "chapter": "discovered-attack",
+      "ids": [
+        "1QH33",
+        "1DNsJ",
+        "0xkVp",
+        "0hhJ6",
+        "0RI7y",
+        "0Vjzs",
+        "0O2vh",
+        "1klXj",
+        "17eZC",
+        "1YsYq"
+      ]
+    },
+    {
+      "level": "NOVICE",
+      "chapter": "defense",
+      "ids": [
+        "6x1yT",
+        "0842V",
+        "4UG3S",
+        "3YiGm",
+        "5I6gG",
+        "0r2vA",
+        "22FJQ",
+        "45onC",
+        "07eNj",
+        "3tWPY"
+      ]
+    },
+    {
+      "level": "NOVICE",
+      "chapter": "mate-in-2",
+      "ids": [
+        "02LIr",
+        "03U5L",
+        "02Nya",
+        "0EpPu",
+        "0Djhh",
+        "035m4",
+        "043Mi",
+        "0FAtz",
+        "06skk",
+        "02NrU"
+      ]
+    },
+    {
+      "level": "NOVICE",
+      "chapter": "mixed-review",
+      "ids": [
+        "00ghH",
+        "078kF",
+        "05q11",
+        "01OgB",
+        "02tIz",
+        "06HFe",
+        "02w5A",
+        "02EUf",
+        "03Xd6",
+        "04gjJ"
+      ]
+    },
+    {
+      "level": "PROFESSIONAL",
+      "chapter": "mate-in-3",
+      "ids": [
+        "0Dxaa",
+        "0NYWd",
+        "0C1lg",
+        "05mYC",
+        "0X3Wp",
+        "0TuSg",
+        "0LzAA",
+        "0Rfns",
+        "0Sskx",
+        "08dio"
+      ]
+    },
+    {
+      "level": "PROFESSIONAL",
+      "chapter": "x-ray",
+      "ids": [
+        "89MNt",
+        "5bDoh",
+        "5Y6xs",
+        "7k7yc",
+        "0MkUM",
+        "2KNGM",
+        "8YeNf",
+        "4jhTT",
+        "7kGPt",
+        "5dPCy"
+      ]
+    },
+    {
+      "level": "PROFESSIONAL",
+      "chapter": "zwischenzug",
+      "ids": [
+        "0YOrc",
+        "0UEtW",
+        "1S3NM",
+        "0pX30",
+        "0OUgY",
+        "0oq0F",
+        "1Azgi",
+        "0mcPd",
+        "0cpya",
+        "0jPsU"
+      ]
+    },
+    {
+      "level": "PROFESSIONAL",
+      "chapter": "pawn-break",
+      "ids": [
+        "0QQrD",
+        "05qg5",
+        "0HtMe",
+        "0GRID",
+        "0CVMh",
+        "04U7q",
+        "0GVME",
+        "05NtB",
+        "0AnXJ",
+        "0CbLE"
+      ]
+    },
+    {
+      "level": "PROFESSIONAL",
+      "chapter": "minor-endgame",
+      "ids": [
+        "0S8an",
+        "0hanr",
+        "0dZp9",
+        "0reZg",
+        "0dv6n",
+        "0wq7X",
+        "0kS8b",
+        "0FANh",
+        "0JcRo",
+        "0OdF3"
+      ]
+    },
+    {
+      "level": "PROFESSIONAL",
+      "chapter": "mixed-review",
+      "ids": [
+        "09KlA",
+        "04XVt",
+        "09V7o",
+        "05Cbv",
+        "05yoK",
+        "04q5c",
+        "06Ss1",
+        "05kuI",
+        "033TG",
+        "02Q8P"
+      ]
+    },
+    {
+      "level": "GRANDMASTER",
+      "chapter": "study-draw",
+      "ids": [
+        "MXlXE",
+        "ARvbh",
+        "2IdQn",
+        "9CwUD",
+        "Wu5sa",
+        "w8fkq",
+        "WmBQI",
+        "4f5Na",
+        "2kWMT",
+        "Xofyp"
+      ]
+    },
+    {
+      "level": "GRANDMASTER",
+      "chapter": "punish",
+      "ids": [
+        "3NuFI",
+        "4r3Hp",
+        "4cKgi",
+        "2KQM0",
+        "3Ai8Y",
+        "0xqrT",
+        "1wJZc",
+        "5UybD",
+        "4etph",
+        "2JyrD"
+      ]
+    },
+    {
+      "level": "GRANDMASTER",
+      "chapter": "final-exam",
+      "ids": [
+        "5VmsV",
+        "9yRdW",
+        "9AQQu",
+        "9FNii",
+        "26ETL",
+        "8zrJt",
+        "4iNMm",
+        "2c87v",
+        "1UROK",
+        "9VYJ9"
+      ]
+    }
+  ]
+}

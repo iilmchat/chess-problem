@@ -4418,8 +4418,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Пат у h8",
-        "en": "Stalemate at h8"
+        "ru": "Пат на краю",
+        "en": "Stalemate on the edge"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4471,8 +4471,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Ферзь на g6",
-        "en": "Queen on g6"
+        "ru": "Ферзь-смертник",
+        "en": "Queen sacrifice"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4524,8 +4524,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Пат у a8",
-        "en": "Stalemate at a8"
+        "ru": "Пат в углу",
+        "en": "Stalemate in the corner"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4577,8 +4577,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Ферзь на b6",
-        "en": "Queen on b6"
+        "ru": "Ферзь-смертник",
+        "en": "Queen sacrifice"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4630,8 +4630,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Пат у h1",
-        "en": "Stalemate at h1"
+        "ru": "Пат на краю",
+        "en": "Stalemate on the edge"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4683,8 +4683,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Ферзь на g3",
-        "en": "Queen on g3"
+        "ru": "Ферзь-смертник",
+        "en": "Queen sacrifice"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4752,8 +4752,8 @@
         },
         {
           "tier": 2,
-          "ru": "Держитесь угла a8: пешка a6 не пройдёт.",
-          "en": "Hold the a8 corner: the a6-pawn cannot break through."
+          "ru": "Король держит угол: возвращайтесь на a8 — прорыва нет.",
+          "en": "The king holds the corner: return to a8 — there is no breakthrough."
         },
         {
           "tier": 3,
@@ -4791,8 +4791,8 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Угол h8",
-        "en": "The h8 corner"
+        "ru": "Угол",
+        "en": "The corner"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь ничьей.",
@@ -4806,8 +4806,8 @@
         },
         {
           "tier": 2,
-          "ru": "После h7+ возвращайтесь на h8: пешка заперта.",
-          "en": "After h7+ return to h8: the pawn is locked."
+          "ru": "Король держит угол: после h7+ возвращайтесь на h8.",
+          "en": "The king holds the corner: after h7+ return to h8."
         },
         {
           "tier": 3,
@@ -4899,8 +4899,8 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Пешка c4",
-        "en": "The c4-pawn"
+        "ru": "Оппозиция: пешка",
+        "en": "Opposition: pawn"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь ничьей.",
@@ -4953,8 +4953,8 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Пешка d4",
-        "en": "The d4-pawn"
+        "ru": "Оппозиция: пешка",
+        "en": "Opposition: pawn"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь ничьей.",
@@ -5007,8 +5007,8 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Пешка f4",
-        "en": "The f4-pawn"
+        "ru": "Оппозиция: пешка",
+        "en": "Opposition: pawn"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь ничьей.",
@@ -5086,8 +5086,8 @@
         }
       ],
       "explanation": {
-        "ru": "Ke3 Ke6 Kd3 — пешки d4/d5 заперты, короли не могут усилить позицию: ничья.",
-        "en": "Ke3 Ke6 Kd3 — the d4/d5 pawns are locked, the kings cannot improve their position: a draw."
+        "ru": "Ke3 Ke6 Kd3 — пешки d4/d5 заперты, белый король не может усилить позицию: ничья.",
+        "en": "Ke3 Ke6 Kd3 — the d4/d5 pawns are locked, the white king cannot improve the position: a draw."
       },
       "source": {
         "provider": "original",
@@ -5115,8 +5115,8 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Пешки e4/e5",
-        "en": "The e4/e5 pawns"
+        "ru": "Запертые пешки",
+        "en": "Locked pawns"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -5169,8 +5169,8 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Пешка b4",
-        "en": "The b4-pawn"
+        "ru": "Оппозиция: пешка",
+        "en": "Opposition: pawn"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь ничьей.",
@@ -5223,8 +5223,8 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Пешка g4",
-        "en": "The g4-pawn"
+        "ru": "Оппозиция: пешка",
+        "en": "Opposition: pawn"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь ничьей.",
@@ -5294,8 +5294,8 @@
         },
         {
           "tier": 2,
-          "ru": "Чередуйте поля c6 и d6: конь d8 и ладья c1 отрезают королю пути.",
-          "en": "Alternate c6 and d6: the knight on d8 and the rook on c1 cut off the king's escapes."
+          "ru": "Ферзь шахует с c6 и d6; король вынужден ходить между a8 и b8.",
+          "en": "The queen checks from c6 and d6; the king must shuttle between a8 and b8."
         },
         {
           "tier": 3,
@@ -5335,8 +5335,8 @@
       ],
       "timeLimitSec": 280,
       "title": {
-        "ru": "Маятник у h8",
-        "en": "Pendulum at h8"
+        "ru": "Маятник",
+        "en": "Pendulum"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -5350,8 +5350,8 @@
         },
         {
           "tier": 2,
-          "ru": "Ферзь ходит между f6 и e6, конь e8 держит g7.",
-          "en": "The queen moves between f6 and e6, the knight on e8 controls g7."
+          "ru": "Ферзь ходит между f6 и e6; король вынужден ходить g8–h8.",
+          "en": "The queen moves between f6 and e6; the king must shuttle g8–h8."
         },
         {
           "tier": 3,
@@ -5391,8 +5391,8 @@
       ],
       "timeLimitSec": 280,
       "title": {
-        "ru": "Вечный шах у a1",
-        "en": "Perpetual at a1"
+        "ru": "Вечный шах в углу",
+        "en": "Perpetual in the corner"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -5406,8 +5406,8 @@
         },
         {
           "tier": 2,
-          "ru": "Ферзь шахует с c3 и d3, конь d1 и ладья c8 отсекают поля.",
-          "en": "The queen checks from c3 and d3, the knight on d1 and the rook on c8 cut off the squares."
+          "ru": "Ферзь шахует с c3 и d3; король ходит только a1–b1.",
+          "en": "The queen checks from c3 and d3; the king can only shuttle a1–b1."
         },
         {
           "tier": 3,
@@ -5447,8 +5447,8 @@
       ],
       "timeLimitSec": 280,
       "title": {
-        "ru": "Маятник у h1",
-        "en": "Pendulum at h1"
+        "ru": "Маятник",
+        "en": "Pendulum"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -5457,13 +5457,13 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король на h1 — шахуйте по диагонали f3–h1.",
-          "en": "The king is on h1 — check along the f3–h1 diagonal."
+          "ru": "Король на h1 — шахуйте по диагонали.",
+          "en": "The king is on h1 — check along the diagonal."
         },
         {
           "tier": 2,
-          "ru": "Ферзь ходит между f3 и e3, конь e1 держит g2, ладья f8 — поле f1.",
-          "en": "The queen moves between f3 and e3, the knight on e1 controls g2, the rook on f8 covers f1."
+          "ru": "Ферзь ходит между f3 и e3; король вынужден ходить g1–h1.",
+          "en": "The queen moves between f3 and e3; the king must shuttle g1–h1."
         },
         {
           "tier": 3,
@@ -5518,8 +5518,8 @@
         },
         {
           "tier": 2,
-          "ru": "Слон a6 держит b7 и c8, конь d8 — поле b7.",
-          "en": "The bishop on a6 covers b7 and c8, the knight on d8 covers b7."
+          "ru": "Ферзь чередует c6 и d6; король заперт в углу.",
+          "en": "The queen alternates c6 and d6; the king is boxed in the corner."
         },
         {
           "tier": 3,
@@ -5559,8 +5559,8 @@
       ],
       "timeLimitSec": 280,
       "title": {
-        "ru": "Слон у a1",
-        "en": "Bishop at a1"
+        "ru": "Слон на страже",
+        "en": "Bishop on guard"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -5574,8 +5574,8 @@
         },
         {
           "tier": 2,
-          "ru": "Слон h6 держит c1 и d2, конь d1 — поле b2.",
-          "en": "The bishop on h6 covers c1 and d2, the knight on d1 covers b2."
+          "ru": "Ферзь качается между c3 и d3; король не может вырваться.",
+          "en": "The queen swings between c3 and d3; the king cannot escape."
         },
         {
           "tier": 3,
@@ -5615,8 +5615,8 @@
       ],
       "timeLimitSec": 280,
       "title": {
-        "ru": "Слон у h1",
-        "en": "Bishop at h1"
+        "ru": "Слон на страже",
+        "en": "Bishop on guard"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -5625,13 +5625,13 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король на h1, ищите шах по диагонали f3–h1.",
-          "en": "The king is on h1; look for a check along f3–h1."
+          "ru": "Король на h1, ищите шах по диагонали.",
+          "en": "The king is on h1; look for a check along the diagonal."
         },
         {
           "tier": 2,
-          "ru": "Слон a6 держит f1, конь e1 — поле g2.",
-          "en": "The bishop on a6 covers f1, the knight on e1 covers g2."
+          "ru": "Ферзь чередует f3 и e3; король заперт в углу.",
+          "en": "The queen alternates f3 and e3; the king is boxed in the corner."
         },
         {
           "tier": 3,
@@ -5686,8 +5686,8 @@
         },
         {
           "tier": 2,
-          "ru": "Пешка g6 держит f7 и h7, слон a3 — поле f8.",
-          "en": "The g6-pawn covers f7 and h7, the bishop on a3 covers f8."
+          "ru": "Ферзь качается между f6 и e6; король не может вырваться.",
+          "en": "The queen swings between f6 and e6; the king cannot escape."
         },
         {
           "tier": 3,
@@ -5742,8 +5742,8 @@
         },
         {
           "tier": 2,
-          "ru": "Ферзь шахует с f3 и e3, конь e1 держит g2, ладья f8 — f1.",
-          "en": "The queen checks from f3 and e3, the knight on e1 covers g2, the rook on f8 covers f1."
+          "ru": "Ферзь шахует с f3 и e3; король ходит только g1–h1.",
+          "en": "The queen checks from f3 and e3; the king can only shuttle g1–h1."
         },
         {
           "tier": 3,
@@ -5798,8 +5798,8 @@
         },
         {
           "tier": 2,
-          "ru": "Шахуйте с f6 и e6: пешка g6 и ладья f1 держат ключевые поля.",
-          "en": "Check from f6 and e6: the g6-pawn and the rook on f1 hold the key squares."
+          "ru": "Ферзь уходит из-под боя и качается f6–e6; король заперт.",
+          "en": "The queen escapes the attack and swings f6–e6; the king is boxed in."
         },
         {
           "tier": 3,
