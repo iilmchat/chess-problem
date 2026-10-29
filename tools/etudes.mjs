@@ -42,7 +42,7 @@ const SIDECAR = path.join(ROOT, "tools", "etudes", "etudes.json");
 
 const CHAPTERS = {
   "grandmaster.stalemate": { level: "GRANDMASTER", chapter: "stalemate", drawKind: "stalemate", plies: [1, 4] },
-  "grandmaster.fortress": { level: "GRANDMASTER", chapter: "fortress", drawKind: "none", plies: [3, 5] },
+  "grandmaster.fortress": { level: "GRANDMASTER", chapter: "fortress", drawKind: "none", plies: [1, 5] },
   "grandmaster.perpetual-check": { level: "GRANDMASTER", chapter: "perpetual-check", drawKind: "repetition", plies: [2, 4] },
 };
 
