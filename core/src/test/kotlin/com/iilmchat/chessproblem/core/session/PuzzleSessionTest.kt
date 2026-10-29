@@ -36,6 +36,30 @@ class PuzzleSessionTest {
     }
 
     @Test
+    fun `draw by stalemate after the forced capture`() {
+        val session = PuzzleSession(stalemateDraw(), rules)
+        var state = session.initialState()
+
+        state = session.onEvent(
+            state,
+            PuzzleEvent.MakeMove(
+                from = Square.fromAlgebraic("c2"),
+                to = Square.fromAlgebraic("b3"),
+            ),
+        )
+
+        assertEquals(PuzzleState.Status.OPPONENT, state.status)
+        assertEquals("Bb3+", state.moves.last().san)
+
+        state = session.onEvent(state, PuzzleEvent.OpponentReply)
+
+        assertEquals(PuzzleState.Status.SOLVED, state.status)
+        assertEquals("Qxb3", state.moves.last().san)
+        assertTrue(state.board.stalemate)
+        assertEquals(1, state.userMoves)
+    }
+
+    @Test
     fun `wrong move costs an attempt and keeps the position`() {
         val session = PuzzleSession(backRankMate(), rules)
         var state = session.initialState()
@@ -266,6 +290,23 @@ class PuzzleSessionTest {
         prompt = LocalizedText("Выиграйте ферзя.", "Win the queen."),
         hints = emptyList(),
         explanation = LocalizedText("Вилка.", "Fork."),
+    )
+
+    private fun stalemateDraw() = Puzzle(
+        id = "grm-901",
+        level = Level.GRANDMASTER,
+        chapter = "stalemate",
+        fen = "5bkr/6pp/8/8/8/6q1/2B5/K7 w - - 0 1",
+        setupMove = null,
+        solution = listOf("c2b3", "g3b3"),
+        task = PuzzleTask(TaskType.DRAW, 1),
+        rating = 2400,
+        themes = listOf("stalemate"),
+        timeLimitSec = 260,
+        title = LocalizedText("Пат в углу", "Stalemate in the corner"),
+        prompt = LocalizedText("Ход белых. Добейтесь ничьей.", "White to move. Draw the game."),
+        hints = emptyList(),
+        explanation = LocalizedText("Bb3+ Qxb3 — пат.", "Bb3+ Qxb3 — stalemate."),
     )
 
     private fun promotionPuzzle() = Puzzle(
