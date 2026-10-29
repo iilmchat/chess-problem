@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.10.3",
+  "contentVersion": "2026.10.4",
   "level": "GRANDMASTER",
   "puzzles": [
     {
@@ -3024,23 +3024,23 @@
       ],
       "timeLimitSec": 240,
       "title": {
-        "ru": "Расчёт: пешка",
-        "en": "Pawn calculation"
+        "ru": "Наказание ошибки: пешкой",
+        "en": "Punish the mistake: pawn"
       },
       "prompt": {
-        "ru": "Ход белых. Добейтесь решающего перевеса.",
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
         "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
-          "en": "Calculate the forcing line to the end, including the opponent's replies."
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
         },
         {
           "tier": 2,
-          "ru": "Решает пешка с поля h5.",
-          "en": "The pawn from h5 is the key piece."
+          "ru": "Ключевая фигура — пешка с поля h5.",
+          "en": "The key piece is the pawn on h5."
         },
         {
           "tier": 3,
@@ -3049,8 +3049,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — h6: пешка делает тихий ход. Соперник отвечает gxh6, Kf6, Kxg5; затем gxh6, g5+, h7. Белые получают решающий перевес; линия — h6 gxh6 gxh6 Kf6 g5+ Kxg5 h7.",
-        "en": "The first move is h6: the pawn makes a quiet move. The opponent replies gxh6, Kf6, Kxg5; then comes gxh6, g5+, h7. The side to move gets a decisive advantage; the line is h6 gxh6 gxh6 Kf6 g5+ Kxg5 h7."
+        "ru": "Первый ход — h6: слабость соперника используется. Далее gxh6 gxh6 Kf6 g5+ Kxg5 h7. Линия — h6 gxh6 gxh6 Kf6 g5+ Kxg5 h7.",
+        "en": "The first move is h6: the opponent's weakness is exploited. Then gxh6 gxh6 Kf6 g5+ Kxg5 h7. The line is h6 gxh6 gxh6 Kf6 g5+ Kxg5 h7."
       },
       "source": {
         "provider": "lichess",
@@ -3141,23 +3141,23 @@
       ],
       "timeLimitSec": 245,
       "title": {
-        "ru": "Расчёт: ладья",
-        "en": "Rook calculation"
+        "ru": "Финальный экзамен: ладьёй",
+        "en": "Final exam: rook"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте ферзя.",
-        "en": "Black to move. Win the queen."
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
-          "en": "Calculate the forcing line to the end, including the opponent's replies."
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
         },
         {
           "tier": 2,
-          "ru": "Решает ладья с поля h8.",
-          "en": "The rook from h8 is the key piece."
+          "ru": "Ключевая фигура — ладья с поля h8.",
+          "en": "The key piece is the rook on h8."
         },
         {
           "tier": 3,
@@ -3166,8 +3166,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Rf8+: ладья даёт шах. Соперник отвечает Ke1, Kd1, Re1; затем Qg3+, Rf2, Rxd2+. В итоге вы выигрываете ферзя; линия — Rf8+ Ke1 Qg3+ Kd1 Rf2 Re1 Rxd2+.",
-        "en": "The first move is Rf8+: the rook gives check. The opponent replies Ke1, Kd1, Re1; then comes Qg3+, Rf2, Rxd2+. In the end you win the queen; the line is Rf8+ Ke1 Qg3+ Kd1 Rf2 Re1 Rxd2+."
+        "ru": "Первый ход — Rf8+: найден сильнейший ход. Далее Ke1 Qg3+ Kd1 Rf2 Re1 Rxd2+. Линия — Rf8+ Ke1 Qg3+ Kd1 Rf2 Re1 Rxd2+.",
+        "en": "The first move is Rf8+: the strongest move is found. Then Ke1 Qg3+ Kd1 Rf2 Re1 Rxd2+. The line is Rf8+ Ke1 Qg3+ Kd1 Rf2 Re1 Rxd2+."
       },
       "source": {
         "provider": "lichess",
@@ -3200,23 +3200,23 @@
       ],
       "timeLimitSec": 230,
       "title": {
-        "ru": "Расчёт: пешка",
-        "en": "Pawn calculation"
+        "ru": "Финальный экзамен",
+        "en": "Final exam"
       },
       "prompt": {
         "ru": "Ход чёрных. Найдите мат в три хода.",
-        "en": "Black to move. Find mate in 3."
+        "en": "Black to move. Find mate in three."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
-          "en": "Calculate the forcing line to the end, including the opponent's replies."
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
         },
         {
           "tier": 2,
-          "ru": "Решает пешка с поля h7.",
-          "en": "The pawn from h7 is the key piece."
+          "ru": "Ключевая фигура — пешка с поля h7.",
+          "en": "The key piece is the pawn on h7."
         },
         {
           "tier": 3,
@@ -3225,8 +3225,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — h6+: пешка даёт шах. Соперник отвечает Kxh6, Kg5; затем Rh8+, Rg4#. Финальный Rg4# ставит мат; линия — h6+ Kxh6 Rh8+ Kg5 Rg4#.",
-        "en": "The first move is h6+: the pawn gives check. The opponent replies Kxh6, Kg5; then comes Rh8+, Rg4#. The final Rg4# delivers mate; the line is h6+ Kxh6 Rh8+ Kg5 Rg4#."
+        "ru": "Первый ход — h6+: найден сильнейший ход. Далее Kxh6 Rh8+ Kg5 Rg4#. Линия — h6+ Kxh6 Rh8+ Kg5 Rg4#.",
+        "en": "The first move is h6+: the strongest move is found. Then Kxh6 Rh8+ Kg5 Rg4#. The line is h6+ Kxh6 Rh8+ Kg5 Rg4#."
       },
       "source": {
         "provider": "lichess",
@@ -3317,23 +3317,23 @@
       ],
       "timeLimitSec": 235,
       "title": {
-        "ru": "Расчёт: пешка",
-        "en": "Pawn calculation"
+        "ru": "Финальный экзамен: пешкой",
+        "en": "Final exam: pawn"
       },
       "prompt": {
-        "ru": "Ход чёрных. Добейтесь решающего перевеса.",
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
         "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
-          "en": "Calculate the forcing line to the end, including the opponent's replies."
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
         },
         {
           "tier": 2,
-          "ru": "Решает пешка с поля g4.",
-          "en": "The pawn from g4 is the key piece."
+          "ru": "Ключевая фигура — пешка с поля g4.",
+          "en": "The key piece is the pawn on g4."
         },
         {
           "tier": 3,
@@ -3342,8 +3342,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — g3: пешка делает тихий ход. Соперник отвечает Ne2, Kd2; затем g2, a4. Чёрные получают решающий перевес; линия — g3 Ne2 g2 Kd2 a4.",
-        "en": "The first move is g3: the pawn makes a quiet move. The opponent replies Ne2, Kd2; then comes g2, a4. The side to move gets a decisive advantage; the line is g3 Ne2 g2 Kd2 a4."
+        "ru": "Первый ход — g3: найден сильнейший ход. Далее Ne2 g2 Kd2 a4. Линия — g3 Ne2 g2 Kd2 a4.",
+        "en": "The first move is g3: the strongest move is found. Then Ne2 g2 Kd2 a4. The line is g3 Ne2 g2 Kd2 a4."
       },
       "source": {
         "provider": "lichess",
@@ -3374,23 +3374,23 @@
       ],
       "timeLimitSec": 240,
       "title": {
-        "ru": "Расчёт: ладья",
-        "en": "Rook calculation"
+        "ru": "Наказание ошибки: ладьёй",
+        "en": "Punish the mistake: rook"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте ферзя.",
-        "en": "White to move. Win the queen."
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
-          "en": "Calculate the forcing line to the end, including the opponent's replies."
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
         },
         {
           "tier": 2,
-          "ru": "Решает ладья с поля f6.",
-          "en": "The rook from f6 is the key piece."
+          "ru": "Ключевая фигура — ладья с поля f6.",
+          "en": "The key piece is the rook on f6."
         },
         {
           "tier": 3,
@@ -3399,8 +3399,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Rxf7+: ладья берёт пешку. Соперник отвечает Rxf7, Kxf7; затем Rxf7+, Qxd8. В итоге вы выигрываете ферзя; линия — Rxf7+ Rxf7 Rxf7+ Kxf7 Qxd8.",
-        "en": "The first move is Rxf7+: the rook captures the pawn. The opponent replies Rxf7, Kxf7; then comes Rxf7+, Qxd8. In the end you win the queen; the line is Rxf7+ Rxf7 Rxf7+ Kxf7 Qxd8."
+        "ru": "Первый ход — Rxf7+: слабость соперника используется. Далее Rxf7 Rxf7+ Kxf7 Qxd8. Линия — Rxf7+ Rxf7 Rxf7+ Kxf7 Qxd8.",
+        "en": "The first move is Rxf7+: the opponent's weakness is exploited. Then Rxf7 Rxf7+ Kxf7 Qxd8. The line is Rxf7+ Rxf7 Rxf7+ Kxf7 Qxd8."
       },
       "source": {
         "provider": "lichess",
@@ -3434,23 +3434,23 @@
       ],
       "timeLimitSec": 240,
       "title": {
-        "ru": "Расчёт: ферзь",
-        "en": "Queen calculation"
+        "ru": "Финальный экзамен: ферзём",
+        "en": "Final exam: queen"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте ферзя.",
-        "en": "White to move. Win the queen."
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
-          "en": "Calculate the forcing line to the end, including the opponent's replies."
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
         },
         {
           "tier": 2,
-          "ru": "Решает ферзь с поля c8.",
-          "en": "The queen from c8 is the key piece."
+          "ru": "Ключевая фигура — ферзь с поля c8.",
+          "en": "The key piece is the queen on c8."
         },
         {
           "tier": 3,
@@ -3459,8 +3459,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Qxf5+: ферзь берёт ладью. Соперник отвечает Qg6, Kxg6; затем Qxg6+, a4. Белые получают решающий перевес; линия — Qxf5+ Qg6 Qxg6+ Kxg6 a4.",
-        "en": "The first move is Qxf5+: the queen captures the rook. The opponent replies Qg6, Kxg6; then comes Qxg6+, a4. The side to move gets a decisive advantage; the line is Qxf5+ Qg6 Qxg6+ Kxg6 a4."
+        "ru": "Первый ход — Qxf5+: найден сильнейший ход. Далее Qg6 Qxg6+ Kxg6 a4. Линия — Qxf5+ Qg6 Qxg6+ Kxg6 a4.",
+        "en": "The first move is Qxf5+: the strongest move is found. Then Qg6 Qxg6+ Kxg6 a4. The line is Qxf5+ Qg6 Qxg6+ Kxg6 a4."
       },
       "source": {
         "provider": "lichess",
@@ -3549,23 +3549,23 @@
       ],
       "timeLimitSec": 250,
       "title": {
-        "ru": "Расчёт: ладья",
-        "en": "Rook calculation"
+        "ru": "Финальный экзамен: ладьёй",
+        "en": "Final exam: rook"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте ладью.",
-        "en": "White to move. Win the rook."
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Считайте форсированный вариант до конца, включая ответы соперника.",
-          "en": "Calculate the forcing line to the end, including the opponent's replies."
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
         },
         {
           "tier": 2,
-          "ru": "Решает ладья с поля a7.",
-          "en": "The rook from a7 is the key piece."
+          "ru": "Ключевая фигура — ладья с поля a7.",
+          "en": "The key piece is the rook on a7."
         },
         {
           "tier": 3,
@@ -3574,8 +3574,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Rg7+: ладья даёт шах. Соперник отвечает Kf8, Rxd7; затем Nd7+, Rxd7. Белые получают решающий перевес; линия — Rg7+ Kf8 Nd7+ Rxd7 Rxd7.",
-        "en": "The first move is Rg7+: the rook gives check. The opponent replies Kf8, Rxd7; then comes Nd7+, Rxd7. The side to move gets a decisive advantage; the line is Rg7+ Kf8 Nd7+ Rxd7 Rxd7."
+        "ru": "Первый ход — Rg7+: найден сильнейший ход. Далее Kf8 Nd7+ Rxd7 Rxd7. Линия — Rg7+ Kf8 Nd7+ Rxd7 Rxd7.",
+        "en": "The first move is Rg7+: the strongest move is found. Then Kf8 Nd7+ Rxd7 Rxd7. The line is Rg7+ Kf8 Nd7+ Rxd7 Rxd7."
       },
       "source": {
         "provider": "lichess",
@@ -3585,6 +3585,3439 @@
       },
       "chapter": "calculation",
       "id": "grm-060"
+    },
+    {
+      "fen": "r1bq1b1Q/1p2kp1p/p2ppn2/2p1n1B1/4P3/N2P3P/PPPR1r2/2K3NR b - - 2 19",
+      "setupMove": "e5g6",
+      "solution": [
+        "d2f2",
+        "g6h8",
+        "g5f6",
+        "e7d7",
+        "f6d8"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2062,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "fork",
+        "skewer"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Этюдная ничья: ладьёй",
+        "en": "Study draw: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля d2.",
+          "en": "The key piece is the rook on d2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxf2.",
+          "en": "First move: Rxf2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxf2: позиция возвращается к равновесию. Далее Nxh8 Bxf6+ Kd7 Bxd8. Линия — Rxf2 Nxh8 Bxf6+ Kd7 Bxd8.",
+        "en": "The first move is Rxf2: the position returns to balance. Then Nxh8 Bxf6+ Kd7 Bxd8. The line is Rxf2 Nxh8 Bxf6+ Kd7 Bxd8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "MXlXE",
+        "url": "https://lichess.org/training/MXlXE",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-061"
+    },
+    {
+      "fen": "8/8/p1p2k2/1pPn4/1P2K1p1/1P6/8/4B3 b - - 1 43",
+      "setupMove": "f6g5",
+      "solution": [
+        "e4e5",
+        "g5g6",
+        "e5d6",
+        "d5b4",
+        "e1b4"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2130,
+      "themes": [
+        "studyDraw",
+        "equality"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Этюдная ничья: королём",
+        "en": "Study draw: king"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — король с поля e4.",
+          "en": "The key piece is the king on e4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ke5.",
+          "en": "First move: Ke5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ke5: позиция возвращается к равновесию. Далее Kg6 Kd6 Nxb4 Bxb4. Линия — Ke5 Kg6 Kd6 Nxb4 Bxb4.",
+        "en": "The first move is Ke5: the position returns to balance. Then Kg6 Kd6 Nxb4 Bxb4. The line is Ke5 Kg6 Kd6 Nxb4 Bxb4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "ARvbh",
+        "url": "https://lichess.org/training/ARvbh",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-062"
+    },
+    {
+      "fen": "r3r2k/5Bpp/p1b4q/2p1B3/8/PQ1P2P1/7P/2R2RK1 w - - 3 33",
+      "setupMove": "f7e8",
+      "solution": [
+        "h6e3",
+        "f1f2",
+        "e3c1",
+        "f2f1",
+        "c1e3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2163,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "deflection",
+        "fork"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Этюдная ничья: ферзём",
+        "en": "Study draw: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля h6.",
+          "en": "The key piece is the queen on h6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe3+.",
+          "en": "First move: Qe3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe3+: позиция возвращается к равновесию. Далее Rf2 Qxc1+ Rf1 Qe3+. Линия — Qe3+ Rf2 Qxc1+ Rf1 Qe3+.",
+        "en": "The first move is Qe3+: the position returns to balance. Then Rf2 Qxc1+ Rf1 Qe3+. The line is Qe3+ Rf2 Qxc1+ Rf1 Qe3+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2IdQn",
+        "url": "https://lichess.org/training/2IdQn",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-063"
+    },
+    {
+      "fen": "1r2r1k1/ppqn1ppp/2p1b3/4P3/2PP4/8/PP1NB1PP/2RQ1RK1 w - - 3 15",
+      "setupMove": "d4d5",
+      "solution": [
+        "c6d5",
+        "c4d5",
+        "c7b6",
+        "g1h1",
+        "e6d5",
+        "d2c4",
+        "d5c4",
+        "e2c4",
+        "d7e5"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 5
+      },
+      "rating": 2312,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "capturingDefender",
+        "intermezzo"
+      ],
+      "timeLimitSec": 300,
+      "title": {
+        "ru": "Этюдная ничья: пешкой",
+        "en": "Study draw: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля c6.",
+          "en": "The key piece is the pawn on c6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: cxd5.",
+          "en": "First move: cxd5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — cxd5: позиция возвращается к равновесию. Далее cxd5 Qb6+ Kh1 Bxd5 Nc4 Bxc4 Bxc4 Nxe5. Линия — cxd5 cxd5 Qb6+ Kh1 Bxd5 Nc4 Bxc4 Bxc4 Nxe5.",
+        "en": "The first move is cxd5: the position returns to balance. Then cxd5 Qb6+ Kh1 Bxd5 Nc4 Bxc4 Bxc4 Nxe5. The line is cxd5 cxd5 Qb6+ Kh1 Bxd5 Nc4 Bxc4 Bxc4 Nxe5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "9CwUD",
+        "url": "https://lichess.org/training/9CwUD",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-064"
+    },
+    {
+      "fen": "2R3k1/p2Qn2p/1p2Pbp1/8/P7/q3p2P/6P1/7K b - - 0 33",
+      "setupMove": "e7c8",
+      "solution": [
+        "d7f7",
+        "g8h8",
+        "f7f6",
+        "h8g8",
+        "f6f7"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2386,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "fork"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Этюдная ничья: ферзём",
+        "en": "Study draw: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d7.",
+          "en": "The key piece is the queen on d7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf7+.",
+          "en": "First move: Qf7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qf7+: позиция возвращается к равновесию. Далее Kh8 Qxf6+ Kg8 Qf7+. Линия — Qf7+ Kh8 Qxf6+ Kg8 Qf7+.",
+        "en": "The first move is Qf7+: the position returns to balance. Then Kh8 Qxf6+ Kg8 Qf7+. The line is Qf7+ Kh8 Qxf6+ Kg8 Qf7+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "Wu5sa",
+        "url": "https://lichess.org/training/Wu5sa",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-065"
+    },
+    {
+      "fen": "N2k3r/1b1p1Q1p/p2q2pb/1ppPp3/8/P1PP2B1/1P3PPP/R3K2R w KQ - 3 20",
+      "setupMove": "e1g1",
+      "solution": [
+        "b7d5",
+        "g3h4",
+        "g6g5",
+        "f7h5",
+        "g5h4"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2401,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "fork"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Этюдная ничья: слоном",
+        "en": "Study draw: bishop"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — слон с поля b7.",
+          "en": "The key piece is the bishop on b7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bxd5.",
+          "en": "First move: Bxd5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bxd5: позиция возвращается к равновесию. Далее Bh4+ g5 Qh5 gxh4. Линия — Bxd5 Bh4+ g5 Qh5 gxh4.",
+        "en": "The first move is Bxd5: the position returns to balance. Then Bh4+ g5 Qh5 gxh4. The line is Bxd5 Bh4+ g5 Qh5 gxh4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "w8fkq",
+        "url": "https://lichess.org/training/w8fkq",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-066"
+    },
+    {
+      "fen": "6R1/8/8/8/3K2pp/7r/5P2/3k4 b - - 15 57",
+      "setupMove": "g4g3",
+      "solution": [
+        "f2g3",
+        "h4g3",
+        "d4e3",
+        "d1e1",
+        "e3f3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2440,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "rookEndgame"
+      ],
+      "timeLimitSec": 285,
+      "title": {
+        "ru": "Этюдная ничья: пешкой",
+        "en": "Study draw: pawn"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля f2.",
+          "en": "The key piece is the pawn on f2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: fxg3.",
+          "en": "First move: fxg3."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — fxg3: позиция возвращается к равновесию. Далее hxg3 Ke3 Ke1 Kf3. Линия — fxg3 hxg3 Ke3 Ke1 Kf3.",
+        "en": "The first move is fxg3: the position returns to balance. Then hxg3 Ke3 Ke1 Kf3. The line is fxg3 hxg3 Ke3 Ke1 Kf3."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "WmBQI",
+        "url": "https://lichess.org/training/WmBQI",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-067"
+    },
+    {
+      "fen": "8/5p2/8/R3nkpP/8/5r1P/6K1/8 b - - 6 55",
+      "setupMove": "f7f6",
+      "solution": [
+        "a5e5",
+        "f5e5",
+        "g2f3",
+        "f6f5",
+        "f3e3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2498,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "defensiveMove"
+      ],
+      "timeLimitSec": 290,
+      "title": {
+        "ru": "Этюдная ничья: ладьёй",
+        "en": "Study draw: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля a5.",
+          "en": "The key piece is the rook on a5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxe5+.",
+          "en": "First move: Rxe5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxe5+: позиция возвращается к равновесию. Далее Kxe5 Kxf3 f5 Ke3. Линия — Rxe5+ Kxe5 Kxf3 f5 Ke3.",
+        "en": "The first move is Rxe5+: the position returns to balance. Then Kxe5 Kxf3 f5 Ke3. The line is Rxe5+ Kxe5 Kxf3 f5 Ke3."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4f5Na",
+        "url": "https://lichess.org/training/4f5Na",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-068"
+    },
+    {
+      "fen": "8/1b5k/6pp/p7/1pP1nP2/1P2QRP1/P7/3RK2q w - - 2 45",
+      "setupMove": "e1e2",
+      "solution": [
+        "e4c3",
+        "e3c3",
+        "h1h2",
+        "f3f2",
+        "h2h5",
+        "c3f3",
+        "b7f3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 4
+      },
+      "rating": 2545,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "exposedKing",
+        "fork",
+        "sacrifice"
+      ],
+      "timeLimitSec": 305,
+      "title": {
+        "ru": "Этюдная ничья: конём",
+        "en": "Study draw: knight"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля e4.",
+          "en": "The key piece is the knight on e4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nc3+.",
+          "en": "First move: Nc3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nc3+: позиция возвращается к равновесию. Далее Qxc3 Qh2+ Rf2 Qh5+ Qf3 Bxf3+. Линия — Nc3+ Qxc3 Qh2+ Rf2 Qh5+ Qf3 Bxf3+.",
+        "en": "The first move is Nc3+: the position returns to balance. Then Qxc3 Qh2+ Rf2 Qh5+ Qf3 Bxf3+. The line is Nc3+ Qxc3 Qh2+ Rf2 Qh5+ Qf3 Bxf3+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2kWMT",
+        "url": "https://lichess.org/training/2kWMT",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-069"
+    },
+    {
+      "fen": "8/p3k2p/4P1p1/3K4/8/7P/PP6/8 w - - 5 43",
+      "setupMove": "b2b4",
+      "solution": [
+        "g6g5",
+        "a2a4",
+        "h7h5",
+        "b4b5",
+        "g5g4",
+        "h3g4",
+        "h5g4"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 4
+      },
+      "rating": 2549,
+      "themes": [
+        "studyDraw",
+        "equality",
+        "pawnEndgame",
+        "quietMove"
+      ],
+      "timeLimitSec": 305,
+      "title": {
+        "ru": "Этюдная ничья: пешкой",
+        "en": "Study draw: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Вы проигрывали — ищите путь к равновесию: упрощение, вечный шах или пат.",
+          "en": "You were losing — look for the way back: trades, perpetual check or stalemate."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля g6.",
+          "en": "The key piece is the pawn on g6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g5.",
+          "en": "First move: g5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g5: позиция возвращается к равновесию. Далее a4 h5 b5 g4 hxg4 hxg4. Линия — g5 a4 h5 b5 g4 hxg4 hxg4.",
+        "en": "The first move is g5: the position returns to balance. Then a4 h5 b5 g4 hxg4 hxg4. The line is g5 a4 h5 b5 g4 hxg4 hxg4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "Xofyp",
+        "url": "https://lichess.org/training/Xofyp",
+        "license": "CC0-1.0"
+      },
+      "chapter": "study-draw",
+      "id": "grm-070"
+    },
+    {
+      "fen": "5bkr/6pp/8/8/8/6q1/2B5/K7 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c2b3",
+        "g3b3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Пат в углу",
+        "en": "Stalemate in the corner"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ищите шах, на который у соперника есть только взятие.",
+          "en": "Look for a check whose only answer is a capture."
+        },
+        {
+          "tier": 2,
+          "ru": "Отдайте слона на b3: после Qxb3 король a1 запатован.",
+          "en": "Give up the bishop on b3: after Qxb3 the king on a1 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bb3+.",
+          "en": "First move: Bb3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Bb3+ Qxb3 — единственный ответ; у белого короля на a1 нет ходов, и это пат.",
+        "en": "Bb3+ Qxb3 is the only reply; the white king on a1 has no moves — stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-01",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-071"
+    },
+    {
+      "fen": "5bkr/6pp/8/8/8/6q1/2Q5/K7 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c2b3",
+        "g3b3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Жертва ферзя",
+        "en": "Queen sacrifice"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ферзь может отдать себя с шахом.",
+          "en": "The queen can give itself up with check."
+        },
+        {
+          "tier": 2,
+          "ru": "Qb3+ вынуждает Qxb3 — и король a1 запатован.",
+          "en": "Qb3+ forces Qxb3 — and the king on a1 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qb3+.",
+          "en": "First move: Qb3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qb3+ Qxb3 — соперник обязан взять ферзя, после чего у белого короля на a1 нет ни одного хода: пат.",
+        "en": "Qb3+ Qxb3 — the opponent must take the queen, after which the white king on a1 has no move: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-02",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-072"
+    },
+    {
+      "fen": "1q3bkr/6pp/8/8/8/8/2B5/K7 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c2b3",
+        "b8b3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Слон-смертник",
+        "en": "Bishop sacrifice"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Чёрный ферзь стоит на b8 — используйте это.",
+          "en": "The black queen stands on b8 — use it."
+        },
+        {
+          "tier": 2,
+          "ru": "Слон b3 отдаётся под Qxb3, и король a1 запатован.",
+          "en": "The bishop on b3 invites Qxb3, and the king on a1 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bb3+.",
+          "en": "First move: Bb3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Bb3+ Qxb3 — ферзь b8 обязана взять слона, и у белого короля на a1 не остаётся ходов: пат.",
+        "en": "Bb3+ Qxb3 — the b8-queen must take the bishop, and the white king on a1 has no moves left: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-03",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-073"
+    },
+    {
+      "fen": "1q3bkr/6pp/8/8/8/8/2Q5/K7 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c2b3",
+        "b8b3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Ферзь против ферзя",
+        "en": "Queen for queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Размен ферзей с шахом — единственный путь.",
+          "en": "Trading queens with check is the only way."
+        },
+        {
+          "tier": 2,
+          "ru": "Qb3+ вынуждает Qxb3, и король a1 запатован.",
+          "en": "Qb3+ forces Qxb3, and the king on a1 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qb3+.",
+          "en": "First move: Qb3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qb3+ Qxb3 — после вынужденного взятия у белого короля на a1 нет ходов: пат.",
+        "en": "Qb3+ Qxb3 — after the forced capture the white king on a1 has no moves: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-04",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-074"
+    },
+    {
+      "fen": "3rkb1K/3pp3/1q6/5B2/8/8/8/8 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "f5g6",
+        "b6g6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Пат у h8",
+        "en": "Stalemate at h8"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на h8 — отдайте фигуру с шахом.",
+          "en": "The king is on h8 — give up a piece with check."
+        },
+        {
+          "tier": 2,
+          "ru": "Слон g6 отдаётся под Qxg6, и король h8 запатован.",
+          "en": "The bishop on g6 invites Qxg6, and the king on h8 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bg6+.",
+          "en": "First move: Bg6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Bg6+ Qxg6 — единственный ответ; у белого короля на h8 нет ходов: пат.",
+        "en": "Bg6+ Qxg6 is the only reply; the white king on h8 has no moves: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-05",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-075"
+    },
+    {
+      "fen": "3rkb1K/3pp3/1q6/5Q2/8/8/8/8 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "f5g6",
+        "b6g6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Ферзь на g6",
+        "en": "Queen on g6"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на h8, ферзь может отдать себя с шахом.",
+          "en": "The king is on h8; the queen can give itself up with check."
+        },
+        {
+          "tier": 2,
+          "ru": "Qg6+ вынуждает Qxg6, и король h8 запатован.",
+          "en": "Qg6+ forces Qxg6, and the king on h8 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qg6+.",
+          "en": "First move: Qg6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qg6+ Qxg6 — соперник обязан взять ферзя, и у белого короля на h8 нет ходов: пат.",
+        "en": "Qg6+ Qxg6 — the opponent must take the queen, and the white king on h8 has no moves: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-06",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-076"
+    },
+    {
+      "fen": "K1bkr3/3pp3/4q3/2B5/8/8/8/8 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c5b6",
+        "e6b6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Пат у a8",
+        "en": "Stalemate at a8"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на a8 — ищите шах с единственным взятием.",
+          "en": "The king is on a8 — look for a check with a single capture."
+        },
+        {
+          "tier": 2,
+          "ru": "Слон b6 отдаётся под Qxb6, и король a8 запатован.",
+          "en": "The bishop on b6 invites Qxb6, and the king on a8 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bb6+.",
+          "en": "First move: Bb6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Bb6+ Qxb6 — единственный ответ; у белого короля на a8 нет ходов: пат.",
+        "en": "Bb6+ Qxb6 is the only reply; the white king on a8 has no moves: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-07",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-077"
+    },
+    {
+      "fen": "K1bkr3/3pp3/4q3/2Q5/8/8/8/8 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c5b6",
+        "e6b6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Ферзь на b6",
+        "en": "Queen on b6"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на a8, ферзь может отдать себя с шахом.",
+          "en": "The king is on a8; the queen can give itself up with check."
+        },
+        {
+          "tier": 2,
+          "ru": "Qb6+ вынуждает Qxb6, и король a8 запатован.",
+          "en": "Qb6+ forces Qxb6, and the king on a8 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qb6+.",
+          "en": "First move: Qb6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qb6+ Qxb6 — после вынужденного взятия у белого короля на a8 нет ходов: пат.",
+        "en": "Qb6+ Qxb6 — after the forced capture the white king on a8 has no moves: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-08",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-078"
+    },
+    {
+      "fen": "rkb5/pp6/8/8/8/1q6/5B2/7K w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "f2g3",
+        "b3g3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Пат у h1",
+        "en": "Stalemate at h1"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на h1 — отдайте фигуру с шахом.",
+          "en": "The king is on h1 — give up a piece with check."
+        },
+        {
+          "tier": 2,
+          "ru": "Слон g3 отдаётся под Qxg3, и король h1 запатован.",
+          "en": "The bishop on g3 invites Qxg3, and the king on h1 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bg3+.",
+          "en": "First move: Bg3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Bg3+ Qxg3 — единственный ответ; у белого короля на h1 нет ходов: пат.",
+        "en": "Bg3+ Qxg3 is the only reply; the white king on h1 has no moves: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-09",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-079"
+    },
+    {
+      "fen": "rkb5/pp6/8/8/8/1q6/5Q2/7K w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "f2g3",
+        "b3g3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 1
+      },
+      "rating": 2400,
+      "themes": [
+        "stalemate"
+      ],
+      "timeLimitSec": 260,
+      "title": {
+        "ru": "Ферзь на g3",
+        "en": "Queen on g3"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на h1, ферзь может отдать себя с шахом.",
+          "en": "The king is on h1; the queen can give itself up with check."
+        },
+        {
+          "tier": 2,
+          "ru": "Qg3+ вынуждает Qxg3, и король h1 запатован.",
+          "en": "Qg3+ forces Qxg3, and the king on h1 is stalemated."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qg3+.",
+          "en": "First move: Qg3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qg3+ Qxg3 — соперник обязан взять ферзя, и у белого короля на h1 нет ходов: пат.",
+        "en": "Qg3+ Qxg3 — the opponent must take the queen, and the white king on h1 has no moves: stalemate."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-stalemate-10",
+        "license": "proprietary"
+      },
+      "chapter": "stalemate",
+      "id": "grm-080"
+    },
+    {
+      "fen": "k7/8/PK6/8/8/8/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "a8b8",
+        "a6a7",
+        "b8a8"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Ладейная пешка",
+        "en": "Rook pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король должен остаться перед ладейной пешкой.",
+          "en": "The king must stay in front of the rook pawn."
+        },
+        {
+          "tier": 2,
+          "ru": "Держитесь угла a8: пешка a6 не пройдёт.",
+          "en": "Hold the a8 corner: the a6-pawn cannot break through."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kb8.",
+          "en": "First move: Kb8."
+        }
+      ],
+      "explanation": {
+        "ru": "Kb8 a7+ Ka8 — король возвращается в угол; пешка a7 упирается в него, и позиция ничейная.",
+        "en": "Kb8 a7+ Ka8 — the king returns to the corner; the a7-pawn is blocked, and the position is drawn."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-01",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-081"
+    },
+    {
+      "fen": "7k/8/6KP/8/8/8/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "h8g8",
+        "h6h7",
+        "g8h8"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Угол h8",
+        "en": "The h8 corner"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ладейная пешка h6 — держите короля в углу h8.",
+          "en": "The rook pawn is on h6 — keep the king in the h8 corner."
+        },
+        {
+          "tier": 2,
+          "ru": "После h7+ возвращайтесь на h8: пешка заперта.",
+          "en": "After h7+ return to h8: the pawn is locked."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kg8.",
+          "en": "First move: Kg8."
+        }
+      ],
+      "explanation": {
+        "ru": "Kg8 h7+ Kh8 — король снова в углу, пешка h7 не может продвинуться: ничья.",
+        "en": "Kg8 h7+ Kh8 — the king is back in the corner, the h7-pawn cannot advance: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-02",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-082"
+    },
+    {
+      "fen": "8/4k3/8/4K3/4P3/8/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "e7d7",
+        "e5f5",
+        "d7e7"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Оппозиция",
+        "en": "Opposition"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король должен встать перед пешкой и держать оппозицию.",
+          "en": "The king must stand in front of the pawn and hold the opposition."
+        },
+        {
+          "tier": 2,
+          "ru": "Уходите на d7, а затем возвращайтесь на e7.",
+          "en": "Step to d7, then return to e7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kd7.",
+          "en": "First move: Kd7."
+        }
+      ],
+      "explanation": {
+        "ru": "Kd7 Kf5 Ke7 — чёрный король сохраняет оппозицию перед пешкой e4; белые не могут усилить позицию, ничья.",
+        "en": "Kd7 Kf5 Ke7 — the black king keeps the opposition in front of the e4-pawn; White cannot make progress, a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-03",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-083"
+    },
+    {
+      "fen": "8/2k5/8/2K5/2P5/8/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c7d7",
+        "c5b5",
+        "d7c7"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Пешка c4",
+        "en": "The c4-pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Держите короля на пути пешки c4.",
+          "en": "Keep the king in the path of the c4-pawn."
+        },
+        {
+          "tier": 2,
+          "ru": "Kd7, затем Kc7 — оппозиция сохранена.",
+          "en": "Kd7, then Kc7 — the opposition is held."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kd7.",
+          "en": "First move: Kd7."
+        }
+      ],
+      "explanation": {
+        "ru": "Kd7 Kb5 Kc7 — король возвращается перед пешкой; белые не могут прорваться, ничья.",
+        "en": "Kd7 Kb5 Kc7 — the king returns in front of the pawn; White cannot break through, a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-04",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-084"
+    },
+    {
+      "fen": "8/3k4/8/3K4/3P4/8/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "d7e7",
+        "d5c5",
+        "e7d7"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Пешка d4",
+        "en": "The d4-pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оппозиция перед пешкой d4 — залог ничьей.",
+          "en": "The opposition in front of the d4-pawn is the key to the draw."
+        },
+        {
+          "tier": 2,
+          "ru": "Ke7, затем Kd7.",
+          "en": "Ke7, then Kd7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ke7.",
+          "en": "First move: Ke7."
+        }
+      ],
+      "explanation": {
+        "ru": "Ke7 Kc5 Kd7 — король не пускает белого короля вперёд; позиция ничейная.",
+        "en": "Ke7 Kc5 Kd7 — the king denies the white king progress; the position is drawn."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-05",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-085"
+    },
+    {
+      "fen": "8/5k2/8/5K2/5P2/8/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "f7g7",
+        "f5e5",
+        "g7f7"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Пешка f4",
+        "en": "The f4-pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король встаёт перед пешкой f4.",
+          "en": "The king takes his place in front of the f4-pawn."
+        },
+        {
+          "tier": 2,
+          "ru": "Kg7, затем Kf7 — оппозиция.",
+          "en": "Kg7, then Kf7 — the opposition."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kg7.",
+          "en": "First move: Kg7."
+        }
+      ],
+      "explanation": {
+        "ru": "Kg7 Ke5 Kf7 — чёрный король держит оппозицию; белая пешка f4 не проходит, ничья.",
+        "en": "Kg7 Ke5 Kf7 — the black king holds the opposition; the f4-pawn cannot advance, a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-06",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-086"
+    },
+    {
+      "fen": "8/8/3k4/3p4/3P4/3K4/8/8 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "d3e3",
+        "d6e6",
+        "e3d3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Запертые пешки",
+        "en": "Locked pawns"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешки d4 и d5 заперты — королю нечего делать.",
+          "en": "The d4 and d5 pawns are locked — the king has nothing to do."
+        },
+        {
+          "tier": 2,
+          "ru": "Держите короля на d3 и не пропускайте чёрного короля.",
+          "en": "Keep the king on d3 and do not let the black king through."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ke3.",
+          "en": "First move: Ke3."
+        }
+      ],
+      "explanation": {
+        "ru": "Ke3 Ke6 Kd3 — пешки d4/d5 заперты, короли не могут усилить позицию: ничья.",
+        "en": "Ke3 Ke6 Kd3 — the d4/d5 pawns are locked, the kings cannot improve their position: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-07",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-087"
+    },
+    {
+      "fen": "8/8/4k3/4p3/4P3/4K3/8/8 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "e3d3",
+        "e6d6",
+        "d3e3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Пешки e4/e5",
+        "en": "The e4/e5 pawns"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешки заперты, важно не пустить чёрного короля.",
+          "en": "The pawns are locked; the key is not to let the black king through."
+        },
+        {
+          "tier": 2,
+          "ru": "Kd3, затем Ke3 — держите оппозицию.",
+          "en": "Kd3, then Ke3 — keep the opposition."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kd3.",
+          "en": "First move: Kd3."
+        }
+      ],
+      "explanation": {
+        "ru": "Kd3 Kd6 Ke3 — пешки e4/e5 заперты, белый король держит оппозицию: ничья.",
+        "en": "Kd3 Kd6 Ke3 — the e4/e5 pawns are locked, the white king holds the opposition: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-08",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-088"
+    },
+    {
+      "fen": "8/1k6/8/1K6/1P6/8/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "b7c7",
+        "b5a5",
+        "c7b7"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Пешка b4",
+        "en": "The b4-pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король встаёт перед пешкой b4.",
+          "en": "The king stands in front of the b4-pawn."
+        },
+        {
+          "tier": 2,
+          "ru": "Kc7, затем Kb7 — оппозиция.",
+          "en": "Kc7, then Kb7 — the opposition."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kc7.",
+          "en": "First move: Kc7."
+        }
+      ],
+      "explanation": {
+        "ru": "Kc7 Ka5 Kb7 — король держит оппозицию; белая пешка b4 не проходит, ничья.",
+        "en": "Kc7 Ka5 Kb7 — the king holds the opposition; the b4-pawn cannot advance, a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-09",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-089"
+    },
+    {
+      "fen": "8/6k1/8/6K1/6P1/8/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "g7h7",
+        "g5f5",
+        "h7g7"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Пешка g4",
+        "en": "The g4-pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король встаёт перед пешкой g4.",
+          "en": "The king takes his place in front of the g4-pawn."
+        },
+        {
+          "tier": 2,
+          "ru": "Kh7, затем Kg7 — оппозиция.",
+          "en": "Kh7, then Kg7 — the opposition."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kh7.",
+          "en": "First move: Kh7."
+        }
+      ],
+      "explanation": {
+        "ru": "Kh7 Kf5 Kg7 — чёрный король сохраняет оппозицию; белая пешка g4 не проходит, ничья.",
+        "en": "Kh7 Kf5 Kg7 — the black king keeps the opposition; the g4-pawn cannot advance, a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-10",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-090"
+    },
+    {
+      "fen": "k2N3r/p7/rP2Q3/8/7q/8/8/2R3Kn w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "e6c6",
+        "a8b8",
+        "c6d6",
+        "b8a8",
+        "d6c6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Вечный шах в углу",
+        "en": "Perpetual in the corner"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ферзь может шаховать короля в углу по большой диагонали.",
+          "en": "The queen can check the cornered king along the long diagonal."
+        },
+        {
+          "tier": 2,
+          "ru": "Чередуйте поля c6 и d6: конь d8 и ладья c1 отрезают королю пути.",
+          "en": "Alternate c6 and d6: the knight on d8 and the rook on c1 cut off the king's escapes."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qc6+.",
+          "en": "First move: Qc6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qc6+ Kb8 Qd6+ Ka8 Qc6+ — ферзь чередует c6 и d6, король ходит только a8–b8, позиция повторяется: ничья вечным шахом.",
+        "en": "Qc6+ Kb8 Qd6+ Ka8 Qc6+ — the queen alternates c6 and d6, the king can only shuttle a8–b8, and the position repeats: a draw by perpetual check."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-01",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-091"
+    },
+    {
+      "fen": "r3N2k/7p/3Q2Pr/8/q7/8/8/nK3R2 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "d6f6",
+        "h8g8",
+        "f6e6",
+        "g8h8",
+        "e6f6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Маятник у h8",
+        "en": "Pendulum at h8"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король заперт на h8 — ищите шахи по диагонали.",
+          "en": "The king is trapped on h8 — look for diagonal checks."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь ходит между f6 и e6, конь e8 держит g7.",
+          "en": "The queen moves between f6 and e6, the knight on e8 controls g7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf6+.",
+          "en": "First move: Qf6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь качается между f6 и e6, король вынужден ходить g8–h8, позиция повторяется: ничья.",
+        "en": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen swings between f6 and e6, the king must shuttle g8–h8, and the position repeats: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-02",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-092"
+    },
+    {
+      "fen": "2R3Kn/8/8/7q/r7/4Q3/p7/k2N3r w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "e3c3",
+        "a1b1",
+        "c3d3",
+        "b1a1",
+        "d3c3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Вечный шах у a1",
+        "en": "Perpetual at a1"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Чёрный король заперт в углу a1.",
+          "en": "The black king is trapped in the a1 corner."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь шахует с c3 и d3, конь d1 и ладья c8 отсекают поля.",
+          "en": "The queen checks from c3 and d3, the knight on d1 and the rook on c8 cut off the squares."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qc3+.",
+          "en": "First move: Qc3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qc3+ Kb1 Qd3+ Ka1 Qc3+ — ферзь чередует c3 и d3, король ходит только a1–b1, и позиция повторяется: ничья.",
+        "en": "Qc3+ Kb1 Qd3+ Ka1 Qc3+ — the queen alternates c3 and d3, the king can only shuttle a1–b1, and the position repeats: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-03",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-093"
+    },
+    {
+      "fen": "nK3R2/8/8/q7/7r/3Q4/7p/r3N2k w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "d3f3",
+        "h1g1",
+        "f3e3",
+        "g1h1",
+        "e3f3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Маятник у h1",
+        "en": "Pendulum at h1"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на h1 — шахуйте по диагонали f3–h1.",
+          "en": "The king is on h1 — check along the f3–h1 diagonal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь ходит между f3 и e3, конь e1 держит g2, ладья f8 — поле f1.",
+          "en": "The queen moves between f3 and e3, the knight on e1 controls g2, the rook on f8 covers f1."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf3+.",
+          "en": "First move: Qf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — ферзь качается между f3 и e3, король ходит g1–h1, позиция повторяется: ничья.",
+        "en": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — the queen swings between f3 and e3, the king shuttles g1–h1, and the position repeats: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-04",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-094"
+    },
+    {
+      "fen": "k2N3r/p7/B7/8/7q/8/8/2Q3Kn w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c1c6",
+        "a8b8",
+        "c6d6",
+        "b8a8",
+        "d6c6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Слон на страже",
+        "en": "Bishop on guard"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Тот же маятник, но поля отсекает слон, а не ладья.",
+          "en": "The same pendulum, but a bishop instead of a rook cuts off the squares."
+        },
+        {
+          "tier": 2,
+          "ru": "Слон a6 держит b7 и c8, конь d8 — поле b7.",
+          "en": "The bishop on a6 covers b7 and c8, the knight on d8 covers b7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qc6+.",
+          "en": "First move: Qc6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qc6+ Kb8 Qd6+ Ka8 Qc6+ — ферзь чередует c6 и d6; слон a6 и конь d8 отнимают у короля все поля: ничья.",
+        "en": "Qc6+ Kb8 Qd6+ Ka8 Qc6+ — the queen alternates c6 and d6; the bishop on a6 and the knight on d8 take away all the king's squares: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-05",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-095"
+    },
+    {
+      "fen": "6Kn/8/7B/2Q4q/8/8/p7/k2N3r w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "c5c3",
+        "a1b1",
+        "c3d3",
+        "b1a1",
+        "d3c3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Слон у a1",
+        "en": "Bishop at a1"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король заперт в углу a1, помогите ферзю слоном.",
+          "en": "The king is trapped in the a1 corner; let the bishop help the queen."
+        },
+        {
+          "tier": 2,
+          "ru": "Слон h6 держит c1 и d2, конь d1 — поле b2.",
+          "en": "The bishop on h6 covers c1 and d2, the knight on d1 covers b2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qc3+.",
+          "en": "First move: Qc3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qc3+ Kb1 Qd3+ Ka1 Qc3+ — ферзь качается между c3 и d3, слон h6 и конь d1 не дают королю вырваться: ничья.",
+        "en": "Qc3+ Kb1 Qd3+ Ka1 Qc3+ — the queen swings between c3 and d3, the bishop on h6 and the knight on d1 keep the king boxed in: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-06",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-096"
+    },
+    {
+      "fen": "nK6/8/B7/q4Q2/8/8/7p/r3N2k w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "f5f3",
+        "h1g1",
+        "f3e3",
+        "g1h1",
+        "e3f3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Слон у h1",
+        "en": "Bishop at h1"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на h1, ищите шах по диагонали f3–h1.",
+          "en": "The king is on h1; look for a check along f3–h1."
+        },
+        {
+          "tier": 2,
+          "ru": "Слон a6 держит f1, конь e1 — поле g2.",
+          "en": "The bishop on a6 covers f1, the knight on e1 covers g2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf3+.",
+          "en": "First move: Qf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — ферзь чередует f3 и e3, слон a6 и конь e1 отнимают поля: ничья.",
+        "en": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — the queen alternates f3 and e3, the bishop on a6 and the knight on e1 cover the escapes: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-07",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-097"
+    },
+    {
+      "fen": "r3N2k/7p/6Pr/8/q7/B7/8/nK3Q2 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "f1f6",
+        "h8g8",
+        "f6e6",
+        "g8h8",
+        "e6f6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Пешка-страж",
+        "en": "Pawn on guard"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на h8, помогите ферзю пешкой g6.",
+          "en": "The king is on h8; let the g6-pawn help the queen."
+        },
+        {
+          "tier": 2,
+          "ru": "Пешка g6 держит f7 и h7, слон a3 — поле f8.",
+          "en": "The g6-pawn covers f7 and h7, the bishop on a3 covers f8."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf6+.",
+          "en": "First move: Qf6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь качается между f6 и e6; пешка g6 и слон a3 не пускают короля: ничья.",
+        "en": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen swings between f6 and e6; the g6-pawn and the bishop on a3 keep the king in: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-08",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-098"
+    },
+    {
+      "fen": "nK3R2/8/8/q7/7r/1Q6/7p/r3N2k w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "b3f3",
+        "h1g1",
+        "f3e3",
+        "g1h1",
+        "e3f3"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Ладья-страж",
+        "en": "Rook on guard"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король на h1, ладья должна отсечь поле f1.",
+          "en": "The king is on h1; the rook must cut off f1."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь шахует с f3 и e3, конь e1 держит g2, ладья f8 — f1.",
+          "en": "The queen checks from f3 and e3, the knight on e1 covers g2, the rook on f8 covers f1."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf3+.",
+          "en": "First move: Qf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — ферзь ходит f3–e3, король g1–h1; ладья f8 и конь e1 закрывают выходы: ничья.",
+        "en": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — the queen alternates f3–e3, the king shuttles g1–h1; the rook on f8 and the knight on e1 close the exits: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-09",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-099"
+    },
+    {
+      "fen": "r3N2k/7p/6Pr/8/q6Q/8/8/nK3R2 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "h4f6",
+        "h8g8",
+        "f6e6",
+        "g8h8",
+        "e6f6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Ферзь под боем",
+        "en": "Queen under attack"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ферзь под ударом — спасайте его вечным шахом.",
+          "en": "The queen is attacked — save it with perpetual check."
+        },
+        {
+          "tier": 2,
+          "ru": "Шахуйте с f6 и e6: пешка g6 и ладья f1 держат ключевые поля.",
+          "en": "Check from f6 and e6: the g6-pawn and the rook on f1 hold the key squares."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf6+.",
+          "en": "First move: Qf6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь уходит из-под боя и качается f6–e6; пешка g6 и ладья f1 не дают королю вырваться: ничья.",
+        "en": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen escapes the attack and swings f6–e6; the g6-pawn and the rook on f1 keep the king boxed in: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-10",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-100"
+    },
+    {
+      "fen": "8/8/p7/1p3kpK/1P6/7P/P7/8 w - - 2 44",
+      "setupMove": "h5h6",
+      "solution": [
+        "g5g4",
+        "h3g4",
+        "f5g4",
+        "h6g6",
+        "g4f4",
+        "g6f6",
+        "f4e4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1802,
+      "themes": [
+        "punish",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Наказание ошибки: пешкой",
+        "en": "Punish the mistake: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля g5.",
+          "en": "The key piece is the pawn on g5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: g4.",
+          "en": "First move: g4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — g4: слабость соперника используется. Далее hxg4+ Kxg4 Kg6 Kf4 Kf6 Ke4. Линия — g4 hxg4+ Kxg4 Kg6 Kf4 Kf6 Ke4.",
+        "en": "The first move is g4: the opponent's weakness is exploited. Then hxg4+ Kxg4 Kg6 Kf4 Kf6 Ke4. The line is g4 hxg4+ Kxg4 Kg6 Kf4 Kf6 Ke4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3NuFI",
+        "url": "https://lichess.org/training/3NuFI",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-101"
+    },
+    {
+      "fen": "8/pR3p1k/2p2r1p/3p4/3P2P1/P1P4P/1P3r1K/4R3 w - - 1 32",
+      "setupMove": "h2g3",
+      "solution": [
+        "f6f3",
+        "g3h4",
+        "f2h2",
+        "b7f7",
+        "f3f7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1805,
+      "themes": [
+        "punish",
+        "endgame"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Наказание ошибки: ладьёй",
+        "en": "Punish the mistake: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля f6.",
+          "en": "The key piece is the rook on f6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: R6f3+.",
+          "en": "First move: R6f3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — R6f3+: слабость соперника используется. Далее Kh4 Rh2 Rxf7+ Rxf7. Линия — R6f3+ Kh4 Rh2 Rxf7+ Rxf7.",
+        "en": "The first move is R6f3+: the opponent's weakness is exploited. Then Kh4 Rh2 Rxf7+ Rxf7. The line is R6f3+ Kh4 Rh2 Rxf7+ Rxf7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4r3Hp",
+        "url": "https://lichess.org/training/4r3Hp",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-102"
+    },
+    {
+      "fen": "6k1/pp4p1/8/6Q1/4q3/1P1pp2P/P7/5R1K w - - 1 47",
+      "setupMove": "h1g1",
+      "solution": [
+        "e3e2",
+        "f1e1",
+        "e4d4",
+        "g1g2",
+        "d3d2",
+        "e1e2",
+        "d2d1q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1814,
+      "themes": [
+        "punish",
+        "advancedPawn",
+        "endgame",
+        "exposedKing",
+        "promotion"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Наказание ошибки: пешкой",
+        "en": "Punish the mistake: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля e3.",
+          "en": "The key piece is the pawn on e3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: e2.",
+          "en": "First move: e2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — e2: слабость соперника используется. Далее Re1 Qd4+ Kg2 d2 Rxe2 d1=Q. Линия — e2 Re1 Qd4+ Kg2 d2 Rxe2 d1=Q.",
+        "en": "The first move is e2: the opponent's weakness is exploited. Then Re1 Qd4+ Kg2 d2 Rxe2 d1=Q. The line is e2 Re1 Qd4+ Kg2 d2 Rxe2 d1=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4cKgi",
+        "url": "https://lichess.org/training/4cKgi",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-103"
+    },
+    {
+      "fen": "8/p4bk1/2pp1p2/2q1p2p/4P2Q/1r5P/5P1N/6RK b - - 1 32",
+      "setupMove": "f7g6",
+      "solution": [
+        "h4h5",
+        "b3g3",
+        "g1g3",
+        "c5c1",
+        "h1g2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1817,
+      "themes": [
+        "punish",
+        "defensiveMove",
+        "endgame",
+        "pin"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Наказание ошибки: ферзём",
+        "en": "Punish the mistake: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля h4.",
+          "en": "The key piece is the queen on h4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxh5.",
+          "en": "First move: Qxh5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxh5: слабость соперника используется. Далее Rg3 Rxg3 Qc1+ Kg2. Линия — Qxh5 Rg3 Rxg3 Qc1+ Kg2.",
+        "en": "The first move is Qxh5: the opponent's weakness is exploited. Then Rg3 Rxg3 Qc1+ Kg2. The line is Qxh5 Rg3 Rxg3 Qc1+ Kg2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2KQM0",
+        "url": "https://lichess.org/training/2KQM0",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-104"
+    },
+    {
+      "fen": "r7/1k5p/3pp3/PK3p2/8/8/2R2P2/8 b - - 5 46",
+      "setupMove": "a8c8",
+      "solution": [
+        "a5a6",
+        "b7b8",
+        "a6a7",
+        "b8a7",
+        "c2c8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1872,
+      "themes": [
+        "punish",
+        "advancedPawn",
+        "deflection",
+        "endgame",
+        "exposedKing"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Наказание ошибки: пешкой",
+        "en": "Punish the mistake: pawn"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля a5.",
+          "en": "The key piece is the pawn on a5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: a6+.",
+          "en": "First move: a6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — a6+: слабость соперника используется. Далее Kb8 a7+ Kxa7 Rxc8. Линия — a6+ Kb8 a7+ Kxa7 Rxc8.",
+        "en": "The first move is a6+: the opponent's weakness is exploited. Then Kb8 a7+ Kxa7 Rxc8. The line is a6+ Kb8 a7+ Kxa7 Rxc8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "3Ai8Y",
+        "url": "https://lichess.org/training/3Ai8Y",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-105"
+    },
+    {
+      "fen": "rn1q2k1/pb1p1rp1/1p2p1Qp/2PnP3/8/B2B4/P1P2PPP/R3K2R b KQ - 0 15",
+      "setupMove": "b6c5",
+      "solution": [
+        "g6h7",
+        "g8f8",
+        "a3c5",
+        "d7d6",
+        "c5d6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1886,
+      "themes": [
+        "punish",
+        "zwischenzug",
+        "kingsideAttack"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Наказание ошибки: ферзём",
+        "en": "Punish the mistake: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля g6.",
+          "en": "The key piece is the queen on g6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qh7+.",
+          "en": "First move: Qh7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qh7+: слабость соперника используется. Далее Kf8 Bxc5+ d6 Bxd6+. Линия — Qh7+ Kf8 Bxc5+ d6 Bxd6+.",
+        "en": "The first move is Qh7+: the opponent's weakness is exploited. Then Kf8 Bxc5+ d6 Bxd6+. The line is Qh7+ Kf8 Bxc5+ d6 Bxd6+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0xqrT",
+        "url": "https://lichess.org/training/0xqrT",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-106"
+    },
+    {
+      "fen": "7B/8/8/3p1k2/P2Pp3/4KP1p/1P6/8 w - - 0 39",
+      "setupMove": "e3f2",
+      "solution": [
+        "e4e3",
+        "f2e3",
+        "h3h2",
+        "h8e5",
+        "h2h1q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1895,
+      "themes": [
+        "punish",
+        "advancedPawn",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Наказание ошибки: пешкой",
+        "en": "Punish the mistake: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля e4.",
+          "en": "The key piece is the pawn on e4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: e3+.",
+          "en": "First move: e3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — e3+: слабость соперника используется. Далее Kxe3 h2 Be5 h1=Q. Линия — e3+ Kxe3 h2 Be5 h1=Q.",
+        "en": "The first move is e3+: the opponent's weakness is exploited. Then Kxe3 h2 Be5 h1=Q. The line is e3+ Kxe3 h2 Be5 h1=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1wJZc",
+        "url": "https://lichess.org/training/1wJZc",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-107"
+    },
+    {
+      "fen": "8/8/6N1/8/7P/2ppk3/8/3K4 w - - 0 53",
+      "setupMove": "g6e5",
+      "solution": [
+        "c3c2",
+        "d1c1",
+        "d3d2",
+        "c1c2",
+        "e3e2",
+        "c2c3",
+        "d2d1q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1904,
+      "themes": [
+        "punish",
+        "advancedPawn",
+        "endgame",
+        "exposedKing",
+        "promotion"
+      ],
+      "timeLimitSec": 250,
+      "title": {
+        "ru": "Наказание ошибки: пешкой",
+        "en": "Punish the mistake: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля c3.",
+          "en": "The key piece is the pawn on c3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: c2+.",
+          "en": "First move: c2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — c2+: слабость соперника используется. Далее Kc1 d2+ Kxc2 Ke2 Kc3 d1=Q. Линия — c2+ Kc1 d2+ Kxc2 Ke2 Kc3 d1=Q.",
+        "en": "The first move is c2+: the opponent's weakness is exploited. Then Kc1 d2+ Kxc2 Ke2 Kc3 d1=Q. The line is c2+ Kc1 d2+ Kxc2 Ke2 Kc3 d1=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5UybD",
+        "url": "https://lichess.org/training/5UybD",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-108"
+    },
+    {
+      "fen": "6k1/1R3Rp1/2p1p3/p1K5/P5q1/1P6/8/8 b - - 3 41",
+      "setupMove": "e6e5",
+      "solution": [
+        "f7g7",
+        "g4g7",
+        "b7g7",
+        "g8g7",
+        "b3b4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1922,
+      "themes": [
+        "punish",
+        "endgame",
+        "fork"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Наказание ошибки: ладьёй",
+        "en": "Punish the mistake: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля f7.",
+          "en": "The key piece is the rook on f7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxg7+.",
+          "en": "First move: Rxg7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxg7+: слабость соперника используется. Далее Qxg7 Rxg7+ Kxg7 b4. Линия — Rxg7+ Qxg7 Rxg7+ Kxg7 b4.",
+        "en": "The first move is Rxg7+: the opponent's weakness is exploited. Then Qxg7 Rxg7+ Kxg7 b4. The line is Rxg7+ Qxg7 Rxg7+ Kxg7 b4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4etph",
+        "url": "https://lichess.org/training/4etph",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-109"
+    },
+    {
+      "fen": "8/p7/1P6/P7/3pk3/6rp/4K2R/8 b - - 0 44",
+      "setupMove": "g3g2",
+      "solution": [
+        "h2g2",
+        "h3g2",
+        "e2f2",
+        "a7b6",
+        "a5a6",
+        "d4d3",
+        "a6a7",
+        "d3d2",
+        "a7a8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 5
+      },
+      "rating": 1941,
+      "themes": [
+        "punish",
+        "advancedPawn",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 265,
+      "title": {
+        "ru": "Наказание ошибки: ладьёй",
+        "en": "Punish the mistake: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соперник ошибся — накажите немедленно.",
+          "en": "The opponent erred — punish it at once."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля h2.",
+          "en": "The key piece is the rook on h2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxg2.",
+          "en": "First move: Rxg2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxg2: слабость соперника используется. Далее hxg2 Kf2 axb6 a6 d3 a7 d2 a8=Q+. Линия — Rxg2 hxg2 Kf2 axb6 a6 d3 a7 d2 a8=Q+.",
+        "en": "The first move is Rxg2: the opponent's weakness is exploited. Then hxg2 Kf2 axb6 a6 d3 a7 d2 a8=Q+. The line is Rxg2 hxg2 Kf2 axb6 a6 d3 a7 d2 a8=Q+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2JyrD",
+        "url": "https://lichess.org/training/2JyrD",
+        "license": "CC0-1.0"
+      },
+      "chapter": "punish",
+      "id": "grm-110"
+    },
+    {
+      "fen": "8/1pk1bpp1/2p1p2p/r6P/P1QP4/qP1R2P1/2P2P2/1K5R w - - 3 33",
+      "setupMove": "h1e1",
+      "solution": [
+        "b7b5",
+        "c4c3",
+        "e7b4",
+        "c3b2",
+        "a3b2",
+        "b1b2",
+        "b4e1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1817,
+      "themes": [
+        "mixed",
+        "endgame",
+        "queensideAttack"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Финальный экзамен: пешкой",
+        "en": "Final exam: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля b7.",
+          "en": "The key piece is the pawn on b7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: b5.",
+          "en": "First move: b5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — b5: найден сильнейший ход. Далее Qc3 Bb4 Qb2 Qxb2+ Kxb2 Bxe1. Линия — b5 Qc3 Bb4 Qb2 Qxb2+ Kxb2 Bxe1.",
+        "en": "The first move is b5: the strongest move is found. Then Qc3 Bb4 Qb2 Qxb2+ Kxb2 Bxe1. The line is b5 Qc3 Bb4 Qb2 Qxb2+ Kxb2 Bxe1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5VmsV",
+        "url": "https://lichess.org/training/5VmsV",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-111"
+    },
+    {
+      "fen": "8/6p1/8/7p/2kpN2P/5nP1/2P1K3/8 b - - 3 49",
+      "setupMove": "f3g1",
+      "solution": [
+        "e2f2",
+        "g1h3",
+        "f2g2",
+        "c4d5",
+        "e4d2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1825,
+      "themes": [
+        "mixed",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Финальный экзамен: королём",
+        "en": "Final exam: king"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — король с поля e2.",
+          "en": "The key piece is the king on e2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kf2.",
+          "en": "First move: Kf2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kf2: найден сильнейший ход. Далее Nh3+ Kg2 Kd5 Nd2. Линия — Kf2 Nh3+ Kg2 Kd5 Nd2.",
+        "en": "The first move is Kf2: the strongest move is found. Then Nh3+ Kg2 Kd5 Nd2. The line is Kf2 Nh3+ Kg2 Kd5 Nd2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "9yRdW",
+        "url": "https://lichess.org/training/9yRdW",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-112"
+    },
+    {
+      "fen": "r7/2pk2p1/3qrp2/1Q6/2p5/PP1P3P/1BP5/1K2R3 b - - 0 29",
+      "setupMove": "c7c6",
+      "solution": [
+        "b5b7",
+        "d6c7",
+        "b7c7",
+        "d7c7",
+        "e1e6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1831,
+      "themes": [
+        "mixed",
+        "endgame",
+        "fork"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Финальный экзамен: ферзём",
+        "en": "Final exam: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля b5.",
+          "en": "The key piece is the queen on b5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qb7+.",
+          "en": "First move: Qb7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qb7+: найден сильнейший ход. Далее Qc7 Qxc7+ Kxc7 Rxe6. Линия — Qb7+ Qc7 Qxc7+ Kxc7 Rxe6.",
+        "en": "The first move is Qb7+: the strongest move is found. Then Qc7 Qxc7+ Kxc7 Rxe6. The line is Qb7+ Qc7 Qxc7+ Kxc7 Rxe6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "9AQQu",
+        "url": "https://lichess.org/training/9AQQu",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-113"
+    },
+    {
+      "fen": "4r1k1/QR6/2p4p/3b2q1/6pN/7P/PPP2PP1/6K1 w - - 2 31",
+      "setupMove": "b7b8",
+      "solution": [
+        "g5c1",
+        "g1h2",
+        "c1f4",
+        "g2g3",
+        "f4b8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1840,
+      "themes": [
+        "mixed",
+        "endgame"
+      ],
+      "timeLimitSec": 230,
+      "title": {
+        "ru": "Финальный экзамен: ферзём",
+        "en": "Final exam: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля g5.",
+          "en": "The key piece is the queen on g5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qc1+.",
+          "en": "First move: Qc1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qc1+: найден сильнейший ход. Далее Kh2 Qf4+ g3 Qxb8. Линия — Qc1+ Kh2 Qf4+ g3 Qxb8.",
+        "en": "The first move is Qc1+: the strongest move is found. Then Kh2 Qf4+ g3 Qxb8. The line is Qc1+ Kh2 Qf4+ g3 Qxb8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "9FNii",
+        "url": "https://lichess.org/training/9FNii",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-114"
+    },
+    {
+      "fen": "2k5/2p5/2p1r3/p7/P2PNpP1/1PP1rP1b/5R1P/2R3K1 w - - 2 36",
+      "setupMove": "e4g5",
+      "solution": [
+        "e3e1",
+        "f2f1",
+        "h3f1",
+        "g5e6",
+        "e1c1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1854,
+      "themes": [
+        "mixed",
+        "endgame"
+      ],
+      "timeLimitSec": 235,
+      "title": {
+        "ru": "Финальный экзамен: ладьёй",
+        "en": "Final exam: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля e3.",
+          "en": "The key piece is the rook on e3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Re1+.",
+          "en": "First move: Re1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Re1+: найден сильнейший ход. Далее Rf1 Bxf1 Nxe6 Rxc1. Линия — Re1+ Rf1 Bxf1 Nxe6 Rxc1.",
+        "en": "The first move is Re1+: the strongest move is found. Then Rf1 Bxf1 Nxe6 Rxc1. The line is Re1+ Rf1 Bxf1 Nxe6 Rxc1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "26ETL",
+        "url": "https://lichess.org/training/26ETL",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-115"
+    },
+    {
+      "fen": "4k3/1r4p1/1q2Ppp1/1P1r1p2/1Q6/4R2P/5KP1/2R5 b - - 1 43",
+      "setupMove": "b6b5",
+      "solution": [
+        "c1c8",
+        "d5d8",
+        "c8d8",
+        "e8d8",
+        "b4f8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1909,
+      "themes": [
+        "mixed",
+        "decoy",
+        "endgame",
+        "exposedKing"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Финальный экзамен: ладьёй",
+        "en": "Final exam: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля c1.",
+          "en": "The key piece is the rook on c1."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rc8+.",
+          "en": "First move: Rc8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rc8+: найден сильнейший ход. Далее Rd8 Rxd8+ Kxd8 Qf8+. Линия — Rc8+ Rd8 Rxd8+ Kxd8 Qf8+.",
+        "en": "The first move is Rc8+: the strongest move is found. Then Rd8 Rxd8+ Kxd8 Qf8+. The line is Rc8+ Rd8 Rxd8+ Kxd8 Qf8+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "8zrJt",
+        "url": "https://lichess.org/training/8zrJt",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-116"
+    },
+    {
+      "fen": "8/4k2p/6p1/4KpPP/5P2/8/8/8 b - - 0 58",
+      "setupMove": "e7f7",
+      "solution": [
+        "h5g6",
+        "f7g6",
+        "e5e6",
+        "h7h6",
+        "g5h6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1939,
+      "themes": [
+        "mixed",
+        "endgame"
+      ],
+      "timeLimitSec": 240,
+      "title": {
+        "ru": "Финальный экзамен: пешкой",
+        "en": "Final exam: pawn"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля h5.",
+          "en": "The key piece is the pawn on h5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: hxg6+.",
+          "en": "First move: hxg6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — hxg6+: найден сильнейший ход. Далее Kxg6 Ke6 h6 gxh6. Линия — hxg6+ Kxg6 Ke6 h6 gxh6.",
+        "en": "The first move is hxg6+: the strongest move is found. Then Kxg6 Ke6 h6 gxh6. The line is hxg6+ Kxg6 Ke6 h6 gxh6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4iNMm",
+        "url": "https://lichess.org/training/4iNMm",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-117"
+    },
+    {
+      "fen": "r1bq1rk1/pp3ppp/2n1pb1B/4N3/2B1NP2/2p3Q1/PP4PP/R4K2 b - - 1 15",
+      "setupMove": "g8h8",
+      "solution": [
+        "e4f6",
+        "d8f6",
+        "h6g5",
+        "f6f5",
+        "c4d3",
+        "c6e5",
+        "d3f5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 4
+      },
+      "rating": 1946,
+      "themes": [
+        "mixed",
+        "trappedPiece"
+      ],
+      "timeLimitSec": 255,
+      "title": {
+        "ru": "Финальный экзамен: конём",
+        "en": "Final exam: knight"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля e4.",
+          "en": "The key piece is the knight on e4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxf6.",
+          "en": "First move: Nxf6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxf6: найден сильнейший ход. Далее Qxf6 Bg5 Qf5 Bd3 Nxe5 Bxf5. Линия — Nxf6 Qxf6 Bg5 Qf5 Bd3 Nxe5 Bxf5.",
+        "en": "The first move is Nxf6: the strongest move is found. Then Qxf6 Bg5 Qf5 Bd3 Nxe5 Bxf5. The line is Nxf6 Qxf6 Bg5 Qf5 Bd3 Nxe5 Bxf5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2c87v",
+        "url": "https://lichess.org/training/2c87v",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-118"
+    },
+    {
+      "fen": "8/8/6P1/5N2/8/3k1p2/7r/4K3 b - - 0 55",
+      "setupMove": "d3e4",
+      "solution": [
+        "f5g3",
+        "e4f4",
+        "g6g7",
+        "f4g3",
+        "g7g8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1999,
+      "themes": [
+        "mixed",
+        "advancedPawn",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 245,
+      "title": {
+        "ru": "Финальный экзамен: конём",
+        "en": "Final exam: knight"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля f5.",
+          "en": "The key piece is the knight on f5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ng3+.",
+          "en": "First move: Ng3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ng3+: найден сильнейший ход. Далее Kf4 g7 Kxg3 g8=Q+. Линия — Ng3+ Kf4 g7 Kxg3 g8=Q+.",
+        "en": "The first move is Ng3+: the strongest move is found. Then Kf4 g7 Kxg3 g8=Q+. The line is Ng3+ Kf4 g7 Kxg3 g8=Q+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1UROK",
+        "url": "https://lichess.org/training/1UROK",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-119"
+    },
+    {
+      "fen": "8/1Rr5/p1Pr1p2/P2PkPp1/2K3P1/8/8/8 b - - 1 47",
+      "setupMove": "c7b7",
+      "solution": [
+        "c6b7",
+        "d6d8",
+        "c4c5",
+        "d8d5",
+        "c5b6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 2123,
+      "themes": [
+        "mixed",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 255,
+      "title": {
+        "ru": "Финальный экзамен: пешкой",
+        "en": "Final exam: pawn"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Соберите всё: угрозы, тактика, точный расчёт.",
+          "en": "Put it all together: threats, tactics, precise calculation."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля c6.",
+          "en": "The key piece is the pawn on c6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: cxb7.",
+          "en": "First move: cxb7."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — cxb7: найден сильнейший ход. Далее Rd8 Kc5 Rxd5+ Kb6. Линия — cxb7 Rd8 Kc5 Rxd5+ Kb6.",
+        "en": "The first move is cxb7: the strongest move is found. Then Rd8 Kc5 Rxd5+ Kb6. The line is cxb7 Rd8 Kc5 Rxd5+ Kb6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "9VYJ9",
+        "url": "https://lichess.org/training/9VYJ9",
+        "license": "CC0-1.0"
+      },
+      "chapter": "final-exam",
+      "id": "grm-120"
     }
   ]
 }

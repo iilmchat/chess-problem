@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026.10.3",
+  "contentVersion": "2026.10.4",
   "level": "PROFESSIONAL",
   "puzzles": [
     {
@@ -528,23 +528,23 @@
       ],
       "timeLimitSec": 185,
       "title": {
-        "ru": "Мат в два: эндшпиль",
-        "en": "Mate in two: endgame"
+        "ru": "Пешечный прорыв",
+        "en": "Pawn break"
       },
       "prompt": {
         "ru": "Ход чёрных. Найдите мат в два хода.",
-        "en": "Black to move. Find mate in 2."
+        "en": "Black to move. Find mate in two."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Первый ход — шах; подумайте, какое поле нужно отрезать у короля перед матом.",
-          "en": "The first move is a check; decide which square to cut off before delivering mate."
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
         },
         {
           "tier": 2,
-          "ru": "Решает король с поля f4.",
-          "en": "The king from f4 is the key piece."
+          "ru": "Ключевая фигура — король с поля f4.",
+          "en": "The key piece is the king on f4."
         },
         {
           "tier": 3,
@@ -553,8 +553,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Kg3: король делает тихий ход. Соперник отвечает e5; затем h2#. Финальный h2# ставит мат; линия — Kg3 e5 h2#.",
-        "en": "The first move is Kg3: the king makes a quiet move. The opponent replies e5; then comes h2#. The final h2# delivers mate; the line is Kg3 e5 h2#."
+        "ru": "Первый ход — Kg3: пешечный прорыв вскрывает позицию. Далее e5 h2#. Линия — Kg3 e5 h2#.",
+        "en": "The first move is Kg3: a pawn break opens the position. Then e5 h2#. The line is Kg3 e5 h2#."
       },
       "source": {
         "provider": "lichess",
@@ -1445,23 +1445,23 @@
       ],
       "timeLimitSec": 185,
       "title": {
-        "ru": "Завлечение слоном",
-        "en": "Bishop decoy"
+        "ru": "Промежуточный ход: слоном",
+        "en": "Zwischenzug: bishop"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте ферзя.",
-        "en": "White to move. Win the queen."
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Завлеките защитника на нужное поле, чтобы освободить удар.",
-          "en": "Lure a defender to the wrong square to free the attack."
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
         },
         {
           "tier": 2,
-          "ru": "Решает слон с поля d5.",
-          "en": "The bishop from d5 is the key piece."
+          "ru": "Ключевая фигура — слон с поля d5.",
+          "en": "The key piece is the bishop on d5."
         },
         {
           "tier": 3,
@@ -1470,8 +1470,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Bxe6+: слон берёт слона. Соперник отвечает Kxe6; затем Qxh3+. В итоге вы выигрываете ферзя; линия — Bxe6+ Kxe6 Qxh3+.",
-        "en": "The first move is Bxe6+: the bishop captures the bishop. The opponent replies Kxe6; then comes Qxh3+. In the end you win the queen; the line is Bxe6+ Kxe6 Qxh3+."
+        "ru": "Первый ход — Bxe6+: промежуточный ход меняет порядок. Далее Kxe6 Qxh3+. Линия — Bxe6+ Kxe6 Qxh3+.",
+        "en": "The first move is Bxe6+: an in-between move changes the order. Then Kxe6 Qxh3+. The line is Bxe6+ Kxe6 Qxh3+."
       },
       "source": {
         "provider": "lichess",
@@ -2296,23 +2296,23 @@
       ],
       "timeLimitSec": 165,
       "title": {
-        "ru": "Эндшпиль: ладья",
-        "en": "Rook endgame"
+        "ru": "Смешанное повторение: ладьёй",
+        "en": "Mixed review: rook"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте ферзя.",
-        "en": "Black to move. Win the queen."
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "В эндшпиле важна точная техника: улучшайте фигуру и создавайте проходную.",
-          "en": "In the endgame, precise technique matters: improve the piece and create a passer."
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
         },
         {
           "tier": 2,
-          "ru": "Решает ладья с поля c8.",
-          "en": "The rook from c8 is the key piece."
+          "ru": "Ключевая фигура — ладья с поля c8.",
+          "en": "The key piece is the rook on c8."
         },
         {
           "tier": 3,
@@ -2321,8 +2321,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Rc4: ладья делает тихий ход. Соперник отвечает Qxc4; затем Bxc4. В итоге вы выигрываете ферзя; линия — Rc4 Qxc4 Bxc4.",
-        "en": "The first move is Rc4: the rook makes a quiet move. The opponent replies Qxc4; then comes Bxc4. In the end you win the queen; the line is Rc4 Qxc4 Bxc4."
+        "ru": "Первый ход — Rc4: найден сильнейший ход. Далее Qxc4 Bxc4. Линия — Rc4 Qxc4 Bxc4.",
+        "en": "The first move is Rc4: the strongest move is found. Then Qxc4 Bxc4. The line is Rc4 Qxc4 Bxc4."
       },
       "source": {
         "provider": "lichess",
@@ -2414,23 +2414,23 @@
       ],
       "timeLimitSec": 185,
       "title": {
-        "ru": "Эндшпиль: пешка",
-        "en": "Pawn endgame"
+        "ru": "Минорный эндшпиль: пешкой",
+        "en": "Minor-piece endgame: pawn"
       },
       "prompt": {
-        "ru": "Ход белых. Проведите пешку в ферзи.",
-        "en": "White to move. Promote the pawn to a queen."
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "В эндшпиле важна точная техника: улучшайте фигуру и создавайте проходную.",
-          "en": "In the endgame, precise technique matters: improve the piece and create a passer."
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
         },
         {
           "tier": 2,
-          "ru": "Решает пешка с поля h5.",
-          "en": "The pawn from h5 is the key piece."
+          "ru": "Ключевая фигура — пешка с поля h5.",
+          "en": "The key piece is the pawn on h5."
         },
         {
           "tier": 3,
@@ -2439,8 +2439,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — h6: пешка делает тихий ход. Соперник отвечает Kc6, Kxd7; затем h7, h8=Q. Белые получают решающий перевес; линия — h6 Kc6 h7 Kxd7 h8=Q.",
-        "en": "The first move is h6: the pawn makes a quiet move. The opponent replies Kc6, Kxd7; then comes h7, h8=Q. The side to move gets a decisive advantage; the line is h6 Kc6 h7 Kxd7 h8=Q."
+        "ru": "Первый ход — h6: точная игра в минорном эндшпиле. Далее Kc6 h7 Kxd7 h8=Q. Линия — h6 Kc6 h7 Kxd7 h8=Q.",
+        "en": "The first move is h6: precise play in the minor-piece endgame. Then Kc6 h7 Kxd7 h8=Q. The line is h6 Kc6 h7 Kxd7 h8=Q."
       },
       "source": {
         "provider": "lichess",
@@ -2475,23 +2475,23 @@
       ],
       "timeLimitSec": 185,
       "title": {
-        "ru": "Эндшпиль: пешка",
-        "en": "Pawn endgame"
+        "ru": "Пешечный прорыв: пешкой",
+        "en": "Pawn break: pawn"
       },
       "prompt": {
-        "ru": "Ход чёрных. Проведите пешку в ферзи.",
-        "en": "Black to move. Promote the pawn to a queen."
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "В эндшпиле важна точная техника: улучшайте фигуру и создавайте проходную.",
-          "en": "In the endgame, precise technique matters: improve the piece and create a passer."
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
         },
         {
           "tier": 2,
-          "ru": "Решает пешка с поля e3.",
-          "en": "The pawn from e3 is the key piece."
+          "ru": "Ключевая фигура — пешка с поля e3.",
+          "en": "The key piece is the pawn on e3."
         },
         {
           "tier": 3,
@@ -2500,8 +2500,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — e2+: пешка даёт шах. Соперник отвечает Kc2, Rxf4+; затем e1=Q, Kg2. Чёрные получают решающий перевес; линия — e2+ Kc2 e1=Q Rxf4+ Kg2.",
-        "en": "The first move is e2+: the pawn gives check. The opponent replies Kc2, Rxf4+; then comes e1=Q, Kg2. The side to move gets a decisive advantage; the line is e2+ Kc2 e1=Q Rxf4+ Kg2."
+        "ru": "Первый ход — e2+: пешечный прорыв вскрывает позицию. Далее Kc2 e1=Q Rxf4+ Kg2. Линия — e2+ Kc2 e1=Q Rxf4+ Kg2.",
+        "en": "The first move is e2+: a pawn break opens the position. Then Kc2 e1=Q Rxf4+ Kg2. The line is e2+ Kc2 e1=Q Rxf4+ Kg2."
       },
       "source": {
         "provider": "lichess",
@@ -2589,23 +2589,23 @@
       ],
       "timeLimitSec": 190,
       "title": {
-        "ru": "Эндшпиль: ферзь",
-        "en": "Queen endgame"
+        "ru": "Смешанное повторение: ферзём",
+        "en": "Mixed review: queen"
       },
       "prompt": {
-        "ru": "Ход белых. Выиграйте ладью.",
-        "en": "White to move. Win the rook."
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "В эндшпиле важна точная техника: улучшайте фигуру и создавайте проходную.",
-          "en": "In the endgame, precise technique matters: improve the piece and create a passer."
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
         },
         {
           "tier": 2,
-          "ru": "Решает ферзь с поля c4.",
-          "en": "The queen from c4 is the key piece."
+          "ru": "Ключевая фигура — ферзь с поля c4.",
+          "en": "The key piece is the queen on c4."
         },
         {
           "tier": 3,
@@ -2614,8 +2614,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Qg4+: ферзь даёт шах. Соперник отвечает Kh6; затем Qxd1. Белые получают решающий перевес; линия — Qg4+ Kh6 Qxd1.",
-        "en": "The first move is Qg4+: the queen gives check. The opponent replies Kh6; then comes Qxd1. The side to move gets a decisive advantage; the line is Qg4+ Kh6 Qxd1."
+        "ru": "Первый ход — Qg4+: найден сильнейший ход. Далее Kh6 Qxd1. Линия — Qg4+ Kh6 Qxd1.",
+        "en": "The first move is Qg4+: the strongest move is found. Then Kh6 Qxd1. The line is Qg4+ Kh6 Qxd1."
       },
       "source": {
         "provider": "lichess",
@@ -2645,23 +2645,23 @@
       ],
       "timeLimitSec": 190,
       "title": {
-        "ru": "Эндшпиль: ладья",
-        "en": "Rook endgame"
+        "ru": "Смешанное повторение: ладьёй",
+        "en": "Mixed review: rook"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте ладью.",
-        "en": "Black to move. Win the rook."
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "В эндшпиле важна точная техника: улучшайте фигуру и создавайте проходную.",
-          "en": "In the endgame, precise technique matters: improve the piece and create a passer."
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
         },
         {
           "tier": 2,
-          "ru": "Решает ладья с поля f4.",
-          "en": "The rook from f4 is the key piece."
+          "ru": "Ключевая фигура — ладья с поля f4.",
+          "en": "The key piece is the rook on f4."
         },
         {
           "tier": 3,
@@ -2670,8 +2670,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Rf7+: ладья даёт шах. Соперник отвечает Kd6; затем Rxa7. Чёрные получают решающий перевес; линия — Rf7+ Kd6 Rxa7.",
-        "en": "The first move is Rf7+: the rook gives check. The opponent replies Kd6; then comes Rxa7. The side to move gets a decisive advantage; the line is Rf7+ Kd6 Rxa7."
+        "ru": "Первый ход — Rf7+: найден сильнейший ход. Далее Kd6 Rxa7. Линия — Rf7+ Kd6 Rxa7.",
+        "en": "The first move is Rf7+: the strongest move is found. Then Kd6 Rxa7. The line is Rf7+ Kd6 Rxa7."
       },
       "source": {
         "provider": "lichess",
@@ -2701,23 +2701,23 @@
       ],
       "timeLimitSec": 195,
       "title": {
-        "ru": "Эндшпиль: слон",
-        "en": "Bishop endgame"
+        "ru": "Пешечный прорыв: слоном",
+        "en": "Pawn break: bishop"
       },
       "prompt": {
-        "ru": "Ход чёрных. Выиграйте ладью.",
-        "en": "Black to move. Win the rook."
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "В эндшпиле важна точная техника: улучшайте фигуру и создавайте проходную.",
-          "en": "In the endgame, precise technique matters: improve the piece and create a passer."
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
         },
         {
           "tier": 2,
-          "ru": "Решает слон с поля f2.",
-          "en": "The bishop from f2 is the key piece."
+          "ru": "Ключевая фигура — слон с поля f2.",
+          "en": "The key piece is the bishop on f2."
         },
         {
           "tier": 3,
@@ -2726,8 +2726,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Bxe1: слон берёт ладью. Соперник отвечает Kg1; затем e2. Чёрные получают решающий перевес; линия — Bxe1 Kg1 e2.",
-        "en": "The first move is Bxe1: the bishop captures the rook. The opponent replies Kg1; then comes e2. The side to move gets a decisive advantage; the line is Bxe1 Kg1 e2."
+        "ru": "Первый ход — Bxe1: пешечный прорыв вскрывает позицию. Далее Kg1 e2. Линия — Bxe1 Kg1 e2.",
+        "en": "The first move is Bxe1: a pawn break opens the position. Then Kg1 e2. The line is Bxe1 Kg1 e2."
       },
       "source": {
         "provider": "lichess",
@@ -2760,23 +2760,23 @@
       ],
       "timeLimitSec": 215,
       "title": {
-        "ru": "Эндшпиль: король",
-        "en": "King endgame"
+        "ru": "Смешанное повторение: королём",
+        "en": "Mixed review: king"
       },
       "prompt": {
-        "ru": "Ход чёрных. Добейтесь решающего перевеса.",
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
         "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "В эндшпиле важна точная техника: улучшайте фигуру и создавайте проходную.",
-          "en": "In the endgame, precise technique matters: improve the piece and create a passer."
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
         },
         {
           "tier": 2,
-          "ru": "Решает король с поля a2.",
-          "en": "The king from a2 is the key piece."
+          "ru": "Ключевая фигура — король с поля a2.",
+          "en": "The key piece is the king on a2."
         },
         {
           "tier": 3,
@@ -2785,8 +2785,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Kxb3: король берёт пешку. Соперник отвечает Kd3, Kd2; затем a5, Kb2. Чёрные получают решающий перевес; линия — Kxb3 Kd3 a5 Kd2 Kb2.",
-        "en": "The first move is Kxb3: the king captures the pawn. The opponent replies Kd3, Kd2; then comes a5, Kb2. The side to move gets a decisive advantage; the line is Kxb3 Kd3 a5 Kd2 Kb2."
+        "ru": "Первый ход — Kxb3: найден сильнейший ход. Далее Kd3 a5 Kd2 Kb2. Линия — Kxb3 Kd3 a5 Kd2 Kb2.",
+        "en": "The first move is Kxb3: the strongest move is found. Then Kd3 a5 Kd2 Kb2. The line is Kxb3 Kd3 a5 Kd2 Kb2."
       },
       "source": {
         "provider": "lichess",
@@ -3107,23 +3107,23 @@
       ],
       "timeLimitSec": 195,
       "title": {
-        "ru": "Жертва ладьи",
-        "en": "Rook sacrifice"
+        "ru": "Мат в три",
+        "en": "Mate in three"
       },
       "prompt": {
         "ru": "Ход белых. Найдите мат в три хода.",
-        "en": "White to move. Find mate in 3."
+        "en": "White to move. Find mate in three."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Начните с жертвы, чтобы вскрыть позицию и получить решающий темп.",
-          "en": "Start with a sacrifice to open the position and gain a decisive tempo."
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
         },
         {
           "tier": 2,
-          "ru": "Решает ладья с поля g4.",
-          "en": "The rook from g4 is the key piece."
+          "ru": "Ключевая фигура — ладья с поля g4.",
+          "en": "The key piece is the rook on g4."
         },
         {
           "tier": 3,
@@ -3132,8 +3132,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Rxg7+: ладья берёт пешку. Соперник отвечает Nxg7, Kg8; затем Rxh6+, Ne7#. Финальный Ne7# ставит мат; линия — Rxg7+ Nxg7 Rxh6+ Kg8 Ne7#.",
-        "en": "The first move is Rxg7+: the rook captures the pawn. The opponent replies Nxg7, Kg8; then comes Rxh6+, Ne7#. The final Ne7# delivers mate; the line is Rxg7+ Nxg7 Rxh6+ Kg8 Ne7#."
+        "ru": "Первый ход — Rxg7+: начинается форсированный мат. Далее Nxg7 Rxh6+ Kg8 Ne7#. Линия — Rxg7+ Nxg7 Rxh6+ Kg8 Ne7#.",
+        "en": "The first move is Rxg7+: a forced mate begins. Then Nxg7 Rxh6+ Kg8 Ne7#. The line is Rxg7+ Nxg7 Rxh6+ Kg8 Ne7#."
       },
       "source": {
         "provider": "lichess",
@@ -3223,23 +3223,23 @@
       ],
       "timeLimitSec": 205,
       "title": {
-        "ru": "Жертва пешки",
-        "en": "Pawn sacrifice"
+        "ru": "Минорный эндшпиль: пешкой",
+        "en": "Minor-piece endgame: pawn"
       },
       "prompt": {
-        "ru": "Ход чёрных. Добейтесь решающего перевеса.",
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
         "en": "Black to move. Get a decisive advantage."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Начните с жертвы, чтобы вскрыть позицию и получить решающий темп.",
-          "en": "Start with a sacrifice to open the position and gain a decisive tempo."
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
         },
         {
           "tier": 2,
-          "ru": "Решает пешка с поля c4.",
-          "en": "The pawn from c4 is the key piece."
+          "ru": "Ключевая фигура — пешка с поля c4.",
+          "en": "The key piece is the pawn on c4."
         },
         {
           "tier": 3,
@@ -3248,8 +3248,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — c3: пешка делает тихий ход. Соперник отвечает bxc3, Nxa5; затем b3, b2. Чёрные получают решающий перевес; линия — c3 bxc3 b3 Nxa5 b2.",
-        "en": "The first move is c3: the pawn makes a quiet move. The opponent replies bxc3, Nxa5; then comes b3, b2. The side to move gets a decisive advantage; the line is c3 bxc3 b3 Nxa5 b2."
+        "ru": "Первый ход — c3: точная игра в минорном эндшпиле. Далее bxc3 b3 Nxa5 b2. Линия — c3 bxc3 b3 Nxa5 b2.",
+        "en": "The first move is c3: precise play in the minor-piece endgame. Then bxc3 b3 Nxa5 b2. The line is c3 bxc3 b3 Nxa5 b2."
       },
       "source": {
         "provider": "lichess",
@@ -3399,23 +3399,23 @@
       ],
       "timeLimitSec": 220,
       "title": {
-        "ru": "Жертва ферзя",
-        "en": "Queen sacrifice"
+        "ru": "Мат в три",
+        "en": "Mate in three"
       },
       "prompt": {
         "ru": "Ход белых. Найдите мат в три хода.",
-        "en": "White to move. Find mate in 3."
+        "en": "White to move. Find mate in three."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Начните с жертвы, чтобы вскрыть позицию и получить решающий темп.",
-          "en": "Start with a sacrifice to open the position and gain a decisive tempo."
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
         },
         {
           "tier": 2,
-          "ru": "Решает ферзь с поля g4.",
-          "en": "The queen from g4 is the key piece."
+          "ru": "Ключевая фигура — ферзь с поля g4.",
+          "en": "The key piece is the queen on g4."
         },
         {
           "tier": 3,
@@ -3424,8 +3424,8 @@
         }
       ],
       "explanation": {
-        "ru": "Первый ход — Qxd4+: ферзь берёт слона. Соперник отвечает Nxd4, Qf6; затем Be5+, Bxf6#. Финальный Bxf6# ставит мат; линия — Qxd4+ Nxd4 Be5+ Qf6 Bxf6#.",
-        "en": "The first move is Qxd4+: the queen captures the bishop. The opponent replies Nxd4, Qf6; then comes Be5+, Bxf6#. The final Bxf6# delivers mate; the line is Qxd4+ Nxd4 Be5+ Qf6 Bxf6#."
+        "ru": "Первый ход — Qxd4+: начинается форсированный мат. Далее Nxd4 Be5+ Qf6 Bxf6#. Линия — Qxd4+ Nxd4 Be5+ Qf6 Bxf6#.",
+        "en": "The first move is Qxd4+: a forced mate begins. Then Nxd4 Be5+ Qf6 Bxf6#. The line is Qxd4+ Nxd4 Be5+ Qf6 Bxf6#."
       },
       "source": {
         "provider": "lichess",
@@ -3435,6 +3435,3473 @@
       },
       "chapter": "sacrifice",
       "id": "pro-060"
+    },
+    {
+      "fen": "8/kp6/p7/8/8/2Q2b2/PPPq1P1b/R5K1 w - - 2 30",
+      "setupMove": "g1h2",
+      "solution": [
+        "d2f2",
+        "h2h3",
+        "f2g2",
+        "h3h4",
+        "g2g4"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1400,
+      "themes": [
+        "mateIn3",
+        "endgame",
+        "exposedKing"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d2.",
+          "en": "The key piece is the queen on d2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf2+.",
+          "en": "First move: Qxf2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf2+: начинается форсированный мат. Далее Kh3 Qg2+ Kh4 Qg4#. Линия — Qxf2+ Kh3 Qg2+ Kh4 Qg4#.",
+        "en": "The first move is Qxf2+: a forced mate begins. Then Kh3 Qg2+ Kh4 Qg4#. The line is Qxf2+ Kh3 Qg2+ Kh4 Qg4#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0Dxaa",
+        "url": "https://lichess.org/training/0Dxaa",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-061"
+    },
+    {
+      "fen": "2r3k1/1p1Q1ppp/p5n1/8/P2Pq3/1P5P/1B4P1/5R1K b - - 1 25",
+      "setupMove": "c8c2",
+      "solution": [
+        "d7f7",
+        "g8h8",
+        "f7f8",
+        "g6f8",
+        "f1f8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1408,
+      "themes": [
+        "mateIn3",
+        "backRankMate",
+        "endgame",
+        "sacrifice"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d7.",
+          "en": "The key piece is the queen on d7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf7+.",
+          "en": "First move: Qxf7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf7+: начинается форсированный мат. Далее Kh8 Qf8+ Nxf8 Rxf8#. Линия — Qxf7+ Kh8 Qf8+ Nxf8 Rxf8#.",
+        "en": "The first move is Qxf7+: a forced mate begins. Then Kh8 Qf8+ Nxf8 Rxf8#. The line is Qxf7+ Kh8 Qf8+ Nxf8 Rxf8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0NYWd",
+        "url": "https://lichess.org/training/0NYWd",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-062"
+    },
+    {
+      "fen": "1R2nbrk/7p/3p2q1/3Pp3/2N1np2/1Q5P/PB4PK/6R1 w - - 0 36",
+      "setupMove": "c4e5",
+      "solution": [
+        "g6g3",
+        "b3g3",
+        "f4g3",
+        "h2h1",
+        "e4f2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1472,
+      "themes": [
+        "mateIn3"
+      ],
+      "timeLimitSec": 200,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля g6.",
+          "en": "The key piece is the queen on g6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qg3+.",
+          "en": "First move: Qg3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qg3+: начинается форсированный мат. Далее Qxg3 fxg3+ Kh1 Nf2#. Линия — Qg3+ Qxg3 fxg3+ Kh1 Nf2#.",
+        "en": "The first move is Qg3+: a forced mate begins. Then Qxg3 fxg3+ Kh1 Nf2#. The line is Qg3+ Qxg3 fxg3+ Kh1 Nf2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0C1lg",
+        "url": "https://lichess.org/training/0C1lg",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-063"
+    },
+    {
+      "fen": "r2q1r2/2pbn2k/p2p2B1/1p1P4/2P1pB1P/1P6/P4P2/b2Q1KR1 b - - 0 21",
+      "setupMove": "e7g6",
+      "solution": [
+        "d1h5",
+        "h7g8",
+        "h5g6",
+        "a1g7",
+        "g6g7"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1508,
+      "themes": [
+        "mateIn3",
+        "deflection",
+        "exposedKing"
+      ],
+      "timeLimitSec": 200,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d1.",
+          "en": "The key piece is the queen on d1."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qh5+.",
+          "en": "First move: Qh5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qh5+: начинается форсированный мат. Далее Kg8 Qxg6+ Bg7 Qxg7#. Линия — Qh5+ Kg8 Qxg6+ Bg7 Qxg7#.",
+        "en": "The first move is Qh5+: a forced mate begins. Then Kg8 Qxg6+ Bg7 Qxg7#. The line is Qh5+ Kg8 Qxg6+ Bg7 Qxg7#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "05mYC",
+        "url": "https://lichess.org/training/05mYC",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-064"
+    },
+    {
+      "fen": "1rb1kb1r/1p3ppp/p7/1N6/8/2P2N2/P4PPP/2KRR3 b k - 1 17",
+      "setupMove": "f8e7",
+      "solution": [
+        "b5c7",
+        "e8f8",
+        "d1d8",
+        "e7d8",
+        "e1e8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1517,
+      "themes": [
+        "mateIn3",
+        "sacrifice"
+      ],
+      "timeLimitSec": 205,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля b5.",
+          "en": "The key piece is the knight on b5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nc7+.",
+          "en": "First move: Nc7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nc7+: начинается форсированный мат. Далее Kf8 Rd8+ Bxd8 Re8#. Линия — Nc7+ Kf8 Rd8+ Bxd8 Re8#.",
+        "en": "The first move is Nc7+: a forced mate begins. Then Kf8 Rd8+ Bxd8 Re8#. The line is Nc7+ Kf8 Rd8+ Bxd8 Re8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0X3Wp",
+        "url": "https://lichess.org/training/0X3Wp",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-065"
+    },
+    {
+      "fen": "2k4r/ppq2pp1/2p1pnp1/8/P1BPN3/5Q2/1PP2PPb/R4R1K w - - 5 19",
+      "setupMove": "e4f6",
+      "solution": [
+        "h2g1",
+        "f3h3",
+        "h8h3",
+        "g2h3",
+        "c7h2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1539,
+      "themes": [
+        "mateIn3",
+        "discoveredAttack",
+        "kingsideAttack"
+      ],
+      "timeLimitSec": 205,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — слон с поля h2.",
+          "en": "The key piece is the bishop on h2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bg1+.",
+          "en": "First move: Bg1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bg1+: начинается форсированный мат. Далее Qh3 Rxh3+ gxh3 Qh2#. Линия — Bg1+ Qh3 Rxh3+ gxh3 Qh2#.",
+        "en": "The first move is Bg1+: a forced mate begins. Then Qh3 Rxh3+ gxh3 Qh2#. The line is Bg1+ Qh3 Rxh3+ gxh3 Qh2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0TuSg",
+        "url": "https://lichess.org/training/0TuSg",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-066"
+    },
+    {
+      "fen": "3R4/4rkpp/p3qP2/1pb4P/2n2B2/5N2/PP2QPP1/6K1 b - - 0 25",
+      "setupMove": "e6e2",
+      "solution": [
+        "f3g5",
+        "f7f6",
+        "d8f8",
+        "e7f7",
+        "f8f7"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1545,
+      "themes": [
+        "mateIn3"
+      ],
+      "timeLimitSec": 205,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в три хода.",
+        "en": "White to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля f3.",
+          "en": "The key piece is the knight on f3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ng5+.",
+          "en": "First move: Ng5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ng5+: начинается форсированный мат. Далее Kxf6 Rf8+ Rf7 Rxf7#. Линия — Ng5+ Kxf6 Rf8+ Rf7 Rxf7#.",
+        "en": "The first move is Ng5+: a forced mate begins. Then Kxf6 Rf8+ Rf7 Rxf7#. The line is Ng5+ Kxf6 Rf8+ Rf7 Rxf7#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0LzAA",
+        "url": "https://lichess.org/training/0LzAA",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-067"
+    },
+    {
+      "fen": "2r3k1/2B2ppp/2Q1pq2/2Pp4/2b5/2P5/1r3PPP/R4RK1 w - - 4 24",
+      "setupMove": "a1a8",
+      "solution": [
+        "f6f2",
+        "f1f2",
+        "b2b1",
+        "f2f1",
+        "b1f1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1555,
+      "themes": [
+        "mateIn3",
+        "kingsideAttack",
+        "sacrifice"
+      ],
+      "timeLimitSec": 205,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля f6.",
+          "en": "The key piece is the queen on f6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf2+.",
+          "en": "First move: Qxf2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf2+: начинается форсированный мат. Далее Rxf2 Rb1+ Rf1 Rxf1#. Линия — Qxf2+ Rxf2 Rb1+ Rf1 Rxf1#.",
+        "en": "The first move is Qxf2+: a forced mate begins. Then Rxf2 Rb1+ Rf1 Rxf1#. The line is Qxf2+ Rxf2 Rb1+ Rf1 Rxf1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0Rfns",
+        "url": "https://lichess.org/training/0Rfns",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-068"
+    },
+    {
+      "fen": "4rr1k/p1pp3p/1p4p1/3Q4/2P4q/8/PP2RPPP/R5K1 w - - 5 19",
+      "setupMove": "a1e1",
+      "solution": [
+        "h4f2",
+        "e2f2",
+        "e8e1",
+        "f2f1",
+        "e1f1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1626,
+      "themes": [
+        "mateIn3",
+        "deflection",
+        "endgame",
+        "kingsideAttack",
+        "sacrifice"
+      ],
+      "timeLimitSec": 210,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля h4.",
+          "en": "The key piece is the queen on h4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf2+.",
+          "en": "First move: Qxf2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf2+: начинается форсированный мат. Далее Rxf2 Rxe1+ Rf1 Rexf1#. Линия — Qxf2+ Rxf2 Rxe1+ Rf1 Rexf1#.",
+        "en": "The first move is Qxf2+: a forced mate begins. Then Rxf2 Rxe1+ Rf1 Rexf1#. The line is Qxf2+ Rxf2 Rxe1+ Rf1 Rexf1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0Sskx",
+        "url": "https://lichess.org/training/0Sskx",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-069"
+    },
+    {
+      "fen": "5R2/p2rp1k1/7p/1p3Qp1/3P1p2/1BP5/P1Pq1KPP/8 w - - 7 33",
+      "setupMove": "f2f3",
+      "solution": [
+        "d2e3",
+        "f3g4",
+        "e3e2",
+        "g4h3",
+        "e2h5"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1704,
+      "themes": [
+        "mateIn3",
+        "endgame",
+        "exposedKing"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Мат в три",
+        "en": "Mate in three"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Мат форсирован: каждый ответ соперника ведёт к цели.",
+          "en": "The mate is forced: every reply leads to the goal."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d2.",
+          "en": "The key piece is the queen on d2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe3+.",
+          "en": "First move: Qe3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe3+: начинается форсированный мат. Далее Kg4 Qe2+ Kh3 Qh5#. Линия — Qe3+ Kg4 Qe2+ Kh3 Qh5#.",
+        "en": "The first move is Qe3+: a forced mate begins. Then Kg4 Qe2+ Kh3 Qh5#. The line is Qe3+ Kg4 Qe2+ Kh3 Qh5#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "08dio",
+        "url": "https://lichess.org/training/08dio",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mate-in-3",
+      "id": "pro-070"
+    },
+    {
+      "fen": "2r5/8/8/1Q1R3P/N4b2/kP6/P1r5/1K6 w - - 4 37",
+      "setupMove": "d5c5",
+      "solution": [
+        "c2c1",
+        "c5c1",
+        "c8c1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1341,
+      "themes": [
+        "xRay",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 175,
+      "title": {
+        "ru": "Рентген",
+        "en": "X-ray"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in two."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля c2.",
+          "en": "The key piece is the rook on c2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rc1+.",
+          "en": "First move: Rc1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rc1+: фигура действует сквозь другую. Далее Rxc1 Rxc1#. Линия — Rc1+ Rxc1 Rxc1#.",
+        "en": "The first move is Rc1+: a piece works through another. Then Rxc1 Rxc1#. The line is Rc1+ Rxc1 Rxc1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "89MNt",
+        "url": "https://lichess.org/training/89MNt",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-071"
+    },
+    {
+      "fen": "r1b2rk1/p1p2p2/1p2pq1p/3n4/2pPB1N1/6P1/P2Q1P1P/R4RK1 b - - 1 19",
+      "setupMove": "f6g5",
+      "solution": [
+        "g4h6",
+        "g5h6",
+        "d2h6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1349,
+      "themes": [
+        "xRay",
+        "kingsideAttack"
+      ],
+      "timeLimitSec": 175,
+      "title": {
+        "ru": "Рентген: конём",
+        "en": "X-ray: knight"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля g4.",
+          "en": "The key piece is the knight on g4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxh6+.",
+          "en": "First move: Nxh6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxh6+: фигура действует сквозь другую. Далее Qxh6 Qxh6. Линия — Nxh6+ Qxh6 Qxh6.",
+        "en": "The first move is Nxh6+: a piece works through another. Then Qxh6 Qxh6. The line is Nxh6+ Qxh6 Qxh6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5bDoh",
+        "url": "https://lichess.org/training/5bDoh",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-072"
+    },
+    {
+      "fen": "2r5/5pkp/5qp1/8/Q7/6P1/PP2R1PP/2r1R2K w - - 1 32",
+      "setupMove": "a4e4",
+      "solution": [
+        "f6f1",
+        "e1f1",
+        "c1f1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1408,
+      "themes": [
+        "xRay",
+        "backRankMate",
+        "endgame",
+        "mateIn2",
+        "sacrifice"
+      ],
+      "timeLimitSec": 180,
+      "title": {
+        "ru": "Рентген",
+        "en": "X-ray"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in two."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля f6.",
+          "en": "The key piece is the queen on f6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf1+.",
+          "en": "First move: Qf1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qf1+: фигура действует сквозь другую. Далее Rxf1 Rxf1#. Линия — Qf1+ Rxf1 Rxf1#.",
+        "en": "The first move is Qf1+: a piece works through another. Then Rxf1 Rxf1#. The line is Qf1+ Rxf1 Rxf1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5Y6xs",
+        "url": "https://lichess.org/training/5Y6xs",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-073"
+    },
+    {
+      "fen": "6k1/p3r1p1/1p3p1p/3q3P/5QP1/P3Rn2/1P3P1K/4R3 w - - 4 42",
+      "setupMove": "h2g3",
+      "solution": [
+        "f3e1",
+        "e3e1",
+        "e7e1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1416,
+      "themes": [
+        "xRay",
+        "endgame"
+      ],
+      "timeLimitSec": 180,
+      "title": {
+        "ru": "Рентген: конём",
+        "en": "X-ray: knight"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля f3.",
+          "en": "The key piece is the knight on f3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxe1.",
+          "en": "First move: Nxe1."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxe1: фигура действует сквозь другую. Далее Rxe1 Rxe1. Линия — Nxe1 Rxe1 Rxe1.",
+        "en": "The first move is Nxe1: a piece works through another. Then Rxe1 Rxe1. The line is Nxe1 Rxe1 Rxe1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "7k7yc",
+        "url": "https://lichess.org/training/7k7yc",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-074"
+    },
+    {
+      "fen": "5rk1/Q4pbp/P7/5R2/2qP4/2P1n3/6PP/5R1K w - - 1 30",
+      "setupMove": "f5f7",
+      "solution": [
+        "c4f1",
+        "f7f1",
+        "f8f1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1487,
+      "themes": [
+        "xRay",
+        "mateIn2"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Рентген",
+        "en": "X-ray"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in two."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля c4.",
+          "en": "The key piece is the queen on c4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf1+.",
+          "en": "First move: Qxf1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf1+: фигура действует сквозь другую. Далее Rxf1 Rxf1#. Линия — Qxf1+ Rxf1 Rxf1#.",
+        "en": "The first move is Qxf1+: a piece works through another. Then Rxf1 Rxf1#. The line is Qxf1+ Rxf1 Rxf1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0MkUM",
+        "url": "https://lichess.org/training/0MkUM",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-075"
+    },
+    {
+      "fen": "4r1k1/7p/pR1qN1p1/2p5/b1P5/8/P2r1PPP/2R1Q1K1 b - - 2 32",
+      "setupMove": "e8e6",
+      "solution": [
+        "e1e6",
+        "d6e6",
+        "b6e6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1504,
+      "themes": [
+        "xRay"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Рентген: ферзём",
+        "en": "X-ray: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля e1.",
+          "en": "The key piece is the queen on e1."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxe6+.",
+          "en": "First move: Qxe6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxe6+: фигура действует сквозь другую. Далее Qxe6 Rxe6. Линия — Qxe6+ Qxe6 Rxe6.",
+        "en": "The first move is Qxe6+: a piece works through another. Then Qxe6 Rxe6. The line is Qxe6+ Qxe6 Rxe6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "2KNGM",
+        "url": "https://lichess.org/training/2KNGM",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-076"
+    },
+    {
+      "fen": "4Qnk1/5r1p/bb3PpB/1pp5/1P2P3/2q3P1/6BP/5R1K b - - 3 29",
+      "setupMove": "f7f6",
+      "solution": [
+        "e8f8",
+        "f6f8",
+        "f1f8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1514,
+      "themes": [
+        "xRay",
+        "mateIn2"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Рентген",
+        "en": "X-ray"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in two."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля e8.",
+          "en": "The key piece is the queen on e8."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf8+.",
+          "en": "First move: Qxf8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxf8+: фигура действует сквозь другую. Далее Rxf8 Rxf8#. Линия — Qxf8+ Rxf8 Rxf8#.",
+        "en": "The first move is Qxf8+: a piece works through another. Then Rxf8 Rxf8#. The line is Qxf8+ Rxf8 Rxf8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "8YeNf",
+        "url": "https://lichess.org/training/8YeNf",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-077"
+    },
+    {
+      "fen": "3r4/3r4/2b2kpp/p1p2p2/2B1pP2/1P2n3/P1NR1KPP/3R4 w - - 0 36",
+      "setupMove": "d2d7",
+      "solution": [
+        "e3d1",
+        "d7d1",
+        "d8d1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1555,
+      "themes": [
+        "xRay"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Рентген: конём",
+        "en": "X-ray: knight"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля e3.",
+          "en": "The key piece is the knight on e3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxd1+.",
+          "en": "First move: Nxd1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxd1+: фигура действует сквозь другую. Далее Rxd1 Rxd1. Линия — Nxd1+ Rxd1 Rxd1.",
+        "en": "The first move is Nxd1+: a piece works through another. Then Rxd1 Rxd1. The line is Nxd1+ Rxd1 Rxd1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "4jhTT",
+        "url": "https://lichess.org/training/4jhTT",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-078"
+    },
+    {
+      "fen": "5rk1/pp4bp/4Rp2/1q6/6Q1/2P4N/P5PP/1r2R2K w - - 5 24",
+      "setupMove": "h3f4",
+      "solution": [
+        "b5f1",
+        "e1f1",
+        "b1f1"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1569,
+      "themes": [
+        "xRay",
+        "backRankMate",
+        "mateIn2",
+        "sacrifice"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Рентген",
+        "en": "X-ray"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в два хода.",
+        "en": "Black to move. Find mate in two."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля b5.",
+          "en": "The key piece is the queen on b5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qf1+.",
+          "en": "First move: Qf1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qf1+: фигура действует сквозь другую. Далее Rxf1 Rxf1#. Линия — Qf1+ Rxf1 Rxf1#.",
+        "en": "The first move is Qf1+: a piece works through another. Then Rxf1 Rxf1#. The line is Qf1+ Rxf1 Rxf1#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "7kGPt",
+        "url": "https://lichess.org/training/7kGPt",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-079"
+    },
+    {
+      "fen": "2knQ3/ppp1Nppp/3q4/8/8/8/PrP2PPP/3R2K1 b - - 6 19",
+      "setupMove": "c8b8",
+      "solution": [
+        "e8d8",
+        "d6d8",
+        "d1d8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1584,
+      "themes": [
+        "xRay",
+        "backRankMate",
+        "endgame",
+        "mateIn2"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Рентген",
+        "en": "X-ray"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in two."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Смотрите сквозь фигуру: линия сохраняет силу.",
+          "en": "Look through the piece: the line keeps its power."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля e8.",
+          "en": "The key piece is the queen on e8."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxd8+.",
+          "en": "First move: Qxd8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxd8+: фигура действует сквозь другую. Далее Qxd8 Rxd8#. Линия — Qxd8+ Qxd8 Rxd8#.",
+        "en": "The first move is Qxd8+: a piece works through another. Then Qxd8 Rxd8#. The line is Qxd8+ Qxd8 Rxd8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "5dPCy",
+        "url": "https://lichess.org/training/5dPCy",
+        "license": "CC0-1.0"
+      },
+      "chapter": "x-ray",
+      "id": "pro-080"
+    },
+    {
+      "fen": "r1b2rk1/p1p2ppp/2p5/8/2BPp3/2P1nq2/PP1K1P2/RN1Q2R1 w - - 0 17",
+      "setupMove": "d1f3",
+      "solution": [
+        "e3c4",
+        "d2e2",
+        "e4f3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1283,
+      "themes": [
+        "zwischenzug",
+        "hangingPiece"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Промежуточный ход: конём",
+        "en": "Zwischenzug: knight"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля e3.",
+          "en": "The key piece is the knight on e3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxc4+.",
+          "en": "First move: Nxc4+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxc4+: промежуточный ход меняет порядок. Далее Ke2 exf3+. Линия — Nxc4+ Ke2 exf3+.",
+        "en": "The first move is Nxc4+: an in-between move changes the order. Then Ke2 exf3+. The line is Nxc4+ Ke2 exf3+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0YOrc",
+        "url": "https://lichess.org/training/0YOrc",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-081"
+    },
+    {
+      "fen": "1r1r2k1/1B3p1p/1P1pbqp1/p7/P1PR4/2Q3P1/1B3P1P/6K1 b - - 2 29",
+      "setupMove": "b8b7",
+      "solution": [
+        "d4d6",
+        "f6c3",
+        "d6d8",
+        "g8g7",
+        "b2c3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1464,
+      "themes": [
+        "zwischenzug",
+        "sacrifice"
+      ],
+      "timeLimitSec": 200,
+      "title": {
+        "ru": "Промежуточный ход: ладьёй",
+        "en": "Zwischenzug: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля d4.",
+          "en": "The key piece is the rook on d4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxd6.",
+          "en": "First move: Rxd6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxd6: промежуточный ход меняет порядок. Далее Qxc3 Rxd8+ Kg7 Bxc3+. Линия — Rxd6 Qxc3 Rxd8+ Kg7 Bxc3+.",
+        "en": "The first move is Rxd6: an in-between move changes the order. Then Qxc3 Rxd8+ Kg7 Bxc3+. The line is Rxd6 Qxc3 Rxd8+ Kg7 Bxc3+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0UEtW",
+        "url": "https://lichess.org/training/0UEtW",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-082"
+    },
+    {
+      "fen": "r4r2/pppq1p1k/1n2pRpp/4P2Q/4N1R1/1P2P3/1PP3PP/6K1 w - - 0 24",
+      "setupMove": "f6g6",
+      "solution": [
+        "d7d1",
+        "g1f2",
+        "f7g6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1468,
+      "themes": [
+        "zwischenzug",
+        "discoveredAttack"
+      ],
+      "timeLimitSec": 185,
+      "title": {
+        "ru": "Промежуточный ход: ферзём",
+        "en": "Zwischenzug: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d7.",
+          "en": "The key piece is the queen on d7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qd1+.",
+          "en": "First move: Qd1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qd1+: промежуточный ход меняет порядок. Далее Kf2 fxg6+. Линия — Qd1+ Kf2 fxg6+.",
+        "en": "The first move is Qd1+: an in-between move changes the order. Then Kf2 fxg6+. The line is Qd1+ Kf2 fxg6+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1S3NM",
+        "url": "https://lichess.org/training/1S3NM",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-083"
+    },
+    {
+      "fen": "r1q2rk1/1pp3pp/1pnpb1n1/3Np3/2P1PpB1/3P3P/PP3PPN/R2Q1RK1 w - - 4 14",
+      "setupMove": "d5c7",
+      "solution": [
+        "e6g4",
+        "d1g4",
+        "c8c7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1489,
+      "themes": [
+        "zwischenzug"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Промежуточный ход: слоном",
+        "en": "Zwischenzug: bishop"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — слон с поля e6.",
+          "en": "The key piece is the bishop on e6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bxg4.",
+          "en": "First move: Bxg4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bxg4: промежуточный ход меняет порядок. Далее Qxg4 Qxc7. Линия — Bxg4 Qxg4 Qxc7.",
+        "en": "The first move is Bxg4: an in-between move changes the order. Then Qxg4 Qxc7. The line is Bxg4 Qxg4 Qxc7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0pX30",
+        "url": "https://lichess.org/training/0pX30",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-084"
+    },
+    {
+      "fen": "r3kb1r/pbpq2pp/2n2p2/1B1Pp1N1/3n4/2N2Q2/PP3PPP/R1B2RK1 w kq - 1 13",
+      "setupMove": "d5c6",
+      "solution": [
+        "d4f3",
+        "g5f3",
+        "b7c6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1491,
+      "themes": [
+        "zwischenzug"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Промежуточный ход: конём",
+        "en": "Zwischenzug: knight"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля d4.",
+          "en": "The key piece is the knight on d4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxf3+.",
+          "en": "First move: Nxf3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxf3+: промежуточный ход меняет порядок. Далее Nxf3 Bxc6. Линия — Nxf3+ Nxf3 Bxc6.",
+        "en": "The first move is Nxf3+: an in-between move changes the order. Then Nxf3 Bxc6. The line is Nxf3+ Nxf3 Bxc6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0OUgY",
+        "url": "https://lichess.org/training/0OUgY",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-085"
+    },
+    {
+      "fen": "8/8/4R1p1/5p1k/7r/5PK1/8/8 w - - 0 59",
+      "setupMove": "e6g6",
+      "solution": [
+        "f5f4",
+        "g3f2",
+        "h5g6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1499,
+      "themes": [
+        "zwischenzug",
+        "endgame"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Промежуточный ход: пешкой",
+        "en": "Zwischenzug: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля f5.",
+          "en": "The key piece is the pawn on f5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: f4+.",
+          "en": "First move: f4+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — f4+: промежуточный ход меняет порядок. Далее Kf2 Kxg6. Линия — f4+ Kf2 Kxg6.",
+        "en": "The first move is f4+: an in-between move changes the order. Then Kf2 Kxg6. The line is f4+ Kf2 Kxg6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0oq0F",
+        "url": "https://lichess.org/training/0oq0F",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-086"
+    },
+    {
+      "fen": "r2q1rk1/pp3pp1/7p/2N5/3p1n2/P2P3b/BPP2PP1/2RQR1K1 w - - 0 19",
+      "setupMove": "g2h3",
+      "solution": [
+        "d8g5",
+        "d1g4",
+        "f4h3",
+        "g1h2",
+        "g5g4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1562,
+      "themes": [
+        "zwischenzug",
+        "fork",
+        "pin"
+      ],
+      "timeLimitSec": 205,
+      "title": {
+        "ru": "Промежуточный ход: ферзём",
+        "en": "Zwischenzug: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d8.",
+          "en": "The key piece is the queen on d8."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qg5+.",
+          "en": "First move: Qg5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qg5+: промежуточный ход меняет порядок. Далее Qg4 Nxh3+ Kh2 Qxg4. Линия — Qg5+ Qg4 Nxh3+ Kh2 Qxg4.",
+        "en": "The first move is Qg5+: an in-between move changes the order. Then Qg4 Nxh3+ Kh2 Qxg4. The line is Qg5+ Qg4 Nxh3+ Kh2 Qxg4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "1Azgi",
+        "url": "https://lichess.org/training/1Azgi",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-087"
+    },
+    {
+      "fen": "8/6k1/1p4pp/2p2p2/1P2p2P/2PqQ1P1/5PK1/8 w - - 1 38",
+      "setupMove": "b4c5",
+      "solution": [
+        "d3e3",
+        "f2e3",
+        "b6c5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1622,
+      "themes": [
+        "zwischenzug",
+        "removeDefender",
+        "endgame"
+      ],
+      "timeLimitSec": 200,
+      "title": {
+        "ru": "Промежуточный ход: ферзём",
+        "en": "Zwischenzug: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d3.",
+          "en": "The key piece is the queen on d3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxe3.",
+          "en": "First move: Qxe3."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxe3: промежуточный ход меняет порядок. Далее fxe3 bxc5. Линия — Qxe3 fxe3 bxc5.",
+        "en": "The first move is Qxe3: an in-between move changes the order. Then fxe3 bxc5. The line is Qxe3 fxe3 bxc5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0mcPd",
+        "url": "https://lichess.org/training/0mcPd",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-088"
+    },
+    {
+      "fen": "r4Nk1/1pqnppb1/p2pb1p1/8/2PP1n2/3BN2P/PP3PP1/2RQ1RK1 b - - 0 17",
+      "setupMove": "f4d3",
+      "solution": [
+        "f8e6",
+        "f7e6",
+        "d1d3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1686,
+      "themes": [
+        "zwischenzug"
+      ],
+      "timeLimitSec": 205,
+      "title": {
+        "ru": "Промежуточный ход: конём",
+        "en": "Zwischenzug: knight"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля f8.",
+          "en": "The key piece is the knight on f8."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxe6.",
+          "en": "First move: Nxe6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxe6: промежуточный ход меняет порядок. Далее fxe6 Qxd3. Линия — Nxe6 fxe6 Qxd3.",
+        "en": "The first move is Nxe6: an in-between move changes the order. Then fxe6 Qxd3. The line is Nxe6 fxe6 Qxd3."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0cpya",
+        "url": "https://lichess.org/training/0cpya",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-089"
+    },
+    {
+      "fen": "rn1Q1knr/2N1bpp1/2p4p/p3P3/8/4BNPb/qPP1BP1P/2KR3R b - - 3 19",
+      "setupMove": "e7d8",
+      "solution": [
+        "e3c5",
+        "g8e7",
+        "d1d8"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 2
+      },
+      "rating": 1762,
+      "themes": [
+        "zwischenzug",
+        "mateIn2"
+      ],
+      "timeLimitSec": 215,
+      "title": {
+        "ru": "Промежуточный ход",
+        "en": "Zwischenzug"
+      },
+      "prompt": {
+        "ru": "Ход белых. Найдите мат в два хода.",
+        "en": "White to move. Find mate in two."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Не отдавайте темп: вставьте промежуточный ход.",
+          "en": "Do not give up the tempo: insert an in-between move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — слон с поля e3.",
+          "en": "The key piece is the bishop on e3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bc5+.",
+          "en": "First move: Bc5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bc5+: промежуточный ход меняет порядок. Далее Ne7 Rxd8#. Линия — Bc5+ Ne7 Rxd8#.",
+        "en": "The first move is Bc5+: an in-between move changes the order. Then Ne7 Rxd8#. The line is Bc5+ Ne7 Rxd8#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0jPsU",
+        "url": "https://lichess.org/training/0jPsU",
+        "license": "CC0-1.0"
+      },
+      "chapter": "zwischenzug",
+      "id": "pro-090"
+    },
+    {
+      "fen": "6rk/R6p/1p1p4/2p5/N2b4/6p1/P4P1P/3R2K1 w - - 0 29",
+      "setupMove": "g1g2",
+      "solution": [
+        "g3f2",
+        "g2f1",
+        "g8g1",
+        "f1e2",
+        "g1d1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1347,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "discoveredAttack",
+        "endgame"
+      ],
+      "timeLimitSec": 185,
+      "title": {
+        "ru": "Пешечный прорыв: пешкой",
+        "en": "Pawn break: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля g3.",
+          "en": "The key piece is the pawn on g3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: gxf2+.",
+          "en": "First move: gxf2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — gxf2+: пешечный прорыв вскрывает позицию. Далее Kf1 Rg1+ Ke2 Rxd1. Линия — gxf2+ Kf1 Rg1+ Ke2 Rxd1.",
+        "en": "The first move is gxf2+: a pawn break opens the position. Then Kf1 Rg1+ Ke2 Rxd1. The line is gxf2+ Kf1 Rg1+ Ke2 Rxd1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0QQrD",
+        "url": "https://lichess.org/training/0QQrD",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-091"
+    },
+    {
+      "fen": "2k5/1pp3Bp/p7/5P2/6P1/5P2/PPr3rP/3K3R b - - 0 25",
+      "setupMove": "g2h2",
+      "solution": [
+        "h1h2",
+        "c2h2",
+        "f5f6",
+        "h2f2",
+        "f6f7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1385,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Пешечный прорыв: ладьёй",
+        "en": "Pawn break: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля h1.",
+          "en": "The key piece is the rook on h1."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxh2.",
+          "en": "First move: Rxh2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxh2: пешечный прорыв вскрывает позицию. Далее Rxh2 f6 Rf2 f7. Линия — Rxh2 Rxh2 f6 Rf2 f7.",
+        "en": "The first move is Rxh2: a pawn break opens the position. Then Rxh2 f6 Rf2 f7. The line is Rxh2 Rxh2 f6 Rf2 f7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "05qg5",
+        "url": "https://lichess.org/training/05qg5",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-092"
+    },
+    {
+      "fen": "k7/3r2pp/1p1P4/pP1K4/P7/3R2P1/7P/4b3 b - - 1 40",
+      "setupMove": "e1b4",
+      "solution": [
+        "d5c6",
+        "d7f7",
+        "d6d7",
+        "f7f6",
+        "c6c7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1394,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Пешечный прорыв: королём",
+        "en": "Pawn break: king"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — король с поля d5.",
+          "en": "The key piece is the king on d5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kc6.",
+          "en": "First move: Kc6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kc6: пешечный прорыв вскрывает позицию. Далее Rf7 d7 Rf6+ Kc7. Линия — Kc6 Rf7 d7 Rf6+ Kc7.",
+        "en": "The first move is Kc6: a pawn break opens the position. Then Rf7 d7 Rf6+ Kc7. The line is Kc6 Rf7 d7 Rf6+ Kc7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0HtMe",
+        "url": "https://lichess.org/training/0HtMe",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-093"
+    },
+    {
+      "fen": "1k4r1/pp3qr1/5p2/3Pn3/4N3/1P3P1p/P2QR1PP/2R4K w - - 0 29",
+      "setupMove": "d5d6",
+      "solution": [
+        "h3g2",
+        "e2g2",
+        "g7g2",
+        "d2g2",
+        "g8g2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1406,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "kingsideAttack"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Пешечный прорыв: пешкой",
+        "en": "Pawn break: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля h3.",
+          "en": "The key piece is the pawn on h3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: hxg2+.",
+          "en": "First move: hxg2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — hxg2+: пешечный прорыв вскрывает позицию. Далее Rxg2 Rxg2 Qxg2 Rxg2. Линия — hxg2+ Rxg2 Rxg2 Qxg2 Rxg2.",
+        "en": "The first move is hxg2+: a pawn break opens the position. Then Rxg2 Rxg2 Qxg2 Rxg2. The line is hxg2+ Rxg2 Rxg2 Qxg2 Rxg2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0GRID",
+        "url": "https://lichess.org/training/0GRID",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-094"
+    },
+    {
+      "fen": "8/5k2/8/7p/1P3Kp1/6P1/8/8 w - - 0 75",
+      "setupMove": "f4e5",
+      "solution": [
+        "h5h4",
+        "e5f4",
+        "h4h3",
+        "f4g4",
+        "h3h2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1441,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Пешечный прорыв: пешкой",
+        "en": "Pawn break: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля h5.",
+          "en": "The key piece is the pawn on h5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: h4.",
+          "en": "First move: h4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — h4: пешечный прорыв вскрывает позицию. Далее Kf4 h3 Kxg4 h2. Линия — h4 Kf4 h3 Kxg4 h2.",
+        "en": "The first move is h4: a pawn break opens the position. Then Kf4 h3 Kxg4 h2. The line is h4 Kf4 h3 Kxg4 h2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0CVMh",
+        "url": "https://lichess.org/training/0CVMh",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-095"
+    },
+    {
+      "fen": "7k/6p1/3P3p/8/1p6/4KB2/rP4PP/8 b - - 0 34",
+      "setupMove": "a2a7",
+      "solution": [
+        "f3c6",
+        "a7a6",
+        "d6d7",
+        "a6c6",
+        "d7d8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1561,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "endgame",
+        "promotion",
+        "quietMove"
+      ],
+      "timeLimitSec": 205,
+      "title": {
+        "ru": "Пешечный прорыв: слоном",
+        "en": "Pawn break: bishop"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — слон с поля f3.",
+          "en": "The key piece is the bishop on f3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bc6.",
+          "en": "First move: Bc6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bc6: пешечный прорыв вскрывает позицию. Далее Ra6 d7 Rxc6 d8=Q+. Линия — Bc6 Ra6 d7 Rxc6 d8=Q+.",
+        "en": "The first move is Bc6: a pawn break opens the position. Then Ra6 d7 Rxc6 d8=Q+. The line is Bc6 Ra6 d7 Rxc6 d8=Q+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "04U7q",
+        "url": "https://lichess.org/training/04U7q",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-096"
+    },
+    {
+      "fen": "8/6p1/8/3R3p/8/5pkP/8/4n1K1 w - - 0 47",
+      "setupMove": "d5h5",
+      "solution": [
+        "f3f2",
+        "g1f1",
+        "e1f3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1582,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Пешечный прорыв: пешкой",
+        "en": "Pawn break: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля f3.",
+          "en": "The key piece is the pawn on f3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: f2+.",
+          "en": "First move: f2+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — f2+: пешечный прорыв вскрывает позицию. Далее Kf1 Nf3. Линия — f2+ Kf1 Nf3.",
+        "en": "The first move is f2+: a pawn break opens the position. Then Kf1 Nf3. The line is f2+ Kf1 Nf3."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0GVME",
+        "url": "https://lichess.org/training/0GVME",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-097"
+    },
+    {
+      "fen": "8/8/3R4/6k1/8/4P2p/r4P2/5K2 w - - 2 51",
+      "setupMove": "d6d8",
+      "solution": [
+        "a2a1",
+        "f1e2",
+        "h3h2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1627,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 200,
+      "title": {
+        "ru": "Пешечный прорыв: ладьёй",
+        "en": "Pawn break: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля a2.",
+          "en": "The key piece is the rook on a2."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ra1+.",
+          "en": "First move: Ra1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ra1+: пешечный прорыв вскрывает позицию. Далее Ke2 h2. Линия — Ra1+ Ke2 h2.",
+        "en": "The first move is Ra1+: a pawn break opens the position. Then Ke2 h2. The line is Ra1+ Ke2 h2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "05NtB",
+        "url": "https://lichess.org/training/05NtB",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-098"
+    },
+    {
+      "fen": "r5rk/pp3pp1/2q2P2/4p1QN/2Pn3P/3P4/P7/3K1R2 b - - 2 30",
+      "setupMove": "d4f3",
+      "solution": [
+        "f6g7",
+        "h8h7",
+        "h5f6",
+        "c6f6",
+        "g5f6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1689,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "fork"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Пешечный прорыв: пешкой",
+        "en": "Pawn break: pawn"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля f6.",
+          "en": "The key piece is the pawn on f6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: fxg7+.",
+          "en": "First move: fxg7+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — fxg7+: пешечный прорыв вскрывает позицию. Далее Kh7 Nf6+ Qxf6 Qxf6. Линия — fxg7+ Kh7 Nf6+ Qxf6 Qxf6.",
+        "en": "The first move is fxg7+: a pawn break opens the position. Then Kh7 Nf6+ Qxf6 Qxf6. The line is fxg7+ Kh7 Nf6+ Qxf6 Qxf6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0AnXJ",
+        "url": "https://lichess.org/training/0AnXJ",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-099"
+    },
+    {
+      "fen": "R7/5pk1/2n4p/p7/Pb5P/2p3P1/2K1BP2/8 w - - 8 47",
+      "setupMove": "a8a6",
+      "solution": [
+        "c6d4",
+        "c2d3",
+        "c3c2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1736,
+      "themes": [
+        "pawnBreak",
+        "advancedPawn",
+        "endgame",
+        "fork"
+      ],
+      "timeLimitSec": 210,
+      "title": {
+        "ru": "Пешечный прорыв: конём",
+        "en": "Pawn break: knight"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Пешечный прорыв вскрывает позицию.",
+          "en": "A pawn break opens the position."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля c6.",
+          "en": "The key piece is the knight on c6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nd4+.",
+          "en": "First move: Nd4+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nd4+: пешечный прорыв вскрывает позицию. Далее Kd3 c2. Линия — Nd4+ Kd3 c2.",
+        "en": "The first move is Nd4+: a pawn break opens the position. Then Kd3 c2. The line is Nd4+ Kd3 c2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0CbLE",
+        "url": "https://lichess.org/training/0CbLE",
+        "license": "CC0-1.0"
+      },
+      "chapter": "pawn-break",
+      "id": "pro-100"
+    },
+    {
+      "fen": "8/5n1p/2k2Pp1/1Np5/P1K3P1/7P/8/8 w - - 1 47",
+      "setupMove": "a4a5",
+      "solution": [
+        "f7e5",
+        "c4c3",
+        "c6b5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1346,
+      "themes": [
+        "minorEndgame",
+        "deflection",
+        "endgame"
+      ],
+      "timeLimitSec": 175,
+      "title": {
+        "ru": "Минорный эндшпиль: конём",
+        "en": "Minor-piece endgame: knight"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля f7.",
+          "en": "The key piece is the knight on f7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ne5+.",
+          "en": "First move: Ne5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ne5+: точная игра в минорном эндшпиле. Далее Kc3 Kxb5. Линия — Ne5+ Kc3 Kxb5.",
+        "en": "The first move is Ne5+: precise play in the minor-piece endgame. Then Kc3 Kxb5. The line is Ne5+ Kc3 Kxb5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0S8an",
+        "url": "https://lichess.org/training/0S8an",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-101"
+    },
+    {
+      "fen": "8/pp4k1/5p2/4p2p/5Pbp/4B3/PPP1B3/2K5 w - - 1 36",
+      "setupMove": "e2g4",
+      "solution": [
+        "h5g4",
+        "f4e5",
+        "f6e5",
+        "e3f2",
+        "g4g3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1367,
+      "themes": [
+        "minorEndgame",
+        "endgame"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Минорный эндшпиль: пешкой",
+        "en": "Minor-piece endgame: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля h5.",
+          "en": "The key piece is the pawn on h5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: hxg4.",
+          "en": "First move: hxg4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — hxg4: точная игра в минорном эндшпиле. Далее fxe5 fxe5 Bf2 g3. Линия — hxg4 fxe5 fxe5 Bf2 g3.",
+        "en": "The first move is hxg4: precise play in the minor-piece endgame. Then fxe5 fxe5 Bf2 g3. The line is hxg4 fxe5 fxe5 Bf2 g3."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0hanr",
+        "url": "https://lichess.org/training/0hanr",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-102"
+    },
+    {
+      "fen": "8/2p5/p1P5/b1KP2p1/P4pBp/4kP1P/8/8 b - - 5 50",
+      "setupMove": "e3d3",
+      "solution": [
+        "d5d6",
+        "c7d6",
+        "c5d6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1405,
+      "themes": [
+        "minorEndgame",
+        "endgame"
+      ],
+      "timeLimitSec": 180,
+      "title": {
+        "ru": "Минорный эндшпиль: пешкой",
+        "en": "Minor-piece endgame: pawn"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля d5.",
+          "en": "The key piece is the pawn on d5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: d6.",
+          "en": "First move: d6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — d6: точная игра в минорном эндшпиле. Далее cxd6+ Kxd6. Линия — d6 cxd6+ Kxd6.",
+        "en": "The first move is d6: precise play in the minor-piece endgame. Then cxd6+ Kxd6. The line is d6 cxd6+ Kxd6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0dZp9",
+        "url": "https://lichess.org/training/0dZp9",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-103"
+    },
+    {
+      "fen": "8/b7/P6p/3K4/7P/4p1k1/4B3/8 w - - 5 54",
+      "setupMove": "d5c6",
+      "solution": [
+        "g3f2",
+        "e2g4",
+        "e3e2"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1412,
+      "themes": [
+        "minorEndgame",
+        "advancedPawn",
+        "endgame"
+      ],
+      "timeLimitSec": 180,
+      "title": {
+        "ru": "Минорный эндшпиль: королём",
+        "en": "Minor-piece endgame: king"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — король с поля g3.",
+          "en": "The key piece is the king on g3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kf2.",
+          "en": "First move: Kf2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kf2: точная игра в минорном эндшпиле. Далее Bg4 e2. Линия — Kf2 Bg4 e2.",
+        "en": "The first move is Kf2: precise play in the minor-piece endgame. Then Bg4 e2. The line is Kf2 Bg4 e2."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0reZg",
+        "url": "https://lichess.org/training/0reZg",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-104"
+    },
+    {
+      "fen": "8/5kp1/1nN5/3p1pP1/3P1P1p/3K3P/8/8 b - - 2 54",
+      "setupMove": "b6c4",
+      "solution": [
+        "c6e5",
+        "c4e5",
+        "d4e5"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1437,
+      "themes": [
+        "minorEndgame",
+        "endgame"
+      ],
+      "timeLimitSec": 185,
+      "title": {
+        "ru": "Минорный эндшпиль: конём",
+        "en": "Minor-piece endgame: knight"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля c6.",
+          "en": "The key piece is the knight on c6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ne5+.",
+          "en": "First move: Ne5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ne5+: точная игра в минорном эндшпиле. Далее Nxe5+ dxe5. Линия — Ne5+ Nxe5+ dxe5.",
+        "en": "The first move is Ne5+: precise play in the minor-piece endgame. Then Nxe5+ dxe5. The line is Ne5+ Nxe5+ dxe5."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0dv6n",
+        "url": "https://lichess.org/training/0dv6n",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-105"
+    },
+    {
+      "fen": "8/5n2/6P1/3k3P/5K2/8/8/8 b - - 0 53",
+      "setupMove": "f7h6",
+      "solution": [
+        "f4g5",
+        "h6g8",
+        "h5h6",
+        "g8h6",
+        "g5h6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1508,
+      "themes": [
+        "minorEndgame",
+        "endgame"
+      ],
+      "timeLimitSec": 200,
+      "title": {
+        "ru": "Минорный эндшпиль: королём",
+        "en": "Minor-piece endgame: king"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — король с поля f4.",
+          "en": "The key piece is the king on f4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kg5.",
+          "en": "First move: Kg5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Kg5: точная игра в минорном эндшпиле. Далее Ng8 h6 Nxh6 Kxh6. Линия — Kg5 Ng8 h6 Nxh6 Kxh6.",
+        "en": "The first move is Kg5: precise play in the minor-piece endgame. Then Ng8 h6 Nxh6 Kxh6. The line is Kg5 Ng8 h6 Nxh6 Kxh6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0wq7X",
+        "url": "https://lichess.org/training/0wq7X",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-106"
+    },
+    {
+      "fen": "8/4bpp1/7p/Pk1p4/1B1P4/1K3P2/P4P1P/8 b - - 0 36",
+      "setupMove": "e7b4",
+      "solution": [
+        "a5a6",
+        "b5a6",
+        "b3b4"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1518,
+      "themes": [
+        "minorEndgame",
+        "deflection",
+        "endgame"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Минорный эндшпиль: пешкой",
+        "en": "Minor-piece endgame: pawn"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля a5.",
+          "en": "The key piece is the pawn on a5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: a6.",
+          "en": "First move: a6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — a6: точная игра в минорном эндшпиле. Далее Kxa6 Kxb4. Линия — a6 Kxa6 Kxb4.",
+        "en": "The first move is a6: precise play in the minor-piece endgame. Then Kxa6 Kxb4. The line is a6 Kxa6 Kxb4."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0kS8b",
+        "url": "https://lichess.org/training/0kS8b",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-107"
+    },
+    {
+      "fen": "4b3/4P3/3kPK2/p7/8/2pB4/P7/8 w - - 1 66",
+      "setupMove": "d3g6",
+      "solution": [
+        "e8g6",
+        "f6g6",
+        "d6e7"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1543,
+      "themes": [
+        "minorEndgame",
+        "endgame"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Минорный эндшпиль: слоном",
+        "en": "Minor-piece endgame: bishop"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — слон с поля e8.",
+          "en": "The key piece is the bishop on e8."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Bxg6.",
+          "en": "First move: Bxg6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Bxg6: точная игра в минорном эндшпиле. Далее Kxg6 Kxe7. Линия — Bxg6 Kxg6 Kxe7.",
+        "en": "The first move is Bxg6: precise play in the minor-piece endgame. Then Kxg6 Kxe7. The line is Bxg6 Kxg6 Kxe7."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0FANh",
+        "url": "https://lichess.org/training/0FANh",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-108"
+    },
+    {
+      "fen": "8/8/8/3p4/3Kp1k1/1p6/8/2B5 w - - 14 62",
+      "setupMove": "d4d5",
+      "solution": [
+        "e4e3",
+        "c1e3",
+        "b3b2",
+        "e3d4",
+        "b2b1q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1672,
+      "themes": [
+        "minorEndgame",
+        "advancedPawn",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 215,
+      "title": {
+        "ru": "Минорный эндшпиль: пешкой",
+        "en": "Minor-piece endgame: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля e4.",
+          "en": "The key piece is the pawn on e4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: e3.",
+          "en": "First move: e3."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — e3: точная игра в минорном эндшпиле. Далее Bxe3 b2 Bd4 b1=Q. Линия — e3 Bxe3 b2 Bd4 b1=Q.",
+        "en": "The first move is e3: precise play in the minor-piece endgame. Then Bxe3 b2 Bd4 b1=Q. The line is e3 Bxe3 b2 Bd4 b1=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0JcRo",
+        "url": "https://lichess.org/training/0JcRo",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-109"
+    },
+    {
+      "fen": "8/3k1p2/p3p2P/3p4/2pP3K/1pP1PB2/1P6/1b6 b - - 0 62",
+      "setupMove": "a6a5",
+      "solution": [
+        "e3e4",
+        "d5e4",
+        "h6h7",
+        "e4f3",
+        "h7h8q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1680,
+      "themes": [
+        "minorEndgame",
+        "advancedPawn",
+        "endgame",
+        "promotion"
+      ],
+      "timeLimitSec": 215,
+      "title": {
+        "ru": "Минорный эндшпиль: пешкой",
+        "en": "Minor-piece endgame: pawn"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Слон и конь в эндшпиле: точность важнее материала.",
+          "en": "Bishop and knight in the endgame: precision matters more than material."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля e3.",
+          "en": "The key piece is the pawn on e3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: e4.",
+          "en": "First move: e4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — e4: точная игра в минорном эндшпиле. Далее dxe4 h7 exf3 h8=Q. Линия — e4 dxe4 h7 exf3 h8=Q.",
+        "en": "The first move is e4: precise play in the minor-piece endgame. Then dxe4 h7 exf3 h8=Q. The line is e4 dxe4 h7 exf3 h8=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "0OdF3",
+        "url": "https://lichess.org/training/0OdF3",
+        "license": "CC0-1.0"
+      },
+      "chapter": "minor-endgame",
+      "id": "pro-110"
+    },
+    {
+      "fen": "6rk/6p1/5nQ1/2p1q2p/1p6/1P4RP/P7/2K3R1 w - - 0 37",
+      "setupMove": "g6h6",
+      "solution": [
+        "g7h6",
+        "g3g8",
+        "f6g8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1253,
+      "themes": [
+        "mixed",
+        "endgame",
+        "hangingPiece"
+      ],
+      "timeLimitSec": 165,
+      "title": {
+        "ru": "Смешанное повторение: пешкой",
+        "en": "Mixed review: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля g7.",
+          "en": "The key piece is the pawn on g7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: gxh6.",
+          "en": "First move: gxh6."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — gxh6: найден сильнейший ход. Далее Rxg8+ Nxg8. Линия — gxh6 Rxg8+ Nxg8.",
+        "en": "The first move is gxh6: the strongest move is found. Then Rxg8+ Nxg8. The line is gxh6 Rxg8+ Nxg8."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "09KlA",
+        "url": "https://lichess.org/training/09KlA",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-111"
+    },
+    {
+      "fen": "Rr3r1k/1P5p/1p6/1PbB4/2Pq4/4pPP1/Q3R2P/6K1 w - - 3 31",
+      "setupMove": "a2b2",
+      "solution": [
+        "d4b2",
+        "e2b2",
+        "e3e2",
+        "g1g2",
+        "e2e1q"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1265,
+      "themes": [
+        "mixed",
+        "advancedPawn",
+        "discoveredAttack",
+        "promotion"
+      ],
+      "timeLimitSec": 180,
+      "title": {
+        "ru": "Смешанное повторение: ферзём",
+        "en": "Mixed review: queen"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d4.",
+          "en": "The key piece is the queen on d4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxb2.",
+          "en": "First move: Qxb2."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qxb2: найден сильнейший ход. Далее Rxb2 e2+ Kg2 e1=Q. Линия — Qxb2 Rxb2 e2+ Kg2 e1=Q.",
+        "en": "The first move is Qxb2: the strongest move is found. Then Rxb2 e2+ Kg2 e1=Q. The line is Qxb2 Rxb2 e2+ Kg2 e1=Q."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "04XVt",
+        "url": "https://lichess.org/training/04XVt",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-112"
+    },
+    {
+      "fen": "8/2K3k1/7p/1R4pP/5rP1/5P2/8/8 w - - 15 43",
+      "setupMove": "b5f5",
+      "solution": [
+        "f4f5",
+        "g4f5",
+        "g7f6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1273,
+      "themes": [
+        "mixed",
+        "endgame"
+      ],
+      "timeLimitSec": 170,
+      "title": {
+        "ru": "Смешанное повторение: ладьёй",
+        "en": "Mixed review: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля f4.",
+          "en": "The key piece is the rook on f4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rxf5.",
+          "en": "First move: Rxf5."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rxf5: найден сильнейший ход. Далее gxf5 Kf6. Линия — Rxf5 gxf5 Kf6.",
+        "en": "The first move is Rxf5: the strongest move is found. Then gxf5 Kf6. The line is Rxf5 gxf5 Kf6."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "09V7o",
+        "url": "https://lichess.org/training/09V7o",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-113"
+    },
+    {
+      "fen": "rn2k2r/pp2q1pp/2p5/5QB1/4n3/2P2p2/P1PK1PPP/3R1B1R w kq - 2 14",
+      "setupMove": "d2c1",
+      "solution": [
+        "e7a3",
+        "c1b1",
+        "e4c3",
+        "b1a1",
+        "a3a2"
+      ],
+      "task": {
+        "type": "MATE",
+        "plies": 3
+      },
+      "rating": 1331,
+      "themes": [
+        "mixed",
+        "fork",
+        "mateIn3"
+      ],
+      "timeLimitSec": 185,
+      "title": {
+        "ru": "Смешанное повторение",
+        "en": "Mixed review"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Найдите мат в три хода.",
+        "en": "Black to move. Find mate in three."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля e7.",
+          "en": "The key piece is the queen on e7."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qa3+.",
+          "en": "First move: Qa3+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qa3+: найден сильнейший ход. Далее Kb1 Nxc3+ Ka1 Qxa2#. Линия — Qa3+ Kb1 Nxc3+ Ka1 Qxa2#.",
+        "en": "The first move is Qa3+: the strongest move is found. Then Kb1 Nxc3+ Ka1 Qxa2#. The line is Qa3+ Kb1 Nxc3+ Ka1 Qxa2#."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "05Cbv",
+        "url": "https://lichess.org/training/05Cbv",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-114"
+    },
+    {
+      "fen": "6k1/pb4p1/1p5p/4Np2/3rp3/6P1/PP1NRPP1/5K2 w - - 0 28",
+      "setupMove": "d2b3",
+      "solution": [
+        "d4d1",
+        "e2e1",
+        "b7a6",
+        "f1g1",
+        "d1e1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1353,
+      "themes": [
+        "mixed",
+        "deflection",
+        "endgame"
+      ],
+      "timeLimitSec": 190,
+      "title": {
+        "ru": "Смешанное повторение: ладьёй",
+        "en": "Mixed review: rook"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля d4.",
+          "en": "The key piece is the rook on d4."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Rd1+.",
+          "en": "First move: Rd1+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Rd1+: найден сильнейший ход. Далее Re1 Ba6+ Kg1 Rxe1+. Линия — Rd1+ Re1 Ba6+ Kg1 Rxe1+.",
+        "en": "The first move is Rd1+: the strongest move is found. Then Re1 Ba6+ Kg1 Rxe1+. The line is Rd1+ Re1 Ba6+ Kg1 Rxe1+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "05yoK",
+        "url": "https://lichess.org/training/05yoK",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-115"
+    },
+    {
+      "fen": "6r1/4kB2/3p1p2/2q1pP2/1p2b3/pQ4P1/PPP5/1K1R4 b - - 0 33",
+      "setupMove": "g8g3",
+      "solution": [
+        "b3e6",
+        "e7d8",
+        "d1d6",
+        "c5d6",
+        "e6d6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1482,
+      "themes": [
+        "mixed",
+        "deflection",
+        "endgame"
+      ],
+      "timeLimitSec": 200,
+      "title": {
+        "ru": "Смешанное повторение: ферзём",
+        "en": "Mixed review: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля b3.",
+          "en": "The key piece is the queen on b3."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qe6+.",
+          "en": "First move: Qe6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qe6+: найден сильнейший ход. Далее Kd8 Rxd6+ Qxd6 Qxd6+. Линия — Qe6+ Kd8 Rxd6+ Qxd6 Qxd6+.",
+        "en": "The first move is Qe6+: the strongest move is found. Then Kd8 Rxd6+ Qxd6 Qxd6+. The line is Qe6+ Kd8 Rxd6+ Qxd6 Qxd6+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "04q5c",
+        "url": "https://lichess.org/training/04q5c",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-116"
+    },
+    {
+      "fen": "1k2r3/1p5p/n2pN3/3P4/1P6/P4RP1/6KP/2b5 b - - 0 37",
+      "setupMove": "a6c7",
+      "solution": [
+        "e6c7",
+        "b8c7",
+        "f3c3",
+        "c7d8",
+        "c3c1"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1506,
+      "themes": [
+        "mixed",
+        "decoy",
+        "endgame",
+        "fork"
+      ],
+      "timeLimitSec": 200,
+      "title": {
+        "ru": "Смешанное повторение: конём",
+        "en": "Mixed review: knight"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — конь с поля e6.",
+          "en": "The key piece is the knight on e6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Nxc7.",
+          "en": "First move: Nxc7."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Nxc7: найден сильнейший ход. Далее Kxc7 Rc3+ Kd8 Rxc1. Линия — Nxc7 Kxc7 Rc3+ Kd8 Rxc1.",
+        "en": "The first move is Nxc7: the strongest move is found. Then Kxc7 Rc3+ Kd8 Rxc1. The line is Nxc7 Kxc7 Rc3+ Kd8 Rxc1."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "06Ss1",
+        "url": "https://lichess.org/training/06Ss1",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-117"
+    },
+    {
+      "fen": "4q3/6pk/8/1p1Qp2p/p4pbP/2P1B1P1/PP4P1/6K1 w - - 0 40",
+      "setupMove": "d5d3",
+      "solution": [
+        "e5e4",
+        "d3d2",
+        "f4e3"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 2
+      },
+      "rating": 1562,
+      "themes": [
+        "mixed",
+        "defensiveMove",
+        "endgame"
+      ],
+      "timeLimitSec": 195,
+      "title": {
+        "ru": "Смешанное повторение: пешкой",
+        "en": "Mixed review: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь решающего преимущества.",
+        "en": "Black to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — пешка с поля e5.",
+          "en": "The key piece is the pawn on e5."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: e4.",
+          "en": "First move: e4."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — e4: найден сильнейший ход. Далее Qd2 fxe3. Линия — e4 Qd2 fxe3.",
+        "en": "The first move is e4: the strongest move is found. Then Qd2 fxe3. The line is e4 Qd2 fxe3."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "05kuI",
+        "url": "https://lichess.org/training/05kuI",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-118"
+    },
+    {
+      "fen": "2kr4/1rp1Q3/5p1p/4bN2/2b1p1P1/4P2P/1q3P2/R1R3K1 b - - 5 36",
+      "setupMove": "b2e2",
+      "solution": [
+        "a1a8",
+        "b7b8",
+        "a8b8",
+        "c8b8",
+        "e7d8"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1700,
+      "themes": [
+        "mixed",
+        "decoy",
+        "queensideAttack"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Смешанное повторение: ладьёй",
+        "en": "Mixed review: rook"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ладья с поля a1.",
+          "en": "The key piece is the rook on a1."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Ra8+.",
+          "en": "First move: Ra8+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Ra8+: найден сильнейший ход. Далее Rb8 Rxb8+ Kxb8 Qxd8+. Линия — Ra8+ Rb8 Rxb8+ Kxb8 Qxd8+.",
+        "en": "The first move is Ra8+: the strongest move is found. Then Rb8 Rxb8+ Kxb8 Qxd8+. The line is Ra8+ Rb8 Rxb8+ Kxb8 Qxd8+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "033TG",
+        "url": "https://lichess.org/training/033TG",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-119"
+    },
+    {
+      "fen": "r2q1rk1/5p1R/ppb1p1p1/n7/P2P1B2/2PB4/5PPP/1R1Q2K1 b - - 0 19",
+      "setupMove": "g8h7",
+      "solution": [
+        "d1h5",
+        "h7g8",
+        "d3g6",
+        "f7g6",
+        "h5g6"
+      ],
+      "task": {
+        "type": "WIN",
+        "plies": 3
+      },
+      "rating": 1705,
+      "themes": [
+        "mixed",
+        "deflection",
+        "pin"
+      ],
+      "timeLimitSec": 220,
+      "title": {
+        "ru": "Смешанное повторение: ферзём",
+        "en": "Mixed review: queen"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь решающего преимущества.",
+        "en": "White to move. Get a decisive advantage."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Оцените все угрозы и найдите сильнейший ход.",
+          "en": "Assess every threat and find the strongest move."
+        },
+        {
+          "tier": 2,
+          "ru": "Ключевая фигура — ферзь с поля d1.",
+          "en": "The key piece is the queen on d1."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qh5+.",
+          "en": "First move: Qh5+."
+        }
+      ],
+      "explanation": {
+        "ru": "Первый ход — Qh5+: найден сильнейший ход. Далее Kg8 Bxg6 fxg6 Qxg6+. Линия — Qh5+ Kg8 Bxg6 fxg6 Qxg6+.",
+        "en": "The first move is Qh5+: the strongest move is found. Then Kg8 Bxg6 fxg6 Qxg6+. The line is Qh5+ Kg8 Bxg6 fxg6 Qxg6+."
+      },
+      "source": {
+        "provider": "lichess",
+        "id": "02Q8P",
+        "url": "https://lichess.org/training/02Q8P",
+        "license": "CC0-1.0"
+      },
+      "chapter": "mixed-review",
+      "id": "pro-120"
     }
   ]
 }

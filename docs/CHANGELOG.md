@@ -3,18 +3,50 @@
 Все заметные изменения проекта. Формат — [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/),
 версии — [SemVer](https://semver.org/lang/ru/).
 
-## [Unreleased]
+## [0.4.0-360-puzzles] — 2026-10-29
 
 ### Added
 
+- 360 production-задач (`contentVersion 2026.10.4`): по 120 на уровень,
+  12 глав × 10 задач.
+- Шесть новых глав на уровень:
+  - Новичок: `double-attack`, `remove-defender`, `discovered-attack`,
+    `defense`, `mate-in-2`, `mixed-review`;
+  - Профессионал: `mate-in-3`, `x-ray`, `zwischenzug`, `pawn-break`,
+    `minor-endgame`, `mixed-review`;
+  - Гроссмейстер: `study-draw`, `stalemate`, `fortress`, `perpetual-check`,
+    `punish`, `final-exam`.
+- Тип задачи `DRAW` в ядре (`TaskType`) и ярлык «Ничья» в UI.
+- 30 авторских этюдов (`tools/etudes.mjs`, `tools/etudes/etudes.json`):
+  10 патов (жертва фигуры с шахом → вынужденное взятие → пат), 10 крепостей
+  (ладейная пешка в углу, оппозиция, запертые пешки), 10 вечных шахов
+  (угловой маятник ферзя). Для патов и вечных шахов единственный ответ
+  соперника подтверждён машинно (`opp=1`).
+- `study-draw` — Lichess `equality` (позиционная ничья); `minor-endgame`
+  вместо `bishop-vs-knight` (`bishopEndgame` + `knightEndgame`).
+- Названия новых глав RU/EN (`Localization.kt`, `strings.xml`).
+- Инструменты: `multiframe-zst.mjs` (34 склеенных zstd-фрейма),
+  `gen-texts.mjs` (авторинг 150 текстов), `probe-equality.mjs`
+  (параллельная разведка equality), `study-draw-select.mjs`.
 - `tools/precheck.mjs` — механический предчек текстов перед человеческим
   ревью: воспроизводит линию через chess.js и сверяет с ней тексты (число
   мата в промпте против `task.plies`, сторона хода, обещанная в WIN цель,
   спойлеры/SAN/поля, tier2/tier3, длина и RU/EN-синхрон разборов). На
   nov-001..029 не даёт ложных срабатываний высокого уровня.
 
+### Changed
+
+- Второе человеческое ревью v0.3.0: **180/180 задач «ОК»**, правок нет
+  (`review-notes.json`).
+- WARN-политика: DRAW-линии без механической ничьей (study-draw, fortress,
+  вечный шах с 2-кратным повторением) документированы валидатором.
+
 ### Fixed
 
+- `PLAN_ORDER`: `bishop-vs-knight` → `minor-endgame` (глава пропускалась при
+  merge).
+- Валидатор допускает чётную длину решения для `DRAW`: классический пат-этюд
+  заканчивается вынужденным ходом соперника.
 - Конь на доске ревьюера и Android-доске заменён на стандартный шахматный
   силуэт из шапки приложения (референс icon666): убрана искажённая форма из
   прототипа, обновлены `tools/review/template.html`,

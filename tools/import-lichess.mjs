@@ -823,7 +823,7 @@ async function cmdDraft(args) {
 function draftPack(level, chapter, records) {
   return {
     schemaVersion: 1,
-    contentVersion: "2026.10.3",
+    contentVersion: "2026.10.4",
     level,
     chapter,
     puzzles: records.map((rec) => ({
@@ -1188,7 +1188,7 @@ function finalPuzzle(puzzle, chapter) {
 function packShell(level, puzzles) {
   return {
     schemaVersion: 1,
-    contentVersion: "2026.10.3",
+    contentVersion: "2026.10.4",
     level,
     puzzles,
   };
