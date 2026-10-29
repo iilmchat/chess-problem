@@ -309,7 +309,7 @@ function checkPuzzle(file, level, puzzle, index) {
     fail(file, id, "solution must be a non-empty array");
     return;
   }
-  if (solution.length % 2 === 0) {
+  if (solution.length % 2 === 0 && puzzle.task?.type !== "DRAW") {
     fail(file, id, "solution length must be odd (user, opponent, user, ...)");
   }
   if (solution.length > 11) {
