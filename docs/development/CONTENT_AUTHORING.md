@@ -299,6 +299,9 @@ PuzzleId,FEN,Moves,Rating,RatingDeviation,Popularity,NbPlays,Themes,GameUrl,Open
 - Нет дублей FEN.
 - Все локализованные поля не пустые.
 - Время в диапазоне.
+- Тексты сверены с линией: `node tools/precheck.mjs` — число мата в промпте
+  против `task.plies`, сторона хода, обещанная в WIN цель берётся в линии,
+  спойлеры/SAN/поля в промпте, tier2/tier3, длина и RU/EN-синхрон разборов.
 
 ### 3.5. Ручное ревью
 
