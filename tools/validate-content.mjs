@@ -31,7 +31,7 @@ const KNOWN_CHAPTERS = {
   ]),
   PROFESSIONAL: new Set([
     "mate-in-2", "mate-in-3", "deflection", "decoy", "interference",
-    "x-ray", "zwischenzug", "pawn-break", "bishop-vs-knight", "endgame",
+    "x-ray", "zwischenzug", "pawn-break", "minor-endgame", "endgame",
     "sacrifice", "mixed-review",
   ]),
   GRANDMASTER: new Set([

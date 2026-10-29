@@ -246,7 +246,184 @@ const CHAPTERS = {
     captureQueen: false,
     primaryTag: "endgame",
   },
+
+  // --- v0.4.0 chapters (6 new per level, 10 tasks each) --------------------
+  // Chapter themes follow CONTENT_PLAN §3; where the planned Lichess tag does
+  // not exist in the 2026-10 database (full-file census, theme-report.json),
+  // the closest real tags are used instead (see docs KI notes).
+  "novice.double-attack": {
+    level: "NOVICE",
+    chapter: "double-attack",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: ["fork", "discoveredAttack", "doubleCheck"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "doubleAttack",
+  },
+  "novice.remove-defender": {
+    level: "NOVICE",
+    chapter: "remove-defender",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: ["capturingDefender"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "removeDefender",
+  },
+  "novice.discovered-attack": {
+    level: "NOVICE",
+    chapter: "discovered-attack",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: ["discoveredAttack"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "discoveredAttack",
+  },
+  "novice.defense": {
+    level: "NOVICE",
+    chapter: "defense",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: ["defensiveMove"],
+    rejectDraws: true,
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "defense",
+  },
+  "novice.mate-in-2": {
+    level: "NOVICE",
+    chapter: "mate-in-2",
+    rating: [950, 1199],
+    userPlies: [2, 2],
+    requireAny: ["mateIn2"],
+    lastIsMate: true,
+    captureQueen: false,
+    primaryTag: "mateIn2",
+  },
+  "novice.mixed-review": {
+    level: "NOVICE",
+    chapter: "mixed-review",
+    rating: [600, 1199],
+    userPlies: [1, 2],
+    requireAny: [],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "mixed",
+  },
+  "professional.mate-in-3": {
+    level: "PROFESSIONAL",
+    chapter: "mate-in-3",
+    rating: [1400, 1799],
+    userPlies: [3, 3],
+    requireAny: ["mateIn3"],
+    lastIsMate: true,
+    captureQueen: false,
+    primaryTag: "mateIn3",
+  },
+  "professional.x-ray": {
+    level: "PROFESSIONAL",
+    chapter: "x-ray",
+    rating: [1200, 1799],
+    userPlies: [2, 2],
+    requireAny: ["xRayAttack"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "xRay",
+  },
+  "professional.zwischenzug": {
+    level: "PROFESSIONAL",
+    chapter: "zwischenzug",
+    rating: [1200, 1799],
+    userPlies: [2, 3],
+    requireAny: ["intermezzo"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "zwischenzug",
+  },
+  "professional.pawn-break": {
+    level: "PROFESSIONAL",
+    chapter: "pawn-break",
+    rating: [1300, 1799],
+    userPlies: [2, 3],
+    requireAny: ["advancedPawn"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "pawnBreak",
+  },
+  "professional.minor-endgame": {
+    level: "PROFESSIONAL",
+    chapter: "minor-endgame",
+    rating: [1300, 1799],
+    userPlies: [2, 3],
+    requireAny: ["bishopEndgame", "knightEndgame"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "minorEndgame",
+  },
+  "professional.mixed-review": {
+    level: "PROFESSIONAL",
+    chapter: "mixed-review",
+    rating: [1200, 1799],
+    userPlies: [2, 3],
+    requireAny: [],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "mixed",
+  },
+  "grandmaster.study-draw": {
+    level: "GRANDMASTER",
+    chapter: "study-draw",
+    rating: [1800, 2600],
+    userPlies: [3, 5],
+    requireAny: ["equality"],
+    lastIsMate: false,
+    captureQueen: false,
+    taskType: "DRAW",
+    primaryTag: "studyDraw",
+  },
+  // stalemate / fortress / perpetual-check are authored études (no Lichess
+  // source); their drafts are composed by hand before merge.
+  "grandmaster.punish": {
+    level: "GRANDMASTER",
+    chapter: "punish",
+    rating: [1800, 2600],
+    userPlies: [3, 5],
+    requireAny: ["crushing", "trappedPiece"],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "punish",
+  },
+  "grandmaster.final-exam": {
+    level: "GRANDMASTER",
+    chapter: "final-exam",
+    rating: [1800, 2600],
+    userPlies: [3, 6],
+    requireAny: [],
+    lastIsMate: false,
+    captureQueen: false,
+    primaryTag: "mixed",
+  },
 };
+
+/** MIX chapters fish for every tag their sibling chapters fish for. */
+function unionTags(level, exclude) {
+  const tags = new Set();
+  for (const config of Object.values(CHAPTERS)) {
+    if (config.level !== level || config.chapter === exclude) continue;
+    for (const tag of config.requireAny) tags.add(tag);
+  }
+  return [...tags];
+}
+for (const [key, exclude] of [
+  ["novice.mixed-review", "mixed-review"],
+  ["professional.mixed-review", "mixed-review"],
+  ["grandmaster.final-exam", "final-exam"],
+]) {
+  const config = CHAPTERS[key];
+  config.requireAny = unionTags(config.level, exclude);
+}
 
 const PLAN_ORDER = [
   ["NOVICE", [
