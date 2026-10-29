@@ -74,11 +74,27 @@
     <string name="chapter_calculation">Расчёт</string>
     <string name="chapter_mixed_review">Смешанное повторение</string>
     <string name="chapter_final_exam">Финальный экзамен</string>
+    <string name="chapter_double_attack">Двойной удар</string>
+    <string name="chapter_remove_defender">Устранение защитника</string>
+    <string name="chapter_discovered_attack">Вскрытое нападение</string>
+    <string name="chapter_defense">Защита</string>
+    <string name="chapter_mate_in_3">Мат в три</string>
+    <string name="chapter_x_ray">Рентген</string>
+    <string name="chapter_zwischenzug">Промежуточный ход</string>
+    <string name="chapter_pawn_break">Пешечный прорыв</string>
+    <string name="chapter_minor_endgame">Минорный эндшпиль</string>
+    <string name="chapter_study_draw">Этюдная ничья</string>
+    <string name="chapter_punish">Наказание ошибки</string>
+    <string name="chapter_stalemate">Пат</string>
+    <string name="chapter_fortress">Крепость</string>
+    <string name="chapter_perpetual_check">Вечный шах</string>
 
     <string name="puzzle_task_mate">Мат в %1$d</string>
     <string name="puzzle_task_win">Выигрыш в %1$d</string>
     <string name="puzzle_task_mate_one">Мат в 1 ход</string>
     <string name="puzzle_task_win_one">Выигрыш в 1 ход</string>
+    <string name="puzzle_task_draw">Ничья в %1$d</string>
+    <string name="puzzle_task_draw_one">Ничья в 1 ход</string>
     <string name="puzzle_attempts">Попытки</string>
     <string name="puzzle_attempts_value">%d</string>
     <string name="puzzle_time">Время</string>

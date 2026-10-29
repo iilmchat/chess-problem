@@ -58,6 +58,8 @@ fun levelDescription(level: Level): String = stringResource(
 fun taskLabel(puzzle: Puzzle): String = when {
     puzzle.task.type == TaskType.MATE && puzzle.task.plies <= 1 -> stringResource(R.string.puzzle_task_mate_one)
     puzzle.task.type == TaskType.MATE -> stringResource(R.string.puzzle_task_mate, puzzle.task.plies)
+    puzzle.task.type == TaskType.DRAW && puzzle.task.plies <= 1 -> stringResource(R.string.puzzle_task_draw_one)
+    puzzle.task.type == TaskType.DRAW -> stringResource(R.string.puzzle_task_draw, puzzle.task.plies)
     puzzle.task.plies <= 1 -> stringResource(R.string.puzzle_task_win_one)
     else -> stringResource(R.string.puzzle_task_win, puzzle.task.plies)
 }
@@ -86,6 +88,22 @@ fun chapterTitle(chapter: String, level: Level): String {
         "chapter_grandmaster_rare_mate" -> R.string.chapter_rare_mate
         "chapter_grandmaster_calculation" -> R.string.chapter_calculation
         "chapter_grandmaster_final_exam" -> R.string.chapter_final_exam
+        "chapter_novice_mate_in_2" -> R.string.chapter_mate_in_2
+        "chapter_novice_double_attack" -> R.string.chapter_double_attack
+        "chapter_novice_remove_defender" -> R.string.chapter_remove_defender
+        "chapter_novice_discovered_attack" -> R.string.chapter_discovered_attack
+        "chapter_novice_defense" -> R.string.chapter_defense
+        "chapter_novice_mixed_review" -> R.string.chapter_mixed_review
+        "chapter_professional_mate_in_3" -> R.string.chapter_mate_in_3
+        "chapter_professional_x_ray" -> R.string.chapter_x_ray
+        "chapter_professional_zwischenzug" -> R.string.chapter_zwischenzug
+        "chapter_professional_pawn_break" -> R.string.chapter_pawn_break
+        "chapter_professional_minor_endgame" -> R.string.chapter_minor_endgame
+        "chapter_grandmaster_study_draw" -> R.string.chapter_study_draw
+        "chapter_grandmaster_punish" -> R.string.chapter_punish
+        "chapter_grandmaster_stalemate" -> R.string.chapter_stalemate
+        "chapter_grandmaster_fortress" -> R.string.chapter_fortress
+        "chapter_grandmaster_perpetual_check" -> R.string.chapter_perpetual_check
         else -> null
     }
     return if (id != null) stringResource(id) else chapter.replace('-', ' ').replaceFirstChar { it.uppercase() }

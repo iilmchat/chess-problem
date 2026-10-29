@@ -72,11 +72,27 @@
     <string name="chapter_calculation">Calculation</string>
     <string name="chapter_mixed_review">Mixed review</string>
     <string name="chapter_final_exam">Final exam</string>
+    <string name="chapter_double_attack">Double attack</string>
+    <string name="chapter_remove_defender">Remove the defender</string>
+    <string name="chapter_discovered_attack">Discovered attack</string>
+    <string name="chapter_defense">Defence</string>
+    <string name="chapter_mate_in_3">Mate in three</string>
+    <string name="chapter_x_ray">X-ray</string>
+    <string name="chapter_zwischenzug">Zwischenzug</string>
+    <string name="chapter_pawn_break">Pawn break</string>
+    <string name="chapter_minor_endgame">Minor-piece endgame</string>
+    <string name="chapter_study_draw">Study draw</string>
+    <string name="chapter_punish">Punish the mistake</string>
+    <string name="chapter_stalemate">Stalemate</string>
+    <string name="chapter_fortress">Fortress</string>
+    <string name="chapter_perpetual_check">Perpetual check</string>
 
     <string name="puzzle_task_mate">Mate in %1$d</string>
     <string name="puzzle_task_win">Win in %1$d</string>
     <string name="puzzle_task_mate_one">Mate in 1</string>
     <string name="puzzle_task_win_one">Win in 1</string>
+    <string name="puzzle_task_draw">Draw in %1$d</string>
+    <string name="puzzle_task_draw_one">Draw in 1</string>
     <string name="puzzle_attempts">Attempts</string>
     <string name="puzzle_attempts_value">%d</string>
     <string name="puzzle_time">Time</string>

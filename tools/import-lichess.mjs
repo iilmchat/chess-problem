@@ -381,6 +381,7 @@ const CHAPTERS = {
     lastIsMate: false,
     captureQueen: false,
     taskType: "DRAW",
+    drawKind: "none", // Lichess equality = positional draw, no rule-based end
     primaryTag: "studyDraw",
   },
   // stalemate / fortress / perpetual-check are authored études (no Lichess
@@ -433,7 +434,7 @@ const PLAN_ORDER = [
   ]],
   ["PROFESSIONAL", [
     "mate-in-2", "deflection", "decoy", "interference", "endgame", "sacrifice",
-    "mate-in-3", "x-ray", "zwischenzug", "pawn-break", "bishop-vs-knight",
+    "mate-in-3", "x-ray", "zwischenzug", "pawn-break", "minor-endgame",
     "mixed-review",
   ]],
   ["GRANDMASTER", [
@@ -613,7 +614,7 @@ function verify(chapter, fen, moves) {
   if (chapter.lastIsMate && !mate) {
     return { plies, san, mate, drawEnd, reason: "line does not end in mate" };
   }
-  if (chapter.taskType === "DRAW" && !drawEnd) {
+  if (chapter.taskType === "DRAW" && chapter.drawKind !== "none" && !drawEnd) {
     return { plies, san, mate, drawEnd, reason: "line does not end in a draw" };
   }
   if (chapter.drawKind === "stalemate" && !chess.isStalemate()) {
