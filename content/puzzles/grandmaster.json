@@ -2464,7 +2464,7 @@
         "en": "Rare mate: rook"
       },
       "prompt": {
-        "ru": "Ход белых. Найдите мат в четыре хода.",
+        "ru": "Ход белых. Найдите мат в пять ходов.",
         "en": "White to move. Find mate in 5."
       },
       "hints": [
@@ -2651,7 +2651,7 @@
         "en": "Rare mate: queen"
       },
       "prompt": {
-        "ru": "Ход белых. Найдите мат в четыре хода.",
+        "ru": "Ход белых. Найдите мат в пять ходов.",
         "en": "White to move. Find mate in 5."
       },
       "hints": [
@@ -2778,7 +2778,7 @@
         "en": "Rare mate: queen"
       },
       "prompt": {
-        "ru": "Ход белых. Найдите мат в четыре хода.",
+        "ru": "Ход белых. Найдите мат в пять ходов.",
         "en": "White to move. Find mate in 5."
       },
       "hints": [
@@ -2843,7 +2843,7 @@
         "en": "Rare mate: queen"
       },
       "prompt": {
-        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "ru": "Ход чёрных. Найдите мат в пять ходов.",
         "en": "Black to move. Find mate in 5."
       },
       "hints": [
@@ -2906,7 +2906,7 @@
         "en": "Rare mate: rook"
       },
       "prompt": {
-        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "ru": "Ход чёрных. Найдите мат в пять ходов.",
         "en": "Black to move. Find mate in 5."
       },
       "hints": [
@@ -2968,7 +2968,7 @@
         "en": "Rare mate: knight"
       },
       "prompt": {
-        "ru": "Ход чёрных. Найдите мат в четыре хода.",
+        "ru": "Ход чёрных. Найдите мат в пять ходов.",
         "en": "Black to move. Find mate in 5."
       },
       "hints": [

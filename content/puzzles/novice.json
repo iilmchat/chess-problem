@@ -1544,7 +1544,7 @@
       ],
       "explanation": {
         "ru": "Подводка: Bxc4 — белый слон забирает коня. Затем Rxe4 — ладья забирает пешку. Соперник может ответить Bxd6+ (один из вариантов); после cxd6 чёрные выигрывают слона; линия — Rxe4 Bxd6+ cxd6.",
-        "en": "Setup: Bxc4, the bishop captures the knight. Then Rxe4 captures the pawn. The opponent may reply Bxd6+ (one possible line); after cxd6 Black wins the bishop; the line is Rxe4 Bxd6+ cxd6."
+        "en": "Setup: Bxc4, the bishop captures the knight. Then Rxe4, the rook captures the pawn. The opponent may reply Bxd6+ (one possible line); after cxd6 Black wins the bishop; the line is Rxe4 Bxd6+ cxd6."
       },
       "source": {
         "provider": "lichess",
