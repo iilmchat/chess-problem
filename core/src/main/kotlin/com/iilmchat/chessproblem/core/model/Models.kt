@@ -30,12 +30,14 @@ data class LocalizedText(
 enum class TaskType {
     MATE,
     WIN,
+    DRAW,
     ;
 
     companion object {
         fun fromId(value: String): TaskType = when (value.uppercase()) {
             "MATE" -> MATE
             "WIN" -> WIN
+            "DRAW" -> DRAW
             else -> error("Unknown task type: $value")
         }
     }
