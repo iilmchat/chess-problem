@@ -43,9 +43,9 @@ import { readFile, readdir, writeFile } from "node:fs/promises";
 import { createInterface } from "node:readline";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import zlib from "node:zlib";
 import { spawn } from "node:child_process";
 import { Chess, validateFen } from "chess.js";
+import { createZstSource } from "./multiframe-zst.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VAR_DIR = path.join(ROOT, "tools", "var");
@@ -249,15 +249,24 @@ const CHAPTERS = {
 };
 
 const PLAN_ORDER = [
-  ["NOVICE", ["mate-in-1", "capture-queen", "fork", "pin", "back-rank", "promotion"]],
-  ["PROFESSIONAL", ["mate-in-2", "deflection", "decoy", "interference", "endgame", "sacrifice"]],
-  ["GRANDMASTER", ["quiet-move", "deep-sacrifice", "zugzwang", "underpromotion", "rare-mate", "calculation"]],
+  ["NOVICE", [
+    "mate-in-1", "capture-queen", "fork", "pin", "back-rank", "promotion",
+    "double-attack", "remove-defender", "discovered-attack", "defense",
+    "mate-in-2", "mixed-review",
+  ]],
+  ["PROFESSIONAL", [
+    "mate-in-2", "deflection", "decoy", "interference", "endgame", "sacrifice",
+    "mate-in-3", "x-ray", "zwischenzug", "pawn-break", "bishop-vs-knight",
+    "mixed-review",
+  ]],
+  ["GRANDMASTER", [
+    "quiet-move", "deep-sacrifice", "zugzwang", "underpromotion", "rare-mate",
+    "calculation", "study-draw", "stalemate", "fortress", "perpetual-check",
+    "punish", "final-exam",
+  ]],
 ];
 
 const LEVEL_PREFIX = { NOVICE: "nov", PROFESSIONAL: "pro", GRANDMASTER: "grm" };
-
-/** Zstd skippable frame (magic 0x184D2A50) at the head of Lichess exports. */
-const SKIPPED_FRAME_BYTES = 12;
 
 // Quality thresholds from CONTENT_PLAN §6.1.
 const MIN_POPULARITY = 80;
@@ -396,6 +405,16 @@ function candidateScore(rec) {
   return rec.popularity + Math.min(50, rec.plays) / 20;
 }
 
+/** Position key without move counters, for repetition checks. */
+function posKey(chess) {
+  return chess.fen().trim().split(/\s+/).slice(0, 4).join(" ");
+}
+
+/** True when the final position of the line is a draw by any rule. */
+function endsDrawn(chess) {
+  return chess.isDraw() || chess.isStalemate() || chess.isThreefoldRepetition();
+}
+
 function verify(chapter, fen, moves) {
   const plies = userPlies(moves);
   if (plies < chapter.userPlies[0] || plies > chapter.userPlies[1]) {
@@ -404,15 +423,35 @@ function verify(chapter, fen, moves) {
   const san = playLine(fen, moves);
   if (san === null) return { plies, reason: "illegal line" };
   const chess = new Chess(fen);
-  for (const uci of moves) chess.move(uciToMove(uci));
+  const repeats = new Map([[posKey(chess), 1]]);
+  for (const uci of moves) {
+    chess.move(uciToMove(uci));
+    const key = posKey(chess);
+    const n = (repeats.get(key) ?? 0) + 1;
+    repeats.set(key, n);
+  }
   const mate = chess.isCheckmate();
+  const drawEnd = endsDrawn(chess);
+  const repeated = [...repeats.values()].some((n) => n >= 2);
   if (chapter.lastIsMate && !mate) {
-    return { plies, san, mate, reason: "line does not end in mate" };
+    return { plies, san, mate, drawEnd, reason: "line does not end in mate" };
+  }
+  if (chapter.taskType === "DRAW" && !drawEnd) {
+    return { plies, san, mate, drawEnd, reason: "line does not end in a draw" };
+  }
+  if (chapter.drawKind === "stalemate" && !chess.isStalemate()) {
+    return { plies, san, mate, drawEnd, reason: "draw is not a stalemate" };
+  }
+  if (chapter.drawKind === "repetition" && !repeated) {
+    return { plies, san, mate, drawEnd, reason: "no repeated position in the line" };
+  }
+  if (chapter.rejectDraws && drawEnd) {
+    return { plies, san, mate, drawEnd, reason: "line ends in a draw" };
   }
   if (chapter.captureQueen && !playerCapturesQueen(fen, moves)) {
-    return { plies, san, mate, reason: "queen is never captured by the player" };
+    return { plies, san, mate, drawEnd, reason: "queen is never captured by the player" };
   }
-  return { plies, san, mate, reason: null };
+  return { plies, san, mate, drawEnd, reason: null };
 }
 
 // --- 1. filter -------------------------------------------------------------
@@ -438,14 +477,12 @@ async function cmdFilter(args) {
   mkdirSync(path.dirname(out), { recursive: true });
   const dst = createWriteStream(out, "utf8");
 
-  const rl = createInterface({
-    input: input.endsWith(".zst")
-      // The Lichess export starts with a 12-byte skippable frame that Node's
-      // Zstd decoder rejects; skip it before piping into the decoder.
-      ? createReadStream(input, { start: SKIPPED_FRAME_BYTES }).pipe(zlib.createZstdDecompress())
-      : createReadStream(input),
-    crlfDelay: Infinity,
-  });
+  // Lichess exports concatenate many zstd frames; createZstSource keeps
+  // decoding after the first frame ends.
+  const source = input.endsWith(".zst")
+    ? await createZstSource(input)
+    : createReadStream(input);
+  const rl = createInterface({ input: source, crlfDelay: Infinity });
 
   rl.on("line", (line) => {
     read += 1;
@@ -540,6 +577,8 @@ function recordOf(chapter, csvFields, moves, result) {
     sanLine: result.san,
     plies: result.plies,
     mate: result.mate,
+    drawEnd: result.drawEnd,
+    taskType: chapter.taskType ?? null,
     rating: Number(csvFields[3]),
     ratingDeviation: Number(csvFields[4]),
     popularity: Number(csvFields[5]),
@@ -615,7 +654,7 @@ function draftPack(level, chapter, records) {
       setupMove: rec.setupMove,
       solution: rec.solution,
       task: {
-        type: rec.mate ? "MATE" : "WIN",
+        type: rec.taskType ?? (rec.mate ? "MATE" : rec.drawEnd ? "DRAW" : "WIN"),
         plies: rec.plies,
       },
       rating: rec.rating,
@@ -781,7 +820,7 @@ async function cmdMerge(args) {
     .filter((name) => name.endsWith(".draft.json"))
     .filter((name) => matchGlob(name, pattern));
   if (files.length === 0) {
-    fail(`no drafts matched ${draftsArg} in ${relative(ROOT, dir)}`);
+    fail(`no drafts matched ${args.drafts} in ${relative(ROOT, dir)}`);
     return;
   }
 
