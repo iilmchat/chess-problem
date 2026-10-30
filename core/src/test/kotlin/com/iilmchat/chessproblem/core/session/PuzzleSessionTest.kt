@@ -244,6 +244,22 @@ class PuzzleSessionTest {
         assertEquals(PuzzleState.Status.SOLVED, state.status)
     }
 
+    @Test
+    fun `drag move to promotion square offers choices`() {
+        val session = PuzzleSession(promotionPuzzle(), rules)
+        val state = session.onEvent(
+            session.initialState(),
+            PuzzleEvent.MakeMove(
+                from = Square.fromAlgebraic("a7"),
+                to = Square.fromAlgebraic("a8"),
+            ),
+        )
+
+        assertEquals(PuzzleState.Status.SOLVING, state.status)
+        assertEquals(4, state.promotionChoices.size)
+        assertTrue(state.promotionChoices.all { it.promotion != null })
+    }
+
     private fun failedState(session: PuzzleSession): PuzzleState {
         var state = session.initialState()
         listOf("e2", "e3", "e4").forEach { target ->

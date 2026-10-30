@@ -273,6 +273,8 @@ fun BoardCard(
     boardTheme: BoardTheme,
     enabled: Boolean,
     onSquareClick: (Square) -> Unit,
+    onMove: (Square, Square) -> Unit = { _, _ -> },
+    haptics: Boolean = false,
     modifier: Modifier = Modifier,
 ) {
     val shape = RoundedCornerShape(18.dp)
@@ -297,6 +299,8 @@ fun BoardCard(
             boardTheme = boardTheme,
             enabled = enabled,
             onSquareClick = onSquareClick,
+            onMove = onMove,
+            haptics = haptics,
             modifier = Modifier.fillMaxWidth(),
         )
     }

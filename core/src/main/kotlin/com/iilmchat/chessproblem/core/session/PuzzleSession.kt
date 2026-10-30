@@ -95,9 +95,21 @@ class PuzzleSession(
 
     private fun makeMove(state: PuzzleState, event: PuzzleEvent.MakeMove): PuzzleState {
         if (state.status != PuzzleState.Status.SOLVING || state.paused) return state
-        val move = rules.legalMoves(state.board, event.from)
-            .firstOrNull { it.to == event.to && it.promotion == event.promotion }
-            ?: return state.copy(feedback = Feedback.Illegal)
+        val candidates = rules.legalMoves(state.board, event.from)
+            .filter { it.to == event.to }
+        if (candidates.isEmpty()) return state.copy(feedback = Feedback.Illegal)
+
+        val promotionCandidates = candidates.filter { it.promotion != null }
+        if (event.promotion == null && promotionCandidates.isNotEmpty()) {
+            return state.copy(promotionChoices = candidates)
+        }
+
+        val move = if (event.promotion != null) {
+            candidates.firstOrNull { it.promotion == event.promotion }
+        } else {
+            candidates.first()
+        } ?: return state.copy(feedback = Feedback.Illegal)
+
         return applyUserMove(state, move)
     }
 

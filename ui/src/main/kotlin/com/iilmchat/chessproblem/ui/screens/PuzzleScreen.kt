@@ -172,6 +172,8 @@ fun PuzzleScreen(
                             boardTheme = ui.settings.boardTheme,
                             enabled = boardEnabled,
                             onSquareClick = viewModel::onTapSquare,
+                            onMove = { from, to -> viewModel.onMakeMove(from, to, null) },
+                            haptics = ui.settings.haptics,
                         )
                         StatusLine(
                             hintText = hintText,

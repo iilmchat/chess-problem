@@ -229,6 +229,25 @@
     <string name="board_in_check">Check</string>
     <string name="board_selected">Selected square %s</string>
     <string name="board_legal_moves">Legal moves: %d</string>
+    <string name="board_square_empty">empty</string>
+    <string name="board_piece_white_pawn">white pawn</string>
+    <string name="board_piece_white_knight">white knight</string>
+    <string name="board_piece_white_bishop">white bishop</string>
+    <string name="board_piece_white_rook">white rook</string>
+    <string name="board_piece_white_queen">white queen</string>
+    <string name="board_piece_white_king">white king</string>
+    <string name="board_piece_black_pawn">black pawn</string>
+    <string name="board_piece_black_knight">black knight</string>
+    <string name="board_piece_black_bishop">black bishop</string>
+    <string name="board_piece_black_rook">black rook</string>
+    <string name="board_piece_black_queen">black queen</string>
+    <string name="board_piece_black_king">black king</string>
+    <string name="board_state_selected">selected</string>
+    <string name="board_state_legal">legal move</string>
+    <string name="board_state_capture">capture available</string>
+    <string name="board_state_check">king in check</string>
+    <string name="board_action_select">Select square %1$s</string>
+    <string name="board_action_move">Move to %1$s</string>
 
     <string name="a11y_back">Back</string>
     <string name="a11y_settings">Settings</string>
