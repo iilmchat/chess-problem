@@ -5235,8 +5235,8 @@
       ],
       "timeLimitSec": 190,
       "title": {
-        "ru": "Пешечный прорыв: ладьёй",
-        "en": "Pawn break: rook"
+        "ru": "Прорыв: ладьёй",
+        "en": "Breakthrough: rook"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь решающего преимущества.",
@@ -5295,8 +5295,8 @@
       ],
       "timeLimitSec": 190,
       "title": {
-        "ru": "Пешечный прорыв: королём",
-        "en": "Pawn break: king"
+        "ru": "Прорыв: королём",
+        "en": "Breakthrough: king"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь решающего преимущества.",
@@ -5474,8 +5474,8 @@
       ],
       "timeLimitSec": 205,
       "title": {
-        "ru": "Пешечный прорыв: слоном",
-        "en": "Pawn break: bishop"
+        "ru": "Прорыв: слоном",
+        "en": "Breakthrough: bishop"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь решающего преимущества.",
@@ -5589,8 +5589,8 @@
       ],
       "timeLimitSec": 200,
       "title": {
-        "ru": "Пешечный прорыв: ладьёй",
-        "en": "Pawn break: rook"
+        "ru": "Прорыв: ладьёй",
+        "en": "Breakthrough: rook"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь решающего преимущества.",
@@ -5706,8 +5706,8 @@
       ],
       "timeLimitSec": 210,
       "title": {
-        "ru": "Пешечный прорыв: конём",
-        "en": "Pawn break: knight"
+        "ru": "Прорыв: конём",
+        "en": "Breakthrough: knight"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь решающего преимущества.",

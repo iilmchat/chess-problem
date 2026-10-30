@@ -395,6 +395,8 @@
     <div class="summary" id="summary"></div>
   </div>
   <div class="top-actions">
+    <button class="btn" id="import-json" title="Загрузить review-notes.json">Импорт</button>
+    <input type="file" id="import-file" accept="application/json,.json" hidden>
     <button class="btn" id="export-json" title="Скачать review-notes.json">JSON</button>
     <button class="btn" id="export-md" title="Скачать Markdown">Markdown</button>
   </div>
@@ -1002,6 +1004,56 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
+  function importJsonFile(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(String(reader.result ?? ""));
+        const source = parsed && typeof parsed.notes === "object" ? parsed.notes : parsed;
+        const items = Array.isArray(source)
+          ? source
+          : Object.entries(source ?? {}).map(([puzzleId, note]) => ({
+              puzzleId,
+              ...(note && typeof note === "object" ? note : {}),
+            }));
+        let applied = 0;
+        let skipped = 0;
+        for (const item of items) {
+          if (!item || typeof item !== "object") {
+            skipped += 1;
+            continue;
+          }
+          const id = item.puzzleId ?? item.id;
+          if (!byId.has(id)) {
+            skipped += 1;
+            continue;
+          }
+          const status = STATUS[item.status] ? item.status : null;
+          const comment = typeof item.comment === "string" ? item.comment : "";
+          if (!status && !comment.trim()) {
+            skipped += 1;
+            continue;
+          }
+          notes[id] = { status, comment, updatedAt: item.updatedAt ?? new Date().toISOString() };
+          applied += 1;
+        }
+        saveNotes();
+        updateProgress();
+        renderList();
+        renderDetail();
+        const version = parsed?.contentVersion && parsed.contentVersion !== DATA.contentVersion
+          ? ` (версия ${parsed.contentVersion})`
+          : "";
+        showToast(`Импортировано: ${applied}, пропущено: ${skipped}${version}`);
+      } catch (error) {
+        console.warn("Cannot import review notes", error);
+        showToast("Не удалось прочитать JSON");
+      }
+    };
+    reader.readAsText(file, "utf-8");
+  }
+
   function bindFilters() {
     $("#filter-level").addEventListener("change", (event) => {
       state.level = event.target.value;
@@ -1020,6 +1072,12 @@
     $("#search").addEventListener("input", () => {
       clearTimeout(searchTimer);
       searchTimer = setTimeout(applyFilters, 140);
+    });
+    $("#import-json").addEventListener("click", () => $("#import-file").click());
+    $("#import-file").addEventListener("change", (event) => {
+      const file = event.target.files?.[0];
+      event.target.value = "";
+      importJsonFile(file);
     });
     $("#export-json").addEventListener("click", exportJson);
     $("#export-md").addEventListener("click", exportMarkdown);

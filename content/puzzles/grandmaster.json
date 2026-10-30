@@ -4231,8 +4231,8 @@
         }
       ],
       "explanation": {
-        "ru": "Bb3+ Qxb3 — единственный ответ; у белого короля на a1 нет ходов, и это пат.",
-        "en": "Bb3+ Qxb3 is the only reply; the white king on a1 has no moves — stalemate."
+        "ru": "Bb3+ Qxb3 — единственный ответ. У белого короля на a1 нет ходов, и это пат.",
+        "en": "Bb3+ Qxb3 is the only reply. The white king on a1 has no moves — stalemate."
       },
       "source": {
         "provider": "original",
@@ -4243,11 +4243,11 @@
       "id": "grm-071"
     },
     {
-      "fen": "5bkr/6pp/8/8/8/6q1/2Q5/K7 w - - 0 1",
+      "fen": "K7/2B5/6q1/8/8/8/6pp/5bkr w - - 0 1",
       "setupMove": null,
       "solution": [
-        "c2b3",
-        "g3b3"
+        "c7b6",
+        "g6b6"
       ],
       "task": {
         "type": "DRAW",
@@ -4259,8 +4259,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Жертва ферзя",
-        "en": "Queen sacrifice"
+        "ru": "Пат в углу",
+        "en": "Stalemate in the corner"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4269,23 +4269,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Ферзь может отдать себя с шахом.",
-          "en": "The queen can give itself up with check."
+          "ru": "Ищите шах, на который у соперника есть только взятие.",
+          "en": "Look for a check whose only answer is a capture."
         },
         {
           "tier": 2,
-          "ru": "Qb3+ вынуждает Qxb3 — и король a1 запатован.",
-          "en": "Qb3+ forces Qxb3 — and the king on a1 is stalemated."
+          "ru": "Отдайте слона на b6: после Qxb6 король a8 запатован.",
+          "en": "Give up the bishop on b6: after Qxb6 the king on a8 is stalemated."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qb3+.",
-          "en": "First move: Qb3+."
+          "ru": "Первый ход: Bb6+.",
+          "en": "First move: Bb6+."
         }
       ],
       "explanation": {
-        "ru": "Qb3+ Qxb3 — соперник обязан взять ферзя, после чего у белого короля на a1 нет ни одного хода: пат.",
-        "en": "Qb3+ Qxb3 — the opponent must take the queen, after which the white king on a1 has no move: stalemate."
+        "ru": "Bb6+ Qxb6 — единственный ответ. У белого короля на a8 нет ходов, и это пат.",
+        "en": "Bb6+ Qxb6 is the only reply. The white king on a8 has no moves — stalemate."
       },
       "source": {
         "provider": "original",
@@ -4337,8 +4337,8 @@
         }
       ],
       "explanation": {
-        "ru": "Bb3+ Qxb3 — ферзь b8 обязана взять слона, и у белого короля на a1 не остаётся ходов: пат.",
-        "en": "Bb3+ Qxb3 — the b8-queen must take the bishop, and the white king on a1 has no moves left: stalemate."
+        "ru": "Bb3+ Qxb3 — ферзь b8 обязана взять слона. У белого короля на a1 не остаётся ходов: пат.",
+        "en": "Bb3+ Qxb3 — the b8-queen must take the bishop. The white king on a1 has no moves left: stalemate."
       },
       "source": {
         "provider": "original",
@@ -4349,11 +4349,11 @@
       "id": "grm-073"
     },
     {
-      "fen": "1q3bkr/6pp/8/8/8/8/2Q5/K7 w - - 0 1",
+      "fen": "8/8/8/8/5B2/1q6/3pp3/3rkb1K w - - 0 1",
       "setupMove": null,
       "solution": [
-        "c2b3",
-        "b8b3"
+        "f4g3",
+        "b3g3"
       ],
       "task": {
         "type": "DRAW",
@@ -4365,8 +4365,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Ферзь против ферзя",
-        "en": "Queen for queen"
+        "ru": "Пат на краю",
+        "en": "Stalemate on the edge"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4375,23 +4375,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Размен ферзей с шахом — единственный путь.",
-          "en": "Trading queens with check is the only way."
+          "ru": "Король на h1 — отдайте фигуру с шахом.",
+          "en": "The king is on h1 — give up a piece with check."
         },
         {
           "tier": 2,
-          "ru": "Qb3+ вынуждает Qxb3, и король a1 запатован.",
-          "en": "Qb3+ forces Qxb3, and the king on a1 is stalemated."
+          "ru": "Слон g3 отдаётся под Qxg3, и король h1 запатован.",
+          "en": "The bishop on g3 invites Qxg3, and the king on h1 is stalemated."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qb3+.",
-          "en": "First move: Qb3+."
+          "ru": "Первый ход: Bg3+.",
+          "en": "First move: Bg3+."
         }
       ],
       "explanation": {
-        "ru": "Qb3+ Qxb3 — после вынужденного взятия у белого короля на a1 нет ходов: пат.",
-        "en": "Qb3+ Qxb3 — after the forced capture the white king on a1 has no moves: stalemate."
+        "ru": "Bg3+ Qxg3 — единственный ответ. У белого короля на h1 нет ходов: пат.",
+        "en": "Bg3+ Qxg3 is the only reply. The white king on h1 has no moves: stalemate."
       },
       "source": {
         "provider": "original",
@@ -4443,8 +4443,8 @@
         }
       ],
       "explanation": {
-        "ru": "Bg6+ Qxg6 — единственный ответ; у белого короля на h8 нет ходов: пат.",
-        "en": "Bg6+ Qxg6 is the only reply; the white king on h8 has no moves: stalemate."
+        "ru": "Bg6+ Qxg6 — единственный ответ. У белого короля на h8 нет ходов: пат.",
+        "en": "Bg6+ Qxg6 is the only reply. The white king on h8 has no moves: stalemate."
       },
       "source": {
         "provider": "original",
@@ -4455,7 +4455,7 @@
       "id": "grm-075"
     },
     {
-      "fen": "3rkb1K/3pp3/1q6/5Q2/8/8/8/8 w - - 0 1",
+      "fen": "3rkb1K/3pp3/1q4p1/5Q2/8/8/8/8 w - - 0 1",
       "setupMove": null,
       "solution": [
         "f5g6",
@@ -4486,18 +4486,18 @@
         },
         {
           "tier": 2,
-          "ru": "Qg6+ вынуждает Qxg6, и король h8 запатован.",
-          "en": "Qg6+ forces Qxg6, and the king on h8 is stalemated."
+          "ru": "Ферзь берёт пешку g6 с шахом: после Qxg6 король h8 запатован.",
+          "en": "The queen takes the g6-pawn with check: after Qxg6 the king on h8 is stalemated."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qg6+.",
-          "en": "First move: Qg6+."
+          "ru": "Первый ход: Qxg6+.",
+          "en": "First move: Qxg6+."
         }
       ],
       "explanation": {
-        "ru": "Qg6+ Qxg6 — соперник обязан взять ферзя, и у белого короля на h8 нет ходов: пат.",
-        "en": "Qg6+ Qxg6 — the opponent must take the queen, and the white king on h8 has no moves: stalemate."
+        "ru": "Qxg6+ Qxg6 — соперник обязан взять ферзя. У белого короля на h8 нет ходов: пат.",
+        "en": "Qxg6+ Qxg6 — the opponent must take the queen. The white king on h8 has no moves: stalemate."
       },
       "source": {
         "provider": "original",
@@ -4549,8 +4549,8 @@
         }
       ],
       "explanation": {
-        "ru": "Bb6+ Qxb6 — единственный ответ; у белого короля на a8 нет ходов: пат.",
-        "en": "Bb6+ Qxb6 is the only reply; the white king on a8 has no moves: stalemate."
+        "ru": "Bb6+ Qxb6 — единственный ответ. У белого короля на a8 нет ходов: пат.",
+        "en": "Bb6+ Qxb6 is the only reply. The white king on a8 has no moves: stalemate."
       },
       "source": {
         "provider": "original",
@@ -4561,7 +4561,7 @@
       "id": "grm-077"
     },
     {
-      "fen": "K1bkr3/3pp3/4q3/2Q5/8/8/8/8 w - - 0 1",
+      "fen": "K1bkr3/3pp3/1p2q3/2Q5/8/8/8/8 w - - 0 1",
       "setupMove": null,
       "solution": [
         "c5b6",
@@ -4592,18 +4592,18 @@
         },
         {
           "tier": 2,
-          "ru": "Qb6+ вынуждает Qxb6, и король a8 запатован.",
-          "en": "Qb6+ forces Qxb6, and the king on a8 is stalemated."
+          "ru": "Ферзь берёт пешку b6 с шахом: после Qxb6 король a8 запатован.",
+          "en": "The queen takes the b6-pawn with check: after Qxb6 the king on a8 is stalemated."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qb6+.",
-          "en": "First move: Qb6+."
+          "ru": "Первый ход: Qxb6+.",
+          "en": "First move: Qxb6+."
         }
       ],
       "explanation": {
-        "ru": "Qb6+ Qxb6 — после вынужденного взятия у белого короля на a8 нет ходов: пат.",
-        "en": "Qb6+ Qxb6 — after the forced capture the white king on a8 has no moves: stalemate."
+        "ru": "Qxb6+ Qxb6 — взятие вынуждено. У белого короля на a8 нет ходов: пат.",
+        "en": "Qxb6+ Qxb6 — the capture is forced. The white king on a8 has no moves: stalemate."
       },
       "source": {
         "provider": "original",
@@ -4655,8 +4655,8 @@
         }
       ],
       "explanation": {
-        "ru": "Bg3+ Qxg3 — единственный ответ; у белого короля на h1 нет ходов: пат.",
-        "en": "Bg3+ Qxg3 is the only reply; the white king on h1 has no moves: stalemate."
+        "ru": "Bg3+ Qxg3 — единственный ответ. У белого короля на h1 нет ходов: пат.",
+        "en": "Bg3+ Qxg3 is the only reply. The white king on h1 has no moves: stalemate."
       },
       "source": {
         "provider": "original",
@@ -4667,11 +4667,11 @@
       "id": "grm-079"
     },
     {
-      "fen": "rkb5/pp6/8/8/8/1q6/5Q2/7K w - - 0 1",
+      "fen": "K7/2B5/8/8/8/8/6pp/1q3bkr w - - 0 1",
       "setupMove": null,
       "solution": [
-        "f2g3",
-        "b3g3"
+        "c7b6",
+        "b1b6"
       ],
       "task": {
         "type": "DRAW",
@@ -4683,8 +4683,8 @@
       ],
       "timeLimitSec": 260,
       "title": {
-        "ru": "Ферзь-смертник",
-        "en": "Queen sacrifice"
+        "ru": "Пат в углу",
+        "en": "Stalemate in the corner"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -4693,23 +4693,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король на h1, ферзь может отдать себя с шахом.",
-          "en": "The king is on h1; the queen can give itself up with check."
+          "ru": "Ферзь b1 должен взять слона — используйте это.",
+          "en": "The b1-queen must take the bishop — use it."
         },
         {
           "tier": 2,
-          "ru": "Qg3+ вынуждает Qxg3, и король h1 запатован.",
-          "en": "Qg3+ forces Qxg3, and the king on h1 is stalemated."
+          "ru": "Слон b6 отдаётся под Qxb6, и король a8 запатован.",
+          "en": "The bishop on b6 invites Qxb6, and the king on a8 is stalemated."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qg3+.",
-          "en": "First move: Qg3+."
+          "ru": "Первый ход: Bb6+.",
+          "en": "First move: Bb6+."
         }
       ],
       "explanation": {
-        "ru": "Qg3+ Qxg3 — соперник обязан взять ферзя, и у белого короля на h1 нет ходов: пат.",
-        "en": "Qg3+ Qxg3 — the opponent must take the queen, and the white king on h1 has no moves: stalemate."
+        "ru": "Bb6+ Qxb6 — ферзь b1 обязана взять слона. У белого короля на a8 нет ходов: пат.",
+        "en": "Bb6+ Qxb6 — the b1-queen must take the bishop. The white king on a8 has no moves: stalemate."
       },
       "source": {
         "provider": "original",
@@ -4762,8 +4762,8 @@
         }
       ],
       "explanation": {
-        "ru": "Kb8 a7+ Ka8 — король возвращается в угол; пешка a7 упирается в него, и позиция ничейная.",
-        "en": "Kb8 a7+ Ka8 — the king returns to the corner; the a7-pawn is blocked, and the position is drawn."
+        "ru": "Kb8 a7+ Ka8 — король возвращается в угол. Пешка a7 упирается в него, и позиция ничейная.",
+        "en": "Kb8 a7+ Ka8 — the king returns to the corner. The a7-pawn is blocked, and the position is drawn."
       },
       "source": {
         "provider": "original",
@@ -4816,8 +4816,8 @@
         }
       ],
       "explanation": {
-        "ru": "Kg8 h7+ Kh8 — король снова в углу, пешка h7 не может продвинуться: ничья.",
-        "en": "Kg8 h7+ Kh8 — the king is back in the corner, the h7-pawn cannot advance: a draw."
+        "ru": "Kg8 h7+ Kh8 — король снова в углу. Пешка h7 не может продвинуться: ничья.",
+        "en": "Kg8 h7+ Kh8 — the king is back in the corner. The h7-pawn cannot advance: a draw."
       },
       "source": {
         "provider": "original",
@@ -4828,12 +4828,66 @@
       "id": "grm-082"
     },
     {
-      "fen": "8/4k3/8/4K3/4P3/8/8/8 b - - 0 1",
+      "fen": "8/8/2k5/8/1K6/1P6/8/8 b - - 0 1",
       "setupMove": null,
       "solution": [
-        "e7d7",
-        "e5f5",
-        "d7e7"
+        "c6b6",
+        "b4c4",
+        "b6c6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 2
+      },
+      "rating": 2400,
+      "themes": [
+        "fortress"
+      ],
+      "timeLimitSec": 270,
+      "title": {
+        "ru": "Оппозиция: пешка",
+        "en": "Opposition: pawn"
+      },
+      "prompt": {
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король должен встать перед пешкой b3 и держать оппозицию.",
+          "en": "The king must stand in front of the b3-pawn and hold the opposition."
+        },
+        {
+          "tier": 2,
+          "ru": "Король идёт Kb6, затем Kc6 — оппозиция сохранена.",
+          "en": "The king goes Kb6, then Kc6 — the opposition is held."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Kb6.",
+          "en": "First move: Kb6."
+        }
+      ],
+      "explanation": {
+        "ru": "Kb6 Kc4 Kc6 — король занимает ключевое поле перед пешкой. Белые не могут прорваться, ничья.",
+        "en": "Kb6 Kc4 Kc6 — the king takes the key square in front of the pawn. White cannot break through, a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-fortress-03",
+        "license": "proprietary"
+      },
+      "chapter": "fortress",
+      "id": "grm-083"
+    },
+    {
+      "fen": "8/8/3k4/8/2K5/2P5/8/8 b - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "d6c6",
+        "c4d4",
+        "c6d6"
       ],
       "task": {
         "type": "DRAW",
@@ -4855,77 +4909,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король должен встать перед пешкой и держать оппозицию.",
-          "en": "The king must stand in front of the pawn and hold the opposition."
+          "ru": "Король встаёт перед пешкой c3.",
+          "en": "The king takes his place in front of the c3-pawn."
         },
         {
           "tier": 2,
-          "ru": "Уходите на d7, а затем возвращайтесь на e7.",
-          "en": "Step to d7, then return to e7."
+          "ru": "Король идёт Kc6, затем Kd6.",
+          "en": "The king goes Kc6, then Kd6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Kd7.",
-          "en": "First move: Kd7."
+          "ru": "Первый ход: Kc6.",
+          "en": "First move: Kc6."
         }
       ],
       "explanation": {
-        "ru": "Kd7 Kf5 Ke7 — чёрный король сохраняет оппозицию перед пешкой e4; белые не могут усилить позицию, ничья.",
-        "en": "Kd7 Kf5 Ke7 — the black king keeps the opposition in front of the e4-pawn; White cannot make progress, a draw."
-      },
-      "source": {
-        "provider": "original",
-        "id": "etude-fortress-03",
-        "license": "proprietary"
-      },
-      "chapter": "fortress",
-      "id": "grm-083"
-    },
-    {
-      "fen": "8/2k5/8/2K5/2P5/8/8/8 b - - 0 1",
-      "setupMove": null,
-      "solution": [
-        "c7d7",
-        "c5b5",
-        "d7c7"
-      ],
-      "task": {
-        "type": "DRAW",
-        "plies": 2
-      },
-      "rating": 2400,
-      "themes": [
-        "fortress"
-      ],
-      "timeLimitSec": 270,
-      "title": {
-        "ru": "Оппозиция: пешка",
-        "en": "Opposition: pawn"
-      },
-      "prompt": {
-        "ru": "Ход чёрных. Добейтесь ничьей.",
-        "en": "Black to move. Draw the game."
-      },
-      "hints": [
-        {
-          "tier": 1,
-          "ru": "Держите короля на пути пешки c4.",
-          "en": "Keep the king in the path of the c4-pawn."
-        },
-        {
-          "tier": 2,
-          "ru": "Kd7, затем Kc7 — оппозиция сохранена.",
-          "en": "Kd7, then Kc7 — the opposition is held."
-        },
-        {
-          "tier": 3,
-          "ru": "Первый ход: Kd7.",
-          "en": "First move: Kd7."
-        }
-      ],
-      "explanation": {
-        "ru": "Kd7 Kb5 Kc7 — король возвращается перед пешкой; белые не могут прорваться, ничья.",
-        "en": "Kd7 Kb5 Kc7 — the king returns in front of the pawn; White cannot break through, a draw."
+        "ru": "Kc6 Kd4 Kd6 — король сохраняет оппозицию. Белая пешка c3 не проходит, ничья.",
+        "en": "Kc6 Kd4 Kd6 — the king keeps the opposition. The c3-pawn cannot advance, a draw."
       },
       "source": {
         "provider": "original",
@@ -4936,12 +4936,12 @@
       "id": "grm-084"
     },
     {
-      "fen": "8/3k4/8/3K4/3P4/8/8/8 b - - 0 1",
+      "fen": "8/8/2k5/8/3K4/3P4/8/8 b - - 0 1",
       "setupMove": null,
       "solution": [
-        "d7e7",
-        "d5c5",
-        "e7d7"
+        "c6d6",
+        "d4e4",
+        "d6e6"
       ],
       "task": {
         "type": "DRAW",
@@ -4963,23 +4963,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Оппозиция перед пешкой d4 — залог ничьей.",
-          "en": "The opposition in front of the d4-pawn is the key to the draw."
+          "ru": "Король встаёт перед пешкой d3.",
+          "en": "The king takes his place in front of the d3-pawn."
         },
         {
           "tier": 2,
-          "ru": "Ke7, затем Kd7.",
-          "en": "Ke7, then Kd7."
+          "ru": "Король идёт Kd6, затем Ke6.",
+          "en": "The king goes Kd6, then Ke6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Ke7.",
-          "en": "First move: Ke7."
+          "ru": "Первый ход: Kd6.",
+          "en": "First move: Kd6."
         }
       ],
       "explanation": {
-        "ru": "Ke7 Kc5 Kd7 — король не пускает белого короля вперёд; позиция ничейная.",
-        "en": "Ke7 Kc5 Kd7 — the king denies the white king progress; the position is drawn."
+        "ru": "Kd6 Ke4 Ke6 — король держит оппозицию. Белая пешка d3 не проходит, ничья.",
+        "en": "Kd6 Ke4 Ke6 — the king holds the opposition. The d3-pawn cannot advance, a draw."
       },
       "source": {
         "provider": "original",
@@ -4990,12 +4990,12 @@
       "id": "grm-085"
     },
     {
-      "fen": "8/5k2/8/5K2/5P2/8/8/8 b - - 0 1",
+      "fen": "8/8/3k4/8/4K3/4P3/8/8 b - - 0 1",
       "setupMove": null,
       "solution": [
-        "f7g7",
-        "f5e5",
-        "g7f7"
+        "d6e6",
+        "e4d4",
+        "e6d6"
       ],
       "task": {
         "type": "DRAW",
@@ -5007,8 +5007,8 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Оппозиция: пешка",
-        "en": "Opposition: pawn"
+        "ru": "Дальняя оппозиция",
+        "en": "Distant opposition"
       },
       "prompt": {
         "ru": "Ход чёрных. Добейтесь ничьей.",
@@ -5017,23 +5017,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король встаёт перед пешкой f4.",
-          "en": "The king takes his place in front of the f4-pawn."
+          "ru": "Король встаёт перед пешкой e3.",
+          "en": "The king takes his place in front of the e3-pawn."
         },
         {
           "tier": 2,
-          "ru": "Kg7, затем Kf7 — оппозиция.",
-          "en": "Kg7, then Kf7 — the opposition."
+          "ru": "Король идёт Ke6, затем Kd6.",
+          "en": "The king goes Ke6, then Kd6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Kg7.",
-          "en": "First move: Kg7."
+          "ru": "Первый ход: Ke6.",
+          "en": "First move: Ke6."
         }
       ],
       "explanation": {
-        "ru": "Kg7 Ke5 Kf7 — чёрный король держит оппозицию; белая пешка f4 не проходит, ничья.",
-        "en": "Kg7 Ke5 Kf7 — the black king holds the opposition; the f4-pawn cannot advance, a draw."
+        "ru": "Ke6 Kd4 Kd6 — король не пускает белого короля вперёд. Позиция ничейная.",
+        "en": "Ke6 Kd4 Kd6 — the king denies the white king progress. The position is drawn."
       },
       "source": {
         "provider": "original",
@@ -5044,12 +5044,12 @@
       "id": "grm-086"
     },
     {
-      "fen": "8/8/3k4/3p4/3P4/3K4/8/8 w - - 0 1",
+      "fen": "8/8/4k3/8/5K2/5P2/8/8 b - - 0 1",
       "setupMove": null,
       "solution": [
-        "d3e3",
-        "d6e6",
-        "e3d3"
+        "e6f6",
+        "f4e4",
+        "f6e6"
       ],
       "task": {
         "type": "DRAW",
@@ -5061,33 +5061,33 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Запертые пешки",
-        "en": "Locked pawns"
+        "ru": "Оппозиция: пешка",
+        "en": "Opposition: pawn"
       },
       "prompt": {
-        "ru": "Ход белых. Добейтесь ничьей.",
-        "en": "White to move. Draw the game."
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Пешки d4 и d5 заперты — королю нечего делать.",
-          "en": "The d4 and d5 pawns are locked — the king has nothing to do."
+          "ru": "Король встаёт перед пешкой f3.",
+          "en": "The king takes his place in front of the f3-pawn."
         },
         {
           "tier": 2,
-          "ru": "Держите короля на d3 и не пропускайте чёрного короля.",
-          "en": "Keep the king on d3 and do not let the black king through."
+          "ru": "Король идёт Kf6, затем Ke6.",
+          "en": "The king goes Kf6, then Ke6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Ke3.",
-          "en": "First move: Ke3."
+          "ru": "Первый ход: Kf6.",
+          "en": "First move: Kf6."
         }
       ],
       "explanation": {
-        "ru": "Ke3 Ke6 Kd3 — пешки d4/d5 заперты, белый король не может усилить позицию: ничья.",
-        "en": "Ke3 Ke6 Kd3 — the d4/d5 pawns are locked, the white king cannot improve the position: a draw."
+        "ru": "Kf6 Ke4 Ke6 — чёрный король держит оппозицию. Белая пешка f3 не проходит, ничья.",
+        "en": "Kf6 Ke4 Ke6 — the black king holds the opposition. The f3-pawn cannot advance, a draw."
       },
       "source": {
         "provider": "original",
@@ -5098,12 +5098,12 @@
       "id": "grm-087"
     },
     {
-      "fen": "8/8/4k3/4p3/4P3/4K3/8/8 w - - 0 1",
+      "fen": "8/8/5k2/8/6K1/6P1/8/8 b - - 0 1",
       "setupMove": null,
       "solution": [
-        "e3d3",
-        "e6d6",
-        "d3e3"
+        "f6g6",
+        "g4f4",
+        "g6f6"
       ],
       "task": {
         "type": "DRAW",
@@ -5115,33 +5115,33 @@
       ],
       "timeLimitSec": 270,
       "title": {
-        "ru": "Запертые пешки",
-        "en": "Locked pawns"
+        "ru": "Король перед пешкой",
+        "en": "King in front of the pawn"
       },
       "prompt": {
-        "ru": "Ход белых. Добейтесь ничьей.",
-        "en": "White to move. Draw the game."
+        "ru": "Ход чёрных. Добейтесь ничьей.",
+        "en": "Black to move. Draw the game."
       },
       "hints": [
         {
           "tier": 1,
-          "ru": "Пешки заперты, важно не пустить чёрного короля.",
-          "en": "The pawns are locked; the key is not to let the black king through."
+          "ru": "Король встаёт перед пешкой g3.",
+          "en": "The king takes his place in front of the g3-pawn."
         },
         {
           "tier": 2,
-          "ru": "Kd3, затем Ke3 — держите оппозицию.",
-          "en": "Kd3, then Ke3 — keep the opposition."
+          "ru": "Король идёт Kg6, затем Kf6.",
+          "en": "The king goes Kg6, then Kf6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Kd3.",
-          "en": "First move: Kd3."
+          "ru": "Первый ход: Kg6.",
+          "en": "First move: Kg6."
         }
       ],
       "explanation": {
-        "ru": "Kd3 Kd6 Ke3 — пешки e4/e5 заперты, белый король держит оппозицию: ничья.",
-        "en": "Kd3 Kd6 Ke3 — the e4/e5 pawns are locked, the white king holds the opposition: a draw."
+        "ru": "Kg6 Kf4 Kf6 — король сохраняет оппозицию. Белая пешка g3 не проходит, ничья.",
+        "en": "Kg6 Kf4 Kf6 — the king keeps the opposition. The g3-pawn cannot advance, a draw."
       },
       "source": {
         "provider": "original",
@@ -5152,12 +5152,12 @@
       "id": "grm-088"
     },
     {
-      "fen": "8/1k6/8/1K6/1P6/8/8/8 b - - 0 1",
+      "fen": "8/8/1k6/8/2K5/2P5/8/8 b - - 0 1",
       "setupMove": null,
       "solution": [
-        "b7c7",
-        "b5a5",
-        "c7b7"
+        "b6c6",
+        "c4d4",
+        "c6d6"
       ],
       "task": {
         "type": "DRAW",
@@ -5179,23 +5179,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король встаёт перед пешкой b4.",
-          "en": "The king stands in front of the b4-pawn."
+          "ru": "Король встаёт перед пешкой c3.",
+          "en": "The king takes his place in front of the c3-pawn."
         },
         {
           "tier": 2,
-          "ru": "Kc7, затем Kb7 — оппозиция.",
-          "en": "Kc7, then Kb7 — the opposition."
+          "ru": "Король идёт Kc6, затем Kd6.",
+          "en": "The king goes Kc6, then Kd6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Kc7.",
-          "en": "First move: Kc7."
+          "ru": "Первый ход: Kc6.",
+          "en": "First move: Kc6."
         }
       ],
       "explanation": {
-        "ru": "Kc7 Ka5 Kb7 — король держит оппозицию; белая пешка b4 не проходит, ничья.",
-        "en": "Kc7 Ka5 Kb7 — the king holds the opposition; the b4-pawn cannot advance, a draw."
+        "ru": "Kc6 Kd4 Kd6 — король держит оппозицию. Белая пешка c3 не проходит, ничья.",
+        "en": "Kc6 Kd4 Kd6 — the king holds the opposition. The c3-pawn cannot advance, a draw."
       },
       "source": {
         "provider": "original",
@@ -5206,12 +5206,12 @@
       "id": "grm-089"
     },
     {
-      "fen": "8/6k1/8/6K1/6P1/8/8/8 b - - 0 1",
+      "fen": "8/8/k7/8/1K6/1P6/8/8 b - - 0 1",
       "setupMove": null,
       "solution": [
-        "g7h7",
-        "g5f5",
-        "h7g7"
+        "a6b6",
+        "b4c4",
+        "b6c6"
       ],
       "task": {
         "type": "DRAW",
@@ -5233,23 +5233,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король встаёт перед пешкой g4.",
-          "en": "The king takes his place in front of the g4-pawn."
+          "ru": "Король встаёт перед пешкой b3.",
+          "en": "The king takes his place in front of the b3-pawn."
         },
         {
           "tier": 2,
-          "ru": "Kh7, затем Kg7 — оппозиция.",
-          "en": "Kh7, then Kg7 — the opposition."
+          "ru": "Король идёт Kb6, затем Kc6.",
+          "en": "The king goes Kb6, then Kc6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Kh7.",
-          "en": "First move: Kh7."
+          "ru": "Первый ход: Kb6.",
+          "en": "First move: Kb6."
         }
       ],
       "explanation": {
-        "ru": "Kh7 Kf5 Kg7 — чёрный король сохраняет оппозицию; белая пешка g4 не проходит, ничья.",
-        "en": "Kh7 Kf5 Kg7 — the black king keeps the opposition; the g4-pawn cannot advance, a draw."
+        "ru": "Kb6 Kc4 Kc6 — король держит оппозицию. Белая пешка b3 не проходит, ничья.",
+        "en": "Kb6 Kc4 Kc6 — the king holds the opposition. The b3-pawn cannot advance, a draw."
       },
       "source": {
         "provider": "original",
@@ -5260,14 +5260,14 @@
       "id": "grm-090"
     },
     {
-      "fen": "k2N3r/p7/rP2Q3/8/7q/8/8/2R3Kn w - - 0 1",
+      "fen": "5b1k/7p/3Q1p1P/8/1q6/8/r7/6K1 w - - 0 1",
       "setupMove": null,
       "solution": [
-        "e6c6",
-        "a8b8",
-        "c6d6",
-        "b8a8",
-        "d6c6"
+        "d6f6",
+        "h8g8",
+        "f6e6",
+        "g8h8",
+        "e6f6"
       ],
       "task": {
         "type": "DRAW",
@@ -5289,23 +5289,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Ферзь может шаховать короля в углу по большой диагонали.",
-          "en": "The queen can check the cornered king along the long diagonal."
+          "ru": "Король h8 заперт; ищите шахи по диагонали.",
+          "en": "The king on h8 is boxed in; look for diagonal checks."
         },
         {
           "tier": 2,
-          "ru": "Ферзь шахует с c6 и d6; король вынужден ходить между a8 и b8.",
-          "en": "The queen checks from c6 and d6; the king must shuttle between a8 and b8."
+          "ru": "Ферзь берёт пешку f6 с шахом, затем качается между f6 и e6.",
+          "en": "The queen takes the f6-pawn with check, then swings between f6 and e6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qc6+.",
-          "en": "First move: Qc6+."
+          "ru": "Первый ход: Qxf6+.",
+          "en": "First move: Qxf6+."
         }
       ],
       "explanation": {
-        "ru": "Qc6+ Kb8 Qd6+ Ka8 Qc6+ — ферзь чередует c6 и d6, король ходит только a8–b8, позиция повторяется: ничья вечным шахом.",
-        "en": "Qc6+ Kb8 Qd6+ Ka8 Qc6+ — the queen alternates c6 and d6, the king can only shuttle a8–b8, and the position repeats: a draw by perpetual check."
+        "ru": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь чередует f6 и e6, король ходит только g8–h8. Позиция повторяется: ничья вечным шахом.",
+        "en": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen alternates f6 and e6, the king can only shuttle g8–h8. The position repeats: a draw by perpetual check."
       },
       "source": {
         "provider": "original",
@@ -5316,7 +5316,7 @@
       "id": "grm-091"
     },
     {
-      "fen": "r3N2k/7p/3Q2Pr/8/q7/8/8/nK3R2 w - - 0 1",
+      "fen": "q4b1k/7p/3Q1p1P/8/8/8/r7/6K1 w - - 0 1",
       "setupMove": null,
       "solution": [
         "d6f6",
@@ -5345,23 +5345,23 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король заперт на h8 — ищите шахи по диагонали.",
-          "en": "The king is trapped on h8 — look for diagonal checks."
+          "ru": "Король h8 заперт — ищите шахи по диагонали.",
+          "en": "The king on h8 is boxed in — look for diagonal checks."
         },
         {
           "tier": 2,
-          "ru": "Ферзь ходит между f6 и e6; король вынужден ходить g8–h8.",
-          "en": "The queen moves between f6 and e6; the king must shuttle g8–h8."
+          "ru": "Ферзь берёт f6 с шахом и качается между f6 и e6.",
+          "en": "The queen takes on f6 with check and swings between f6 and e6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qf6+.",
-          "en": "First move: Qf6+."
+          "ru": "Первый ход: Qxf6+.",
+          "en": "First move: Qxf6+."
         }
       ],
       "explanation": {
-        "ru": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь качается между f6 и e6, король вынужден ходить g8–h8, позиция повторяется: ничья.",
-        "en": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen swings between f6 and e6, the king must shuttle g8–h8, and the position repeats: a draw."
+        "ru": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь качается между f6 и e6, король вынужден ходить g8–h8. Позиция повторяется: ничья.",
+        "en": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen swings between f6 and e6, the king must shuttle g8–h8. The position repeats: a draw."
       },
       "source": {
         "provider": "original",
@@ -5372,290 +5372,10 @@
       "id": "grm-092"
     },
     {
-      "fen": "2R3Kn/8/8/7q/r7/4Q3/p7/k2N3r w - - 0 1",
+      "fen": "5b1k/7p/3Q1p1P/8/8/q7/r7/6K1 w - - 0 1",
       "setupMove": null,
       "solution": [
-        "e3c3",
-        "a1b1",
-        "c3d3",
-        "b1a1",
-        "d3c3"
-      ],
-      "task": {
-        "type": "DRAW",
-        "plies": 3
-      },
-      "rating": 2400,
-      "themes": [
-        "perpetualCheck"
-      ],
-      "timeLimitSec": 280,
-      "title": {
-        "ru": "Вечный шах в углу",
-        "en": "Perpetual in the corner"
-      },
-      "prompt": {
-        "ru": "Ход белых. Добейтесь ничьей.",
-        "en": "White to move. Draw the game."
-      },
-      "hints": [
-        {
-          "tier": 1,
-          "ru": "Чёрный король заперт в углу a1.",
-          "en": "The black king is trapped in the a1 corner."
-        },
-        {
-          "tier": 2,
-          "ru": "Ферзь шахует с c3 и d3; король ходит только a1–b1.",
-          "en": "The queen checks from c3 and d3; the king can only shuttle a1–b1."
-        },
-        {
-          "tier": 3,
-          "ru": "Первый ход: Qc3+.",
-          "en": "First move: Qc3+."
-        }
-      ],
-      "explanation": {
-        "ru": "Qc3+ Kb1 Qd3+ Ka1 Qc3+ — ферзь чередует c3 и d3, король ходит только a1–b1, и позиция повторяется: ничья.",
-        "en": "Qc3+ Kb1 Qd3+ Ka1 Qc3+ — the queen alternates c3 and d3, the king can only shuttle a1–b1, and the position repeats: a draw."
-      },
-      "source": {
-        "provider": "original",
-        "id": "etude-perpetual-03",
-        "license": "proprietary"
-      },
-      "chapter": "perpetual-check",
-      "id": "grm-093"
-    },
-    {
-      "fen": "nK3R2/8/8/q7/7r/3Q4/7p/r3N2k w - - 0 1",
-      "setupMove": null,
-      "solution": [
-        "d3f3",
-        "h1g1",
-        "f3e3",
-        "g1h1",
-        "e3f3"
-      ],
-      "task": {
-        "type": "DRAW",
-        "plies": 3
-      },
-      "rating": 2400,
-      "themes": [
-        "perpetualCheck"
-      ],
-      "timeLimitSec": 280,
-      "title": {
-        "ru": "Маятник",
-        "en": "Pendulum"
-      },
-      "prompt": {
-        "ru": "Ход белых. Добейтесь ничьей.",
-        "en": "White to move. Draw the game."
-      },
-      "hints": [
-        {
-          "tier": 1,
-          "ru": "Король на h1 — шахуйте по диагонали.",
-          "en": "The king is on h1 — check along the diagonal."
-        },
-        {
-          "tier": 2,
-          "ru": "Ферзь ходит между f3 и e3; король вынужден ходить g1–h1.",
-          "en": "The queen moves between f3 and e3; the king must shuttle g1–h1."
-        },
-        {
-          "tier": 3,
-          "ru": "Первый ход: Qf3+.",
-          "en": "First move: Qf3+."
-        }
-      ],
-      "explanation": {
-        "ru": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — ферзь качается между f3 и e3, король ходит g1–h1, позиция повторяется: ничья.",
-        "en": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — the queen swings between f3 and e3, the king shuttles g1–h1, and the position repeats: a draw."
-      },
-      "source": {
-        "provider": "original",
-        "id": "etude-perpetual-04",
-        "license": "proprietary"
-      },
-      "chapter": "perpetual-check",
-      "id": "grm-094"
-    },
-    {
-      "fen": "k2N3r/p7/B7/8/7q/8/8/2Q3Kn w - - 0 1",
-      "setupMove": null,
-      "solution": [
-        "c1c6",
-        "a8b8",
-        "c6d6",
-        "b8a8",
-        "d6c6"
-      ],
-      "task": {
-        "type": "DRAW",
-        "plies": 3
-      },
-      "rating": 2400,
-      "themes": [
-        "perpetualCheck"
-      ],
-      "timeLimitSec": 280,
-      "title": {
-        "ru": "Слон на страже",
-        "en": "Bishop on guard"
-      },
-      "prompt": {
-        "ru": "Ход белых. Добейтесь ничьей.",
-        "en": "White to move. Draw the game."
-      },
-      "hints": [
-        {
-          "tier": 1,
-          "ru": "Тот же маятник, но поля отсекает слон, а не ладья.",
-          "en": "The same pendulum, but a bishop instead of a rook cuts off the squares."
-        },
-        {
-          "tier": 2,
-          "ru": "Ферзь чередует c6 и d6; король заперт в углу.",
-          "en": "The queen alternates c6 and d6; the king is boxed in the corner."
-        },
-        {
-          "tier": 3,
-          "ru": "Первый ход: Qc6+.",
-          "en": "First move: Qc6+."
-        }
-      ],
-      "explanation": {
-        "ru": "Qc6+ Kb8 Qd6+ Ka8 Qc6+ — ферзь чередует c6 и d6; слон a6 и конь d8 отнимают у короля все поля: ничья.",
-        "en": "Qc6+ Kb8 Qd6+ Ka8 Qc6+ — the queen alternates c6 and d6; the bishop on a6 and the knight on d8 take away all the king's squares: a draw."
-      },
-      "source": {
-        "provider": "original",
-        "id": "etude-perpetual-05",
-        "license": "proprietary"
-      },
-      "chapter": "perpetual-check",
-      "id": "grm-095"
-    },
-    {
-      "fen": "6Kn/8/7B/2Q4q/8/8/p7/k2N3r w - - 0 1",
-      "setupMove": null,
-      "solution": [
-        "c5c3",
-        "a1b1",
-        "c3d3",
-        "b1a1",
-        "d3c3"
-      ],
-      "task": {
-        "type": "DRAW",
-        "plies": 3
-      },
-      "rating": 2400,
-      "themes": [
-        "perpetualCheck"
-      ],
-      "timeLimitSec": 280,
-      "title": {
-        "ru": "Слон на страже",
-        "en": "Bishop on guard"
-      },
-      "prompt": {
-        "ru": "Ход белых. Добейтесь ничьей.",
-        "en": "White to move. Draw the game."
-      },
-      "hints": [
-        {
-          "tier": 1,
-          "ru": "Король заперт в углу a1, помогите ферзю слоном.",
-          "en": "The king is trapped in the a1 corner; let the bishop help the queen."
-        },
-        {
-          "tier": 2,
-          "ru": "Ферзь качается между c3 и d3; король не может вырваться.",
-          "en": "The queen swings between c3 and d3; the king cannot escape."
-        },
-        {
-          "tier": 3,
-          "ru": "Первый ход: Qc3+.",
-          "en": "First move: Qc3+."
-        }
-      ],
-      "explanation": {
-        "ru": "Qc3+ Kb1 Qd3+ Ka1 Qc3+ — ферзь качается между c3 и d3, слон h6 и конь d1 не дают королю вырваться: ничья.",
-        "en": "Qc3+ Kb1 Qd3+ Ka1 Qc3+ — the queen swings between c3 and d3, the bishop on h6 and the knight on d1 keep the king boxed in: a draw."
-      },
-      "source": {
-        "provider": "original",
-        "id": "etude-perpetual-06",
-        "license": "proprietary"
-      },
-      "chapter": "perpetual-check",
-      "id": "grm-096"
-    },
-    {
-      "fen": "nK6/8/B7/q4Q2/8/8/7p/r3N2k w - - 0 1",
-      "setupMove": null,
-      "solution": [
-        "f5f3",
-        "h1g1",
-        "f3e3",
-        "g1h1",
-        "e3f3"
-      ],
-      "task": {
-        "type": "DRAW",
-        "plies": 3
-      },
-      "rating": 2400,
-      "themes": [
-        "perpetualCheck"
-      ],
-      "timeLimitSec": 280,
-      "title": {
-        "ru": "Слон на страже",
-        "en": "Bishop on guard"
-      },
-      "prompt": {
-        "ru": "Ход белых. Добейтесь ничьей.",
-        "en": "White to move. Draw the game."
-      },
-      "hints": [
-        {
-          "tier": 1,
-          "ru": "Король на h1, ищите шах по диагонали.",
-          "en": "The king is on h1; look for a check along the diagonal."
-        },
-        {
-          "tier": 2,
-          "ru": "Ферзь чередует f3 и e3; король заперт в углу.",
-          "en": "The queen alternates f3 and e3; the king is boxed in the corner."
-        },
-        {
-          "tier": 3,
-          "ru": "Первый ход: Qf3+.",
-          "en": "First move: Qf3+."
-        }
-      ],
-      "explanation": {
-        "ru": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — ферзь чередует f3 и e3, слон a6 и конь e1 отнимают поля: ничья.",
-        "en": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — the queen alternates f3 and e3, the bishop on a6 and the knight on e1 cover the escapes: a draw."
-      },
-      "source": {
-        "provider": "original",
-        "id": "etude-perpetual-07",
-        "license": "proprietary"
-      },
-      "chapter": "perpetual-check",
-      "id": "grm-097"
-    },
-    {
-      "fen": "r3N2k/7p/6Pr/8/q7/B7/8/nK3Q2 w - - 0 1",
-      "setupMove": null,
-      "solution": [
-        "f1f6",
+        "d6f6",
         "h8g8",
         "f6e6",
         "g8h8",
@@ -5671,8 +5391,8 @@
       ],
       "timeLimitSec": 280,
       "title": {
-        "ru": "Пешка-страж",
-        "en": "Pawn on guard"
+        "ru": "Слон на страже",
+        "en": "Bishop on guard"
       },
       "prompt": {
         "ru": "Ход белых. Добейтесь ничьей.",
@@ -5681,93 +5401,37 @@
       "hints": [
         {
           "tier": 1,
-          "ru": "Король на h8, помогите ферзю пешкой g6.",
-          "en": "The king is on h8; let the g6-pawn help the queen."
+          "ru": "Король h8 заперт; слон f8 держит поле f8.",
+          "en": "The king on h8 is boxed in; the bishop on f8 holds f8."
         },
         {
           "tier": 2,
-          "ru": "Ферзь качается между f6 и e6; король не может вырваться.",
-          "en": "The queen swings between f6 and e6; the king cannot escape."
+          "ru": "Ферзь берёт f6 с шахом, затем уходит на e6.",
+          "en": "The queen takes on f6 with check, then goes to e6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qf6+.",
-          "en": "First move: Qf6+."
+          "ru": "Первый ход: Qxf6+.",
+          "en": "First move: Qxf6+."
         }
       ],
       "explanation": {
-        "ru": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь качается между f6 и e6; пешка g6 и слон a3 не пускают короля: ничья.",
-        "en": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen swings between f6 and e6; the g6-pawn and the bishop on a3 keep the king in: a draw."
+        "ru": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь чередует f6 и e6. Слон f8 и пешка h6 не дают королю вырваться: ничья.",
+        "en": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen alternates f6 and e6. The bishop on f8 and the h6-pawn keep the king in: a draw."
       },
       "source": {
         "provider": "original",
-        "id": "etude-perpetual-08",
+        "id": "etude-perpetual-03",
         "license": "proprietary"
       },
       "chapter": "perpetual-check",
-      "id": "grm-098"
+      "id": "grm-093"
     },
     {
-      "fen": "nK3R2/8/8/q7/7r/1Q6/7p/r3N2k w - - 0 1",
+      "fen": "5b1k/7p/3Q1p1P/8/1q6/8/r7/5K2 w - - 0 1",
       "setupMove": null,
       "solution": [
-        "b3f3",
-        "h1g1",
-        "f3e3",
-        "g1h1",
-        "e3f3"
-      ],
-      "task": {
-        "type": "DRAW",
-        "plies": 3
-      },
-      "rating": 2400,
-      "themes": [
-        "perpetualCheck"
-      ],
-      "timeLimitSec": 280,
-      "title": {
-        "ru": "Ладья-страж",
-        "en": "Rook on guard"
-      },
-      "prompt": {
-        "ru": "Ход белых. Добейтесь ничьей.",
-        "en": "White to move. Draw the game."
-      },
-      "hints": [
-        {
-          "tier": 1,
-          "ru": "Король на h1, ладья должна отсечь поле f1.",
-          "en": "The king is on h1; the rook must cut off f1."
-        },
-        {
-          "tier": 2,
-          "ru": "Ферзь шахует с f3 и e3; король ходит только g1–h1.",
-          "en": "The queen checks from f3 and e3; the king can only shuttle g1–h1."
-        },
-        {
-          "tier": 3,
-          "ru": "Первый ход: Qf3+.",
-          "en": "First move: Qf3+."
-        }
-      ],
-      "explanation": {
-        "ru": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — ферзь ходит f3–e3, король g1–h1; ладья f8 и конь e1 закрывают выходы: ничья.",
-        "en": "Qf3+ Kg1 Qe3+ Kh1 Qf3+ — the queen alternates f3–e3, the king shuttles g1–h1; the rook on f8 and the knight on e1 close the exits: a draw."
-      },
-      "source": {
-        "provider": "original",
-        "id": "etude-perpetual-09",
-        "license": "proprietary"
-      },
-      "chapter": "perpetual-check",
-      "id": "grm-099"
-    },
-    {
-      "fen": "r3N2k/7p/6Pr/8/q6Q/8/8/nK3R2 w - - 0 1",
-      "setupMove": null,
-      "solution": [
-        "h4f6",
+        "d6f6",
         "h8g8",
         "f6e6",
         "g8h8",
@@ -5798,18 +5462,354 @@
         },
         {
           "tier": 2,
-          "ru": "Ферзь уходит из-под боя и качается f6–e6; король заперт.",
-          "en": "The queen escapes the attack and swings f6–e6; the king is boxed in."
+          "ru": "Qxf6+ уводит ферзя из-под боя; далее f6–e6.",
+          "en": "Qxf6+ takes the queen out of danger; then f6–e6."
         },
         {
           "tier": 3,
-          "ru": "Первый ход: Qf6+.",
-          "en": "First move: Qf6+."
+          "ru": "Первый ход: Qxf6+.",
+          "en": "First move: Qxf6+."
         }
       ],
       "explanation": {
-        "ru": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь уходит из-под боя и качается f6–e6; пешка g6 и ладья f1 не дают королю вырваться: ничья.",
-        "en": "Qf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen escapes the attack and swings f6–e6; the g6-pawn and the rook on f1 keep the king boxed in: a draw."
+        "ru": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь уходит из-под боя и качается f6–e6. Пешка h6 и слон f8 держат короля: ничья.",
+        "en": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen escapes the attack and swings f6–e6. The h6-pawn and the bishop on f8 keep the king in: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-04",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-094"
+    },
+    {
+      "fen": "5b1k/7p/3Q1p1P/8/1q6/8/r7/7K w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "d6f6",
+        "h8g8",
+        "f6e6",
+        "g8h8",
+        "e6f6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Вечный шах в углу",
+        "en": "Perpetual in the corner"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король h8 заперт; ищите шахи по диагонали.",
+          "en": "The king on h8 is boxed in; look for diagonal checks."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь берёт f6 с шахом и качается f6–e6.",
+          "en": "The queen takes on f6 with check and swings f6–e6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf6+.",
+          "en": "First move: Qxf6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь чередует f6 и e6, король ходит g8–h8. Позиция повторяется: ничья.",
+        "en": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen alternates f6 and e6, the king shuttles g8–h8. The position repeats: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-05",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-095"
+    },
+    {
+      "fen": "5b1k/7p/3Q1p1P/8/1q6/8/r7/3K4 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "d6f6",
+        "h8g8",
+        "f6e6",
+        "g8h8",
+        "e6f6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Маятник",
+        "en": "Pendulum"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король h8 заперт; ищите шахи по диагонали.",
+          "en": "The king on h8 is boxed in; look for diagonal checks."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь берёт f6 с шахом, затем качается f6–e6.",
+          "en": "The queen takes on f6 with check, then swings f6–e6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxf6+.",
+          "en": "First move: Qxf6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — ферзь чередует f6 и e6. Пешка h6 и слон f8 не дают королю вырваться: ничья.",
+        "en": "Qxf6+ Kg8 Qe6+ Kh8 Qf6+ — the queen alternates f6 and e6. The h6-pawn and the bishop on f8 keep the king in: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-06",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-096"
+    },
+    {
+      "fen": "k1b5/p7/P1p1Q3/8/6q1/8/7r/1K6 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "e6c6",
+        "a8b8",
+        "c6d6",
+        "b8a8",
+        "d6c6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Вечный шах в углу",
+        "en": "Perpetual in the corner"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король a8 заперт; ищите шахи по диагонали.",
+          "en": "The king on a8 is boxed in; look for diagonal checks."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь берёт пешку c6 с шахом, затем качается между c6 и d6.",
+          "en": "The queen takes the c6-pawn with check, then swings between c6 and d6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxc6+.",
+          "en": "First move: Qxc6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qxc6+ Kb8 Qd6+ Ka8 Qc6+ — ферзь чередует c6 и d6, король ходит только a8–b8. Позиция повторяется: ничья вечным шахом.",
+        "en": "Qxc6+ Kb8 Qd6+ Ka8 Qc6+ — the queen alternates c6 and d6, the king can only shuttle a8–b8. The position repeats: a draw by perpetual check."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-07",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-097"
+    },
+    {
+      "fen": "k1b4q/p7/P1p1Q3/8/8/8/7r/1K6 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "e6c6",
+        "a8b8",
+        "c6d6",
+        "b8a8",
+        "d6c6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Слон на страже",
+        "en": "Bishop on guard"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король a8 заперт; слон c8 держит поле c8.",
+          "en": "The king on a8 is boxed in; the bishop on c8 holds c8."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь берёт c6 с шахом, затем качается c6–d6.",
+          "en": "The queen takes on c6 with check, then swings c6–d6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxc6+.",
+          "en": "First move: Qxc6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qxc6+ Kb8 Qd6+ Ka8 Qc6+ — ферзь чередует c6 и d6. Слон c8 и пешка a6 не дают королю вырваться: ничья.",
+        "en": "Qxc6+ Kb8 Qd6+ Ka8 Qc6+ — the queen alternates c6 and d6. The bishop on c8 and the a6-pawn keep the king in: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-08",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-098"
+    },
+    {
+      "fen": "k1b5/p7/P1p1Q3/8/6q1/8/7r/2K5 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "e6c6",
+        "a8b8",
+        "c6d6",
+        "b8a8",
+        "d6c6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Пешка-страж",
+        "en": "Pawn on guard"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Король a8 заперт; пешка a6 держит b7.",
+          "en": "The king on a8 is boxed in; the a6-pawn holds b7."
+        },
+        {
+          "tier": 2,
+          "ru": "Ферзь берёт c6 с шахом и качается c6–d6.",
+          "en": "The queen takes on c6 with check and swings c6–d6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxc6+.",
+          "en": "First move: Qxc6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qxc6+ Kb8 Qd6+ Ka8 Qc6+ — ферзь чередует c6 и d6. Пешка a6 и слон c8 не пускают короля: ничья.",
+        "en": "Qxc6+ Kb8 Qd6+ Ka8 Qc6+ — the queen alternates c6 and d6. The a6-pawn and the bishop on c8 keep the king in: a draw."
+      },
+      "source": {
+        "provider": "original",
+        "id": "etude-perpetual-09",
+        "license": "proprietary"
+      },
+      "chapter": "perpetual-check",
+      "id": "grm-099"
+    },
+    {
+      "fen": "k1b4q/p7/P1p1Q3/8/8/8/7r/2K5 w - - 0 1",
+      "setupMove": null,
+      "solution": [
+        "e6c6",
+        "a8b8",
+        "c6d6",
+        "b8a8",
+        "d6c6"
+      ],
+      "task": {
+        "type": "DRAW",
+        "plies": 3
+      },
+      "rating": 2400,
+      "themes": [
+        "perpetualCheck"
+      ],
+      "timeLimitSec": 280,
+      "title": {
+        "ru": "Ферзь под боем",
+        "en": "Queen under attack"
+      },
+      "prompt": {
+        "ru": "Ход белых. Добейтесь ничьей.",
+        "en": "White to move. Draw the game."
+      },
+      "hints": [
+        {
+          "tier": 1,
+          "ru": "Ферзь под ударом — спасайте его вечным шахом.",
+          "en": "The queen is attacked — save it with perpetual check."
+        },
+        {
+          "tier": 2,
+          "ru": "Qxc6+ уводит ферзя из-под боя; далее c6–d6.",
+          "en": "Qxc6+ takes the queen out of danger; then c6–d6."
+        },
+        {
+          "tier": 3,
+          "ru": "Первый ход: Qxc6+.",
+          "en": "First move: Qxc6+."
+        }
+      ],
+      "explanation": {
+        "ru": "Qxc6+ Kb8 Qd6+ Ka8 Qc6+ — ферзь уходит из-под боя и качается c6–d6. Пешка a6 и слон c8 держат короля: ничья.",
+        "en": "Qxc6+ Kb8 Qd6+ Ka8 Qc6+ — the queen escapes the attack and swings c6–d6. The a6-pawn and the bishop on c8 keep the king in: a draw."
       },
       "source": {
         "provider": "original",

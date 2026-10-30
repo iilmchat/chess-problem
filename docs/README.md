@@ -35,7 +35,8 @@
 | --- | --- |
 | [RELEASES.md](development/RELEASES.md) | Пошаговый чек-лист выпуска версии |
 | [MANUAL_TESTING_GUIDE.md](qa/MANUAL_TESTING_GUIDE.md) | Ручные кейсы, матрица устройств, шаблон баг-репорта |
-| [Content review](../tools/review/README.md) | Офлайн-ревьюер 180 задач: две доски, RU/EN тексты, статусы, экспорт |
+| [Content review](../tools/review/README.md) | Офлайн-ревьюер 360 задач: две доски, RU/EN тексты, статусы, импорт/экспорт |
+| [AI review v0.4.0](reviews/v0.4.0-ai-review.md) | Пакет ревью 180 новых задач: проверки, исправления, 40 DRAW на подтверждение |
 | [KNOWN_ISSUES.md](KNOWN_ISSUES.md) | Реестр известных проблем и ограничений (KI-XXX) |
 | [CHANGELOG.md](CHANGELOG.md) | История версий в формате Keep a Changelog |
 | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md) | Политика конфиденциальности RU/EN |
@@ -56,6 +57,7 @@
 | Валидатор контента | [tools/validate-content.mjs](../tools/validate-content.mjs) |
 | Воспроизводимый отбор 60 задач (v0.2.1) | [tools/lichess-selection.json](../tools/lichess-selection.json) |
 | Воспроизводимый отбор 180 задач (v0.3.0) | [tools/lichess-selection-v030.json](../tools/lichess-selection-v030.json) |
+| Воспроизводимый отбор 180 задач (v0.4.0) | [tools/lichess-selection-v040.json](../tools/lichess-selection-v040.json) |
 | Модули и состояние сессии | [ARCHITECTURE.md](development/ARCHITECTURE.md) |
 | Требования RuStore | [RUSTORE.md](development/RUSTORE.md) |
 | Политику конфиденциальности | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md) |
@@ -67,12 +69,12 @@
 
 | Документ | Статус |
 | --- | --- |
-| README | актуален на v0.3.0-180-puzzles |
+| README | актуален на v0.4.0-360-puzzles |
 | DESIGN v0.1 | первая редакция, правила реализуются в Android |
 | UI/UX SPEC | первая редакция, прототип и Android-срезы сверены |
-| CONTENT PLAN | первая редакция, 180 production-задач проверены; цель — 360 |
+| CONTENT PLAN | первая редакция, 360 production-задач собраны; AI-ревью — на подтверждении |
 | USER_GUIDE | черновик до первого публичного билда |
-| MANUAL_TESTING_GUIDE | smoke 180 задач на Pixel 6 API 36; полная матрица — перед релизом |
+| MANUAL_TESTING_GUIDE | smoke 180 задач v0.3.0; drag/TalkBack и 360 задач — перед релизом |
 | ARCHITECTURE | реализованная архитектура v0.3.0 |
 | GETTING_STARTED | Android-проект, 180 задач, сборка и troubleshooting |
 | CONTENT_AUTHORING | первая редакция, валидатор работает |
