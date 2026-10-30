@@ -36,7 +36,7 @@
 | [RELEASES.md](development/RELEASES.md) | Пошаговый чек-лист выпуска версии |
 | [MANUAL_TESTING_GUIDE.md](qa/MANUAL_TESTING_GUIDE.md) | Ручные кейсы, матрица устройств, шаблон баг-репорта |
 | [Content review](../tools/review/README.md) | Офлайн-ревьюер 360 задач: две доски, RU/EN тексты, статусы, импорт/экспорт |
-| [AI review v0.4.0](reviews/v0.4.0-ai-review.md) | Пакет ревью 180 новых задач: проверки, исправления, 40 DRAW на подтверждение |
+| [AI review v0.4.0](reviews/v0.4.0-ai-review.md) | Пакет ревью 180 новых задач: проверки, исправления, человеческое подтверждение 180/180 |
 | [KNOWN_ISSUES.md](KNOWN_ISSUES.md) | Реестр известных проблем и ограничений (KI-XXX) |
 | [CHANGELOG.md](CHANGELOG.md) | История версий в формате Keep a Changelog |
 | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md) | Политика конфиденциальности RU/EN |
@@ -72,7 +72,7 @@
 | README | актуален на v0.4.0-360-puzzles |
 | DESIGN v0.1 | первая редакция, правила реализуются в Android |
 | UI/UX SPEC | первая редакция, прототип и Android-срезы сверены |
-| CONTENT PLAN | первая редакция, 360 production-задач собраны; AI-ревью — на подтверждении |
+| CONTENT PLAN | первая редакция, 360 production-задач собраны; человеческое ревью — 360/360 OK |
 | USER_GUIDE | черновик до первого публичного билда |
 | MANUAL_TESTING_GUIDE | smoke 180 задач v0.3.0; drag/TalkBack и 360 задач — перед релизом |
 | ARCHITECTURE | реализованная архитектура v0.3.0 |

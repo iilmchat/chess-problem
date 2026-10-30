@@ -1,0 +1,1101 @@
+{
+  "contentVersion": "2026.10.4",
+  "generatedAt": "2026-10-30T12:00:00.000Z",
+  "exportedAt": "2026-10-30T12:00:00.000Z",
+  "review": {
+    "kind": "human",
+    "date": "2026-10-30",
+    "result": "180/180 OK, no errors or remarks",
+    "issue": "KI-017"
+  },
+  "summary": {
+    "total": 180,
+    "reviewed": 180,
+    "ok": 180,
+    "fix": 0,
+    "skip": 0,
+    "unreviewed": 0
+  },
+  "notes": [
+    {
+      "puzzleId": "nov-061",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-062",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-063",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-064",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-065",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-066",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-067",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-068",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-069",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-070",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-071",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-072",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-073",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-074",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-075",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-076",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-077",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-078",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-079",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-080",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-081",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-082",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-083",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-084",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-085",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-086",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-087",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-088",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-089",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-090",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-091",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-092",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-093",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-094",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-095",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-096",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-097",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-098",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-099",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-100",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-101",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-102",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-103",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-104",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-105",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-106",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-107",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-108",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-109",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-110",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-111",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-112",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-113",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-114",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-115",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-116",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-117",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-118",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-119",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "nov-120",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-061",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-062",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-063",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-064",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-065",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-066",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-067",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-068",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-069",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-070",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-071",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-072",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-073",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-074",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-075",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-076",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-077",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-078",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-079",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-080",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-081",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-082",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-083",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-084",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-085",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-086",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-087",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-088",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-089",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-090",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-091",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-092",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-093",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-094",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-095",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-096",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-097",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-098",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-099",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-100",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-101",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-102",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-103",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-104",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-105",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-106",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-107",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-108",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-109",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-110",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-111",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-112",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-113",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-114",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-115",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-116",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-117",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-118",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-119",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "pro-120",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-061",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-062",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-063",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-064",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-065",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-066",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-067",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-068",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-069",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-070",
+      "status": "ok",
+      "comment": "AI: Lichess equality; линия легальна, финал — позиционная ничья (chess.js не определяет). Подтвердите оценку ничьей.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-071",
+      "status": "ok",
+      "comment": "AI: эталонный пат; Stockfish 0.00, без мата. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-072",
+      "status": "ok",
+      "comment": "AI: пат-этюд пересобран (слон b6). Финал — пат, Stockfish 0.00, без мата. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-073",
+      "status": "ok",
+      "comment": "AI: эталонный пат; Stockfish 0.00, без мата. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-074",
+      "status": "ok",
+      "comment": "AI: пат-этюд пересобран (слон g3). Финал — пат, Stockfish 0.00, без мата. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-075",
+      "status": "ok",
+      "comment": "AI: эталонный пат; Stockfish 0.00, без мата. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-076",
+      "status": "ok",
+      "comment": "AI: добавлена пешка g6, чтобы убрать мат Qh5. Qxg6+ ведёт к пату; Stockfish 0.00.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-077",
+      "status": "ok",
+      "comment": "AI: эталонный пат; Stockfish 0.00, без мата. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-078",
+      "status": "ok",
+      "comment": "AI: добавлена пешка b6, чтобы убрать мат Qa5. Qxb6+ ведёт к пату; Stockfish 0.00.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-079",
+      "status": "ok",
+      "comment": "AI: эталонный пат; Stockfish 0.00, без мата. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-080",
+      "status": "ok",
+      "comment": "AI: пат-этюд пересобран (слон b6, ферзь b1). Финал — пат, Stockfish 0.00.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-081",
+      "status": "ok",
+      "comment": "AI: табличная ничья, единственный ничейный ход. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-082",
+      "status": "ok",
+      "comment": "AI: табличная ничья, единственный ничейный ход. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-083",
+      "status": "ok",
+      "comment": "AI: крепость заменена на табличную ничью; единственный ход Kb6. Подтверждено Lichess tablebase.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-084",
+      "status": "ok",
+      "comment": "AI: крепость заменена на табличную ничью; единственный ход Kc6. Подтверждено Lichess tablebase.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-085",
+      "status": "ok",
+      "comment": "AI: крепость заменена на табличную ничью; единственный ход Kd6. Подтверждено Lichess tablebase.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-086",
+      "status": "ok",
+      "comment": "AI: крепость заменена на табличную ничью; единственный ход Ke6. Подтверждено Lichess tablebase.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-087",
+      "status": "ok",
+      "comment": "AI: крепость заменена на табличную ничью; единственный ход Kf6. Подтверждено Lichess tablebase.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-088",
+      "status": "ok",
+      "comment": "AI: крепость заменена на табличную ничью; единственный ход Kg6. Подтверждено Lichess tablebase.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-089",
+      "status": "ok",
+      "comment": "AI: крепость заменена на табличную ничью; единственный ход Kc6. Подтверждено Lichess tablebase.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-090",
+      "status": "ok",
+      "comment": "AI: крепость заменена на табличную ничью; единственный ход Kb6. Подтверждено Lichess tablebase.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-091",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-092",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-093",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-094",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-095",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-096",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-097",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-098",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-099",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-100",
+      "status": "ok",
+      "comment": "AI: вечный шах пересобран; Stockfish 0.00, без мата; линия повторяется. Подтвердите.",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-101",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-102",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-103",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-104",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-105",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-106",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-107",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-108",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-109",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-110",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-111",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-112",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-113",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-114",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-115",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-116",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-117",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-118",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-119",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "puzzleId": "grm-120",
+      "status": "ok",
+      "comment": "AI: механически проверено (линия, финал, RU/EN).",
+      "updatedAt": "2026-10-30T12:00:00.000Z"
+    }
+  ]
+}
