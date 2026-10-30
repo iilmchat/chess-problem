@@ -21,6 +21,8 @@
 **План:** опубликовать `docs/legal/PRIVACY_POLICY.md` на
 `iiruchating.ru/chess-problem/privacy` или GitHub Pages; указать URL в карточке
 и в приложении.
+**Проверка 2026-10-30:** `https://iiruchating.ru/chess-problem/privacy`
+возвращает **404** — публикация всё ещё требуется.
 
 ### KI-007 — Название и package — рабочие
 

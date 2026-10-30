@@ -34,6 +34,7 @@
 | Документ | Что внутри |
 | --- | --- |
 | [RELEASES.md](development/RELEASES.md) | Пошаговый чек-лист выпуска версии |
+| [Release checklist v0.4.0](reviews/v0.4.0-release-checklist.md) | Сборка, подпись, store-ассеты, device QA и блокеры v0.4.0 |
 | [MANUAL_TESTING_GUIDE.md](qa/MANUAL_TESTING_GUIDE.md) | Ручные кейсы, матрица устройств, шаблон баг-репорта |
 | [Content review](../tools/review/README.md) | Офлайн-ревьюер 360 задач: две доски, RU/EN тексты, статусы, импорт/экспорт |
 | [AI review v0.4.0](reviews/v0.4.0-ai-review.md) | Пакет ревью 180 новых задач: проверки, исправления, человеческое подтверждение 180/180 |

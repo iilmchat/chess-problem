@@ -1,6 +1,15 @@
+import java.util.Properties
+
 plugins {
     id("chessproblem.android.application")
     id("chessproblem.android.compose")
+}
+
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties().apply {
+    if (keystorePropertiesFile.exists()) {
+        keystorePropertiesFile.inputStream().use { load(it) }
+    }
 }
 
 android {
@@ -8,6 +17,22 @@ android {
 
     defaultConfig {
         applicationId = "com.iilmchat.chessproblem"
+    }
+
+    signingConfigs {
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
+                listOf("storeFile", "storePassword", "keyAlias", "keyPassword").forEach { key ->
+                    require(!keystoreProperties.getProperty(key).isNullOrBlank()) {
+                        "keystore.properties is missing '$key'"
+                    }
+                }
+                storeFile = rootProject.file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
+        }
     }
 
     buildFeatures {
@@ -22,6 +47,9 @@ android {
 
     buildTypes {
         release {
+            if (keystorePropertiesFile.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(

@@ -19,6 +19,17 @@
 - `versionCode` никогда не уменьшается: RuStore отклонит сборку.
 - Тег в git: `vX.Y.Z`, аннотированный, с ссылкой на CHANGELOG.
 
+### 1.1. Ключ подписи
+
+1. Создайте release-keystore **вне репозитория** и сохраните его в надёжном
+   месте (потеря ключа = невозможность обновлять приложение).
+2. Скопируйте `keystore.properties.example` в `keystore.properties` в корне
+   проекта и заполните `storeFile`, `storePassword`, `keyAlias`,
+   `keyPassword`.
+3. `keystore.properties` и `*.jks` уже в `.gitignore`; не коммитьте их.
+4. Если файла нет, `bundleRelease` соберёт **unsigned** AAB — это удобно для
+   локальной проверки, но не для публикации.
+
 ---
 
 ## 2. Заморозка

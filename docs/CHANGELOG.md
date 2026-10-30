@@ -35,6 +35,9 @@
   nov-001..029 не даёт ложных срабатываний высокого уровня.
 - Drag-and-drop фигур, подсветка целей, drag-to-promotion и тактильная
   отдача; TalkBack-семантика 64 клеток с итоговым узлом доски.
+- Release-подпись через `keystore.properties` (шаблон
+  `keystore.properties.example`), release AAB в CI, monochrome-иконка и
+  store-иконка 512×512.
 
 ### Changed
 
