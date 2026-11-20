@@ -4,7 +4,7 @@
 так. Они не заменяют [ARCHITECTURE](../ARCHITECTURE.md): архитектура описывает
 текущее устройство, ADR — историю выбора и его последствия.
 
-**Статус:** 8 решений принято · **Дата:** 28.10.2026
+**Статус:** 10 решений принято · **Дата:** 20.11.2026
 **Связано:** [ARCHITECTURE](../ARCHITECTURE.md) · [RULES](../RULES.md) · [DESIGN](../../design/DESIGN_V01_MVP.md)
 
 ---
@@ -21,6 +21,8 @@
 | [0006](0006-monetization-deferred.md) | Запуск без монетизации; lifetime Premium позже | Accepted | 28.10.2026 |
 | [0007](0007-manual-di.md) | Ручной DI через `AppContainer` | Accepted | 28.10.2026 |
 | [0008](0008-json-content-pipeline.md) | JSON-паки + машинная валидация в CI | Accepted | 28.10.2026 |
+| [0009](0009-content-versioning.md) | `contentVersion` и изоляция прогресса в Room (KI-018) | Accepted | 20.11.2026 |
+| [0010](0010-cold-start-theme-cache.md) | Синхронный кэш `theme`/`language` на холодном старте (KI-015) | Accepted | 20.11.2026 |
 
 ---
 
@@ -119,7 +121,7 @@ ADR обязателен, если решение:
 
 - Номер — четыре цифры, сквозной, не переиспользуется.
 - Файл — `NNNN-kebab-case.md`.
-- Следующий номер — 0009.
+- Следующий номер — 0011.
 - ADR, отменяющее предыдущее, получает новый номер и ссылку
   `Superseded by ADR-YYYY` в старом.
 

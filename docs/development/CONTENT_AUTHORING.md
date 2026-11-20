@@ -1,8 +1,10 @@
 # Content Authoring
 
-**Статус:** 180 production-задач в v0.3.0 · **Дата:** 28.10.2026
+**Статус:** 360 production-задач; v0.4.1 (`contentVersion` из паков) · **Дата:** 20.11.2026
 **Связано:** [CONTENT PLAN](../design/CONTENT_PLAN.md) · [схема](../../content/schema/puzzle-pack.schema.json) ·
-[валидатор](../../tools/validate-content.mjs) · [Lichess selection](../../tools/lichess-selection-v030.json)
+[валидатор](../../tools/validate-content.mjs) ·
+[Lichess selection v0.4.0](../../tools/lichess-selection-v040.json) ·
+[ADR-0009](adr/0009-content-versioning.md)
 
 Как добавить шахматную задачу, проверить линию, написать подсказки и разбор,
 собрать пак и не сломать прогресс игроков.
@@ -37,7 +39,9 @@ assets-каталог модуля `data` (статические демо-па�
 ### 1.1. Lichess-пайплайн
 
 Для production-контента используется `tools/import-lichess.mjs`; отбор
-180 задач зафиксирован в `tools/lichess-selection-v030.json`:
+зафиксирован в `tools/lichess-selection-v030.json` (180 задач v0.3.0) и
+`tools/lichess-selection-v040.json` (180 новых задач v0.4.0). Ещё 30 авторских
+этюдов v0.4.0 собираются `tools/etudes.mjs` из `tools/etudes/etudes.json`:
 
 ```bash
 # 1. Скачать lichess_db_puzzle.csv.zst с database.lichess.org и распаковать
@@ -65,6 +69,30 @@ node tools/validate-content.mjs
 склеенных zstd-фреймов, `tools/multiframe-zst.mjs` декодирует их по очереди.
 `merge` идемпотентен: повторный
 запуск сохраняет ID существующих задач и не считает их FEN дублями.
+
+Инструменты v0.4.0:
+
+| Инструмент | Назначение |
+| --- | --- |
+| `tools/import-lichess.mjs` | filter → draft → author → merge паков |
+| `tools/etudes.mjs`, `tools/etudes/etudes.json` | 30 авторских этюдов |
+| `tools/gen-texts.mjs` | авторинг RU/EN текстов для 150 новых Lichess-задач |
+| `tools/probe-equality.mjs`, `tools/study-draw-select.mjs` | разведка и отбор Lichess `equality` для `study-draw` |
+| `tools/precheck.mjs` | сверка текстов с линией перед человеческим ревью |
+| `tools/validate-content.mjs` | схема, легальность, `DRAW`, дубли, RU/EN |
+
+### 1.1.1. Авторские этюды v0.4.0
+
+30 позиций, распределенных поровну между тремя идеями:
+
+- 10 патов — жертва фигуры с шахом, вынужденное взятие, пат;
+- 10 крепостей — ладейная пешка в углу, оппозиция;
+- 10 вечных шахов — угловой маятник ферзя.
+
+Для патов и вечных шахов единственный ответ соперника подтверждён машинно
+(`opp=1`). Часть линий заканчивается ходом соперника, поэтому для `DRAW`
+допускается чётная длина `solution` (§2.2). Все тексты RU/EN прошли то же
+ревью, что и Lichess-задачи (KI-017).
 
 ### 1.2. Второе ревью
 
@@ -376,8 +404,10 @@ node tools/validate-content.mjs content/puzzles/novice.json
 - При исправлении линии ID сохраняется, `contentVersion` растёт.
 - Если задача стала нелегальной/спорной — удалите её и добавьте новую с новым
   ID; прогресс старой останется «осиротевшим», но не сломает приложение.
-- `contentVersion` — `YYYY.MM.N`; показывается в «О приложении».
-- При обновлении пака прогресс сопоставляется по ID.
+- `contentVersion` — `YYYY.MM.N` (сейчас `2026.10.4`); показывается в
+  «О приложении».
+- При обновлении пака прогресс сопоставляется по ID; демо-прогресс v0.2.0
+  изолирован от production-паков. Стратегия — ADR-0009 (KI-018).
 
 ---
 
@@ -385,7 +415,8 @@ node tools/validate-content.mjs content/puzzles/novice.json
 
 - [ ] FEN легален, сторона хода верная.
 - [ ] `setupMove` (если есть) легален и отделён от `solution`.
-- [ ] `solution` — UCI, нечётная длина, начинается с пользователя.
+- [ ] `solution` — UCI, начинается с пользователя; нечётная длина, кроме `DRAW`
+      с вынужденным последним ходом соперника.
 - [ ] `task.plies` = число ходов пользователя.
 - [ ] Для MATE последний ход — мат.
 - [ ] Нет очевидного альтернативного выигрыша (WIN/DRAW).

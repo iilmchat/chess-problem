@@ -1,6 +1,6 @@
 # Контент
 
-**Статус:** v0.3.0 — 180 production-задач в Android · **Дата:** 28.10.2026
+**Статус:** v0.4.0 — 360 production-задач в Android; подготовка v0.4.1 · **Дата:** 29.10.2026
 **Связано:** [CONTENT PLAN](../docs/design/CONTENT_PLAN.md) ·
 [CONTENT AUTHORING](../docs/development/CONTENT_AUTHORING.md) ·
 [схема](schema/puzzle-pack.schema.json)
@@ -21,14 +21,15 @@ content/
 │   ├── professional.sample.json  ← 1 задача
 │   └── grandmaster.sample.json   ← 1 задача
 ├── puzzles/
-│   ├── novice.json               ← production, 60 задач
-│   ├── professional.json         ← production, 60 задач
-│   └── grandmaster.json          ← production, 60 задач
+│   ├── novice.json               ← production, 120 задач
+│   ├── professional.json         ← production, 120 задач
+│   └── grandmaster.json          ← production, 120 задач
 └── README.md
 ```
 
-Один файл — один уровень. В v0.3.0 в каждом уровне 6 глав по 10 задач
-(180 всего); целевой v1.0 — 12 глав по 10 задач (120 на уровень, 360 всего).
+Один файл — один уровень. В v0.4.0 в каждом уровне 12 глав по 10 задач
+(120 на уровень, 360 всего), `contentVersion 2026.10.4`; тип `DRAW` и
+30 авторских этюдов вошли в production-паки.
 Примеры нужны для проверки схемы и валидатора, а не для релиза; их ID
 (`nov-001` и т.п.) — только примеры формата. Production-паки используют тот
 же диапазон ID для другого набора задач и проверяются отдельным запуском
@@ -36,7 +37,10 @@ content/
 
 Production-паки собраны из Lichess puzzle DB (CC0 1.0) по
 [`tools/lichess-selection-v030.json`](../tools/lichess-selection-v030.json) и
-проходят `tools/import-lichess.mjs author/merge` + `validate-content.mjs`.
+[`tools/lichess-selection-v040.json`](../tools/lichess-selection-v040.json),
+а также из 30 авторских этюдов `tools/etudes/etudes.json`, и проходят
+`tools/import-lichess.mjs author/merge`, `tools/precheck.mjs` и
+`tools/validate-content.mjs`.
 
 ---
 
@@ -103,7 +107,7 @@ Production-задачи имеют `source.provider = "lichess"`, `source.url` �
 ```bash
 npm ci --prefix tools
 
-# Production: 3 пака, 180 задач (валидатор выбирает content/puzzles)
+# Production: 3 пака, 360 задач (валидатор выбирает content/puzzles)
 node tools/validate-content.mjs
 
 # Примеры формата проверяются отдельно
@@ -113,9 +117,9 @@ node tools/validate-content.mjs content/samples
 Ожидаемый вывод:
 
 ```text
-OK  content/puzzles/grandmaster.json: 60 puzzles
-OK  content/puzzles/novice.json: 60 puzzles
-OK  content/puzzles/professional.json: 60 puzzles
+OK  content/puzzles/grandmaster.json: 120 puzzles
+OK  content/puzzles/novice.json: 120 puzzles
+OK  content/puzzles/professional.json: 120 puzzles
 ...
 OK  content/samples/novice.sample.json: 2 puzzles
 OK  content/samples/professional.sample.json: 1 puzzle
@@ -167,7 +171,9 @@ OK  content/samples/grandmaster.sample.json: 1 puzzle
 - `contentVersion` — `YYYY.MM.N`; показывается в «О приложении».
 - ID задач неизменяемы; удалённые ID не переиспользуются.
 - При исправлении линии ID сохраняется, `contentVersion` растёт.
-- Прогресс сопоставляется по ID; новые задачи не сбрасывают старый прогресс.
+- Прогресс сопоставляется по ID; новые задачи не сбрасывают старый прогресс;
+  демо-прогресс v0.2.0 изолирован
+  ([ADR-0009](../docs/development/adr/0009-content-versioning.md), KI-018).
 
 ---
 

@@ -58,14 +58,15 @@ drag-to-promotion, тактильная отдача и семантика 64 к
 принимает альтернативный мат.
 **План:** прототип оставить средством проверки композиции, не эталоном правил.
 
-### KI-014 — Нет instrumented и screenshot-тестов
+### KI-014 — Нет screenshot-тестов, process death и instrumented-прогона
 
-**Статус:** фундамент Compose UI-тестов закрыт в v0.4.1; screenshot-тесты остаются
-**Влияние:** CI проверяет unit-тесты `core`, 4 smoke UI-теста `:ui` на JVM
-(Robolectric) и detekt, но всё ещё нет instrumented/screenshot-прогона на
-эмуляторе.
-**План:** добавить screenshot tests на 360×800 и 430×932 и аппаратный прогон
-вместе с KI-010/KI-012.
+**Статус:** 4 JVM Compose UI-теста закрыты в v0.4.1; screenshot-тесты и process death остаются
+**Влияние:** CI проверяет unit-тесты `core`, 4 JVM Compose UI-теста `:ui`
+(Robolectric) — главная, ход на доске, лист подсказок, результат — и detekt, но
+по-прежнему нет screenshot-прогона на 360×800/430×932, теста
+process death/restore и instrumented-запуска на эмуляторе.
+**План:** добавить screenshot tests, тест восстановления после process death
+и аппаратный прогон вместе с KI-010/KI-012.
 
 ## Решённые
 

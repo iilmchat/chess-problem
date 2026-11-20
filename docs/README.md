@@ -28,6 +28,8 @@
 | [CONTENT_AUTHORING.md](development/CONTENT_AUTHORING.md) | Как добавить задачу, проверить линию, написать подсказки и разбор |
 | [RULES.md](development/RULES.md) | Правила кода, контента, документации, git, PR, лицензий |
 | [ADR](development/adr/README.md) | Записи решений: Compose, chesslib, Lichess, офлайн, монетизация, модули |
+| [ADR-0009](development/adr/0009-content-versioning.md) | `contentVersion` и изоляция прогресса в Room (KI-018) |
+| [ADR-0010](development/adr/0010-cold-start-theme-cache.md) | Синхронный кэш `theme`/`language` при холодном старте (KI-015) |
 
 ### Релиз, QA и право
 
@@ -70,19 +72,19 @@
 
 | Документ | Статус |
 | --- | --- |
-| README | актуален на v0.4.0-360-puzzles |
-| DESIGN v0.1 | первая редакция, правила реализуются в Android |
-| UI/UX SPEC | первая редакция, прототип и Android-срезы сверены |
+| README | актуален на v0.4.1 |
+| DESIGN v0.1 | первая редакция; v0.4.0 реализован, DRAW/этюды/планшет сверены |
+| UI/UX SPEC | первая редакция, прототип и Android-срезы сверены в v0.4.0 |
 | CONTENT PLAN | первая редакция, 360 production-задач собраны; человеческое ревью — 360/360 OK |
 | USER_GUIDE | черновик до первого публичного билда |
-| MANUAL_TESTING_GUIDE | smoke 180 задач v0.3.0; drag/TalkBack и 360 задач — перед релизом |
-| ARCHITECTURE | реализованная архитектура v0.3.0 |
-| GETTING_STARTED | Android-проект, 180 задач, сборка и troubleshooting |
-| CONTENT_AUTHORING | первая редакция, валидатор работает |
+| MANUAL_TESTING_GUIDE | smoke v0.3.0; 360 задач, drag/TalkBack, планшет — device QA (KI-010/KI-012) |
+| ARCHITECTURE | реализованная архитектура v0.4.1 (Room v2, синхронный кэш) |
+| GETTING_STARTED | Android-проект, 360 задач, сборка и troubleshooting |
+| CONTENT_AUTHORING | 360 задач, пайплайн v0.4.0, `contentVersion` из паков, валидатор работает |
 | RUSTORE | требования выверены по документации RuStore (10.2026) |
 | RELEASES | первая редакция |
-| KNOWN_ISSUES | актуален, KI-001/KI-005 закрыты |
-| ADR | 8 решений зафиксировано |
+| KNOWN_ISSUES | актуален, KI-001/KI-003/KI-005/KI-008/KI-009/KI-017 закрыты |
+| ADR | 10 решений зафиксировано, включая ADR-0009/0010 |
 | PRIVACY_POLICY | черновик для офлайн-запуска |
 | THIRD_PARTY_LICENSES | актуален для Android-сборки |
 

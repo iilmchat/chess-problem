@@ -1,12 +1,14 @@
 # Архитектура Chess Problem
 
-**Статус:** реализовано в v0.3.0 · **Версия:** 0.3 · **Дата:** 28.10.2026
+**Статус:** реализовано в v0.4.1 · **Версия:** 0.4.1 · **Дата:** 20.11.2026
 **Связано:** [DESIGN](../design/DESIGN_V01_MVP.md) · [RULES](RULES.md) · [ADR](adr/README.md)
 
 Документ описывает реализованную архитектуру Android-приложения и границы
 следующих этапов. `core`, `data`, `ui`, `app` и `build-logic` собираются;
-180 production-задач проходят путь от `content/puzzles` через generated assets
-до Canvas-доски и Room-прогресса.
+360 production-задач (12 глав на уровень, `contentVersion 2026.10.4`) проходят
+путь от `content/puzzles` через generated assets до Canvas-доски и
+Room-прогресса. В v0.4.0 добавлены тип `DRAW`, drag-and-drop и
+TalkBack-семантика клеток.
 
 ---
 
@@ -246,13 +248,16 @@ FAILED → CONTINUE (SOLVING, +60s, 1 attempt) | RETRY (READY) | REVEAL (REVIEW)
 
 1. `ChessRules.legalMoves` — ход легален?
 2. Если `task.type == MATE` и ход ставит мат — принять, даже если он не в линии.
-3. Иначе сравнить UCI с `solution[solutionIndex]`.
-4. Если совпал:
+3. Для `task.type == DRAW` успех — завершение проверенной линии; последний ход
+   может принадлежать сопернику (пат-этюд), поэтому длина `solution` бывает
+   чётной.
+4. Иначе сравнить UCI с `solution[solutionIndex]`.
+5. Если совпал:
    - применить ход, добавить в историю;
    - если это последний ход — `SOLVED`;
    - иначе `OPPONENT`, применить ответ из `solution[solutionIndex + 1]`,
      вернуться в `SOLVING`.
-5. Если не совпал:
+6. Если не совпал:
    - вернуть снимок до хода;
    - `attemptsLeft--`;
    - `feedback = WrongMove`;
@@ -280,8 +285,10 @@ class PuzzleTimer(
   собственный поток.
 - Пауза на lifecycle, hint sheet, pause/exit dialog; при возврате из фона
   показывается overlay «Пауза».
-- При выходе/уходе в фон сохраняются `lastPlayedAt`, ошибки и число подсказок
-  для карточки «Продолжить»; текущий `elapsedMs` не восстанавливается.
+- При выходе/уходе в фон в Room (`puzzle_progress.lastPlayedAt`) сохраняются
+  данные для карточки «Продолжить»; текущий `elapsedMs` **не сохраняется и не
+  восстанавливается** — возобновление начинается с полным лимитом времени.
+  Это согласовано с [PRIVACY POLICY §2.2](../legal/PRIVACY_POLICY.md#22-какие-данные-обрабатываются).
 - Process death/restore и сохранение таймера — следующий этап (KI-014).
 
 ---
@@ -295,8 +302,10 @@ class PuzzleTimer(
   `data/build/generated/puzzlePacks/content/` перед каждой сборкой.
 - Загрузка через `kotlinx.serialization`; валидация в debug и CI.
 - `PuzzleRepository` отдаёт `Flow<List<Puzzle>>` по уровню/главе; кэш в памяти.
-- `contentVersion` показывается в «О приложении».
-- При обновлении приложения контент заменяется; прогресс по ID сохраняется.
+- `contentVersion` (`2026.10.4`) читается из заголовков паков через
+  `ContentVersionProvider` и показывается в «О приложении».
+- При обновлении пака несовместимые записи прогресса (в том числе демо v0.2.0 с
+  пустой версией) удаляются при инициализации репозитория (ADR-0009, KI-018).
 
 ### 6.2. Room
 
@@ -309,7 +318,9 @@ puzzle_progress(
   bestTimeMs INTEGER,
   attempts INTEGER NOT NULL,
   hintsUsed INTEGER NOT NULL,
-  lastPlayedAt INTEGER NOT NULL
+  lastPlayedAt INTEGER NOT NULL,
+  chapterId TEXT NOT NULL DEFAULT '',
+  contentVersion TEXT NOT NULL DEFAULT ''
 )
 
 chapter_progress(
@@ -330,9 +341,13 @@ achievement(
 )
 ```
 
-- `puzzle_progress` — единственный источник звёзд.
-- `chapter_progress` — денормализованный кэш для быстрых списков; пересчитывается
-  из `puzzle_progress` при старте.
+- Схема Room — версия 2; `Migration_1_2` добавляет `chapterId`/`contentVersion`
+  и создаёт `chapter_progress` (ADR-0009).
+- `puzzle_progress` — единственный источник звёзд; записи с неактуальной
+  `contentVersion` удаляются при инициализации репозитория.
+- `chapter_progress` — денормализованный кэш для быстрых списков; очищается и
+  пересчитывается из `puzzle_progress` целиком после очистки и при каждом
+  `save()`.
 - `daily_streak` — для серии и задачи дня.
 - Индексы: `puzzleId`, `chapterId`, `date`.
 
@@ -340,8 +355,8 @@ achievement(
 
 Ключи:
 
-- `language`: `system|ru|en`
-- `theme`: `system|dark|light`
+- `language`: `system|ru|en` (legacy-ключ; рабочее значение — `LocalePreferences`)
+- `theme`: `system|dark|light` (legacy-ключ для сидинга; рабочее — `ThemePreferences`)
 - `boardTheme`: `sage|classic|slate|high_contrast`
 - `coordinates`: Boolean
 - `autoFlip`: Boolean
@@ -351,9 +366,13 @@ achievement(
 - `haptics`: Boolean
 - `timerSound`: Boolean
 - `onboardingSeen`: Boolean
-- `lastPuzzleId`: String?
-- `lastPuzzleElapsedMs`: Long
 - `dailyReminder`: Boolean (v0.4.0)
+
+Карточка «Продолжить» строится по `puzzle_progress.lastPlayedAt` в Room, а не
+по DataStore; `elapsedMs` не сохраняется (§5.5). Перед первым composable
+`theme` и `language` читаются синхронно из `ThemePreferences` /
+`LocalePreferences` (SharedPreferences) как зеркала DataStore — ADR-0010,
+KI-015.
 
 ### 6.4. Backup
 
@@ -384,6 +403,8 @@ achievement(
 - Семантика: `Modifier.semantics` на каждую клетку; действия «Выбрать»,
   «Ход», «Отменить выбор».
 - Drag: `pointerInput` + `detectDragGestures`; tap: `detectTapGestures`.
+- Планшет: центрированная колонка max 560 dp, поля 32 dp на ≥600 dp (допуск
+  спецификации до 640 dp); runtime-проверка на 7–10" — KI-010/KI-012.
 - Никаких аллокаций в `draw`; пути и кисти — кэш.
 
 ### 7.3. Состояния экранов
@@ -470,7 +491,7 @@ class AppContainer(context: Context) {
 | Unit | JSON-парсинг, Room DAO, репозитории | `data/src/test` | план |
 | UI | выбор фигуры, ход, подсказка, результат, смена языка | `ui/src/androidTest` | план (KI-014) |
 | Screenshot | главная, решатель, результат, подсказки | `ui/src/test` | план (KI-014) |
-| Content | схема, легальность, мат, дубли, локализация | `tools/validate-content.mjs` | зелёный |
+| Content | 360 задач: схема, легальность, `DRAW`, дубли, RU/EN | `tools/validate-content.mjs` | зелёный: 0 error / 42 WARN |
 | Manual | устройства, lifecycle, TalkBack, таймер | [QA guide](../qa/MANUAL_TESTING_GUIDE.md) | частично: Pixel 6 API 36 |
 
 **Проверенные тесты сессии:**
@@ -498,7 +519,8 @@ Compose UI и screenshot tests.
 | Размер контента | < 2 МБ | JSON + сжатие |
 | Батарея | без фоновой работы | ручной тест |
 
-- Baseline Profile для главной и решателя.
+- Синхронный кэш `theme`/`language` для холодного старта — ADR-0010 (KI-015).
+- Baseline Profile для главной и решателя (после замеров на устройстве).
 - Никаких сетевых SDK в v1.0.0.
 - Шрифты — subset, только нужные глифы.
 - Фигуры — векторы, не PNG.
@@ -526,6 +548,8 @@ Compose UI и screenshot tests.
 | --- | --- |
 | Новый уровень | `Level` enum, контент-пак, главы, store-описание |
 | Новый пак задач | `content/puzzles/*.json`, `contentVersion`, CI |
+| Версионирование контента | `contentVersion`, изоляция демо-прогресса, ADR-0009 |
+| Холодный старт | `startup_prefs` как зеркало `theme`/`language`, ADR-0010 |
 | Новая тема | `themes` в контенте, статистика, фильтры |
 | Новая подсказка | `HintTier`, `HintPolicy`, UI-лист |
 | Новый язык | `values-xx`, localized content, QA |
@@ -544,8 +568,9 @@ Compose UI и screenshot tests.
 3. **Room и KSP.** Решено: Room 2.8.5 + KSP 2.2.10-2.0.2; нужен
    `android.disallowKotlinSourceSets=false`, пока KSP не мигрирует.
 4. **Compose BOM.** Зафиксирован: 2026.09.00; compileSdk 37.
-5. **Baseline Profile.** Отложен до появления полного контента; сначала
-   измерить холодный старт на реальном устройстве (KI-015).
-6. **Планшет.** Одна колонка max 560 dp или две панели в v0.4.0.
+5. **Baseline Profile.** Отложен до замеров на реальном устройстве; здоровье
+   холодного старта обеспечивает синхронный кэш настроек (ADR-0010, KI-015).
+6. **Планшет.** Центрированная колонка max 560 dp (допуск до 640 dp); двухпанельная
+   раскладка — исследование v0.5.0; аппаратная проверка — KI-010/KI-012.
 7. **Локальные напоминания.** `POST_NOTIFICATIONS` и политика — только если
    реально нужно.

@@ -5,24 +5,25 @@
 > таймер и подсказки, которые учат думать, а не угадывать.
 
 [![CI](https://github.com/iilmchat/chess-problem/actions/workflows/ci.yml/badge.svg)](https://github.com/iilmchat/chess-problem/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/badge/version-0.3.0--180--puzzles-c9a45c.svg)](docs/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.4.1-c9a45c.svg)](docs/CHANGELOG.md)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.2.10-7F52FF.svg)](docs/development/ARCHITECTURE.md)
 [![Compose](https://img.shields.io/badge/Jetpack-Compose-4285F4.svg)](docs/design/UI_UX_SPEC.md)
 [![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3ddc84.svg)](docs/development/RUSTORE.md)
 [![License](https://img.shields.io/badge/license-proprietary-lightgrey.svg)](#лицензия)
 
-**Версия:** `v0.3.0-180-puzzles` · **Фаза:** Android + контент-масштабирование
+**Версия:** `v0.4.1` · **Фаза:** техническая стабилизация после `v0.4.0-360-puzzles`, подготовка к beta
 **Стек:** Kotlin 2.2.10 · Jetpack Compose · Material 3 · chesslib
 **Платформа:** Android 8.0+ (minSdk 26), compileSdk 37 / targetSdk 36
 **Локализация:** RU · EN
 **Сеть:** офлайн, без аккаунта и сбора персональных данных
 **© 2026 RuChating (iilmchat)**
 
-> **Статус:** Android-проект собирается и запускается. Реализованы доска,
-> решатель, подсказки, таймер, пауза, продолжение, звёзды/XP, Room-прогресс,
-> настройки, RU/EN и **180 production-задач** (60 на уровень, 6 глав).
-> Полные 360 задач, drag-and-drop, TalkBack-навигация по доске, Premium и
-> rewarded-реклама — следующие этапы.
+> **Статус:** `v0.4.1` — технический релиз после `v0.4.0-360-puzzles`: **360
+> production-задач** (по 120 на уровень, 12 глав), drag-and-drop, TalkBack,
+> release-подпись, `contentVersion` и миграция прогресса, синхронный кэш темы и
+> локали, detekt/ktlint, 4 Compose UI-теста на JVM, планшетная колонка 560 dp и
+> просмотр лицензий в «О приложении». Следующий этап — RuStore closed beta
+> (v0.5.0). Premium и rewarded-реклама остаются планами v1.1.0.
 
 ---
 
@@ -83,7 +84,7 @@ Debug-сборка на эмуляторе Pixel 6 (Android 16, 1080×2400). Б�
 
 ### 🧩 Контент
 
-- **360 задач к релизу v1.0:** 3 уровня × 12 глав × 10 задач.
+- **360 production-задач в v0.4.0:** 3 уровня × 12 глав × 10 задач, `contentVersion 2026.10.4`.
 - **Три уровня:** Новичок (рейтинг 600–1199), Профессионал (1200–1799),
   Гроссмейстер (1800–2400+).
 - **Реальные позиции:** основа — открытая база задач Lichess (CC0 1.0),
@@ -260,11 +261,13 @@ chess-problem/
 ├── content/
 │   ├── schema/                        ← JSON Schema паков задач
 │   ├── samples/                       ← 4 примера формата
-│   ├── puzzles/                       ← 180 production-задач (3 пака)
+│   ├── puzzles/                       ← 360 задач: 3 пака × 120, 12 глав на уровень
 │   └── README.md                      ← контент-пайплайн и лицензии
-├── tools/                             ← import-lichess, replay, валидаторы
+├── tools/                             ← import-lichess, replay, валидаторы, etudes
 │   ├── lichess-selection.json          ← отбор v0.2.1 (60 задач)
-│   └── lichess-selection-v030.json     ← отбор v0.3.0 (180 задач)
+│   ├── lichess-selection-v030.json     ← отбор v0.3.0 (180 задач)
+│   ├── lichess-selection-v040.json     ← отбор v0.4.0 (180 задач)
+│   └── etudes/                         ← 30 авторских этюдов
 ├── store/                             ← черновик карточки RuStore
 ├── app/                               ← Activity, DI, Navigation Compose
 ├── core/                              ← правила, сессия, звёзды, XP, таймер
@@ -293,7 +296,7 @@ chess-problem/
 | [ARCHITECTURE.md](docs/development/ARCHITECTURE.md) | разработчик | Модули, состояние, доска, данные, сборка, тесты |
 | [GETTING_STARTED.md](docs/development/GETTING_STARTED.md) | новый разработчик | Развёртывание, сборка, troubleshooting |
 | [CONTENT_AUTHORING.md](docs/development/CONTENT_AUTHORING.md) | контент-мейкер, разработчик | Как добавить и проверить задачу |
-| [Content review](tools/review/README.md) | ревьюер контента | Офлайн-ревьюер 180 задач: доски, тексты, статусы, экспорт |
+| [Content review](tools/review/README.md) | ревьюер контента | Офлайн-ревьюер 360 задач: доски, тексты, статусы, экспорт |
 | [RUSTORE.md](docs/development/RUSTORE.md) | релиз-менеджер | Требования RuStore, карточка, монетизация, риски |
 | [RELEASES.md](docs/development/RELEASES.md) | релиз-менеджер | Пошаговый чек-лист выпуска |
 | [RULES.md](docs/development/RULES.md) | вся команда | Код, контент, документация, git, PR, лицензии |
@@ -309,15 +312,15 @@ chess-problem/
 
 | Показатель | Значение |
 | --- | --- |
-| Версия | **v0.3.0-180-puzzles** |
-| Фаза | Android + 180 production-задач (60 на уровень, 6 глав) |
+| Версия | **v0.4.1** (после `v0.4.0-360-puzzles`) |
+| Фаза | Техническая стабилизация перед RuStore closed beta (v0.5.0) |
 | Документов | 25+ (дизайн, разработка, QA, legal, ADR) |
 | Прототип | 4 экрана в `design/prototype/index.html` |
-| Android | 4 модуля, debug APK, Compose Canvas, chesslib, Room, DataStore |
-| Контент | 180 задач (60 на уровень, 6 глав); цель — 360 |
-| Тесты | 21 unit-тест `core`, lint; CI собирает debug APK |
-| Сборка | `./gradlew :app:assembleDebug` — успешно |
-| Магазин | Черновик карточки RuStore и концепт иконки в `store/` |
+| Android | 4 модуля, Compose Canvas, chesslib, Room, DataStore, drag-and-drop, TalkBack |
+| Контент | 360 задач (120 на уровень, 12 глав), `contentVersion 2026.10.4` |
+| Тесты | 21 unit-тест `core`, тесты `:data` (миграция/DAO/360 задач), 4 Compose UI-теста (Robolectric), валидатор контента, detekt; CI собирает debug APK и release AAB |
+| Сборка | `./gradlew :app:assembleDebug` и `:app:bundleRelease` — успешно |
+| Магазин | Карточка RuStore, release-подпись, store-иконка; beta — v0.5.0 |
 
 ---
 
@@ -329,9 +332,9 @@ chess-problem/
 | **v0.2.0** | Android vertical slice: доска, решатель, таймер, подсказки, результат, Room-прогресс, настройки, RU/EN, 4 демо-задачи | **готово** |
 | **v0.2.1** | 60 production-задач (20 на уровень), Lichess-пайплайн, CI Android job | **готово** |
 | **v0.3.0** | 180 production-задач (60 на уровень, 6 глав), новые тактические главы | **готово** |
-| v0.3.1 | Статистика по темам, достижения, задача дня, полировка | план |
-| v0.4.0 | 360 задач, drag-and-drop, TalkBack, планшетная раскладка | план |
-| v0.5.0 | RuStore closed beta, подпись, скриншоты, политика | план |
+| **v0.4.0** | 360 задач (12 глав на уровень), drag-and-drop, TalkBack, 30 авторских этюдов, release-подпись | **готово** |
+| **v0.4.1** | Стабилизация: `contentVersion` + Room v2, синхронный кэш темы, detekt/ktlint, планшетная колонка 560 dp, Compose UI-тесты, лицензионные файлы | **готово** |
+| v0.5.0 | RuStore closed beta, скриншоты, публикация политики | план |
 | **v1.0.0** | Публичный релиз в RuStore: 360 задач, RU/EN, офлайн | план |
 | v1.1.0 | Premium lifetime + опциональная rewarded-реклама после ИП/юрлица | исследование |
 | v1.2.0+ | Новые паки, облачная синхронизация, iOS | исследование |
