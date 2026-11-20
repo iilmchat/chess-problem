@@ -5,25 +5,26 @@
 > таймер и подсказки, которые учат думать, а не угадывать.
 
 [![CI](https://github.com/iilmchat/chess-problem/actions/workflows/ci.yml/badge.svg)](https://github.com/iilmchat/chess-problem/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/badge/version-0.4.1-c9a45c.svg)](docs/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.5.0-c9a45c.svg)](docs/CHANGELOG.md)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.2.10-7F52FF.svg)](docs/development/ARCHITECTURE.md)
 [![Compose](https://img.shields.io/badge/Jetpack-Compose-4285F4.svg)](docs/design/UI_UX_SPEC.md)
 [![Platform](https://img.shields.io/badge/platform-Android%208.0%2B-3ddc84.svg)](docs/development/RUSTORE.md)
 [![License](https://img.shields.io/badge/license-proprietary-lightgrey.svg)](#лицензия)
 
-**Версия:** `v0.4.1` · **Фаза:** техническая стабилизация после `v0.4.0-360-puzzles`, подготовка к beta
+**Версия:** `v0.5.0` · **Фаза:** RuStore Closed Beta — сборка beta-кандидата готова, остаются внешние шаги публикации
 **Стек:** Kotlin 2.2.10 · Jetpack Compose · Material 3 · chesslib
 **Платформа:** Android 8.0+ (minSdk 26), compileSdk 37 / targetSdk 36
 **Локализация:** RU · EN
 **Сеть:** офлайн, без аккаунта и сбора персональных данных
 **© 2026 RuChating (iilmchat)**
 
-> **Статус:** `v0.4.1` — технический релиз после `v0.4.0-360-puzzles`: **360
-> production-задач** (по 120 на уровень, 12 глав), drag-and-drop, TalkBack,
-> release-подпись, `contentVersion` и миграция прогресса, синхронный кэш темы и
-> локали, detekt/ktlint, 4 Compose UI-теста на JVM, планшетная колонка 560 dp и
-> просмотр лицензий в «О приложении». Следующий этап — RuStore closed beta
-> (v0.5.0). Premium и rewarded-реклама остаются планами v1.1.0.
+> **Статус:** `v0.5.0` — beta-кандидат для RuStore Closed Beta. Подписанный
+> release AAB проверен локально; восстановление сессии после process death,
+> R8-аудит, иконка 512×512 и 10 screenshot-тестов Roborazzi готовы. Подготовлены
+> политика `docs/legal/privacy.html`, карточка `store/RUSTORE_LISTING.md` и
+> чек-лист релиза. Остаются внешние шаги: публикация политики по URL (KI-006),
+> подтверждение названия/package (KI-007), живые скриншоты и отправка на
+> модерацию. Premium и rewarded-реклама — планы v1.1.0.
 
 ---
 
@@ -315,15 +316,15 @@ chess-problem/
 
 | Показатель | Значение |
 | --- | --- |
-| Версия | **v0.4.1** (после `v0.4.0-360-puzzles`) |
-| Фаза | Техническая стабилизация перед RuStore closed beta (v0.5.0) |
+| Версия | **v0.5.0** (`versionCode 500`) |
+| Фаза | RuStore Closed Beta: beta-кандидат готов, внешние шаги публикации остаются |
 | Документов | 25+ (дизайн, разработка, QA, legal, ADR) |
 | Прототип | 4 экрана в `design/prototype/index.html` |
 | Android | 4 модуля, Compose Canvas, chesslib, Room, DataStore, drag-and-drop, TalkBack |
 | Контент | 360 задач (120 на уровень, 12 глав), `contentVersion 2026.10.4` |
-| Тесты | 21 unit-тест `core`, тесты `:data` (миграция/DAO/360 задач), 4 Compose UI-теста (Robolectric), валидатор контента, detekt; CI собирает debug APK и release AAB |
-| Сборка | `./gradlew :app:assembleDebug` и `:app:bundleRelease` — успешно |
-| Магазин | Карточка RuStore, release-подпись, store-иконка; beta — v0.5.0 |
+| Тесты | unit-тесты `core`/`:data`, восстановление сессии, 4 Compose UI-теста и 10 screenshot-тестов Roborazzi; валидатор контента, detekt |
+| Сборка | `./gradlew :app:assembleDebug` и подписанный `:app:bundleRelease` — успешно |
+| Магазин | Карточка и иконка 512×512 готовы; политика HTML подготовлена; отправка в RuStore — следующий шаг |
 
 ---
 
@@ -337,7 +338,7 @@ chess-problem/
 | **v0.3.0** | 180 production-задач (60 на уровень, 6 глав), новые тактические главы | **готово** |
 | **v0.4.0** | 360 задач (12 глав на уровень), drag-and-drop, TalkBack, 30 авторских этюдов, release-подпись | **готово** |
 | **v0.4.1** | Стабилизация: `contentVersion` + Room v2, синхронный кэш темы, detekt/ktlint, планшетная колонка 560 dp, Compose UI-тесты, лицензионные файлы | **готово** |
-| v0.5.0 | RuStore closed beta, скриншоты, публикация политики | план |
+| **v0.5.0** | RuStore Closed Beta: подписанный beta-кандидат, process death, R8-аудит, иконка 512×512, 10 screenshot-тестов, политика и карточка | **сборка готова; публикация — внешние шаги** |
 | **v1.0.0** | Публичный релиз в RuStore: 360 задач, RU/EN, офлайн | план |
 | v1.1.0 | Premium lifetime + опциональная rewarded-реклама после ИП/юрлица | исследование |
 | v1.2.0+ | Новые паки, облачная синхронизация, iOS | исследование |

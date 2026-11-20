@@ -3,6 +3,16 @@
 Все заметные изменения проекта. Формат — [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/),
 версии — [SemVer](https://semver.org/lang/ru/).
 
+## [Unreleased]
+
+> Планы публичного релиза v1.0.0.
+
+### Planned
+
+- Аппаратный QA (drag-and-drop, TalkBack, планшет, авиарежим) и живые скриншоты.
+- Снятие внешних блокеров KI-006/KI-007 и публикация карточки RuStore.
+- Мониторинг отзывов, крашей и метрик после закрытой беты.
+
 ## [0.4.0-360-puzzles] — 2026-10-29
 
 ### Added
@@ -260,7 +270,11 @@
 - KI-010: контент и доска не растягиваются на планшете, оставаясь читаемыми.
 - KI-019: тексты лицензий доступны из UI, захардкоженная версия `v0.3.0` удалена.
 
-## [0.5.0-closed-beta] — 2026-11-20
+## [0.5.0] — 2026-11-20
+
+Закрытая бета в RuStore: финальный бамп версии (`versionName 0.5.0`,
+`versionCode 500`), release-keystore настроен, подписанный `bundleRelease`
+проверен локально.
 
 ### Added
 
@@ -280,9 +294,17 @@
 - `tools/capture-store-screenshots.ps1`: воспроизводимая съёмка живых скриншотов
   RuStore через `adb` (установка APK, профили 1080×2400 / 1600×2560, 5 экранов,
   обязательный сброс `wm size/density`), папка `store/screenshots/` с инструкцией.
+- Статическая политика `docs/legal/privacy.html`: RU/EN в одном файле без
+  внешних зависимостей, готова к выгрузке по постоянному URL (KI-006).
+- `store/RUSTORE_LISTING.md`: готовые поля карточки — название, краткое и
+  подробное описания, теги, возраст 6+, декларация данных и «Что нового».
+- `docs/releases/v0.5.0-checklist.md`: чек-лист закрытой беты по шаблону
+  `RELEASES.md` с внешними блокерами KI-006/KI-007.
 
 ### Changed
 
+- `versionName = "0.5.0"`, `versionCode = 500` по формуле
+  `0 × 10000 + 5 × 100 + 0` в convention-плагине приложения.
 - `AppViewModelFactory` передаёт `SavedStateHandle` из `CreationExtras` в
   ViewModel вместо пустой фабрики.
 - Release-аудит: в merged manifest нет `INTERNET` и `android:debuggable`,
