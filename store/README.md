@@ -186,6 +186,14 @@ tablet-05-progress.png 800×1280
 Команды: `./gradlew :ui:recordRoborazziDebug` (перезапись эталонов) и
 `./gradlew :ui:verifyRoborazziDebug` (проверка, запускается в CI).
 
+Живые скриншоты с устройства/эмулятора через `adb` складываются в
+[`store/screenshots/`](screenshots/README.md) (`phone/` и `tablet/`, по 5 PNG).
+Съёмка автоматизирована скриптом
+[`tools/capture-store-screenshots.ps1`](../tools/capture-store-screenshots.ps1):
+он ставит APK, переключает профили 1080×2400 / 1600×2560, снимает 5 экранов и
+сбрасывает `wm size`/`wm density`. В текущем окружении UI/QA устройство и эмулятор
+недоступны, поэтому живые файлы ещё не созданы (KI-012).
+
 ---
 
 ## 8. Возраст и маркировки
