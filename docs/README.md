@@ -68,6 +68,8 @@
 | Требования RuStore | [RUSTORE.md](development/RUSTORE.md) |
 | Политику конфиденциальности | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md), [privacy.html](legal/privacy.html) |
 | Готовые поля карточки RuStore | [RUSTORE_LISTING.md](../store/RUSTORE_LISTING.md) |
+| Чек-лист релиза v1.0.0 | [v1.0.0-checklist.md](releases/v1.0.0-checklist.md) |
+| «Что нового» v1.0.0 | [WHATS_NEW_v1.0.0.md](../store/WHATS_NEW_v1.0.0.md) |
 | Чек-лист релиза v0.5.0 | [v0.5.0-checklist.md](releases/v0.5.0-checklist.md) |
 | Лицензии | [THIRD_PARTY_LICENSES.md](legal/THIRD_PARTY_LICENSES.md) |
 
@@ -77,7 +79,7 @@
 
 | Документ | Статус |
 | --- | --- |
-| README | актуален на v0.5.0 (beta-кандидат) |
+| README | актуален на v1.0.0 (релиз-кандидат) |
 | DESIGN v0.1 | первая редакция; v0.4.0 реализован, DRAW/этюды/планшет сверены |
 | UI/UX SPEC | первая редакция, прототип и Android-срезы сверены в v0.4.0 |
 | CONTENT PLAN | первая редакция, 360 production-задач собраны; человеческое ревью — 360/360 OK |
@@ -88,7 +90,7 @@
 | CONTENT_AUTHORING | 360 задач, пайплайн v0.4.0, `contentVersion` из паков, валидатор работает |
 | RUSTORE | требования выверены по документации RuStore (10.2026) |
 | RELEASES | первая редакция |
-| KNOWN_ISSUES | актуален, KI-001/KI-003/KI-005/KI-008/KI-009/KI-017 закрыты |
+| KNOWN_ISSUES | актуален на v1.0.0: KI-004/KI-006/KI-007/KI-012 — открытые внешние шаги |
 | ADR | 10 решений зафиксировано, включая ADR-0009/0010 |
 | PRIVACY_POLICY | черновик для офлайн-запуска |
 | THIRD_PARTY_LICENSES | актуален для Android-сборки |
