@@ -2,7 +2,8 @@
 
 **Статус:** draft · **Версия продукта:** v1.0.0 (план) · **Дата:** 28.10.2026
 **Связано:** [RUSTORE](../docs/development/RUSTORE.md) · [RELEASES](../docs/development/RELEASES.md) ·
-[DESIGN](../docs/design/DESIGN_V01_MVP.md) · [PRIVACY POLICY](../docs/legal/PRIVACY_POLICY.md)
+[DESIGN](../docs/design/DESIGN_V01_MVP.md) · [PRIVACY POLICY](../docs/legal/PRIVACY_POLICY.md) ·
+[«Что нового» v0.5.0](WHATS_NEW_v0.5.0.md)
 
 Карточка ещё не опубликована. Тексты и ассеты — рабочий черновик для v1.0.0;
 перед загрузкой проверьте лимиты и требования в консоли RuStore.
@@ -109,7 +110,8 @@
 ```
 
 3–6 пунктов, без технического шума. Для следующих версий — только реальные
-изменения.
+изменения. Готовые тексты для v0.5.0 (компактный до 500 и стандартный до 1000
+символов) — в [WHATS_NEW_v0.5.0.md](WHATS_NEW_v0.5.0.md).
 
 ---
 
