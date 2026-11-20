@@ -124,18 +124,24 @@
 | Читаемость | проверить на 48 dp и в тёмной/светлой теме |
 | Права | собственная иконка; без логотипов Lichess/Chess.com |
 
-Экспорт:
+Экспорт (CairoSVG + Pillow, фон принудительно заливается `#08110E`):
 
 ```bash
-# Пример через ImageMagick (после установки)
-magick -background "#08110E" design/icon.svg -resize 512x512 \
-  store/assets/icon-512.png
+python -c "import cairosvg; from PIL import Image; \
+cairosvg.svg2png(url='design/icon.svg', write_to='store/icon-512.png', \
+output_width=512, output_height=512); \
+img=Image.open('store/icon-512.png').convert('RGBA'); \
+bg=Image.new('RGBA', img.size, (8,17,14,255)); bg.alpha_composite(img); \
+bg.convert('RGB').save('store/icon-512.png','PNG')"
 ```
 
-Проверить, что углы не обрезаны и фон не прозрачный.
+Проверка: размер `512×512`, режим `RGB` (альфа-канала нет), углы залиты
+`~#08110E`, обрезания нет.
 
-Готовый файл: [`store/assets/icon-512.png`](assets/icon-512.png) — 512×512,
-без альфа-канала, 62 КБ.
+Готовый файл для загрузки: [`store/icon-512.png`](icon-512.png) — 512×512,
+без альфа-канала, ~62 КБ. Ранее использованный
+[`store/assets/icon-512.png`](assets/icon-512.png) оставлен для совместимости
+старых черновиков; в RuStore загружать корневой файл.
 
 ---
 
@@ -159,20 +165,26 @@ magick -background "#08110E" design/icon.svg -resize 512x512 \
 - не показывать Premium/рекламу, которых нет в v1.0.0;
 - для планшета — портретная ориентация, как в консоли.
 
-Имена файлов:
+Автоматизированные эталоны (Roborazzi + Robolectric) уже сняты в точных
+размерах и лежат в `ui/src/test/screenshots/`:
 
 ```text
-store/assets/
-├── icon-512.png
-├── phone-01-home.png
-├── phone-02-solver.png
-├── phone-03-hints.png
-├── phone-04-result.png
-├── phone-05-progress.png
-├── tablet-01-home.png
-├── tablet-02-solver.png
-└── tablet-03-progress.png
+phone-01-home.png      360×800
+phone-02-solver.png    360×800
+phone-03-hints.png     360×800
+phone-04-result.png    360×800
+phone-05-progress.png  360×800
+tablet-01-home.png     800×1280
+tablet-02-solver.png   800×1280
+tablet-03-hints.png    800×1280
+tablet-04-result.png   800×1280
+tablet-05-progress.png 800×1280
 ```
+
+Для карточки RuStore достаточно любых трёх телефонных и трёх планшетных
+файлов; полный набор из десяти используется как регрессионная база.
+Команды: `./gradlew :ui:recordRoborazziDebug` (перезапись эталонов) и
+`./gradlew :ui:verifyRoborazziDebug` (проверка, запускается в CI).
 
 ---
 

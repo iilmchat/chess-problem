@@ -79,6 +79,19 @@ jobs:
       - name: Core and UI tests, debug APK, release AAB and lint
         run: ./gradlew :core:test :ui:testDebugUnitTest :app:assembleDebug :app:lintDebug :app:bundleRelease :app:lintRelease --no-daemon
 
+      - name: Verify screenshot baselines (Roborazzi)
+        run: ./gradlew :ui:verifyRoborazziDebug --no-daemon
+
+      - name: Upload screenshot diff on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-diff
+          path: |
+            ui/build/outputs/roborazzi
+            ui/build/reports/roborazzi
+          if-no-files-found: ignore
+
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:

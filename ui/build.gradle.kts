@@ -2,6 +2,12 @@ plugins {
     id("chessproblem.android.library")
     id("chessproblem.android.compose")
     id("chessproblem.detekt")
+    alias(libs.plugins.roborazzi)
+}
+
+roborazzi {
+    // Эталоны лежат в репозитории, чтобы verifyRoborazziDebug работал в CI.
+    outputDir.set(file("src/test/screenshots"))
 }
 
 android {
@@ -41,4 +47,6 @@ dependencies {
     testImplementation(libs.androidx.compose.ui.test.junit4)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.robolectric)
+    testImplementation(libs.roborazzi)
+    testImplementation(libs.roborazzi.compose)
 }
