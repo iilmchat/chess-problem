@@ -14,6 +14,9 @@ data class PuzzleProgressEntity(
     val attempts: Int,
     val hintsUsed: Int,
     val lastPlayedAt: Long,
+    // KI-018: обе колонки добавлены миграцией 1 -> 2 со значением по умолчанию ''.
+    val chapterId: String = "",
+    val contentVersion: String = "",
 )
 
 fun PuzzleProgressEntity.toModel() = PuzzleProgress(
@@ -25,6 +28,8 @@ fun PuzzleProgressEntity.toModel() = PuzzleProgress(
     attempts = attempts,
     hintsUsed = hintsUsed,
     lastPlayedAt = lastPlayedAt,
+    chapterId = chapterId,
+    contentVersion = contentVersion,
 )
 
 fun PuzzleProgress.toEntity() = PuzzleProgressEntity(
@@ -36,4 +41,6 @@ fun PuzzleProgress.toEntity() = PuzzleProgressEntity(
     attempts = attempts,
     hintsUsed = hintsUsed,
     lastPlayedAt = lastPlayedAt,
+    chapterId = chapterId,
+    contentVersion = contentVersion,
 )

@@ -19,4 +19,11 @@ interface PuzzleProgressDao {
 
     @Query("DELETE FROM puzzle_progress")
     suspend fun clear()
+
+    /**
+     * KI-018: демо-записи v0.2.0 после миграции имеют пустую версию и удаляются
+     * при первой инициализации репозитория вместе с записями других версий паков.
+     */
+    @Query("DELETE FROM puzzle_progress WHERE contentVersion <> :contentVersion")
+    suspend fun deleteIncompatible(contentVersion: String)
 }

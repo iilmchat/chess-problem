@@ -205,13 +205,65 @@
 - Нет drag-and-drop и TalkBack-навигации по клеткам; см. `KNOWN_ISSUES.md`.
 - Монетизация по-прежнему не подключена: RuStore требует ИП/юрлицо.
 
+## [0.4.1] — 2026-11-20
+
+Технический релиз: закрыт архитектурный долг `:core`/`:data` перед closed beta.
+
+### Added
+
+- `puzzle_progress.contentVersion` и `chapter_progress` в Room: версия схемы 2,
+  `Migration_1_2` и пересчёт денормализованного кэша глав (KI-018).
+- Синхронный кэш `theme`/`language` на SharedPreferences с зеркалированием
+  записей `SettingsDataStore` и чтением до первой композиции (KI-015).
+- Unit-тесты `:data`: парсинг всех 360 задач (3 уровня, 36 глав, `MATE`/`WIN`/
+  `DRAW`, RU/EN) и тесты Room DAO/миграции на in-memory базе.
+
+### Changed
+
+- Актуальная версия контента берётся из заголовков JSON-паков через
+  `ContentVersionProvider`, а не захардкода.
+- `versionName` `0.4.1`, `versionCode` `401`.
+
+### Fixed
+
+- KI-018: демо-прогресс v0.2.0 с пустой/устаревшей версией контента больше не
+  проецируется на production-задачи; несовместимые строки удаляются при eerste
+  первом обращении к репозиторию прогресса (при инициализации).
+- KI-015: светлая тема и неверная локаль больше не мелькают на холодном старте.
+
 ## [Unreleased]
 
-### Planned
+> Подготовка v0.4.1 — техническая стабилизация после `v0.4.0-360-puzzles`
+> перед RuStore closed beta (v0.5.0).
 
-- 60 задач в v0.2.1, затем 180 и 360.
-- Drag-and-drop, TalkBack-семантика клеток, Compose UI/screenshot tests.
-- detekt/ktlint, release-подпись, RuStore closed beta.
+### Added
+
+- `ADR-0009`: `contentVersion` и изоляция демо-прогресса в Room (KI-018).
+- `ADR-0010`: синхронный кэш `theme`/`language` при холодном старте (KI-015).
+- Полные тексты лицензий в `app/src/main/assets/licenses/`:
+  `Apache-2.0.txt`, `OFL-1.1.txt`, `CC0-1.0.txt`, `BSD-2-Clause.txt` и `NOTICE`
+  с атрибуцией Lichess, Kotlin, AndroidX, chesslib и шрифтов.
+- `KI-019`: экран «О приложении → Лицензии» пока показывает статичный текст и
+  версию `v0.3.0`; чтение файлов из assets — задача v0.4.1.
+
+### Changed
+
+- README и техническая документация синхронизированы с v0.4.0: 360 задач,
+  12 глав на уровень, тип `DRAW`, 30 авторских этюдов, планшет 560–640 dp,
+  release-подпись. Дорожная карта дополнена строкой v0.4.1.
+- DESIGN/UI-UX SPEC сверены с CHANGELOG v0.4.0: ярлык «Ничья», 30 этюдов,
+  колонка 560–640 dp.
+- `PRIVACY POLICY` §2.2 и `ARCHITECTURE` §5.5/§6.3 согласованы: карточка
+  «Продолжить» строится по Room `puzzle_progress.lastPlayedAt`, текущий таймер
+  не сохраняется и не восстанавливается.
+- KI-015 и KI-018 закрыты в v0.4.1 по решениям ADR-0010 и ADR-0009.
+
+### Planned (v0.4.1)
+
+- Compose UI/screenshot-тесты (KI-014) и планшетная раскладка 560–640 dp
+  с проверкой на 7–10" (KI-010/KI-012).
+- Экран лицензий, читающий `assets/licenses/`, и версия из BuildConfig (KI-019).
+- detekt/ktlint и RuStore closed beta — v0.5.0.
 
 ## [0.1.0-design] — 2026-10-28
 

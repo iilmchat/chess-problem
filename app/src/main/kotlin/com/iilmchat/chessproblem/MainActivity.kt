@@ -42,6 +42,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         val container = (application as ChessProblemApp).container
 
+        // KI-015: тема применяется до первой композиции — SharedPreferences
+        // читаются синхронно, в отличие от потока DataStore.
+        applySystemBars(resolveDarkTheme(container.settingsRepository.startupTheme()))
+
         setContent {
             val settingsViewModel: SettingsViewModel = viewModel(
                 factory = AppViewModelFactory {
@@ -67,11 +71,7 @@ class MainActivity : ComponentActivity() {
                 ThemeMode.SYSTEM -> isSystemInDarkTheme()
             }
 
-            SideEffect {
-                val controller = WindowCompat.getInsetsController(window, window.decorView)
-                controller.isAppearanceLightStatusBars = !darkTheme
-                controller.isAppearanceLightNavigationBars = !darkTheme
-            }
+            SideEffect { applySystemBars(darkTheme) }
 
             ChessProblemTheme(darkTheme = darkTheme) {
                 AppNavHost(
@@ -89,5 +89,19 @@ class MainActivity : ComponentActivity() {
                 )
             }
         }
+    }
+
+    private fun resolveDarkTheme(theme: ThemeMode): Boolean = when (theme) {
+        ThemeMode.DARK -> true
+        ThemeMode.LIGHT -> false
+        ThemeMode.SYSTEM ->
+            resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK ==
+                Configuration.UI_MODE_NIGHT_YES
+    }
+
+    private fun applySystemBars(darkTheme: Boolean) {
+        val controller = WindowCompat.getInsetsController(window, window.decorView)
+        controller.isAppearanceLightStatusBars = !darkTheme
+        controller.isAppearanceLightNavigationBars = !darkTheme
     }
 }

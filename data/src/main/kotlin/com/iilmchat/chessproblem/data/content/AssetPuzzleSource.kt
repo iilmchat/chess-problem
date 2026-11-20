@@ -7,24 +7,18 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
 class AssetPuzzleSource(
-    private val assets: AssetManager,
+    private val reader: PuzzlePackReader,
 ) {
+    constructor(assets: AssetManager) : this(AssetPuzzleReader(assets))
+
     private val json = Json {
         ignoreUnknownKeys = true
         isLenient = false
     }
 
     suspend fun load(): List<Puzzle> = withContext(Dispatchers.IO) {
-        val names = assets.list(CONTENT_DIR)
-            ?.filter { it.endsWith(".json", ignoreCase = true) }
-            ?.sorted()
-            .orEmpty()
-
-        names.flatMap { name ->
-            val text = assets.open("$CONTENT_DIR/$name")
-                .bufferedReader()
-                .use { it.readText() }
-            val pack = json.decodeFromString<PuzzlePackJson>(text)
+        reader.names().flatMap { name ->
+            val pack = json.decodeFromString<PuzzlePackJson>(reader.read(name))
             pack.toDomain()
         }
     }

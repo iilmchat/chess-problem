@@ -27,7 +27,16 @@ class SettingsViewModel(
     private val hintRepository: HintRepository,
 ) : ViewModel() {
 
-    private val _state = MutableStateFlow(SettingsUiState())
+    // KI-015: первое состояние берётся из синхронного кэша, а не из пустого
+    // значения по умолчанию — иначе первый кадр мигает светлой темой.
+    private val _state = MutableStateFlow(
+        SettingsUiState(
+            settings = UserSettings(
+                theme = settingsRepository.startupTheme(),
+                language = settingsRepository.startupLanguage(),
+            ),
+        ),
+    )
     val state: StateFlow<SettingsUiState> = _state.asStateFlow()
 
     init {

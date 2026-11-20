@@ -374,6 +374,7 @@ class PuzzleViewModel(
             progressRepository.save(
                 PuzzleProgress(
                     puzzleId = outcome.puzzleId,
+                    chapterId = state.puzzle.chapter,
                     solved = solved,
                     reviewed = reviewed,
                     stars = stars,
@@ -393,6 +394,7 @@ class PuzzleViewModel(
             progressRepository.save(
                 PuzzleProgress(
                     puzzleId = puzzleId,
+                    chapterId = state.puzzle.chapter,
                     solved = existing?.solved == true,
                     reviewed = existing?.reviewed == true,
                     stars = existing?.stars ?: 0,

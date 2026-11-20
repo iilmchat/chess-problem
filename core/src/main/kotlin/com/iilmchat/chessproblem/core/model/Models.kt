@@ -99,10 +99,21 @@ data class PuzzleProgress(
     val attempts: Int = 0,
     val hintsUsed: Int = 0,
     val lastPlayedAt: Long = 0L,
+    // KI-018: без версии контента запись нельзя отличить от демо-прогресса v0.2.0.
+    val chapterId: String = "",
+    val contentVersion: String = "",
 ) {
     val completed: Boolean
         get() = solved || reviewed
 }
+
+/** Денормализованный кэш прогресса главы, пересчитывается из [PuzzleProgress]. */
+data class ChapterProgress(
+    val chapterId: String,
+    val solvedCount: Int,
+    val stars: Int,
+    val completedAt: Long?,
+)
 
 enum class AppLanguage {
     SYSTEM,

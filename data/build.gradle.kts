@@ -21,6 +21,11 @@ val syncPuzzlePacks by tasks.registering(Sync::class) {
 
 android {
     namespace = "com.iilmchat.chessproblem.data"
+
+    testOptions {
+        // Room in-memory требует реальный Android SQLite в unit-тестах (KI-018).
+        unitTests.isIncludeAndroidResources = true
+    }
 }
 
 androidComponents {
@@ -50,4 +55,7 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.kotlin.test.junit)
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.androidx.sqlite)
+    testImplementation(libs.androidx.sqlite.framework)
+    testImplementation(libs.robolectric)
 }
