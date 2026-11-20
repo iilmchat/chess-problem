@@ -1,0 +1,344 @@
+<!doctype html>
+<!--
+  Источник: docs/legal/PRIVACY_POLICY.md, редакция 1.0 от 28.10.2026 (RU §2, EN §3).
+  Опубликовать этим файлом по адресу https://iiruchating.ru/chess-problem/privacy
+  (или как index.html в отдельном каталоге GitHub Pages). Внешних зависимостей нет.
+  Перед публикацией: юридическая вычитка и проверка URL (KI-006).
+-->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Политика конфиденциальности — Chess Problem / Privacy Policy</title>
+  <meta name="description" content="Chess Problem: офлайн-тренажёр шахматных задач. Политика конфиденциальности — RU/EN. Персональные данные не собираются.">
+  <meta name="color-scheme" content="light">
+  <style>
+    :root {
+      --bg: #FAF7EF;
+      --surface: #FFFFFF;
+      --text: #1B2420;
+      --muted: #5B6B63;
+      --border: #C9D3CB;
+      --accent: #059669;
+      --accent-soft: #E6F4EC;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+    header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    h1 { margin: 0 0 12px; font-size: 26px; line-height: 1.3; }
+    h2 { margin: 32px 0 12px; font-size: 20px; line-height: 1.35; }
+    h3 { margin: 22px 0 8px; font-size: 17px; line-height: 1.4; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 0 0 12px; padding-left: 22px; }
+    li { margin-bottom: 4px; }
+    .meta { color: var(--muted); font-size: 14px; }
+    .summary {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 0 0 24px;
+    }
+    .summary p:last-child, .summary ul:last-child { margin-bottom: 0; }
+    .lang-switch { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+    .lang-switch button {
+      font: inherit;
+      font-size: 14px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .lang-switch button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .lang-switch button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    main { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 8px 24px 24px; }
+    .table-scroll { overflow-x: auto; margin: 0 0 16px; }
+    table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14px; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    th { background: var(--accent-soft); font-weight: 700; }
+    code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .92em; }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 520px) {
+      .wrap { padding: 16px 12px 40px; }
+      header, main { padding: 18px 16px; }
+      h1 { font-size: 22px; }
+    }
+    @media print {
+      body { background: #fff; }
+      header, main { border: 0; padding: 0; }
+      .lang-switch { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Chess Problem · RuChating (iilmchat)</p>
+      <h1>Политика конфиденциальности / Privacy Policy</h1>
+      <p class="meta">Версия 1.0 · дата вступления 28.10.2026 · Android-приложение
+        <code>com.iilmchat.chessproblem</code> в RuStore</p>
+      <nav class="lang-switch" aria-label="Язык / Language">
+        <button type="button" data-lang="ru" aria-pressed="true">Русский</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ============================ RU ============================ -->
+      <div class="lang" data-lang="ru" lang="ru">
+        <div class="summary">
+          <h2>1. Кратко</h2>
+          <ul>
+            <li><strong>v1.0 не собирает персональные данные.</strong></li>
+            <li>Нет аккаунта, облака, аналитики, рекламы и сетевых запросов.</li>
+            <li>Прогресс и настройки хранятся только на устройстве.</li>
+            <li>Приложение работает офлайн; для игры интернет не нужен.</li>
+            <li>Удаление приложения удаляет локальные данные (в v1.0 резервное копирование отключено).</li>
+          </ul>
+        </div>
+
+        <h2>2. Общие сведения</h2>
+        <p>Настоящая Политика конфиденциальности описывает, какие данные обрабатывает
+          приложение Chess Problem («Приложение»), как они хранятся и какие права есть у
+          пользователя. Оператор — RuChating (iilmchat).</p>
+        <p>Приложение предназначено для решения шахматных задач. Оно не требует
+          регистрации, не создаёт учётную запись и не передаёт данные на сервер.</p>
+
+        <h3>2.2. Какие данные обрабатываются</h3>
+        <p>В версии v1.0 Приложение <strong>не собирает и не передаёт</strong>:</p>
+        <ul>
+          <li>имя, e-mail, телефон, адрес;</li>
+          <li>геолокацию;</li>
+          <li>идентификаторы устройства или рекламный идентификатор;</li>
+          <li>контакты, фото, файлы, микрофон, камеру;</li>
+          <li>историю браузера или других приложений;</li>
+          <li>аналитику использования и crash-отчёты.</li>
+        </ul>
+        <p>На устройстве локально хранятся:</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Данные</th><th>Зачем</th><th>Где</th></tr></thead>
+            <tbody>
+              <tr><td>Прогресс: решённые задачи, звёзды, XP, серия, достижения</td><td>Показывать прогресс и статистику</td><td>Room, приватное хранилище приложения</td></tr>
+              <tr><td>Настройки: язык, тема, доска, звук, haptics, доступность</td><td>Сохранять выбор пользователя</td><td>DataStore и синхронный кэш темы/локали, приватное хранилище приложения</td></tr>
+              <tr><td>Последняя задача и отметка времени (<code>lastPlayedAt</code>)</td><td>Показать карточку «Продолжить» после сворачивания; текущее время таймера не сохраняется</td><td>Room, таблица <code>puzzle_progress</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Эти данные не покидают устройство. Доступ к ним имеет только Приложение в
+          пределах своей песочницы Android.</p>
+
+        <h3>2.3. Разрешения</h3>
+        <p>В v1.0 Приложение не запрашивает опасных разрешений. Для тактильной отдачи
+          может использоваться системный haptic feedback, который не требует доступа к
+          персональным данным. Если в будущем понадобится разрешение, оно будет
+          запрошено с понятным объяснением, а Политика обновлена.</p>
+
+        <h3>2.4. Сеть и сторонние SDK</h3>
+        <p>В v1.0 Приложение не содержит <code>INTERNET</code>, рекламных, аналитических
+          или платёжных SDK. Контент и прогресс локальные.</p>
+        <p>В Приложении указана атрибуция Lichess: часть задач основана на открытой базе
+          Lichess (CC0 1.0). Lichess не получает данные пользователя через Приложение и
+          не связан с ним.</p>
+        <p>Магазин RuStore может самостоятельно собирать статистику установок, крашей и
+          отзывов в соответствии со своей политикой. Это происходит на стороне магазина
+          и не контролируется Приложением; см. политику RuStore.</p>
+
+        <h3>2.5. Дети</h3>
+        <p>Приложение имеет возрастную маркировку 6+. Мы сознательно не собираем данные
+          детей и не показываем рекламу. Если в будущем появится реклама или покупки,
+          Политика и возрастная маркировка будут пересмотрены.</p>
+
+        <h3>2.6. Хранение и удаление</h3>
+        <p>Данные хранятся на устройстве, пока установлено Приложение. Пользователь может:</p>
+        <ul>
+          <li>сбросить прогресс в «Настройки → Данные → Сбросить прогресс»;</li>
+          <li>удалить Приложение — вместе с ним удаляются локальные данные приложения.</li>
+        </ul>
+        <p>В v1.0 <code>allowBackup=false</code>, поэтому прогресс не копируется в облачный
+          backup Android. При удалении Приложения восстановить прогресс невозможно.</p>
+
+        <h3>2.7. Права пользователя</h3>
+        <p>Поскольку Оператор не получает персональные данные, запросы на доступ,
+          исправление или удаление данных на сервере неприменимы. По вопросам
+          приватности можно написать на <a href="mailto:info@iiruchating.ru">info@iiruchating.ru</a>.</p>
+
+        <h3>2.8. Изменения</h3>
+        <p>Мы можем обновлять Политику при изменении функций Приложения. Новая версия
+          публикуется по тому же URL с датой вступления. Существенные изменения
+          (например, появление рекламы или покупок) будут отражены в Приложении и
+          карточке RuStore до включения функции.</p>
+
+        <h3>2.9. Контакты</h3>
+        <ul>
+          <li>E-mail: <a href="mailto:info@iiruchating.ru">info@iiruchating.ru</a></li>
+          <li>GitHub: <a href="https://github.com/iilmchat">github.com/iilmchat</a></li>
+          <li>Сайт: <a href="https://iiruchating.ru">iiruchating.ru</a></li>
+        </ul>
+
+        <h2>3. Публикация и версии</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Версия</th><th>Дата</th><th>Что изменилось</th></tr></thead>
+            <tbody><tr><td>1.0</td><td>28.10.2026</td><td>Первая редакция для офлайн-версии v1.0: данные не собираются</td></tr></tbody>
+          </table>
+        </div>
+
+        <h2>4. Будущие версии (не действует сейчас)</h2>
+        <p>Если в v1.1 появятся rewarded-реклама и/или встроенные покупки, до их
+          включения Политика будет дополнена перечнем рекламных/платёжных SDK,
+          правовым основанием и согласием, данными о покупках (без номера карты —
+          его обрабатывает RuStore), возрастом и настройками персонализации, а также
+          способом отключить рекламу (Premium). До обновления Политики эти функции
+          не включаются.</p>
+      </div>
+
+      <!-- ============================ EN ============================ -->
+      <div class="lang" data-lang="en" lang="en" hidden>
+        <div class="summary">
+          <h2>1. In short</h2>
+          <ul>
+            <li><strong>v1.0 does not collect personal data.</strong></li>
+            <li>No account, cloud, analytics, ads, or network requests.</li>
+            <li>Progress and settings stay on the device only.</li>
+            <li>The App works offline; no internet connection is needed.</li>
+            <li>Uninstalling the App removes local data (backup is disabled in v1.0).</li>
+          </ul>
+        </div>
+
+        <h2>2. Overview</h2>
+        <p>This Privacy Policy explains what data Chess Problem (“the App”) processes, how
+          it is stored, and what rights users have. The operator is RuChating (iilmchat).</p>
+        <p>The App is a chess puzzle trainer. It does not require an account and does not
+          send data to a server.</p>
+
+        <h3>2.2. Data processed</h3>
+        <p>In v1.0 the App <strong>does not collect or transmit</strong>:</p>
+        <ul>
+          <li>name, email, phone number, or address;</li>
+          <li>location;</li>
+          <li>device identifiers or advertising ID;</li>
+          <li>contacts, photos, files, microphone, or camera;</li>
+          <li>browsing history or usage of other apps;</li>
+          <li>usage analytics or crash reports.</li>
+        </ul>
+        <p>The App stores the following locally on the device:</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Data</th><th>Purpose</th><th>Where</th></tr></thead>
+            <tbody>
+              <tr><td>Progress: solved puzzles, stars, XP, streak, achievements</td><td>Show progress and statistics</td><td>Room, app-private storage</td></tr>
+              <tr><td>Settings: language, theme, board, sound, haptics, accessibility</td><td>Remember user preferences</td><td>DataStore and synchronous theme/locale cache, app-private storage</td></tr>
+              <tr><td>Last puzzle and its <code>lastPlayedAt</code> timestamp</td><td>Show the “Continue” card after backgrounding; the running timer is not persisted</td><td>Room, <code>puzzle_progress</code> table</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>This data never leaves the device. Only the App can access it within its Android
+          sandbox.</p>
+
+        <h3>2.3. Permissions</h3>
+        <p>v1.0 requests no dangerous permissions. Haptic feedback may use the system
+          haptic API, which does not provide access to personal data. Any future
+          permission will be requested with a clear explanation and an updated Policy.</p>
+
+        <h3>2.4. Network and third-party SDKs</h3>
+        <p>v1.0 has no <code>INTERNET</code> permission and contains no advertising,
+          analytics, or payment SDKs. Content and progress are local.</p>
+        <p>The App includes Lichess attribution: some puzzles are based on the open Lichess
+          puzzle database (CC0 1.0). Lichess does not receive user data through the App
+          and is not affiliated with it.</p>
+        <p>RuStore may independently collect install, crash, and review statistics under
+          its own policy. This happens on the store side and is not controlled by the App;
+          see RuStore’s policy.</p>
+
+        <h3>2.5. Children</h3>
+        <p>The App is rated 6+. We intentionally do not collect children’s data and do not
+          show ads. If advertising or purchases are added, the Policy and age rating will
+          be reviewed.</p>
+
+        <h3>2.6. Retention and deletion</h3>
+        <p>Data stays on the device while the App is installed. The user can:</p>
+        <ul>
+          <li>reset progress in “Settings → Data → Reset progress”;</li>
+          <li>uninstall the App, which removes its local data.</li>
+        </ul>
+        <p>v1.0 uses <code>allowBackup=false</code>, so progress is not copied to Android
+          cloud backup. Uninstalling the App permanently removes progress.</p>
+
+        <h3>2.7. User rights</h3>
+        <p>Because the operator does not receive personal data, server-side access,
+          correction, or deletion requests do not apply. For privacy questions, contact
+          <a href="mailto:info@iiruchating.ru">info@iiruchating.ru</a>.</p>
+
+        <h3>2.8. Changes</h3>
+        <p>We may update this Policy when App features change. The new version will be
+          published at the same URL with an effective date. Material changes (for example,
+          ads or purchases) will be reflected in the App and the RuStore listing before
+          the feature is enabled.</p>
+
+        <h3>2.9. Contact</h3>
+        <ul>
+          <li>Email: <a href="mailto:info@iiruchating.ru">info@iiruchating.ru</a></li>
+          <li>GitHub: <a href="https://github.com/iilmchat">github.com/iilmchat</a></li>
+          <li>Website: <a href="https://iiruchating.ru">iiruchating.ru</a></li>
+        </ul>
+
+        <h2>3. Publication and versions</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Version</th><th>Date</th><th>Change</th></tr></thead>
+            <tbody><tr><td>1.0</td><td>28.10.2026</td><td>First edition for the offline v1.0: no data is collected</td></tr></tbody>
+          </table>
+        </div>
+
+        <h2>4. Future versions (not in effect now)</h2>
+        <p>If rewarded ads and/or in-app purchases are added in v1.1, the Policy will be
+          updated before they are enabled: the list of ad/payment SDKs, legal basis and
+          consent, purchase data (card details are handled by RuStore), age and
+          personalisation settings, and a way to opt out of ads (Premium).</p>
+      </div>
+    </main>
+
+    <footer>© 2026 RuChating (iilmchat). Chess Problem — офлайн-тренажёр шахматных задач.</footer>
+  </div>
+
+  <script>
+    (function () {
+      var blocks = Array.prototype.slice.call(document.querySelectorAll('.lang'));
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang-switch button'));
+      function setLang(lang) {
+        blocks.forEach(function (block) { block.hidden = block.getAttribute('data-lang') !== lang; });
+        buttons.forEach(function (button) {
+          button.setAttribute('aria-pressed', String(button.getAttribute('data-lang') === lang));
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('chessproblem-privacy-lang', lang); } catch (e) { /* file:// */ }
+      }
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () { setLang(button.getAttribute('data-lang')); });
+      });
+      var saved = null;
+      try { saved = localStorage.getItem('chessproblem-privacy-lang'); } catch (e) { /* file:// */ }
+      setLang(saved === 'en' ? 'en' : 'ru');
+    })();
+  </script>
+</body>
+</html>

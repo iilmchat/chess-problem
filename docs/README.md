@@ -43,6 +43,9 @@
 | [KNOWN_ISSUES.md](KNOWN_ISSUES.md) | Реестр известных проблем и ограничений (KI-XXX) |
 | [CHANGELOG.md](CHANGELOG.md) | История версий в формате Keep a Changelog |
 | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md) | Политика конфиденциальности RU/EN |
+| [privacy.html](legal/privacy.html) | Статическая политика RU/EN одним файлом для публикации (KI-006) |
+| [RuStore listing](../store/RUSTORE_LISTING.md) | Готовые поля карточки RuStore: названия, описания, теги, декларация |
+| [Release checklist v0.5.0](releases/v0.5.0-checklist.md) | Чек-лист RuStore Closed Beta и внешние блокеры |
 | [THIRD_PARTY_LICENSES.md](legal/THIRD_PARTY_LICENSES.md) | Лицензии библиотек, шрифтов, задач и инструментов |
 | [store/README.md](../store/README.md) | Черновик карточки RuStore, иконка, скриншоты, тексты |
 
@@ -63,7 +66,9 @@
 | Воспроизводимый отбор 180 задач (v0.4.0) | [tools/lichess-selection-v040.json](../tools/lichess-selection-v040.json) |
 | Модули и состояние сессии | [ARCHITECTURE.md](development/ARCHITECTURE.md) |
 | Требования RuStore | [RUSTORE.md](development/RUSTORE.md) |
-| Политику конфиденциальности | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md) |
+| Политику конфиденциальности | [PRIVACY_POLICY.md](legal/PRIVACY_POLICY.md), [privacy.html](legal/privacy.html) |
+| Готовые поля карточки RuStore | [RUSTORE_LISTING.md](../store/RUSTORE_LISTING.md) |
+| Чек-лист релиза v0.5.0 | [v0.5.0-checklist.md](releases/v0.5.0-checklist.md) |
 | Лицензии | [THIRD_PARTY_LICENSES.md](legal/THIRD_PARTY_LICENSES.md) |
 
 ---

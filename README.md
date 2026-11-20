@@ -304,6 +304,9 @@ chess-problem/
 | [CHANGELOG.md](docs/CHANGELOG.md) | все | История версий (Keep a Changelog) |
 | [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) | все | Известные ограничения и проблемы |
 | [PRIVACY_POLICY.md](docs/legal/PRIVACY_POLICY.md) | все | Политика конфиденциальности RU/EN |
+| [privacy.html](docs/legal/privacy.html) | владелец продукта | Статическая политика RU/EN одним файлом для публикации |
+| [RUSTORE_LISTING.md](store/RUSTORE_LISTING.md) | релиз-менеджер | Готовые поля карточки RuStore для консоли |
+| [v0.5.0-checklist.md](docs/releases/v0.5.0-checklist.md) | релиз-менеджер | Чек-лист Closed Beta и внешние блокеры |
 | [THIRD_PARTY_LICENSES.md](docs/legal/THIRD_PARTY_LICENSES.md) | все | Лицензии библиотек, шрифтов и задач |
 
 ---
