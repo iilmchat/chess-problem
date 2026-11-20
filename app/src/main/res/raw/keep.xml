@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Шрифты загружаются по R.font из :ui; фиксируем их в release,
+     чтобы shrinkResources не вырезал файлы при изменении темы/типографики. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@font/montserrat,@font/manrope,@font/roboto_mono" />

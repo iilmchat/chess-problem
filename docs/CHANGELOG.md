@@ -5,7 +5,24 @@
 
 ## [Unreleased]
 
-> Планы публичного релиза v1.0.0.
+> Подготовка публичного релиза v1.0.0 (`versionCode = 10000`).
+
+### Added
+
+- Расширенные R8/ProGuard-правила публичной сборки: `$$serializer` и
+  `@Serializable`-модели паков, Room entity/DAO и `RoomDatabase`, `chesslib`,
+  `java.io.Serializable`-снимок сессии и его перечисления (стабильные имена
+  полей и констант).
+- `tools:keep` для resource-шрифтов Montserrat/Manrope/Roboto Mono при
+  `isShrinkResources = true`.
+- Gradle-задача `verifyReleaseArtifacts` (финализатор `:app:bundleRelease`):
+  проверяет наличие `outputs/mapping/release/mapping.txt` и отсутствие
+  `INTERNET`, `AD_ID`, `debuggable="true"` в merged release-манифесте при
+  `allowBackup="false"`.
+
+### Changed
+
+- `versionCode = 10000`, `versionName = "1.0.0"` для RuStore.
 
 ### Planned
 
