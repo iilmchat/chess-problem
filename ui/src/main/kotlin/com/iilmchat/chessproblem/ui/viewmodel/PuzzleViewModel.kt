@@ -1,5 +1,6 @@
 package com.iilmchat.chessproblem.ui.viewmodel
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.iilmchat.chessproblem.core.chess.ChessRules
@@ -16,8 +17,11 @@ import com.iilmchat.chessproblem.core.repository.SettingsRepository
 import com.iilmchat.chessproblem.core.session.Feedback
 import com.iilmchat.chessproblem.core.session.PuzzleEvent
 import com.iilmchat.chessproblem.core.session.PuzzleSession
+import com.iilmchat.chessproblem.core.session.PuzzleSessionSnapshot
 import com.iilmchat.chessproblem.core.session.PuzzleState
+import com.iilmchat.chessproblem.core.session.finished
 import com.iilmchat.chessproblem.core.session.toOutcome
+import com.iilmchat.chessproblem.core.session.toSnapshot
 import com.iilmchat.chessproblem.ui.R
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -48,6 +52,7 @@ data class PuzzleUiState(
 
 class PuzzleViewModel(
     private val puzzleId: String,
+    private val savedStateHandle: SavedStateHandle,
     private val puzzleRepository: PuzzleRepository,
     private val progressRepository: ProgressRepository,
     private val hintRepository: HintRepository,
@@ -80,13 +85,19 @@ class PuzzleViewModel(
             val settings = runCatching { settingsRepository.settings.first() }
                 .getOrDefault(UserSettings())
             val puzzleSession = PuzzleSession(puzzle, rules).also { session = it }
-            val initial = puzzleSession.initialState().let { state ->
+            // Process death: доска и счётчики восстанавливаются из снимка, а не
+            // начинаются заново. Завершённые снимки не сохраняются.
+            val restored = savedStateHandle.get<PuzzleSessionSnapshot>(KEY_SESSION)
+                ?.takeIf { it.puzzleId == puzzle.id && !it.finished }
+                ?.let { snapshot -> runCatching { puzzleSession.restore(snapshot) }.getOrNull() }
+            val initial = restored ?: puzzleSession.initialState().let { state ->
                 if (settings.autoFlip && state.board.sideToMove == Side.BLACK) {
                     state.copy(flipped = true)
                 } else {
                     state
                 }
             }
+            if (restored == null) persistSnapshot(initial)
 
             _state.update {
                 it.copy(
@@ -94,12 +105,14 @@ class PuzzleViewModel(
                     puzzle = puzzle,
                     session = initial,
                     settings = settings,
+                    showPause = restored != null,
                 )
             }
             observeSettings()
             observeHints()
             hintRepository.refillIfNeeded()
-            startTicker()
+            // Восстановленная сессия уже на паузе — таймер не тикает до Resume.
+            if (restored?.paused != true) startTicker()
         }
     }
 
@@ -129,6 +142,7 @@ class PuzzleViewModel(
         val current = _state.value.session ?: return
         if (current.finished || current.status != PuzzleState.Status.SOLVING) return
         val paused = session?.onEvent(current, PuzzleEvent.Pause) ?: return
+        persistSnapshot(paused)
         _state.update { it.copy(session = paused, showHints = true) }
     }
 
@@ -165,6 +179,7 @@ class PuzzleViewModel(
         val current = _state.value.session ?: return
         if (current.finished) return
         val paused = session?.onEvent(current, PuzzleEvent.Pause) ?: return
+        persistSnapshot(paused)
         _state.update { it.copy(session = paused, showPause = true) }
     }
 
@@ -172,6 +187,7 @@ class PuzzleViewModel(
         val current = _state.value.session ?: return
         val resumed = session?.onEvent(current, PuzzleEvent.Resume) ?: return
         _state.update { it.copy(session = resumed, showPause = false) }
+        if (tickerJob?.isActive != true) startTicker()
     }
 
     fun requestExit() {
@@ -181,7 +197,10 @@ class PuzzleViewModel(
         } else {
             session?.onEvent(current, PuzzleEvent.Pause) ?: current
         }
-        if (!current.finished) saveVisit(current)
+        if (!current.finished) {
+            saveVisit(current)
+            persistSnapshot(paused)
+        }
         _state.update {
             it.copy(
                 session = paused,
@@ -206,8 +225,10 @@ class PuzzleViewModel(
         val current = _state.value.session ?: return
         if (current.finished) return
         saveVisit(current)
+        persistSnapshot(current)
         if (current.paused) return
         val paused = session?.onEvent(current, PuzzleEvent.Pause) ?: return
+        persistSnapshot(paused)
         _state.update { it.copy(session = paused, showPause = true) }
     }
 
@@ -277,6 +298,7 @@ class PuzzleViewModel(
     }
 
     private fun applySession(next: PuzzleState) {
+        persistSnapshot(next)
         _state.update {
             it.copy(
                 session = next,
@@ -346,6 +368,15 @@ class PuzzleViewModel(
                 it.copy(session = session?.onEvent(current, PuzzleEvent.ClearHint) ?: current)
             }
             scheduledHint = null
+        }
+    }
+
+    /** Снимок обновляется на каждом изменении сессии и при уходе в фон. */
+    private fun persistSnapshot(state: PuzzleState) {
+        if (state.finished) {
+            savedStateHandle.remove<PuzzleSessionSnapshot>(KEY_SESSION)
+        } else {
+            savedStateHandle[KEY_SESSION] = state.toSnapshot()
         }
     }
 
@@ -419,5 +450,9 @@ class PuzzleViewModel(
         feedbackJob?.cancel()
         hintJob?.cancel()
         super.onCleared()
+    }
+
+    private companion object {
+        const val KEY_SESSION = "active_puzzle_session"
     }
 }

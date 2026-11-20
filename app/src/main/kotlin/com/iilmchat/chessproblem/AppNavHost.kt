@@ -169,9 +169,10 @@ fun AppNavHost(
                 val nextPuzzleId = puzzle?.let { catalog.nextPuzzleAfter(it)?.id }
                 val puzzleViewModel: PuzzleViewModel = viewModel(
                     key = "puzzle_$puzzleId",
-                    factory = AppViewModelFactory {
+                    factory = AppViewModelFactory { savedStateHandle ->
                         PuzzleViewModel(
                             puzzleId = puzzleId,
+                            savedStateHandle = savedStateHandle,
                             puzzleRepository = container.puzzleRepository,
                             progressRepository = container.progressRepository,
                             hintRepository = container.hintRepository,

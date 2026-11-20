@@ -51,7 +51,8 @@
 | --- | --- | --- |
 | Прогресс: решённые задачи, звёзды, XP, серия, достижения | Показывать прогресс и статистику | Room, приватное хранилище приложения |
 | Настройки: язык, тема, доска, звук, haptics, доступность | Сохранять выбор пользователя | DataStore и синхронный кэш SharedPreferences (язык, тема), приватное хранилище приложения |
-| Последняя задача и отметка времени (`lastPlayedAt`) | Показать карточку «Продолжить» после сворачивания; текущее время таймера не сохраняется | Room, таблица `puzzle_progress` |
+| Последняя задача и отметка времени (`lastPlayedAt`) | Показать карточку «Продолжить» после сворачивания | Room, таблица `puzzle_progress` |
+| Снимок активной сессии: ходы, подсказки, попытки, остаток таймера | Восстановить задачу после убийства процесса системой; восстановление всегда начинается с паузы | `SavedStateHandle`, состояние процесса; данные не покидают устройство |
 
 Эти данные не покидают устройство. Доступ к ним имеет только Приложение в
 пределах своей песочницы Android.
@@ -140,7 +141,8 @@ The App stores the following locally on the device:
 | --- | --- | --- |
 | Progress: solved puzzles, stars, XP, streak, achievements | Show progress and statistics | Room, app-private storage |
 | Settings: language, theme, board, sound, haptics, accessibility | Remember user preferences | DataStore and synchronous SharedPreferences cache (language, theme), app-private storage |
-| Last puzzle and its `lastPlayedAt` timestamp | Show the "Continue" card after backgrounding; the running timer is not persisted | Room, `puzzle_progress` table |
+| Last puzzle and its `lastPlayedAt` timestamp | Show the "Continue" card after backgrounding | Room, `puzzle_progress` table |
+| Active session snapshot: moves, hints, attempts, remaining timer | Restore the puzzle after process death; restore always starts paused | `SavedStateHandle`, process state; data never leaves the device |
 
 This data never leaves the device. Only the App can access it within its Android
 sandbox.

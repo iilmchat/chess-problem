@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             val settingsViewModel: SettingsViewModel = viewModel(
-                factory = AppViewModelFactory {
+                factory = AppViewModelFactory { _ ->
                     SettingsViewModel(
                         settingsRepository = container.settingsRepository,
                         progressRepository = container.progressRepository,
@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
                 },
             )
             val catalogViewModel: CatalogViewModel = viewModel(
-                factory = AppViewModelFactory {
+                factory = AppViewModelFactory { _ ->
                     CatalogViewModel(
                         puzzleRepository = container.puzzleRepository,
                         progressRepository = container.progressRepository,

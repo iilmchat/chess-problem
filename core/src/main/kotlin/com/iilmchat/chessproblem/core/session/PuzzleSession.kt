@@ -46,6 +46,44 @@ class PuzzleSession(
         )
     }
 
+    /**
+     * Восстанавливает состояние после process death: доска пересчитывается
+     * переигрыванием сохранённых ходов, а таймер сразу ставится на паузу —
+     * игрок увидит overlay «Пауза» и не потеряет время вслепую.
+     */
+    fun restore(snapshot: PuzzleSessionSnapshot): PuzzleState {
+        require(snapshot.puzzleId == puzzle.id) {
+            "Snapshot of ${snapshot.puzzleId} cannot restore ${puzzle.id}"
+        }
+
+        var board = rules.load(puzzle.fen)
+        snapshot.moves.forEach { played ->
+            // Ходы приходят из нашего же снимка; при расхождении версий пропускаем
+            // невоспроизводимый ход, чтобы не сломать восстановление целиком.
+            rules.move(board, parseUci(played.uci))?.let { board = it.board }
+        }
+
+        return PuzzleState(
+            puzzle = puzzle,
+            board = board,
+            status = snapshot.status,
+            moves = snapshot.moves,
+            attemptsLeft = snapshot.attemptsLeft,
+            mistakes = snapshot.mistakes,
+            hintsUsed = snapshot.hintsUsed,
+            elapsedMs = (snapshot.timeLimitMs - snapshot.remainingMs).coerceAtLeast(0L),
+            timeLimitMs = snapshot.timeLimitMs,
+            stars = snapshot.stars,
+            starsCap = snapshot.starsCap,
+            solutionIndex = snapshot.solutionIndex,
+            feedback = null,
+            flipped = snapshot.flipped,
+            paused = true,
+            continued = snapshot.continued,
+            revealUsed = snapshot.revealUsed,
+        )
+    }
+
     fun onEvent(state: PuzzleState, event: PuzzleEvent): PuzzleState = when (event) {
         is PuzzleEvent.TapSquare -> tapSquare(state, event.square)
         is PuzzleEvent.MakeMove -> makeMove(state, event)

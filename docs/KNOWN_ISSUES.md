@@ -64,13 +64,15 @@ drag-to-promotion, тактильная отдача и семантика 64 к
 
 ### KI-014 — Нет screenshot-тестов, process death и instrumented-прогона
 
-**Статус:** 4 JVM Compose UI-теста закрыты в v0.4.1; screenshot-тесты и process death остаются
-**Влияние:** CI проверяет unit-тесты `core`, 4 JVM Compose UI-теста `:ui`
-(Robolectric) — главная, ход на доске, лист подсказок, результат — и detekt, но
-по-прежнему нет screenshot-прогона на 360×800/430×932, теста
-process death/restore и instrumented-запуска на эмуляторе.
-**План:** добавить screenshot tests, тест восстановления после process death
-и аппаратный прогон вместе с KI-010/KI-012.
+**Статус:** JVM-тесты снимка сессии и process death закрыты в подготовке v0.5.0;
+screenshot-тесты и instrumented-прогон остаются
+**Влияние:** CI проверяет unit-тесты `core`, JVM Compose UI-тесты `:ui`
+(Robolectric) и detekt. Восстановление активной сессии после process death
+покрыто тестами `:core`/`:ui` (доска, ходы, попытки, подсказки, остаток таймера,
+overlay «Пауза»), но по-прежнему нет screenshot-прогона на 360×800/430×932 и
+instrumented-запуска на эмуляторе с реальным убийством процесса.
+**План:** добавить screenshot tests и аппаратный прогон process death/restore
+вместе с KI-010/KI-012.
 
 ## Решённые
 

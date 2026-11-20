@@ -262,10 +262,45 @@
 
 ## [Unreleased]
 
+### Added
+
+- Магазинная иконка `store/icon-512.png`: 512×512 PNG без альфа-канала, фон
+  залит фирменным `#08110E`, сгенерирована из `design/icon.svg` (KI-019/RuStore).
+- Roborazzi 1.79.0 поверх Robolectric: 10 эталонных скриншотов — 5 экранов
+  (главная, решатель, подсказки, результат, прогресс) в профилях 360×800 и
+  800×1280; эталоны лежат в `ui/src/test/screenshots`, верификация —
+  `:ui:verifyRoborazziDebug` в CI (KI-014).
+- Снимок активной сессии (`PuzzleSessionSnapshot`) и восстановление доски,
+  ходов, попыток, подсказок и остатка таймера через `SavedStateHandle` после
+  process death; восстановленная сессия сразу ставится на паузу с overlay.
+- Unit-тесты восстановления сессии в `:core` (пересчёт доски и счётчиков) и `:ui`
+  (ViewModel: пауза, отсутствие тика до Resume, игнорирование завершённых
+  снимков).
+- R8-правило стабильности полей `PuzzleSessionSnapshot` и `PlayedMove`.
+
+### Changed
+
+- `AppViewModelFactory` передаёт `SavedStateHandle` из `CreationExtras` в
+  ViewModel вместо пустой фабрики.
+- Release-аудит: в merged manifest нет `INTERNET` и `android:debuggable`,
+  `allowBackup="false"`, R8/ProGuard для chesslib, kotlinx.serialization, Room и
+  снимка сессии проходят минификацию.
+- Документация таймера и политики конфиденциальности согласована с сохранением
+  остатка времени в state process death (KI-014).
+- `store/README.md`: иконка для загрузки — корневой `store/icon-512.png`,
+  добавлена команда генерации и проверки отсутствия прозрачности.
+
+### Fixed
+
+- Фикстура `PuzzleViewModelRestoreTest.activeSnapshot()` создавала завершённую
+  сессию (демо-задача решалась ходом e2e4 и ответом соперника), из-за чего
+  JVM-тесты восстановления падали; теперь снимок остаётся активным.
+
 ### Planned
 
-- Screenshot-тесты на 360×800 и 430×932 и проверка process death/restore (KI-014).
-- Аппаратная проверка планшета 7–10", drag-and-drop и TalkBack (KI-010/KI-012).
+- Аппаратная проверка process death/restore, drag-and-drop и TalkBack на
+  эмуляторе/устройстве (KI-012).
+- Аппаратная проверка планшета 7–10" (KI-010).
 - RuStore closed beta (v0.5.0).
 
 ## [0.1.0-design] — 2026-10-28

@@ -7,7 +7,9 @@ import com.iilmchat.chessproblem.core.chess.Side
 import com.iilmchat.chessproblem.core.chess.Square
 import com.iilmchat.chessproblem.core.model.HintTier
 import com.iilmchat.chessproblem.core.model.Puzzle
+import java.io.Serializable
 
+// Serializable нужен для сохранения снимка сессии в SavedStateHandle (process death).
 data class PlayedMove(
     val uci: String,
     val san: String,
@@ -15,7 +17,11 @@ data class PlayedMove(
     val isCorrect: Boolean,
     val timestampMs: Long,
     val side: Side,
-)
+) : Serializable {
+    private companion object {
+        const val serialVersionUID: Long = 1L
+    }
+}
 
 sealed interface Feedback {
     data object Wrong : Feedback

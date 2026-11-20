@@ -286,10 +286,15 @@ class PuzzleTimer(
 - Пауза на lifecycle, hint sheet, pause/exit dialog; при возврате из фона
   показывается overlay «Пауза».
 - При выходе/уходе в фон в Room (`puzzle_progress.lastPlayedAt`) сохраняются
-  данные для карточки «Продолжить»; текущий `elapsedMs` **не сохраняется и не
-  восстанавливается** — возобновление начинается с полным лимитом времени.
-  Это согласовано с [PRIVACY POLICY §2.2](../legal/PRIVACY_POLICY.md#22-какие-данные-обрабатываются).
-- Process death/restore и сохранение таймера — следующий этап (KI-014).
+  данные для карточки «Продолжить».
+- Активная сессия дополнительно сохраняется как `PuzzleSessionSnapshot` в
+  `SavedStateHandle`: `solutionIndex`, сыгранные ходы, `attemptsLeft`,
+  `mistakes`, подсказки, `remainingMs`, `continued` и ориентация доски. После
+  process death сессия восстанавливается **на паузе** и показывает overlay
+  «Пауза» — время не тикает до явного Resume. Снимок живёт в state процесса
+  и не уходит с устройства
+  ([PRIVACY POLICY §2.2](../legal/PRIVACY_POLICY.md#22-какие-данные-обрабатываются)).
+  JVM-тесты восстановления — в `:core`/`:ui`; instrumented-прогон — KI-014.
 
 ---
 
@@ -369,7 +374,8 @@ achievement(
 - `dailyReminder`: Boolean (v0.4.0)
 
 Карточка «Продолжить» строится по `puzzle_progress.lastPlayedAt` в Room, а не
-по DataStore; `elapsedMs` не сохраняется (§5.5). Перед первым composable
+по DataStore. Остаток таймера активной сессии хранится в `SavedStateHandle`,
+а не в DataStore/Room (§5.5). Перед первым composable
 `theme` и `language` читаются синхронно из `ThemePreferences` /
 `LocalePreferences` (SharedPreferences) как зеркала DataStore — ADR-0010,
 KI-015.
@@ -503,8 +509,11 @@ class AppContainer(context: Context) {
 - таймаут → FAILED, continue даёт +60 с и 1 попытку;
 - альтернативный мат принимается.
 
-**Следующие тесты:** process death/restore, Room DAO на in-memory базе,
-Compose UI и screenshot tests.
+**Проверенные тесты:** восстановление сессии после process death в `:core`/`:ui`,
+Room DAO на in-memory базе, Compose UI-тесты JVM.
+
+**Следующие тесты:** instrumented-прогон process death/restore на устройстве и
+screenshot tests (KI-014).
 
 ---
 
