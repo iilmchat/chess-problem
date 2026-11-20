@@ -1,0 +1,39 @@
+# Единые правила статического анализа для всех модулей (KI-016).
+# Настройки наследуются от detekt по умолчанию (buildUponDefaultConfig = true).
+# detekt-formatting — это ktlint; длина строки синхронизирована с .editorconfig.
+formatting:
+  active: true
+  android: false
+  autoCorrect: false
+  MaxLineLength:
+    active: true
+    maxLineLength: 120
+
+naming:
+  # Composable-функции в Compose по соглашению пишутся в PascalCase.
+  FunctionNaming:
+    active: true
+    functionPattern: '^([a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|`[^`]+`)$'
+
+complexity:
+  # Декларативное описание UI и машина состояний не укладываются в
+  # общие пороги сложности: экраны и сессии намеренно остаются крупными.
+  LongMethod:
+    active: false
+  TooManyFunctions:
+    active: false
+  LongParameterList:
+    active: false
+  CyclomaticComplexMethod:
+    active: true
+    threshold: 45
+
+style:
+  # UI-код оперирует dp/sp/alfa-значениями: magic number здесь не является запахом.
+  MagicNumber:
+    active: false
+  # Ранний возврат — идиоматичный способ описать состояния Compose-экрана.
+  ReturnCount:
+    active: false
+  LoopWithTooManyJumpStatements:
+    active: false

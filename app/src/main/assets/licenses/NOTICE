@@ -1,0 +1,50 @@
+Chess Problem — уведомления о сторонних компонентах
+===================================================
+
+Этот файл вместе с Apache-2.0.txt, OFL-1.1.txt, CC0-1.0.txt и
+BSD-2-Clause.txt поставляется в APK/AAB и предназначен для экрана
+«О приложении → Лицензии». Реестр компонентов и версии — в
+docs/legal/THIRD_PARTY_LICENSES.md; версии зависимостей зафиксированы в
+gradle/libs.versions.toml.
+
+Собственный код и оригинальные материалы
+-----------------------------------------
+Copyright 2026 RuChating (iilmchat). Все права защищены. Лицензия —
+proprietary, см. LICENSE в корне репозитория.
+
+Контент
+-------
+Lichess puzzle database — https://database.lichess.org/#puzzles
+Лицензия: CC0 1.0 Universal (полный текст — CC0-1.0.txt).
+
+Шахматные задачи основаны на открытой базе Lichess (CC0 1.0).
+Lichess не связан с Chess Problem и не поддерживает приложение.
+
+Авторские позиции и этюды: © RuChating (iilmchat), proprietary.
+Имена игроков и copyrighted-аннотации не сохраняются.
+
+Apache 2.0 (полный текст — Apache-2.0.txt)
+-----------------------------------------
+Kotlin stdlib 2.2.10 — Copyright JetBrains s.r.o.
+kotlinx.serialization 1.9.0 — Copyright JetBrains s.r.o.
+kotlinx.coroutines 1.10.2 — Copyright JetBrains s.r.o.
+AndroidX / Jetpack Compose (BOM 2026.09.00), Material 3, Room 2.8.5,
+DataStore 1.3.0, Material Icons Extended —
+Copyright The Android Open Source Project; Copyright Google LLC.
+chesslib 1.3.7 — Copyright bhlangonijr.
+
+SIL Open Font License 1.1 (полный текст — OFL-1.1.txt)
+------------------------------------------------------
+Montserrat — Copyright The Montserrat Project Authors.
+Manrope — Copyright The Manrope Project Authors.
+Roboto Mono — Copyright Google LLC.
+
+BSD-2-Clause (полный текст — BSD-2-Clause.txt)
+----------------------------------------------
+chess.js 1.4.0 — Copyright (c) 2025, Jeff Hlywa (jhlywa@gmail.com).
+Используется только в инструментах валидации CI, не поставляется в APK.
+
+Собственные ассеты
+------------------
+Иконка приложения (design/icon.svg), шахматные фигуры и интерфейсные
+иконки — собственные; сторонние наборы фигур не используются.

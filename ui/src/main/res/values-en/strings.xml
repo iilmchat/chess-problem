@@ -222,6 +222,9 @@
     <string name="about_made">Made with respect for chess</string>
     <string name="about_offline">Offline</string>
     <string name="about_languages">RU · EN</string>
+    <string name="about_content_version">Content: %1$s</string>
+    <string name="about_licenses_open">Open license texts</string>
+    <string name="about_license_unavailable">Could not read the license file.</string>
 
     <string name="board_content_description">Chessboard</string>
     <string name="board_white_to_move">White to move</string>
@@ -256,4 +259,5 @@
     <string name="a11y_flip">Flip board</string>
     <string name="a11y_pause">Pause</string>
     <string name="a11y_close_sheet">Close hints</string>
+    <string name="a11y_stars">%1$d of %2$d stars</string>
 </resources>

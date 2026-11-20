@@ -7,6 +7,7 @@ group = "com.iilmchat.chessproblem.buildlogic"
 dependencies {
     implementation("com.android.tools.build:gradle:9.4.1")
     implementation("org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.2.10")
+    implementation(libs.detekt.gradle.plugin)
 }
 
 gradlePlugin {
@@ -22,6 +23,10 @@ gradlePlugin {
         register("androidCompose") {
             id = "chessproblem.android.compose"
             implementationClass = "com.iilmchat.chessproblem.buildlogic.AndroidComposeConventionPlugin"
+        }
+        register("detekt") {
+            id = "chessproblem.detekt"
+            implementationClass = "com.iilmchat.chessproblem.buildlogic.DetektConventionPlugin"
         }
     }
 }

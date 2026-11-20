@@ -50,12 +50,14 @@ import com.iilmchat.chessproblem.core.model.ThemeMode
 import com.iilmchat.chessproblem.ui.R
 import com.iilmchat.chessproblem.ui.components.ChessTopBar
 import com.iilmchat.chessproblem.ui.components.InfoPill
+import com.iilmchat.chessproblem.ui.components.ResponsiveScaffoldContainer
 import com.iilmchat.chessproblem.ui.components.SectionHeader
 import com.iilmchat.chessproblem.ui.viewmodel.SettingsUiState
 
 @Composable
 fun SettingsScreen(
     state: SettingsUiState,
+    appVersion: String,
     onLanguage: (AppLanguage) -> Unit,
     onTheme: (ThemeMode) -> Unit,
     onBoardTheme: (BoardTheme) -> Unit,
@@ -72,11 +74,6 @@ fun SettingsScreen(
     var showResetDialog by remember { mutableStateOf(false) }
     val snackbarHostState = remember { SnackbarHostState() }
     val context = LocalContext.current
-    val version = remember {
-        runCatching {
-            context.packageManager.getPackageInfo(context.packageName, 0).versionName
-        }.getOrNull() ?: "0.3.0"
-    }
 
     LaunchedEffect(state.resetDone) {
         if (state.resetDone) {
@@ -85,167 +82,169 @@ fun SettingsScreen(
         }
     }
 
-    Box(modifier = modifier.fillMaxSize()) {
-        LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 110.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
-            item {
-                ChessTopBar(title = stringResource(R.string.settings_title))
-            }
-            item {
-                SectionHeader(title = stringResource(R.string.settings_section_appearance))
-            }
-            item {
-                SettingsCard {
-                    SettingLabel(stringResource(R.string.settings_language))
-                    ChoiceRow(
-                        options = listOf(
-                            AppLanguage.SYSTEM to stringResource(R.string.settings_language_system),
-                            AppLanguage.RU to stringResource(R.string.settings_language_ru),
-                            AppLanguage.EN to stringResource(R.string.settings_language_en),
-                        ),
-                        selected = state.settings.language,
-                        onSelected = onLanguage,
-                    )
-                    Spacer(Modifier.height(14.dp))
-                    SettingLabel(stringResource(R.string.settings_theme))
-                    ChoiceRow(
-                        options = listOf(
-                            ThemeMode.SYSTEM to stringResource(R.string.settings_theme_system),
-                            ThemeMode.DARK to stringResource(R.string.settings_theme_dark),
-                            ThemeMode.LIGHT to stringResource(R.string.settings_theme_light),
-                        ),
-                        selected = state.settings.theme,
-                        onSelected = onTheme,
-                    )
-                    Spacer(Modifier.height(14.dp))
-                    SettingLabel(stringResource(R.string.settings_board))
-                    BoardChoiceRow(
-                        selected = state.settings.boardTheme,
-                        onSelected = onBoardTheme,
-                    )
+    ResponsiveScaffoldContainer(modifier = modifier) {
+        Box(Modifier.fillMaxSize()) {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 110.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                item {
+                    ChessTopBar(title = stringResource(R.string.settings_title))
                 }
-            }
-            item {
-                SectionHeader(title = stringResource(R.string.settings_section_game))
-            }
-            item {
-                SettingsCard {
-                    SettingSwitchRow(
-                        title = stringResource(R.string.settings_coordinates),
-                        checked = state.settings.coordinates,
-                        onCheckedChange = onCoordinates,
-                    )
-                    SettingSwitchRow(
-                        title = stringResource(R.string.settings_auto_flip),
-                        checked = state.settings.autoFlip,
-                        onCheckedChange = onAutoFlip,
-                    )
-                    SettingSwitchRow(
-                        title = stringResource(R.string.settings_reduce_motion),
-                        checked = state.settings.reduceMotion,
-                        onCheckedChange = onReduceMotion,
-                    )
-                    SettingSwitchRow(
-                        title = stringResource(R.string.settings_sound),
-                        checked = state.settings.sound,
-                        onCheckedChange = onSound,
-                    )
-                    SettingSwitchRow(
-                        title = stringResource(R.string.settings_haptics),
-                        checked = state.settings.haptics,
-                        onCheckedChange = onHaptics,
-                        showDivider = false,
-                    )
+                item {
+                    SectionHeader(title = stringResource(R.string.settings_section_appearance))
                 }
-            }
-            item {
-                SectionHeader(title = stringResource(R.string.settings_hints))
-            }
-            item {
-                Surface(
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(16.dp),
-                    color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f)),
-                ) {
-                    Row(
-                        modifier = Modifier.padding(14.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Icon(
-                            imageVector = Icons.Filled.Lightbulb,
-                            contentDescription = null,
-                            tint = MaterialTheme.colorScheme.secondary,
-                            modifier = Modifier.size(22.dp),
+                item {
+                    SettingsCard {
+                        SettingLabel(stringResource(R.string.settings_language))
+                        ChoiceRow(
+                            options = listOf(
+                                AppLanguage.SYSTEM to stringResource(R.string.settings_language_system),
+                                AppLanguage.RU to stringResource(R.string.settings_language_ru),
+                                AppLanguage.EN to stringResource(R.string.settings_language_en),
+                            ),
+                            selected = state.settings.language,
+                            onSelected = onLanguage,
                         )
-                        Spacer(Modifier.width(10.dp))
-                        Column(Modifier.weight(1f)) {
-                            Text(
-                                text = stringResource(R.string.settings_hints_balance, state.hintBalance),
-                                style = MaterialTheme.typography.titleMedium,
-                                color = MaterialTheme.colorScheme.onSurface,
+                        Spacer(Modifier.height(14.dp))
+                        SettingLabel(stringResource(R.string.settings_theme))
+                        ChoiceRow(
+                            options = listOf(
+                                ThemeMode.SYSTEM to stringResource(R.string.settings_theme_system),
+                                ThemeMode.DARK to stringResource(R.string.settings_theme_dark),
+                                ThemeMode.LIGHT to stringResource(R.string.settings_theme_light),
+                            ),
+                            selected = state.settings.theme,
+                            onSelected = onTheme,
+                        )
+                        Spacer(Modifier.height(14.dp))
+                        SettingLabel(stringResource(R.string.settings_board))
+                        BoardChoiceRow(
+                            selected = state.settings.boardTheme,
+                            onSelected = onBoardTheme,
+                        )
+                    }
+                }
+                item {
+                    SectionHeader(title = stringResource(R.string.settings_section_game))
+                }
+                item {
+                    SettingsCard {
+                        SettingSwitchRow(
+                            title = stringResource(R.string.settings_coordinates),
+                            checked = state.settings.coordinates,
+                            onCheckedChange = onCoordinates,
+                        )
+                        SettingSwitchRow(
+                            title = stringResource(R.string.settings_auto_flip),
+                            checked = state.settings.autoFlip,
+                            onCheckedChange = onAutoFlip,
+                        )
+                        SettingSwitchRow(
+                            title = stringResource(R.string.settings_reduce_motion),
+                            checked = state.settings.reduceMotion,
+                            onCheckedChange = onReduceMotion,
+                        )
+                        SettingSwitchRow(
+                            title = stringResource(R.string.settings_sound),
+                            checked = state.settings.sound,
+                            onCheckedChange = onSound,
+                        )
+                        SettingSwitchRow(
+                            title = stringResource(R.string.settings_haptics),
+                            checked = state.settings.haptics,
+                            onCheckedChange = onHaptics,
+                            showDivider = false,
+                        )
+                    }
+                }
+                item {
+                    SectionHeader(title = stringResource(R.string.settings_hints))
+                }
+                item {
+                    Surface(
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(16.dp),
+                        color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
+                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f)),
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(14.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.Lightbulb,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.secondary,
+                                modifier = Modifier.size(22.dp),
                             )
+                            Spacer(Modifier.width(10.dp))
+                            Column(Modifier.weight(1f)) {
+                                Text(
+                                    text = stringResource(R.string.settings_hints_balance, state.hintBalance),
+                                    style = MaterialTheme.typography.titleMedium,
+                                    color = MaterialTheme.colorScheme.onSurface,
+                                )
+                                Text(
+                                    text = stringResource(R.string.settings_hints_note),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                        }
+                    }
+                }
+                item {
+                    SectionHeader(title = stringResource(R.string.settings_section_data))
+                }
+                item {
+                    OutlinedButton(
+                        onClick = { showResetDialog = true },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(14.dp),
+                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.error.copy(alpha = 0.55f)),
+                    ) {
+                        Text(
+                            text = stringResource(R.string.settings_reset),
+                            color = MaterialTheme.colorScheme.error,
+                        )
+                    }
+                }
+                item {
+                    SectionHeader(title = stringResource(R.string.settings_section_about))
+                }
+                item {
+                    SettingsCard {
+                        SettingsNavRow(
+                            title = stringResource(R.string.common_about),
+                            onClick = onAbout,
+                        )
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 14.dp, vertical = 10.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
                             Text(
-                                text = stringResource(R.string.settings_hints_note),
+                                text = stringResource(R.string.settings_version, appVersion),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.weight(1f),
                             )
+                            InfoPill(text = "v$appVersion")
                         }
                     }
                 }
             }
-            item {
-                SectionHeader(title = stringResource(R.string.settings_section_data))
-            }
-            item {
-                OutlinedButton(
-                    onClick = { showResetDialog = true },
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(14.dp),
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.error.copy(alpha = 0.55f)),
-                ) {
-                    Text(
-                        text = stringResource(R.string.settings_reset),
-                        color = MaterialTheme.colorScheme.error,
-                    )
-                }
-            }
-            item {
-                SectionHeader(title = stringResource(R.string.settings_section_about))
-            }
-            item {
-                SettingsCard {
-                    SettingsNavRow(
-                        title = stringResource(R.string.common_about),
-                        onClick = onAbout,
-                    )
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 14.dp, vertical = 10.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Text(
-                            text = stringResource(R.string.settings_version, version),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.weight(1f),
-                        )
-                        InfoPill(text = "v0.3.0")
-                    }
-                }
-            }
-        }
 
-        SnackbarHost(
-            hostState = snackbarHostState,
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 84.dp),
-        )
+            SnackbarHost(
+                hostState = snackbarHostState,
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = 84.dp),
+            )
+        }
     }
 
     if (showResetDialog) {

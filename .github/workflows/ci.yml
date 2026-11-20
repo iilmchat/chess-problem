@@ -73,8 +73,11 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x gradlew
 
-      - name: Core tests, debug APK, release AAB and lint
-        run: ./gradlew :core:test :app:assembleDebug :app:lintDebug :app:bundleRelease :app:lintRelease --no-daemon
+      - name: Static analysis (detekt + ktlint)
+        run: ./gradlew detekt --no-daemon
+
+      - name: Core and UI tests, debug APK, release AAB and lint
+        run: ./gradlew :core:test :ui:testDebugUnitTest :app:assembleDebug :app:lintDebug :app:bundleRelease :app:lintRelease --no-daemon
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4

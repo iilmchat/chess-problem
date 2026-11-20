@@ -40,6 +40,8 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -162,8 +164,9 @@ fun StarRow(
     modifier: Modifier = Modifier,
     size: Dp = 20.dp,
 ) {
+    val starsDescription = stringResource(R.string.a11y_stars, stars, 3)
     Row(
-        modifier = modifier,
+        modifier = modifier.semantics { contentDescription = starsDescription },
         horizontalArrangement = Arrangement.spacedBy(3.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {

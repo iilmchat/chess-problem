@@ -49,7 +49,11 @@ object XpPolicy {
         return (100 + starBonus + timeBonus - 20 * hintsUsed).coerceAtLeast(10)
     }
 
-    fun reviewXp(): Int = 10
+    // Разбор даёт фиксированную награду: это часть экономики, а не вычисление.
+    @Suppress("FunctionOnlyReturningConstant")
+    fun reviewXp(): Int = REVIEW_XP
+
+    const val REVIEW_XP = 10
 }
 
 object TimerPolicy {

@@ -2,12 +2,12 @@ package com.iilmchat.chessproblem.ui.util
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import com.iilmchat.chessproblem.core.model.Level
 import com.iilmchat.chessproblem.core.model.LocalizedText
 import com.iilmchat.chessproblem.core.model.Puzzle
 import com.iilmchat.chessproblem.core.model.TaskType
 import com.iilmchat.chessproblem.ui.R
-import androidx.compose.ui.res.stringResource
 import java.util.Locale
 
 @Composable

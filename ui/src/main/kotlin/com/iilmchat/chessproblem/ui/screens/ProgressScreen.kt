@@ -35,6 +35,7 @@ import com.iilmchat.chessproblem.ui.components.ChessTopBar
 import com.iilmchat.chessproblem.ui.components.ErrorState
 import com.iilmchat.chessproblem.ui.components.LoadingState
 import com.iilmchat.chessproblem.ui.components.PrimaryButton
+import com.iilmchat.chessproblem.ui.components.ResponsiveScaffoldContainer
 import com.iilmchat.chessproblem.ui.components.SectionHeader
 import com.iilmchat.chessproblem.ui.components.StarRow
 import com.iilmchat.chessproblem.ui.components.StatCard
@@ -55,111 +56,113 @@ fun ProgressScreen(
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    when {
-        state.loading -> LoadingState(modifier)
-        state.error != null -> ErrorState(onRetry = onRetry, modifier = modifier)
-        else -> {
-            val solved = state.solvedCount
-            val total = state.total
-            val stars = state.totalStars
-            val accuracy = if (total > 0) {
-                ((solved * 100.0) / total).roundToInt()
-            } else {
-                0
-            }
-            val bestTimes = state.progress.values.mapNotNull { it.bestTimeMs }
-            val avgTime = if (bestTimes.isEmpty()) 0L else bestTimes.average().toLong()
-            val recent = state.recentProgress(5)
+    ResponsiveScaffoldContainer(modifier = modifier) {
+        when {
+            state.loading -> LoadingState()
+            state.error != null -> ErrorState(onRetry = onRetry)
+            else -> {
+                val solved = state.solvedCount
+                val total = state.total
+                val stars = state.totalStars
+                val accuracy = if (total > 0) {
+                    ((solved * 100.0) / total).roundToInt()
+                } else {
+                    0
+                }
+                val bestTimes = state.progress.values.mapNotNull { it.bestTimeMs }
+                val avgTime = if (bestTimes.isEmpty()) 0L else bestTimes.average().toLong()
+                val recent = state.recentProgress(5)
 
-            LazyColumn(
-                modifier = modifier.fillMaxSize(),
-                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 110.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-            ) {
-                item {
-                    ChessTopBar(
-                        title = stringResource(R.string.progress_title),
-                        subtitle = stringResource(R.string.progress_subtitle),
-                    )
-                }
-                item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        StatCard(
-                            label = stringResource(R.string.progress_solved),
-                            value = "$solved/$total",
-                            modifier = Modifier.weight(1f),
-                        )
-                        StatCard(
-                            label = stringResource(R.string.progress_stars),
-                            value = stars.toString(),
-                            modifier = Modifier.weight(1f),
-                        )
-                    }
-                }
-                item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        StatCard(
-                            label = stringResource(R.string.progress_accuracy),
-                            value = "$accuracy%",
-                            modifier = Modifier.weight(1f),
-                        )
-                        StatCard(
-                            label = stringResource(R.string.progress_time),
-                            value = if (avgTime > 0L) formatShortTime(avgTime) else "—",
-                            modifier = Modifier.weight(1f),
-                        )
-                    }
-                }
-                item {
-                    SectionHeader(title = stringResource(R.string.progress_levels))
-                }
-                Level.entries.forEach { level ->
-                    item(key = level.id) {
-                        ProgressLevelCard(
-                            level = level,
-                            solved = state.solvedInLevel(level),
-                            total = state.puzzlesFor(level).size,
-                            stars = state.starsInLevel(level),
-                        )
-                    }
-                }
-                item {
-                    SectionHeader(title = stringResource(R.string.progress_recent))
-                }
-                if (recent.isEmpty()) {
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 110.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
                     item {
-                        Surface(
-                            modifier = Modifier.fillMaxWidth(),
-                            shape = RoundedCornerShape(16.dp),
-                            color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f),
-                        ) {
-                            Column(
-                                modifier = Modifier.padding(18.dp),
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                            ) {
-                                Text(
-                                    text = stringResource(R.string.progress_empty),
-                                    style = MaterialTheme.typography.bodyMedium,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                )
-                                Spacer(Modifier.height(14.dp))
-                                PrimaryButton(
-                                    text = stringResource(R.string.progress_start),
-                                    onClick = onPlay,
-                                )
-                            }
+                        ChessTopBar(
+                            title = stringResource(R.string.progress_title),
+                            subtitle = stringResource(R.string.progress_subtitle),
+                        )
+                    }
+                    item {
+                        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                            StatCard(
+                                label = stringResource(R.string.progress_solved),
+                                value = "$solved/$total",
+                                modifier = Modifier.weight(1f),
+                            )
+                            StatCard(
+                                label = stringResource(R.string.progress_stars),
+                                value = stars.toString(),
+                                modifier = Modifier.weight(1f),
+                            )
                         }
                     }
-                } else {
-                    recent.forEach { (puzzle, progress) ->
-                        item(key = puzzle.id) {
-                            RecentPuzzleRow(
-                                title = localized(puzzle.title),
-                                level = levelTitle(puzzle.level),
-                                stars = progress.stars,
-                                time = progress.bestTimeMs,
-                                onClick = { onPuzzleClick(puzzle.id) },
+                    item {
+                        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                            StatCard(
+                                label = stringResource(R.string.progress_accuracy),
+                                value = "$accuracy%",
+                                modifier = Modifier.weight(1f),
                             )
+                            StatCard(
+                                label = stringResource(R.string.progress_time),
+                                value = if (avgTime > 0L) formatShortTime(avgTime) else "—",
+                                modifier = Modifier.weight(1f),
+                            )
+                        }
+                    }
+                    item {
+                        SectionHeader(title = stringResource(R.string.progress_levels))
+                    }
+                    Level.entries.forEach { level ->
+                        item(key = level.id) {
+                            ProgressLevelCard(
+                                level = level,
+                                solved = state.solvedInLevel(level),
+                                total = state.puzzlesFor(level).size,
+                                stars = state.starsInLevel(level),
+                            )
+                        }
+                    }
+                    item {
+                        SectionHeader(title = stringResource(R.string.progress_recent))
+                    }
+                    if (recent.isEmpty()) {
+                        item {
+                            Surface(
+                                modifier = Modifier.fillMaxWidth(),
+                                shape = RoundedCornerShape(16.dp),
+                                color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f),
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(18.dp),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                ) {
+                                    Text(
+                                        text = stringResource(R.string.progress_empty),
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    )
+                                    Spacer(Modifier.height(14.dp))
+                                    PrimaryButton(
+                                        text = stringResource(R.string.progress_start),
+                                        onClick = onPlay,
+                                    )
+                                }
+                            }
+                        }
+                    } else {
+                        recent.forEach { (puzzle, progress) ->
+                            item(key = puzzle.id) {
+                                RecentPuzzleRow(
+                                    title = localized(puzzle.title),
+                                    level = levelTitle(puzzle.level),
+                                    stars = progress.stars,
+                                    time = progress.bestTimeMs,
+                                    onClick = { onPuzzleClick(puzzle.id) },
+                                )
+                            }
                         }
                     }
                 }

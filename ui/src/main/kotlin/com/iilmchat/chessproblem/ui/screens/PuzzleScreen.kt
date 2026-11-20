@@ -34,17 +34,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
@@ -60,6 +57,7 @@ import com.iilmchat.chessproblem.ui.components.ErrorState
 import com.iilmchat.chessproblem.ui.components.InfoPill
 import com.iilmchat.chessproblem.ui.components.LoadingState
 import com.iilmchat.chessproblem.ui.components.MoveLog
+import com.iilmchat.chessproblem.ui.components.ResponsiveScaffoldContainer
 import com.iilmchat.chessproblem.ui.components.TimerPill
 import com.iilmchat.chessproblem.ui.util.chapterTitle
 import com.iilmchat.chessproblem.ui.util.levelTitle
@@ -101,139 +99,141 @@ fun PuzzleScreen(
         }
     }
 
-    when {
-        ui.loading -> LoadingState(modifier)
-        ui.puzzle == null || ui.session == null -> ErrorState(onRetry = onBack, modifier = modifier)
-        ui.resultVisible -> {
-            ResultScreen(
-                puzzle = ui.puzzle!!,
-                state = ui.session!!,
-                nextPuzzleId = nextPuzzleId,
-                reviewBoard = ui.reviewBoard,
-                boardTheme = ui.settings.boardTheme,
-                coordinates = ui.settings.coordinates,
-                onNext = onNext,
-                onHome = onHome,
-                onBack = onBack,
-                onContinue = viewModel::continueWithTime,
-                onRestart = viewModel::restartAfterFail,
-                onRetry = viewModel::retry,
-                onReveal = viewModel::reveal,
-                onToggleReviewBoard = viewModel::toggleReviewBoard,
-                modifier = modifier,
-            )
-        }
+    ResponsiveScaffoldContainer(modifier = modifier) {
+        when {
+            ui.loading -> LoadingState()
+            ui.puzzle == null || ui.session == null -> ErrorState(onRetry = onBack)
+            ui.resultVisible -> {
+                ResultScreen(
+                    puzzle = ui.puzzle!!,
+                    state = ui.session!!,
+                    nextPuzzleId = nextPuzzleId,
+                    reviewBoard = ui.reviewBoard,
+                    boardTheme = ui.settings.boardTheme,
+                    coordinates = ui.settings.coordinates,
+                    onNext = onNext,
+                    onHome = onHome,
+                    onBack = onBack,
+                    onContinue = viewModel::continueWithTime,
+                    onRestart = viewModel::restartAfterFail,
+                    onRetry = viewModel::retry,
+                    onReveal = viewModel::reveal,
+                    onToggleReviewBoard = viewModel::toggleReviewBoard,
+                    modifier = Modifier,
+                )
+            }
 
-        else -> {
-            val puzzle = ui.puzzle!!
-            val session = ui.session!!
-            val boardEnabled = session.status == PuzzleState.Status.SOLVING &&
-                !session.paused && !session.finished
-            val hintText = hintText(ui, session)
-            val feedbackText = feedbackText(session)
+            else -> {
+                val puzzle = ui.puzzle!!
+                val session = ui.session!!
+                val boardEnabled = session.status == PuzzleState.Status.SOLVING &&
+                    !session.paused && !session.finished
+                val hintText = hintText(ui, session)
+                val feedbackText = feedbackText(session)
 
-            Box(
-                modifier = modifier
-                    .fillMaxSize()
-                    .background(MaterialTheme.colorScheme.background),
-            ) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.background),
                 ) {
-                    PuzzleTopBar(
-                        puzzleTitle = localized(puzzle.title),
-                        chapter = chapterTitle(puzzle.chapter, puzzle.level),
-                        level = levelTitle(puzzle.level),
-                        session = session,
-                        onBack = viewModel::requestExit,
-                        onPause = viewModel::pause,
-                    )
-
                     Column(
-                        modifier = Modifier
-                            .weight(1f)
-                            .verticalScroll(rememberScrollState())
-                            .padding(horizontal = 16.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp),
+                        modifier = Modifier.fillMaxSize(),
                     ) {
-                        TaskCard(
-                            ui = ui,
+                        PuzzleTopBar(
+                            puzzleTitle = localized(puzzle.title),
+                            chapter = chapterTitle(puzzle.chapter, puzzle.level),
+                            level = levelTitle(puzzle.level),
                             session = session,
+                            onBack = viewModel::requestExit,
+                            onPause = viewModel::pause,
                         )
-                        BoardCard(
-                            board = session.board,
-                            selected = session.selectedSquare,
-                            legalTargets = session.legalTargets,
-                            lastMove = session.board.lastMove,
-                            flipped = session.flipped,
-                            hintPiece = session.hintPiece,
-                            hintMove = session.hintMove,
-                            coordinates = ui.settings.coordinates,
-                            boardTheme = ui.settings.boardTheme,
-                            enabled = boardEnabled,
-                            onSquareClick = viewModel::onTapSquare,
-                            onMove = { from, to -> viewModel.onMakeMove(from, to, null) },
-                            haptics = ui.settings.haptics,
+
+                        Column(
+                            modifier = Modifier
+                                .weight(1f)
+                                .verticalScroll(rememberScrollState())
+                                .padding(horizontal = 16.dp),
+                            verticalArrangement = Arrangement.spacedBy(12.dp),
+                        ) {
+                            TaskCard(
+                                ui = ui,
+                                session = session,
+                            )
+                            BoardCard(
+                                board = session.board,
+                                selected = session.selectedSquare,
+                                legalTargets = session.legalTargets,
+                                lastMove = session.board.lastMove,
+                                flipped = session.flipped,
+                                hintPiece = session.hintPiece,
+                                hintMove = session.hintMove,
+                                coordinates = ui.settings.coordinates,
+                                boardTheme = ui.settings.boardTheme,
+                                enabled = boardEnabled,
+                                onSquareClick = viewModel::onTapSquare,
+                                onMove = { from, to -> viewModel.onMakeMove(from, to, null) },
+                                haptics = ui.settings.haptics,
+                            )
+                            StatusLine(
+                                hintText = hintText,
+                                feedbackText = feedbackText,
+                                session = session,
+                            )
+                            MoveLog(
+                                moves = session.moves,
+                                userMoves = session.userMoves,
+                                totalUserMoves = puzzle.task.plies,
+                            )
+                            Spacer(Modifier.height(4.dp))
+                        }
+
+                        BottomActions(
+                            hintBalance = ui.hintBalance,
+                            onHint = viewModel::openHints,
+                            onFlip = viewModel::flipBoard,
                         )
-                        StatusLine(
-                            hintText = hintText,
-                            feedbackText = feedbackText,
-                            session = session,
-                        )
-                        MoveLog(
-                            moves = session.moves,
-                            userMoves = session.userMoves,
-                            totalUserMoves = puzzle.task.plies,
-                        )
-                        Spacer(Modifier.height(4.dp))
                     }
 
-                    BottomActions(
-                        hintBalance = ui.hintBalance,
-                        onHint = viewModel::openHints,
-                        onFlip = viewModel::flipBoard,
+                    SnackbarHost(
+                        hostState = snackbarHostState,
+                        modifier = Modifier
+                            .align(Alignment.BottomCenter)
+                            .padding(bottom = 76.dp),
                     )
                 }
 
-                SnackbarHost(
-                    hostState = snackbarHostState,
-                    modifier = Modifier
-                        .align(Alignment.BottomCenter)
-                        .padding(bottom = 76.dp),
-                )
-            }
-
-            if (ui.showHints) {
-                HintsSheet(
-                    session = session,
-                    balance = ui.hintBalance,
-                    onUseHint = viewModel::useHint,
-                    onDismiss = viewModel::dismissHints,
-                )
-            }
-            if (ui.showPause) {
-                PauseDialog(
-                    onResume = viewModel::resume,
-                    onExit = viewModel::requestExit,
-                )
-            }
-            if (ui.showExit) {
-                ExitDialog(
-                    onConfirm = onBack,
-                    onDismiss = viewModel::dismissExit,
-                )
-            }
-            if (session.promotionChoices.isNotEmpty()) {
-                PromotionDialog(
-                    session = session,
-                    onChoose = { promotion ->
-                        val move = session.promotionChoices.firstOrNull { it.promotion == promotion }
-                        if (move != null) {
-                            viewModel.onMakeMove(move.from, move.to, move.promotion)
-                        }
-                    },
-                    onDismiss = viewModel::clearPromotion,
-                )
+                if (ui.showHints) {
+                    HintsSheet(
+                        session = session,
+                        balance = ui.hintBalance,
+                        onUseHint = viewModel::useHint,
+                        onDismiss = viewModel::dismissHints,
+                    )
+                }
+                if (ui.showPause) {
+                    PauseDialog(
+                        onResume = viewModel::resume,
+                        onExit = viewModel::requestExit,
+                    )
+                }
+                if (ui.showExit) {
+                    ExitDialog(
+                        onConfirm = onBack,
+                        onDismiss = viewModel::dismissExit,
+                    )
+                }
+                if (session.promotionChoices.isNotEmpty()) {
+                    PromotionDialog(
+                        session = session,
+                        onChoose = { promotion ->
+                            val move = session.promotionChoices.firstOrNull { it.promotion == promotion }
+                            if (move != null) {
+                                viewModel.onMakeMove(move.from, move.to, move.promotion)
+                            }
+                        },
+                        onDismiss = viewModel::clearPromotion,
+                    )
+                }
             }
         }
     }

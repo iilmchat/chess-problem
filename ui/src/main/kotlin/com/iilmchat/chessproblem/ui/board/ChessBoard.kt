@@ -38,7 +38,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.iilmchat.chessproblem.core.chess.BoardSnapshot
 import com.iilmchat.chessproblem.core.chess.Move
@@ -77,8 +76,11 @@ fun ChessBoard(
     val currentOnMove by rememberUpdatedState(onMove)
     val boardDescription = stringResource(R.string.board_content_description)
     val sideToMove = stringResource(
-        if (board.sideToMove == Side.WHITE) R.string.board_white_to_move
-        else R.string.board_black_to_move,
+        if (board.sideToMove == Side.WHITE) {
+            R.string.board_white_to_move
+        } else {
+            R.string.board_black_to_move
+        },
     )
     val checkDescription = if (board.inCheck) stringResource(R.string.board_in_check) else null
     val selectionDescription = if (selected != null) {
@@ -360,8 +362,11 @@ private fun BoardAccessibilityLayer(
                     }
                     val legalState = if (isLegalTarget) {
                         stringResource(
-                            if (piece != null) R.string.board_state_capture
-                            else R.string.board_state_legal,
+                            if (piece != null) {
+                                R.string.board_state_capture
+                            } else {
+                                R.string.board_state_legal
+                            },
                         )
                     } else {
                         null
@@ -529,11 +534,6 @@ private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawCoordinates(
         )
     }
 }
-
-private fun kingSquare(board: BoardSnapshot, side: Side): Square? =
-    board.pieces.entries.firstOrNull {
-        it.value.type == PieceType.KING && it.value.side == side
-    }?.key
 
 @Suppress("unused")
 private fun moveDistance(from: Square, to: Square): Int =

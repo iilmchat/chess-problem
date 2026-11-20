@@ -39,6 +39,7 @@ import com.iilmchat.chessproblem.ui.components.ChessTopBar
 import com.iilmchat.chessproblem.ui.components.ErrorState
 import com.iilmchat.chessproblem.ui.components.InfoPill
 import com.iilmchat.chessproblem.ui.components.LoadingState
+import com.iilmchat.chessproblem.ui.components.ResponsiveScaffoldContainer
 import com.iilmchat.chessproblem.ui.components.SectionHeader
 import com.iilmchat.chessproblem.ui.components.StarRow
 import com.iilmchat.chessproblem.ui.theme.Brass
@@ -58,59 +59,61 @@ fun LevelScreen(
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    when {
-        state.loading -> LoadingState(modifier)
-        state.error != null -> ErrorState(onRetry = onRetry, modifier = modifier)
-        else -> {
-            val chapters = state.chaptersFor(level)
-            val accent = levelAccent(level)
-            LazyColumn(
-                modifier = modifier.fillMaxSize(),
-                contentPadding = PaddingValues(bottom = 32.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-            ) {
-                item {
-                    ChessTopBar(
-                        title = levelTitle(level),
-                        subtitle = stringResource(R.string.level_subtitle),
-                        onBack = onBack,
-                    )
-                }
-                item {
-                    LevelHero(
-                        level = level,
-                        total = state.puzzlesFor(level).size,
-                        solved = state.solvedInLevel(level),
-                        stars = state.starsInLevel(level),
-                        accent = accent,
-                        modifier = Modifier.padding(horizontal = 16.dp),
-                    )
-                }
-                item {
-                    SectionHeader(
-                        title = stringResource(R.string.level_chapters),
-                        modifier = Modifier.padding(horizontal = 16.dp),
-                    )
-                }
-                if (chapters.isEmpty()) {
+    ResponsiveScaffoldContainer(modifier = modifier) {
+        when {
+            state.loading -> LoadingState()
+            state.error != null -> ErrorState(onRetry = onRetry)
+            else -> {
+                val chapters = state.chaptersFor(level)
+                val accent = levelAccent(level)
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(bottom = 32.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
                     item {
-                        Text(
-                            text = stringResource(R.string.chapter_empty),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
+                        ChessTopBar(
+                            title = levelTitle(level),
+                            subtitle = stringResource(R.string.level_subtitle),
+                            onBack = onBack,
                         )
                     }
-                } else {
-                    chapters.forEach { chapter ->
-                        item(key = chapter.id) {
-                            ChapterCard(
-                                chapter = chapter,
-                                level = level,
-                                accent = accent,
-                                onClick = { onChapterClick(chapter.id) },
-                                modifier = Modifier.padding(horizontal = 16.dp),
+                    item {
+                        LevelHero(
+                            level = level,
+                            total = state.puzzlesFor(level).size,
+                            solved = state.solvedInLevel(level),
+                            stars = state.starsInLevel(level),
+                            accent = accent,
+                            modifier = Modifier.padding(horizontal = 16.dp),
+                        )
+                    }
+                    item {
+                        SectionHeader(
+                            title = stringResource(R.string.level_chapters),
+                            modifier = Modifier.padding(horizontal = 16.dp),
+                        )
+                    }
+                    if (chapters.isEmpty()) {
+                        item {
+                            Text(
+                                text = stringResource(R.string.chapter_empty),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
                             )
+                        }
+                    } else {
+                        chapters.forEach { chapter ->
+                            item(key = chapter.id) {
+                                ChapterCard(
+                                    chapter = chapter,
+                                    level = level,
+                                    accent = accent,
+                                    onClick = { onChapterClick(chapter.id) },
+                                    modifier = Modifier.padding(horizontal = 16.dp),
+                                )
+                            }
                         }
                     }
                 }
@@ -292,54 +295,60 @@ fun ChapterScreen(
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    when {
-        state.loading -> LoadingState(modifier)
-        state.error != null -> ErrorState(onRetry = onRetry, modifier = modifier)
-        else -> {
-            val chapter = state.chapter(level, chapterId)
-            LazyColumn(
-                modifier = modifier.fillMaxSize(),
-                contentPadding = PaddingValues(bottom = 32.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp),
-            ) {
-                item {
-                    ChessTopBar(
-                        title = chapterTitle(chapterId, level),
-                        subtitle = levelTitle(level),
-                        onBack = onBack,
-                    )
-                }
-                if (chapter == null || chapter.puzzles.isEmpty()) {
+    ResponsiveScaffoldContainer(modifier = modifier) {
+        when {
+            state.loading -> LoadingState()
+            state.error != null -> ErrorState(onRetry = onRetry)
+            else -> {
+                val chapter = state.chapter(level, chapterId)
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(bottom = 32.dp),
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
+                ) {
                     item {
-                        Text(
-                            text = stringResource(R.string.chapter_empty),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.padding(16.dp),
+                        ChessTopBar(
+                            title = chapterTitle(chapterId, level),
+                            subtitle = levelTitle(level),
+                            onBack = onBack,
                         )
                     }
-                } else {
-                    item {
-                        Row(
-                            modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
-                            horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        ) {
-                            InfoPill(
-                                text = stringResource(R.string.home_level_progress, chapter.solved, chapter.puzzles.size),
+                    if (chapter == null || chapter.puzzles.isEmpty()) {
+                        item {
+                            Text(
+                                text = stringResource(R.string.chapter_empty),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.padding(16.dp),
                             )
-                            InfoPill(text = "${chapter.stars} ★")
                         }
-                    }
-                    chapter.puzzles.forEachIndexed { index, puzzle ->
-                        item(key = puzzle.id) {
-                            PuzzleRow(
-                                index = index + 1,
-                                puzzle = puzzle,
-                                stars = state.progressFor(puzzle.id)?.stars ?: 0,
-                                solved = state.progressFor(puzzle.id)?.solved == true,
-                                onClick = { onPuzzleClick(puzzle.id) },
-                                modifier = Modifier.padding(horizontal = 16.dp),
-                            )
+                    } else {
+                        item {
+                            Row(
+                                modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            ) {
+                                InfoPill(
+                                    text = stringResource(
+                                        R.string.home_level_progress,
+                                        chapter.solved,
+                                        chapter.puzzles.size,
+                                    ),
+                                )
+                                InfoPill(text = "${chapter.stars} ★")
+                            }
+                        }
+                        chapter.puzzles.forEachIndexed { index, puzzle ->
+                            item(key = puzzle.id) {
+                                PuzzleRow(
+                                    index = index + 1,
+                                    puzzle = puzzle,
+                                    stars = state.progressFor(puzzle.id)?.stars ?: 0,
+                                    solved = state.progressFor(puzzle.id)?.solved == true,
+                                    onClick = { onPuzzleClick(puzzle.id) },
+                                    modifier = Modifier.padding(horizontal = 16.dp),
+                                )
+                            }
                         }
                     }
                 }
@@ -394,7 +403,11 @@ private fun PuzzleRow(
                 Text(
                     text = index.toString(),
                     style = MaterialTheme.typography.labelLarge,
-                    color = if (solved) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                    color = if (solved) {
+                        MaterialTheme.colorScheme.primary
+                    } else {
+                        MaterialTheme.colorScheme.onSurfaceVariant
+                    },
                 )
             }
             Spacer(Modifier.width(12.dp))

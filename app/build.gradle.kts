@@ -3,6 +3,7 @@ import java.util.Properties
 plugins {
     id("chessproblem.android.application")
     id("chessproblem.android.compose")
+    id("chessproblem.detekt")
 }
 
 val keystorePropertiesFile = rootProject.file("keystore.properties")

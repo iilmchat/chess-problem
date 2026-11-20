@@ -33,7 +33,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -45,10 +44,10 @@ import com.iilmchat.chessproblem.core.model.Level
 import com.iilmchat.chessproblem.core.model.Puzzle
 import com.iilmchat.chessproblem.ui.R
 import com.iilmchat.chessproblem.ui.board.ChessBoard
-import com.iilmchat.chessproblem.ui.board.boardPalette
 import com.iilmchat.chessproblem.ui.components.ErrorState
 import com.iilmchat.chessproblem.ui.components.InfoPill
 import com.iilmchat.chessproblem.ui.components.LoadingState
+import com.iilmchat.chessproblem.ui.components.ResponsiveScaffoldContainer
 import com.iilmchat.chessproblem.ui.components.SectionHeader
 import com.iilmchat.chessproblem.ui.components.StarRow
 import com.iilmchat.chessproblem.ui.theme.Brass
@@ -70,17 +69,19 @@ fun HomeScreen(
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    when {
-        state.loading -> LoadingState(modifier)
-        state.error != null -> ErrorState(onRetry = onRetry, modifier = modifier)
-        else -> HomeContent(
-            state = state,
-            onPuzzleClick = onPuzzleClick,
-            onLevelClick = onLevelClick,
-            onProgressClick = onProgressClick,
-            onSettingsClick = onSettingsClick,
-            modifier = modifier,
-        )
+    ResponsiveScaffoldContainer(modifier = modifier) {
+        when {
+            state.loading -> LoadingState()
+            state.error != null -> ErrorState(onRetry = onRetry)
+            else -> HomeContent(
+                state = state,
+                onPuzzleClick = onPuzzleClick,
+                onLevelClick = onLevelClick,
+                onProgressClick = onProgressClick,
+                onSettingsClick = onSettingsClick,
+                modifier = Modifier,
+            )
+        }
     }
 }
 

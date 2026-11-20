@@ -3,7 +3,6 @@ package com.iilmchat.chessproblem.core.chess
 import com.github.bhlangonijr.chesslib.Board
 import com.github.bhlangonijr.chesslib.Piece as LibPiece
 import com.github.bhlangonijr.chesslib.PieceType as LibPieceType
-import com.github.bhlangonijr.chesslib.Side as LibSide
 import com.github.bhlangonijr.chesslib.Square as LibSquare
 import com.github.bhlangonijr.chesslib.move.Move as LibMove
 

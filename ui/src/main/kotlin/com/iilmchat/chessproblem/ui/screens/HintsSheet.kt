@@ -81,7 +81,6 @@ fun HintsSheet(
             }
 
             HintOption(
-                tier = HintTier.IDEA,
                 title = stringResource(R.string.puzzle_hint_idea),
                 description = stringResource(R.string.puzzle_hint_idea_desc),
                 icon = Icons.Filled.Lightbulb,
@@ -91,7 +90,6 @@ fun HintsSheet(
                 onClick = { onUseHint(HintTier.IDEA) },
             )
             HintOption(
-                tier = HintTier.PIECE,
                 title = stringResource(R.string.puzzle_hint_piece),
                 description = stringResource(R.string.puzzle_hint_piece_desc),
                 icon = Icons.Filled.Search,
@@ -101,7 +99,6 @@ fun HintsSheet(
                 onClick = { onUseHint(HintTier.PIECE) },
             )
             HintOption(
-                tier = HintTier.MOVE,
                 title = stringResource(R.string.puzzle_hint_move),
                 description = stringResource(R.string.puzzle_hint_move_desc),
                 icon = Icons.Filled.ArrowForward,
@@ -123,7 +120,6 @@ fun HintsSheet(
 
 @Composable
 private fun HintOption(
-    tier: HintTier,
     title: String,
     description: String,
     icon: ImageVector,

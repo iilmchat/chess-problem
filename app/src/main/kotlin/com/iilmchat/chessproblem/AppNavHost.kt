@@ -98,6 +98,7 @@ fun AppNavHost(
             composable("settings") {
                 SettingsScreen(
                     state = settings,
+                    appVersion = BuildConfig.VERSION_NAME,
                     onLanguage = onLanguageChanged,
                     onTheme = settingsViewModel::setTheme,
                     onBoardTheme = settingsViewModel::setBoardTheme,
@@ -113,7 +114,11 @@ fun AppNavHost(
             }
 
             composable("about") {
-                AboutScreen(onBack = { navController.popBackStack() })
+                AboutScreen(
+                    appVersion = BuildConfig.VERSION_NAME,
+                    contentVersion = container.contentVersionProvider.current(),
+                    onBack = { navController.popBackStack() },
+                )
             }
 
             composable("level/{level}") { entry ->

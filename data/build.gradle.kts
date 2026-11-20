@@ -4,6 +4,7 @@ plugins {
     id("chessproblem.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+    id("chessproblem.detekt")
 }
 
 // Content cutover (KI-008): `content/puzzles/*.json` stays the single source of

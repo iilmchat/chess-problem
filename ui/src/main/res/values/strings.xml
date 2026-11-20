@@ -224,6 +224,9 @@
     <string name="about_made">Сделано с уважением к шахматам</string>
     <string name="about_offline">Офлайн</string>
     <string name="about_languages">RU · EN</string>
+    <string name="about_content_version">Контент: %1$s</string>
+    <string name="about_licenses_open">Открыть тексты лицензий</string>
+    <string name="about_license_unavailable">Не удалось прочитать файл лицензии.</string>
 
     <string name="board_content_description">Шахматная доска</string>
     <string name="board_white_to_move">Ход белых</string>
@@ -258,4 +261,5 @@
     <string name="a11y_flip">Перевернуть доску</string>
     <string name="a11y_pause">Пауза</string>
     <string name="a11y_close_sheet">Закрыть подсказки</string>
+    <string name="a11y_stars">%1$d из %2$d звёзд</string>
 </resources>

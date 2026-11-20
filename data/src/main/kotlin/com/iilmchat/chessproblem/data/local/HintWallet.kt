@@ -7,13 +7,13 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.iilmchat.chessproblem.core.repository.HintRepository
-import java.io.IOException
-import java.time.LocalDate
-import kotlin.math.min
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import java.io.IOException
+import java.time.LocalDate
+import kotlin.math.min
 
 private val Context.hintsDataStore by preferencesDataStore(name = "hints")
 

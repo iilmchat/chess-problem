@@ -4,10 +4,11 @@
 **Связано:** [LICENSE](../../LICENSE) · [RULES §7](../development/RULES.md#7-лицензии-и-ассеты) ·
 [CONTENT PLAN](../design/CONTENT_PLAN.md)
 
-Реестр сторонних компонентов Chess Problem. Перед релизом полные тексты
-лицензий копируются в `app/src/main/assets/licenses/` и доступны на экране
-«О приложении → Лицензии». Для компонентов, которые не поставляются в APK
-(инструменты сборки и валидации), достаточно указать их в этом реестре.
+Реестр сторонних компонентов Chess Problem. Полные тексты лицензий
+скопированы в `app/src/main/assets/licenses/` и читаются экраном
+«О приложении → Лицензии» с v0.4.1 (KI-019 закрыт).
+Для компонентов, которые не поставляются в APK (инструменты сборки и
+валидации), достаточно указать их в этом реестре.
 
 ---
 
@@ -40,8 +41,9 @@ Variable-шрифты добавлены в `ui/src/main/res/font/`; полны�
 - `OFL-Manrope.txt`
 - `OFL-RobotoMono.txt`
 
-Шрифты покрывают RU/EN, цифры и SAN. Перед релизом тексты лицензий будут
-продублированы в assets для экрана «О приложении → Лицензии».
+Шрифты покрывают RU/EN, цифры и SAN. Все три текста объединены в
+`app/src/main/assets/licenses/OFL-1.1.txt` и доступны с экрана
+«О приложении → Лицензии».
 
 ### 1.2. Иконки и фигуры
 
@@ -104,15 +106,16 @@ Lichess — товарный знак Lichess.org; мы не используе�
 
 ## 4. Полные тексты лицензий
 
-Перед релизом в `assets/licenses/` добавляются:
+В `app/src/main/assets/licenses/` добавлены:
 
-- `Apache-2.0.txt` — для Kotlin, AndroidX, chesslib, Roboto Mono, Material
-  Symbols;
-- `OFL-1.1.txt` — для Montserrat и Manrope;
-- `BSD-2-Clause.txt` — для chess.js (если он когда-либо попадёт в поставку;
-  сейчас — только CI);
+- `Apache-2.0.txt` — для Kotlin, AndroidX, chesslib, Material Symbols;
+- `OFL-1.1.txt` — полные тексты для Montserrat, Manrope и Roboto Mono;
+- `BSD-2-Clause.txt` — для chess.js (сейчас — только CI);
 - `CC0-1.0.txt` — для базы Lichess;
-- `NOTICE` — уведомления Apache-компонентов.
+- `NOTICE` — атрибуция Lichess, Kotlin, AndroidX, chesslib и шрифтов.
+
+С v0.4.1 экран «О приложении → Лицензии» открывает диалог выбора файла и
+показывает полный текст с прокруткой (KI-019 закрыт).
 
 Официальные тексты:
 

@@ -47,6 +47,8 @@ private data class PieceArt(
     val scale: Float = 1f,
 )
 
+// SVG-пути не разбиваются: пробелы внутри path data имеют смысл.
+@Suppress("MaxLineLength", "MaximumLineLength", "ArgumentListWrapping")
 private val pawnArt = PieceArt(
     listOf(
         PiecePart.Circle(cx = 32f, cy = 16.5f, radius = 8.5f),
@@ -64,6 +66,7 @@ private val rookArt = PieceArt(
 
 // Standard knight silhouette from the user-provided icon666 reference.
 // The path is authored in a 195-unit viewBox; the art scale maps it to 64.
+@Suppress("MaxLineLength", "MaximumLineLength", "ArgumentListWrapping")
 private val knightArt = PieceArt(
     parts = listOf(
         PiecePart.Svg(
@@ -74,6 +77,7 @@ private val knightArt = PieceArt(
     scale = 64f / 195f,
 )
 
+@Suppress("MaxLineLength", "MaximumLineLength", "ArgumentListWrapping")
 private val bishopArt = PieceArt(
     listOf(
         PiecePart.Svg("M32 8c4.5 5.5 7 10 7 14 0 3-1.8 5.6-4.5 7.5 5.6 2.8 9 8 9 14.5H20.5c0-6.5 3.4-11.7 9-14.5-2.7-1.9-4.5-4.5-4.5-7.5 0-4 2.5-8.5 7-14z"),
@@ -169,7 +173,13 @@ private fun DrawScope.drawArt(
                     if (part.fill) {
                         drawPath(
                             path = path,
-                            color = if (shadow) Color.Black.copy(alpha = 0.2f) else if (part.detail) detailColor else fillColor,
+                            color = if (shadow) {
+                                Color.Black.copy(alpha = 0.2f)
+                            } else if (part.detail) {
+                                detailColor
+                            } else {
+                                fillColor
+                            },
                         )
                     } else if (shadow) {
                         return@forEach

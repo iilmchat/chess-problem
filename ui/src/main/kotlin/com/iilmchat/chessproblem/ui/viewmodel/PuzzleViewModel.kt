@@ -134,7 +134,9 @@ class PuzzleViewModel(
 
     fun dismissHints() {
         val current = _state.value.session ?: return
-        val resumed = if (current.finished) current else {
+        val resumed = if (current.finished) {
+            current
+        } else {
             session?.onEvent(current, PuzzleEvent.Resume) ?: current
         }
         _state.update { it.copy(session = resumed, showHints = false) }
@@ -174,7 +176,9 @@ class PuzzleViewModel(
 
     fun requestExit() {
         val current = _state.value.session ?: return
-        val paused = if (current.finished) current else {
+        val paused = if (current.finished) {
+            current
+        } else {
             session?.onEvent(current, PuzzleEvent.Pause) ?: current
         }
         if (!current.finished) saveVisit(current)
@@ -190,7 +194,9 @@ class PuzzleViewModel(
 
     fun dismissExit() {
         val current = _state.value.session ?: return
-        val resumed = if (current.finished) current else {
+        val resumed = if (current.finished) {
+            current
+        } else {
             session?.onEvent(current, PuzzleEvent.Resume) ?: current
         }
         _state.update { it.copy(session = resumed, showExit = false) }
